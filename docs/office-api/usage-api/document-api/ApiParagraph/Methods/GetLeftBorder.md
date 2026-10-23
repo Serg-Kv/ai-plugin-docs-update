@@ -1,0 +1,41 @@
+# GetLeftBorder
+
+Returns the left border of the current paragraph.
+
+Inherited from [ApiParaPr.GetLeftBorder](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParaPr/Methods/GetLeftBorder.md).
+
+## Syntax
+
+```javascript
+expression.GetLeftBorder();
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParagraph.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[Border](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/Border.md) \| undefined
+
+## Example
+
+Retrieve the left border settings applied to a paragraph in a document.
+
+```javascript editor-docx
+// How do I read the left border from a paragraph's formatting in a document?
+
+// Useful when you need to inspect border details such as type and size drawn to the left of a paragraph.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+let paraPr = paragraph.GetParaPr();
+paraPr.SetLeftBorder("single", 24, 0, Api.Color(255, 111, 61));
+paragraph.AddText("This is a paragraph with a left border.");
+let border = paraPr.GetLeftBorder();
+let paragraph2 = Api.CreateParagraph();
+paragraph2.AddText("Left border type: " + border.Type + ", size: " + border.Size);
+doc.Push(paragraph2);
+```

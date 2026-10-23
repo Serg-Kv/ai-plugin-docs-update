@@ -1,0 +1,53 @@
+# SetHorAxisTitle
+
+Specifies the chart horizontal axis title.
+
+## Syntax
+
+```javascript
+expression.SetHorAxisTitle(sTitle, fontSize, bIsBold);
+```
+
+`expression` - A variable that represents an [ApiChart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiChart.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sTitle | Required | string |  | The title which will be displayed for the horizontal axis of the current chart. |
+| fontSize | Required | [hps](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/hps.md) |  | The text size value measured in half-points (1/144 of an inch). |
+| bIsBold | Required | boolean |  | Specifies if the horizontal axis title is written in bold font or not. |
+
+## Returns
+
+boolean
+
+## Example
+
+Set a title for the horizontal axis of a chart in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I label the horizontal axis on a chart in a spreadsheet?
+
+// Give the bottom axis a descriptive name to clarify the data categories in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+worksheet.GetRange("B1").SetValue(2014);
+worksheet.GetRange("C1").SetValue(2015);
+worksheet.GetRange("D1").SetValue(2016);
+worksheet.GetRange("A2").SetValue("Projected Revenue");
+worksheet.GetRange("A3").SetValue("Estimated Costs");
+worksheet.GetRange("B2").SetValue(200);
+worksheet.GetRange("B3").SetValue(250);
+worksheet.GetRange("C2").SetValue(240);
+worksheet.GetRange("C3").SetValue(260);
+worksheet.GetRange("D2").SetValue(280);
+worksheet.GetRange("D3").SetValue(280);
+let chart = worksheet.AddChart("'Sheet1'!$A$1:$D$3", true, "3DColumnClustered", 2, 100 * 36000, 70 * 36000, 0, 2 * 36000, 5, 3 * 36000);
+chart.SetTitle("Financial Overview", 26);
+chart.SetHorAxisTitle("Year", 22);
+let fill = Api.CreateSolidFill(Api.RGB(51, 51, 51));
+chart.SetSeriesFill(fill, 0, false);
+fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+chart.SetSeriesFill(fill, 1, false);
+```

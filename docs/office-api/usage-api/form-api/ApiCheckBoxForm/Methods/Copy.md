@@ -1,0 +1,41 @@
+# Copy
+
+Copies the current form (copies with the shape if it exists).
+
+Inherited from [ApiFormBase.Copy](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/Copy.md).
+
+## Syntax
+
+```javascript
+expression.Copy();
+```
+
+`expression` - A variable that represents an [ApiCheckBoxForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/ApiForm.md) \| null \| undefined
+
+## Example
+
+Duplicate an existing checkbox form field and insert the copy into a document.
+
+```javascript editor-forms
+// How do I reuse a checkbox form by making an identical copy of it in a document?
+
+// Add a second radio button with the same settings as the first without recreating it from scratch in a document.
+
+let doc = Api.GetDocument();
+let checkBoxForm = Api.CreateCheckBoxForm({"key": "Marital status", "tip": "Specify your marital status", "required": true, "placeholder": "Marital status", "radio": true});
+let paragraph = doc.GetElement(0);
+paragraph.AddElement(checkBoxForm);
+paragraph.AddText(" Married");
+let copyCheckBoxForm = checkBoxForm.Copy();
+paragraph.AddLineBreak();
+paragraph.AddElement(copyCheckBoxForm);
+paragraph.AddText(" Single");
+```

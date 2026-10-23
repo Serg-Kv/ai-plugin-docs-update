@@ -1,0 +1,50 @@
+# SetPriority
+
+Sets the priority value for the conditional formatting rule.
+
+## Syntax
+
+```javascript
+expression.SetPriority(Priority);
+```
+
+`expression` - A variable that represents an [ApiIconSetCondition](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiIconSetCondition.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| Priority | Required | number |  | The priority value (1-based). |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+Assign a specific priority order to an icon set formatting rule in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I control when an icon set rule is evaluated relative to other rules in a spreadsheet?
+
+// Reorder formatting rules so the icon set runs at the desired position in the evaluation sequence.
+
+let worksheet = Api.GetActiveSheet();
+
+worksheet.GetRange("A1").SetValue("Ratings");
+worksheet.GetRange("A2").SetValue(88);
+worksheet.GetRange("A3").SetValue(68);
+worksheet.GetRange("A4").SetValue(48);
+
+let range = worksheet.GetRange("A2:A4");
+let formatConditions = range.GetFormatConditions();
+
+let iconCondition = formatConditions.AddIconSetCondition();
+let dataBarCondition = formatConditions.AddDatabar();
+
+worksheet.GetRange("B1").SetValue("Priority before: " + iconCondition.GetPriority());
+
+iconCondition.SetPriority(3);
+
+worksheet.GetRange("B2").SetValue("Priority after: " + iconCondition.GetPriority());
+```

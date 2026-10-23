@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkapi_onlyoffice_com=self.webpackChunkapi_onlyoffice_com||[]).push([["90835"],{809118(e,c,i){i.d(c,{createArchitectureServices:()=>a.S});var a=i(801015);i(405896)}}]);

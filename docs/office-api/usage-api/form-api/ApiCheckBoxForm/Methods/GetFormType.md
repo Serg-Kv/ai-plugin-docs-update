@@ -1,0 +1,45 @@
+# GetFormType
+
+Returns a type of the current form.
+
+Inherited from [ApiFormBase.GetFormType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetFormType.md).
+
+## Syntax
+
+```javascript
+expression.GetFormType();
+```
+
+`expression` - A variable that represents an [ApiCheckBoxForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[FormType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/FormType.md)
+
+## Example
+
+Read the type of a form field to distinguish it from other form elements in a document.
+
+```javascript editor-forms
+// How do I find out what type a particular form field is in a document?
+
+// Verify that a form field is the expected type before applying type-specific settings in a document.
+
+let doc = Api.GetDocument();
+let checkBoxForm = Api.CreateCheckBoxForm({"key": "Marital status", "tip": "Specify your marital status", "required": true, "placeholder": "Marital status", "radio": true});
+let paragraph = doc.GetElement(0);
+paragraph.AddElement(checkBoxForm);
+paragraph.AddText(" Married");
+paragraph.AddLineBreak();
+checkBoxForm = Api.CreateCheckBoxForm({"key": "Marital status", "tip": "Specify your marital status", "required": true, "placeholder": "Marital status", "radio": true});
+paragraph.AddElement(checkBoxForm);
+paragraph.AddText(" Single");
+let formType = checkBoxForm.GetFormType();
+paragraph = Api.CreateParagraph();
+paragraph.AddText("Form type: " + formType);
+doc.Push(paragraph);
+```

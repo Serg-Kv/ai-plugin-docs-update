@@ -1,0 +1,39 @@
+# GetRange
+
+Returns a Range object that represents the document part contained in the specified hyperlink.
+
+## Syntax
+
+```javascript
+expression.GetRange(Start, End);
+```
+
+`expression` - A variable that represents an [ApiHyperlink](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiHyperlink.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| Start | Required | Number |  | Start position index in the current element. |
+| End | Required | Number |  | End position index in the current element. |
+
+## Returns
+
+[ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiRange.md)
+
+## Example
+
+Obtain a text range that spans part of a hyperlink in a document.
+
+```javascript editor-docx
+// How do I select a portion of a hyperlink as a range in a document?
+
+// Apply bold formatting to a subset of hyperlink characters using a range in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+paragraph.AddText("Visit ONLYOFFICE for developers");
+let hyperlink = paragraph.AddHyperlink("https://api.onlyoffice.com");
+let range = hyperlink.GetRange(0, 2);
+range.SetBold(true);
+```

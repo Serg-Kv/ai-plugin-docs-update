@@ -1,0 +1,42 @@
+# ThemeColor
+
+Creates a theme color.
+
+## Syntax
+
+```javascript
+expression.ThemeColor(name, tintAndShade);
+```
+
+`expression` - A variable that represents an [Api](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Api.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| name | Optional | [SchemeColorId](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Enumeration/SchemeColorId.md) | "tx1" | The theme color name. If the provided name is not supported, the 'tx1' color will be used. |
+| tintAndShade | Optional | number | 0 | The luminance shift from -1 (the darkest shade) to 1 (the lightest tint). 0 keeps the theme color as it is. |
+
+## Returns
+
+[ApiColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiColor.md)
+
+## Example
+
+Apply a color from the document's theme to a shape in a PDF.
+
+```javascript editor-pdf
+// How do I use a theme color instead of a custom color in a PDF?
+
+// Fill a shape with an accent color from the theme in a PDF.
+
+const doc = Api.GetDocument();
+const page = doc.GetPage(0);
+
+const color = Api.ThemeColor('accent6');
+const fill = Api.CreateSolidFill(color);
+const stroke = Api.CreateStroke(36000, Api.CreateSolidFill(Api.RGB(0, 0, 0)));
+const shape = Api.CreateShape("rect", 150 * 36000, 65 * 36000, fill, stroke);
+shape.SetPosition(608400, 1267200);
+page.AddObject(shape);
+```

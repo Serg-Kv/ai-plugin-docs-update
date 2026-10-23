@@ -1,0 +1,34 @@
+# TRUE
+
+Returns the **true** logical value.
+
+## Syntax
+
+```javascript
+expression.TRUE();
+```
+
+`expression` - A variable that represents an [ApiWorksheetFunction](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiWorksheetFunction.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+boolean
+
+## Example
+
+Return a logical true value in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I insert the logical true value into a cell in a spreadsheet?
+
+// Set a cell to the boolean true value in a spreadsheet.
+
+const worksheet = Api.GetActiveSheet();
+let func = Api.WorksheetFunction;
+let ans = func.TRUE();
+worksheet.GetRange("A1").SetValue(ans);
+```

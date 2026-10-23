@@ -1,0 +1,44 @@
+# SetTextColor
+
+Sets widget text color.
+
+## Syntax
+
+```javascript
+expression.SetTextColor(color);
+```
+
+`expression` - A variable that represents an [ApiBaseWidget](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiBaseWidget.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| color | Required | [ApiColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiColor.md) |  | The text color. |
+
+## Returns
+
+boolean
+
+## Example
+
+Apply a text color to all field widgets in a PDF.
+
+```javascript editor-pdf
+// How do I set the text color for widgets in a PDF?
+
+// Change the text display color for widget content in a PDF.
+
+let doc = Api.GetDocument();
+let page = doc.GetPage(0);
+let textField = Api.CreateTextField([10, 10, 160, 30]);
+page.AddObject(textField);
+
+textField.SetValue('Example text');
+textField.AddWidget(0, [10, 40, 160, 60]);
+let widgets = textField.GetAllWidgets();
+let rgbColor = Api.RGB(255, 100, 0);
+widgets.forEach(function(widget) {
+    widget.SetTextColor(rgbColor);
+});
+```

@@ -1,0 +1,35 @@
+# RemovePlugin
+
+Removes a plugin with the specified GUID.
+
+## Syntax
+
+```javascript
+expression.RemovePlugin(guid, backup);
+```
+
+`expression` - A variable that represents an [Api](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/pdf-api.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| guid | Required | string |  | The plugin identifier. It must be of the *asc.\{UUID\}* type. |
+| backup | Required | string |  | The plugin backup. This parameter is used when working with the desktop editors. |
+
+## Returns
+
+object
+
+## Example
+
+```javascript
+function removePlugin(backup) {
+    if (removeGuid)
+        window.Asc.plugin.executeMethod('RemovePlugin', [removeGuid, backup], function(result) {
+            postMessage(result);
+        });
+
+    removeGuid = null;
+};
+```

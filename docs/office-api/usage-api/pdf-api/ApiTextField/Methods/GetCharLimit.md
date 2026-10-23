@@ -1,0 +1,41 @@
+# GetCharLimit
+
+Gets the text field character limit.
+
+:::note
+If the character limit is 0, the field has no character limit.
+:::
+
+## Syntax
+
+```javascript
+expression.GetCharLimit();
+```
+
+`expression` - A variable that represents an [ApiTextField](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTextField.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+number
+
+## Example
+
+Check the maximum character limit for a text field in a PDF.
+
+```javascript editor-pdf
+// How do I find out how many characters a text field accepts in a PDF?
+
+// Read the character limit restriction of a text input field in a PDF.
+
+let doc = Api.GetDocument();
+let page = doc.GetPage(0);
+let textField = Api.CreateTextField([10, 10, 160, 30]);
+page.AddObject(textField);
+
+textField.SetCharLimit(20);
+textField.SetValue('Char limit is: ' + textField.GetCharLimit());
+```

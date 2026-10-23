@@ -1,0 +1,49 @@
+# GetFillColor
+
+Returns the fill color for the top 10 conditional formatting rule.
+
+## Syntax
+
+```javascript
+expression.GetFillColor();
+```
+
+`expression` - A variable that represents an [ApiTop10](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiTop10.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiColor.md) \| null
+
+## Example
+
+Read the background color set by a top 10 conditional formatting rule in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I find out what fill color a top 10 conditional formatting rule uses in a spreadsheet?
+
+// Confirm which highlight color marks the top values in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+
+worksheet.GetRange("A1").SetValue("Sales Data");
+worksheet.GetRange("A2").SetValue(100);
+worksheet.GetRange("A3").SetValue(250);
+worksheet.GetRange("A4").SetValue(150);
+worksheet.GetRange("A5").SetValue(300);
+worksheet.GetRange("A6").SetValue(75);
+
+let dataRange = worksheet.GetRange("A2:A6");
+let formatConditions = dataRange.GetFormatConditions();
+
+let condition1 = formatConditions.AddTop10();
+condition1.SetFillColor(Api.RGB(255, 255, 0));
+
+let fillColor = condition1.GetFillColor();
+
+worksheet.GetRange("C1").SetValue("Fill color retrieved");
+worksheet.GetRange("C2").SetValue("Top 2 values highlighted");
+```

@@ -1,0 +1,44 @@
+# SetSpacing
+
+Sets the text spacing measured in twentieths of a point.
+
+## Syntax
+
+```javascript
+expression.SetSpacing(spacing);
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiParagraph.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| spacing | Required | [twips](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Enumeration/twips.md) \| null |  | The value of the text spacing measured in twentieths of a point (1/1440 of an inch). Pass *null* to remove the text spacing. |
+
+## Returns
+
+[ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiParagraph.md)
+
+## Example
+
+Adjust the distance between characters in a PDF.
+
+```javascript editor-pdf
+// How do I change the spacing between letters in text in a PDF?
+
+// Modify character distance to make text tighter or looser in a PDF.
+
+const doc = Api.GetDocument();
+const page = doc.GetPage(0);
+
+const fill = Api.CreateSolidFill(Api.HexColor('#FF6F3D'));
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape('roundRect', Api.MillimetersToEmus(300), Api.MillimetersToEmus(130), fill, stroke);
+shape.SetPosition(Api.MillimetersToEmus(20), Api.MillimetersToEmus(35));
+const docContent = shape.GetContent();
+const paragraph = docContent.GetElement(0);
+paragraph.AddText('This is a paragraph with the text spacing set to 5 points.');
+paragraph.SetSpacing(60);
+page.AddObject(shape);
+```

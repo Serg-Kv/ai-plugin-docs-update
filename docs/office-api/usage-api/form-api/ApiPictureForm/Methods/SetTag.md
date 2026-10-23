@@ -1,0 +1,44 @@
+# SetTag
+
+Sets the tag attribute to the current form.
+
+Inherited from [ApiFormBase.SetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/SetTag.md).
+
+## Syntax
+
+```javascript
+expression.SetTag(tag);
+```
+
+`expression` - A variable that represents an [ApiPictureForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| tag | Required | string |  | The tag which will be added to the current container. |
+
+## Returns
+
+boolean
+
+## Example
+
+Attach an identifying tag to a picture field in a document.
+
+```javascript editor-forms
+// How do I label a picture field with a custom tag so I can reference it later in a document?
+
+// Mark a picture field with a short keyword to make it easy to find and group in a document.
+
+let doc = Api.GetDocument();
+let pictureForm = Api.CreatePictureForm({"key": "Personal information", "tip": "Upload your photo", "required": true, "placeholder": "Photo", "scaleFlag": "tooBig", "lockAspectRatio": true, "respectBorders": false, "shiftX": 50, "shiftY": 50});
+pictureForm.SetTag("Personal");
+let paragraph = doc.GetElement(0);
+paragraph.AddElement(pictureForm);
+pictureForm.SetImage("https://static.onlyoffice.com/assets/docs/samples/img/onlyoffice_logo.png", Api.MillimetersToEmus(70), Api.MillimetersToEmus(80));
+let tag = pictureForm.GetTag();
+paragraph = Api.CreateParagraph();
+paragraph.AddText("Form tag: " + tag);
+doc.Push(paragraph);
+```

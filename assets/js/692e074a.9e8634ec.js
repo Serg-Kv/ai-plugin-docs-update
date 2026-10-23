@@ -1,0 +1,138 @@
+"use strict";(self.webpackChunkapi_onlyoffice_com=self.webpackChunkapi_onlyoffice_com||[]).push([["690402"],{480958(e,t,r){r.d(t,{A:()=>o});let o={container:"container_unb8",toolbar:"toolbar_w0De",toolbarGroup:"toolbarGroup_Wb9C",toolbarGroupRight:"toolbarGroupRight_p7eS",label:"label_tEpc",selectTrigger:"selectTrigger_Huge",selectContent:"selectContent_yBi6",selectPopup:"selectPopup_ZN3T",selectOption:"selectOption_rLvl",selectIcon:"selectIcon_MQZf",notice:"notice_UIJS",desktopContent:"desktopContent_Az4M",resizeHandle:"resizeHandle_YPVe",resizeHandleGrip:"resizeHandleGrip_c2TW",tabsRoot:"tabsRoot_Bes3",tabsList:"tabsList_jX4U",tabPanel:"tabPanel_FBYA",tab:"tab_Mbpn",editorContainer:"editorContainer_s0wW",runButton:"runButton_tifg",preview:"preview_m4HJ"}},711502(e,t,r){r.d(t,{v:()=>l});var o=r(155708),s=r(242912);let i="https://docspace-duv4mw.onlyoffice.com",c="johnsmith.testing2026@gmail.com",n="0455101f3594b2d0b353ce477735cbe13782b021484f1c8764f5c42e5ef9b1b4",a={manager:"initManager","public-room":"initPublicRoom",viewer:"initViewer",editor:"initEditor","room-selector":"initRoomSelector","file-selector":"initFileSelector",system:"initSystem",frame:"initFrame"},l=(0,s.forwardRef)(({mode:e,theme:t,id:r,requestToken:c,className:n,style:l,autoInit:d=!0},p)=>{let m=(0,s.useRef)(null),h=(0,s.useId)(),f=(0,s.useRef)(`ds-frame-${h.replace(/:/g,"")}`),S=(0,s.useCallback)(()=>{try{let e="u">typeof DocSpace&&DocSpace.SDK?.frames?.[f.current];e?.destroyFrame&&e.destroyFrame()}catch{}},[]),g=(0,s.useCallback)(()=>{let e=m.current;if(!e)return null;S(),e.innerHTML="";let t=document.createElement("div");return t.id=f.current,t.style.width="100%",t.style.height="100%",e.appendChild(t),t},[S]),b=(0,s.useCallback)(e=>{let t=m.current?.querySelector(`#${CSS.escape(f.current)}`);t&&(t.style.cssText="display:flex;align-items:center;justify-content:center;color:#888;font-size:14px;width:100%;height:100%;",t.textContent=e)},[]),x=(0,s.useCallback)(e=>{if(!g())return;let r=f.current,o="dark"===t;try{let t=DocSpace.SDK,s=new Proxy(t,{get(e,t){let s=e[t];return"function"==typeof s&&("init"===t||String(t).startsWith("init"))?t=>{let c=t.src&&"https://your-docspace.com"!==t.src?t.src:i,n={...t,src:c,frameId:r,width:"100%",height:"100%",checkCSP:!1,theme:o?"Dark":"Base"};return s.call(e,n)}:s}});Function("DocSpace",e)({SDK:s})}catch(e){b("Script error: "+(e?.message??e))}},[t,g,b]),y=(0,s.useCallback)(e=>{u().then(()=>x(e)).catch(e=>b(String(e)))},[x,b]);return(0,s.useImperativeHandle)(p,()=>({runScript:y}),[y]),(0,s.useEffect)(()=>{if(!d)return u().catch(()=>{}),S;if(!g())return;let o=f.current;return u().then(()=>(function(){if("u"<typeof DocSpace||!DocSpace.SDK)return void b("ONLYOFFICE Apps SDK unavailable.");let s="dark"===t,n={frameId:o,src:i,width:"100%",height:"100%",checkCSP:!1,theme:s?"Dark":"Base",events:{onAppReady(){let e=DocSpace.SDK.frames[o];e?.setConfig&&e.setConfig({theme:s?"Dark":"Base"})},onAppError(e){b("ONLYOFFICE Apps error: "+(e?.message??e))}}};if(void 0!==r&&(n.id=r),void 0!==c&&(n.requestToken=c),"public-room"===e){n.mode="public-room",n.rootPath="/rooms/share",DocSpace.SDK.init(n);return}let l=a[e]||"initManager";"function"!=typeof DocSpace.SDK[l]?b(`SDK method "${l}" is not available.`):DocSpace.SDK[l](n)})()).catch(()=>b("Failed to load ONLYOFFICE Apps SDK.")),S},[d,e,t,r,c]),(0,o.jsx)("div",{className:n,style:l,ref:m})}),d=null;function u(){return d||(d=new Promise((e,t)=>{function r(){if(!c||!n)return void e();let t="ds-system-login",r=document.createElement("div");r.id=t,r.style.display="none",document.body.appendChild(r),DocSpace.SDK.initSystem({frameId:t,src:i,events:{async onAppReady(){let o=DocSpace.SDK.frames[t];try{await o.login(c,n)}catch{}finally{o.destroyFrame(),r.remove(),e()}},onAppError(){r.remove(),e()}}})}if("u">typeof DocSpace&&DocSpace.SDK)r();else{let e=document.createElement("script");e.src=`${i}/static/scripts/sdk/2.0.0/api.js?src=${encodeURIComponent(i)}`,e.onload=()=>r(),e.onerror=()=>t("Failed to load ONLYOFFICE Apps SDK."),document.head.appendChild(e)}}))}},333172(e,t,r){r.r(t),r.d(t,{default:()=>y});var o=r(155708),s=r(307741),i=r(81779),c=r(574252),n=r(37614),a=r(242912),l=r(326263),d=r(233665),u=r(324811);let p={manager:"Manager",editor:"Editor",viewer:"Viewer","room-selector":"Room selector","file-selector":"File selector",frame:"Frame",system:"System","public-room":"Public room"},m={manager:`const config = {
+    src: "https://your-docspace.com",
+    mode: "manager",
+    width: "100%",
+    height: "100%",
+    frameId: "ds-frame",
+    showHeader: true,
+    showTitle: true,
+    showMenu: false,
+    showFilter: true,
+    disableActionButton: false, // Requires user with appropriate permissions
+    infoPanelVisible: true, // Requires user with appropriate permissions
+    init: true,
+    filter: {
+        count: 100,
+        page: 1,
+        sortorder: "descending",
+        sortby: "DateAndTime",
+        search: ""
+    }
+};
+
+DocSpace.SDK.initManager(config);`,editor:`const config = {
+    src: "https://your-docspace.com",
+    mode: "editor",
+    width: "100%",
+    height: "100%",
+    frameId: "ds-frame",
+    init: false,
+    id: 3730262 // Replace with your file ID
+};
+
+DocSpace.SDK.initEditor(config);`,viewer:`const config = {
+    src: "https://your-docspace.com",
+    mode: "viewer",
+    editorType: "embedded",
+    width: "100%",
+    height: "100%",
+    frameId: "ds-frame",
+    init: false,
+    id: 3730260 // Replace with your file ID
+};
+
+DocSpace.SDK.initViewer(config);`,"room-selector":`const config = {
+    src: "https://your-docspace.com",
+    mode: "room-selector",
+    width: "100%",
+    height: "100%",
+    frameId: "ds-frame",
+    init: true,
+    showSelectorCancel: true,
+    showSelectorHeader: true,
+    withSearch: true,
+    acceptButtonLabel: "Select",
+    cancelButtonLabel: "Cancel",
+    isButtonMode: false,
+
+    events: {
+        onSelectCallback: null,
+        onCloseCallback: null,
+        onAppReady: null,
+        onAppError: null
+    }
+};
+
+DocSpace.SDK.initRoomSelector(config);`,"file-selector":`const config = {
+    src: "https://your-docspace.com",
+    mode: "file-selector",
+    width: "100%",
+    height: "100%",
+    frameId: "ds-frame",
+    init: true,
+    showSelectorCancel: true,
+    showSelectorHeader: true,
+    withSearch: true,
+    acceptButtonLabel: "Select",
+    cancelButtonLabel: "Cancel",
+    withSubtitle: true,
+    filterParam: "ALL",
+    isButtonMode: false,
+
+    events: {
+        onSelectCallback: null,
+        onCloseCallback: null,
+        onAppReady: null,
+        onAppError: null
+    }
+};
+
+DocSpace.SDK.initFileSelector(config);`,frame:`const config = {
+    src: "https://your-docspace.com",
+    mode: "manager",
+    width: "100%",
+    height: "100%",
+    frameId: "ds-frame",
+    init: true
+};
+
+DocSpace.SDK.initFrame(config);`,system:`const config = {
+    src: "https://your-docspace.com",
+    mode: "system",
+    width: "100%",
+    height: "100%",
+    frameId: "ds-frame",
+    init: true,
+    events: {
+        onAppReady: null,
+        onAppError: null
+    }
+};
+
+DocSpace.SDK.initSystem(config);`,"public-room":`const config = {
+    src: "https://your-docspace.com",
+    mode: "public-room",
+    width: "100%",
+    height: "100%",
+    frameId: "ds-frame",
+    showHeader: true,
+    showTitle: true,
+    showMenu: false,
+    showFilter: true,
+    disableActionButton: false,
+    infoPanelVisible: false,
+    init: true,
+    filter: {
+        count: 100,
+        page: 1,
+        sortorder: "descending",
+        sortby: "DateAndTime",
+        search: "",
+        withSubfolders: false
+    },
+    id: 2613800, // Replace with your room ID
+    requestToken: "ZjIrNGhZM2tDbmFnbzRHMmxKODE4Umx5SHdXOUx4OXVpc3BpaTlyN1ZIOD0_IjEzZmQ4MmRkLTVkNTAtNDM0ZC1iZTE0LWM2M2ZkNDJkMDFhNCI", // Replace with your request token
+    rootPath: "/rooms/share"
+};
+
+DocSpace.SDK.init(config);`};var h=r(711502),f=r(480958);let S=(0,a.lazy)(()=>Promise.all([r.e("16687"),r.e("949132")]).then(r.bind(r,625927)).then(e=>({default:e.DocSpaceEditor}))),g=({initialMode:e="manager"})=>{let[t,r]=(0,a.useState)(e),[i,c]=(0,a.useState)(m[e]),{colorMode:n,setColorMode:l}=(0,s.G)(),d=(0,a.useRef)(null),u=(0,a.useRef)(!1);(0,a.useEffect)(()=>{u.current||(u.current=!0,d.current?.runScript(i))},[]);let p=(0,a.useRef)(n);(0,a.useEffect)(()=>{p.current!==n&&(p.current=n,d.current?.runScript(i))},[n]);let h=(0,a.useCallback)(e=>{r(e);let t=m[e];c(t),d.current?.runScript(t)},[]),S=(0,a.useCallback)(()=>{d.current?.runScript(i)},[i]);return(0,o.jsxs)("div",{className:f.A.container,children:[(0,o.jsx)(b,{mode:t,onModeChange:h,theme:n,onThemeChange:l}),(0,o.jsx)("div",{className:f.A.notice,children:"This playground may not work in Safari or incognito/private browsing mode due to third-party cookie restrictions."}),(0,o.jsx)(x,{script:i,onScriptChange:c,onRun:S,previewRef:d,mode:t,theme:n})]})},b=({mode:e,onModeChange:t,theme:r,onThemeChange:s})=>(0,o.jsxs)("div",{className:f.A.toolbar,children:[(0,o.jsxs)("div",{className:f.A.toolbarGroup,children:[(0,o.jsx)("div",{className:f.A.label,children:"Mode:"}),(0,o.jsxs)(l.bL,{value:e,onValueChange:e=>t(e),children:[(0,o.jsxs)(l.l9,{className:f.A.selectTrigger,children:[(0,o.jsx)(l.WT,{}),(0,o.jsx)(l.In,{asChild:!0,children:(0,o.jsx)("div",{className:f.A.selectIcon})})]}),(0,o.jsx)(l.ZL,{children:(0,o.jsx)(l.UC,{className:f.A.selectContent,position:"popper",children:(0,o.jsx)(l.LM,{className:f.A.selectPopup,children:Object.keys(p).map(e=>(0,o.jsx)(l.q7,{value:e,className:f.A.selectOption,children:(0,o.jsx)(l.p4,{children:p[e]})},e))})})})]})]}),(0,o.jsxs)("div",{className:`${f.A.toolbarGroup} ${f.A.toolbarGroupRight}`,children:[(0,o.jsx)("div",{className:f.A.label,children:"Theme:"}),(0,o.jsxs)(l.bL,{value:r,onValueChange:e=>s(e),children:[(0,o.jsxs)(l.l9,{className:f.A.selectTrigger,children:[(0,o.jsx)(l.WT,{}),(0,o.jsx)(l.In,{asChild:!0,children:(0,o.jsx)("div",{className:f.A.selectIcon})})]}),(0,o.jsx)(l.ZL,{children:(0,o.jsx)(l.UC,{className:f.A.selectContent,position:"popper",children:(0,o.jsxs)(l.LM,{className:f.A.selectPopup,children:[(0,o.jsx)(l.q7,{value:"light",className:f.A.selectOption,children:(0,o.jsx)(l.p4,{children:"Light"})}),(0,o.jsx)(l.q7,{value:"dark",className:f.A.selectOption,children:(0,o.jsx)(l.p4,{children:"Dark"})})]})})})]})]})]}),x=({script:e,onScriptChange:t,onRun:r,previewRef:s,mode:i,theme:c})=>!function(e="(max-width: 767px)"){let[t,r]=(0,a.useState)(!1);return(0,a.useEffect)(()=>{let t=window.matchMedia(e);r(t.matches);let o=e=>r(e.matches);return t.addEventListener("change",o),()=>t.removeEventListener("change",o)},[e]),t}()?(0,o.jsxs)(u.YZ,{direction:"horizontal",className:f.A.desktopContent,children:[(0,o.jsx)(u.Zk,{minSize:20,defaultSize:40,children:(0,o.jsx)(a.Suspense,{children:(0,o.jsx)(S,{value:e,onChange:t,onRun:r,theme:c})})}),(0,o.jsx)(u.TW,{className:f.A.resizeHandle,children:(0,o.jsx)("div",{className:f.A.resizeHandleGrip,children:(0,o.jsxs)("svg",{xmlns:"http://www.w3.org/2000/svg",width:"24",height:"24",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round",children:[(0,o.jsx)("circle",{cx:"9",cy:"12",r:"1"}),(0,o.jsx)("circle",{cx:"9",cy:"5",r:"1"}),(0,o.jsx)("circle",{cx:"9",cy:"19",r:"1"}),(0,o.jsx)("circle",{cx:"15",cy:"12",r:"1"}),(0,o.jsx)("circle",{cx:"15",cy:"5",r:"1"}),(0,o.jsx)("circle",{cx:"15",cy:"19",r:"1"})]})})}),(0,o.jsx)(u.Zk,{minSize:20,defaultSize:60,children:(0,o.jsx)(h.v,{ref:s,mode:i,theme:c,autoInit:!1,className:f.A.preview})})]}):(0,o.jsxs)(d.bL,{className:f.A.tabsRoot,defaultValue:"editor",children:[(0,o.jsxs)(d.B8,{className:f.A.tabsList,children:[(0,o.jsx)(d.l9,{value:"editor",className:f.A.tab,children:"Editor"}),(0,o.jsx)(d.l9,{value:"preview",className:f.A.tab,children:"Preview"})]}),(0,o.jsx)(d.UC,{value:"editor",className:f.A.tabPanel,children:(0,o.jsx)(a.Suspense,{children:(0,o.jsx)(S,{value:e,onChange:t,onRun:r,theme:c})})}),(0,o.jsx)(d.UC,{value:"preview",className:f.A.tabPanel,children:(0,o.jsx)(h.v,{ref:s,mode:i,theme:c,autoInit:!1,className:f.A.preview})})]}),y=()=>{let e=new URLSearchParams((0,i.zy)().search).get("mode")??void 0;return(0,o.jsxs)(s.a,{children:[(0,o.jsxs)(c.A,{children:[(0,o.jsx)("title",{children:"Apps SDK Playground | ONLYOFFICE"}),(0,o.jsx)("meta",{name:"description",content:"An interactive platform to explore and test ONLYOFFICE Apps SDK embedding modes \u2014 manager, editor, viewer, selectors, and more."}),(0,o.jsx)("meta",{property:"og:title",content:"Apps SDK Playground | ONLYOFFICE"}),(0,o.jsx)("meta",{property:"og:description",content:"An interactive platform to explore and test ONLYOFFICE Apps SDK embedding modes \u2014 manager, editor, viewer, selectors, and more."})]}),(0,o.jsx)(n.default,{children:()=>(0,o.jsx)(g,{initialMode:e})})]})}}}]);

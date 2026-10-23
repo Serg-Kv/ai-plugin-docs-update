@@ -1,0 +1,43 @@
+# ThemeColor
+
+Creates a theme color.
+
+## Syntax
+
+```javascript
+expression.ThemeColor(name, tintAndShade);
+```
+
+`expression` - A variable that represents an [Api](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/Api.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| name | Optional | [SchemeColorId](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/Enumeration/SchemeColorId.md) | "tx1" | The theme color name. If the provided name is not supported, the 'tx1' color will be used. |
+| tintAndShade | Optional | number | 0 | The luminance shift from -1 (the darkest shade) to 1 (the lightest tint). 0 keeps the theme color as it is. |
+
+## Returns
+
+[ApiColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiColor.md)
+
+## Example
+
+Create a theme color and use it as a shape fill in a presentation.
+
+```javascript editor-pptx
+// Theme colors provide visual consistency across presentations through predefined palettes.
+
+// Apply the theme color to a shape's solid fill using the Api object.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const color = Api.ThemeColor('accent6');
+const fill = Api.CreateSolidFill(color);
+const stroke = Api.CreateStroke(36000, Api.CreateSolidFill(Api.RGB(0, 0, 0)));
+const shape = Api.CreateShape("rect", 300 * 36000, 130 * 36000, fill, stroke);
+shape.SetPosition(608400, 1267200);
+slide.AddObject(shape);
+```

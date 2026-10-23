@@ -1,0 +1,53 @@
+# SetMinorVerticalGridlines
+
+Specifies minor vertical gridline visual properties.
+
+## Syntax
+
+```javascript
+expression.SetMinorVerticalGridlines(oStroke);
+```
+
+`expression` - A variable that represents an [ApiChart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiChart.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| oStroke | Required | [ApiStroke](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiStroke.md) \| null \| undefined |  | The stroke used to create the element shadow. |
+
+## Returns
+
+boolean
+
+## Example
+
+Format the minor vertical gridlines in a chart in a presentation.
+
+```javascript editor-pptx
+// How do I change the appearance of the secondary vertical lines in a chart in a presentation?
+
+// Apply a custom color and thickness to the minor vertical gridlines in a presentation.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const chart = Api.CreateChart("3DColumnClustered", [
+	[200, 240, 280],
+	[250, 260, 280]
+], ["Projected Revenue", "Estimated Costs"], [2014, 2015, 2016], 4051300, 2347595, 24);
+chart.SetVerAxisTitle("USD In Hundred Thousands", 20);
+chart.SetHorAxisTitle("Year", 22);
+chart.SetTitle("Financial Overview", 26);
+chart.SetSize(300 * 36000, 130 * 36000);
+chart.SetPosition(608400, 1267200);
+
+let fill = Api.CreateSolidFill(Api.RGB(51, 51, 51));
+chart.SetSeriesFill(fill, 0, false);
+fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+chart.SetSeriesFill(fill, 1, false);
+let stroke = Api.CreateStroke(1 * 10000, Api.CreateSolidFill(Api.RGB(255, 111, 61)));
+chart.SetMinorVerticalGridlines(stroke);
+slide.AddObject(chart);
+```

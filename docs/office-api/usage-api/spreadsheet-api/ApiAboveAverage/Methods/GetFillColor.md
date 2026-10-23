@@ -1,0 +1,51 @@
+# GetFillColor
+
+Returns the background color for the format condition.
+
+Returns 'No Fill' when the background color of the format condition is null.
+
+## Syntax
+
+```javascript
+expression.GetFillColor();
+```
+
+`expression` - A variable that represents an [ApiAboveAverage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiAboveAverage.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiColor.md) \| 'No Fill'
+
+## Example
+
+Read the background color used to highlight above-average cells in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I find out what fill color an above-average conditional formatting rule uses in a spreadsheet?
+
+// Inspect the highlight shade assigned to cells that exceed the average value in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+
+worksheet.GetRange("A1").SetValue("Sales Data");
+worksheet.GetRange("A2").SetValue(100);
+worksheet.GetRange("A3").SetValue(250);
+worksheet.GetRange("A4").SetValue(150);
+worksheet.GetRange("A5").SetValue(300);
+worksheet.GetRange("A6").SetValue(75);
+
+let dataRange = worksheet.GetRange("A2:A6");
+let formatConditions = dataRange.GetFormatConditions();
+
+let aboveAvgCondition = formatConditions.AddAboveAverage();
+aboveAvgCondition.SetFillColor(Api.RGB(255, 255, 0));
+
+let fillColor = aboveAvgCondition.GetFillColor();
+
+worksheet.GetRange("B1").SetValue("Fill Color Retrieved");
+worksheet.GetRange("B2").SetValue(fillColor !== "No Fill" ? "Yellow color applied" : "No color");
+```

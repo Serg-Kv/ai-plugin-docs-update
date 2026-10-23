@@ -1,0 +1,187 @@
+# ONLYOFFICE Apps: UI Kit
+
+> Build ONLYOFFICE Apps plugin screens and interfaces with the React components the portal itself uses: form controls, overlays, selectors, and theming.
+
+Links below point to the Markdown version of each page. For the other sections of this documentation, see the [index](https://api.onlyoffice.com/ai-plugin-docs-update/llms.txt).
+
+## Getting started
+
+- [Getting started](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/getting-started.md): What the kit is, how to install it, and the pieces every application sets up once: the theme and translation providers, the API client, and the hooks, utilities and constants the components share.
+- [ONLYOFFICE Apps UI Kit](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/getting-started/welcome.md): What the kit is, how it is installed and the providers every application mounts.
+- [Installation and setup](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/getting-started/installation-and-setup.md): Everything a React application needs to do once, before any component of this kit renders correctly: install it, mount two providers, and know which import forms exist.
+- [Components](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/getting-started/catalogue.md): Every component this package ships, what it is for, and how it is imported.
+- [Structure](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/getting-started/structure.md): `@onlyoffice/apps-ui-kit` is a standalone repository.
+- [Themes](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/getting-started/themes.md): The UI Kit ships with Base (light) and Dark themes.
+- [Translation](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/getting-started/translation.md): The UI Kit uses **i18next** and **react-i18next** for internationalization.
+- [Agent skills](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/getting-started/agent-skills.md): The `ui-kit` skill teaches an AI coding agent to build screens with this kit in your own React app: which component fits the job, what its props are called, how to install and theme it, and a check it runs on the result.
+- [API](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/getting-started/api.md): The UI Kit uses `ApiProvider` to give components access to the ONLYOFFICE Apps REST API.
+- [Types and roles](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/getting-started/types-and-roles.md): What a person may do in ONLYOFFICE Apps depends on two separate things.
+- [Hooks](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/getting-started/hooks.md): Eleven hooks, barrelled in `hooks/index.ts` and re-exported from the package root.
+- [Utils](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/getting-started/utils.md): `utils/` holds the non-visual half of the library: 32 modules of date maths, device detection, URL and file helpers, cookie access, email parsing and the small generic helpers the components lean on.
+- [Constants, enums and types](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/getting-started/constants.md): Three small modules carry the values and the vocabulary the rest of the library is written in.
+
+## Components
+
+- [Components](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components.md): The composites built from the UI components for the portal's screens. Of these, the providers are public; the rest need a portal.
+- [AI Chat](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/ai-chat.md): A conversation with the portal's AI models, about the files and rooms the user is working in.
+- [AI Settings](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/ai-settings.md): The portal's AI settings screens, from `ai-agent/settings`.
+- [Files](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/files.md): The Files section as the portal draws it: a header, the filter bar and the rows of the caller's personal folder.
+- [Rooms](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/rooms.md): The Rooms section: the active rooms the caller can see, with a header, the filter bar and the rows.
+- [Forms](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/forms.md): The Forms section: the form-filling rooms the caller can see, with a header, the filter bar and the rows.
+- [Uploader](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/uploader.md): Uploader is a file upload component that supports chunked uploads, folder uploads, and file size validation.
+- [Document Editor](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/document-editor.md): DocumentEditor wraps the \`@onlyoffice/document-editor-react\` component, embedding an ONLYOFFICE Document Server editor into the UI.
+- [Selectors](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/selectors.md): The portal's pickers: a panel that lists files, rooms, people, groups, AI agents or MCP servers from a portal and hands back what the user chose.
+- [AIAgentSelector](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/selectors/ai-agent-selector.md): AIAgentSelector is a selector panel for choosing an AI agent room.
+- [FilesSelector](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/selectors/files-selector.md): FilesSelector is a full file-system browser selector for navigating ONLYOFFICE Apps rooms, folders, and files.
+- [GroupsSelector](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/selectors/groups-selector.md): GroupsSelector is a searchable, paginated selector panel for choosing a user group.
+- [MCPServersSelector](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/selectors/mcp-servers-selector.md): MCPServersSelector is a multi-select panel for choosing available MCP (Model Context Protocol) servers to connect to an AI agent.
+- [PeopleSelector](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/selectors/people-selector.md): PeopleSelector is a searchable, paginated selector for choosing users and groups from the ONLYOFFICE Apps system.
+- [RoomSelector](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/selectors/room-selector.md): RoomSelector is a searchable, paginated selector for choosing rooms from the ONLYOFFICE Apps system.
+- [Providers](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/providers.md): The providers an application mounts above the components. ThemeProvider and TranslationProvider are required -- without them components render unstyled and without text -- and ErrorBoundary catches a render failure below it.
+- [ApiProvider](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/providers/api-provider.md): Provides API client context to all child components using the ONLYOFFICE Apps API SDK.
+- [ErrorBoundary](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/providers/error-boundary.md): Catches what the subtree throws while rendering and shows something in its place.
+- [ThemeProvider](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/providers/theme.md): Resolves the light, dark or system theme and writes it onto the document for every component to read.
+- [TranslationProvider](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/providers/translation.md): Installs the i18next instance the eleven components with labels of their own read from.
+- [Errors](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/errors.md): The full-page states the portal shows when a request fails: access denied, not found, offline, unavailable, an expired link.
+- [AccessRestricted](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/errors/access-restricted.md): Access restricted error page.
+- [Error401](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/errors/error-401.md): Unauthorized error page (401).
+- [Error403](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/errors/error-403.md): Forbidden error page (403).
+- [Error404](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/errors/error-404.md): Not Found error page (404).
+- [ErrorInvalidLink](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/errors/error-invalid-link.md): Invalid link error page.
+- [ErrorOffline](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/errors/error-offline.md): Offline error page.
+- [ErrorUnavailable](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/components/errors/error-unavailable.md): Unavailable error page.
+
+## UI
+
+- [UI](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui.md): The components themselves, grouped by what they do on a page: controls, overlays, data display, navigation, feedback and layout.
+- [Form controls](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls.md): Inputs, pickers and the containers that label them. Every control here is controlled: it renders the value it is given and reports changes through its callback.
+- [AccessRightSelect](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/access-right-select.md): Drop-down for choosing an access level, with an icon, a description and a paid badge on each row.
+- [Calendar](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/calendar.md): Month grid for picking a day, with month and year views behind it.
+- [Checkbox](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/checkbox.md): Checkbox with a label, an indeterminate state and an optional help button.
+- [ColorInput](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/color-input.md): Hex field with a swatch that opens a colour picker.
+- [ColorPicker](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/color-picker.md): Saturation square with a hue strip for choosing a colour, with or without a hex field and buttons.
+- [ComboBox](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/combobox.md): Button showing the current choice, with a list of options under it.
+- [DatePicker](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/date-picker.md): Button that becomes a removable chip once a date is chosen, with a calendar behind it.
+- [DateTimePicker](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/date-time-picker.md): A date chip and a time beside it, editable in place.
+- [EmailInput](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/email-input.md): Text field that parses what is typed as an email address and colours itself when it does not parse.
+- [FieldContainer](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/field-container.md): Layout wrapper for one form field: an optional label with a help tooltip, the control itself, and its error message.
+- [FileInput](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/file-input.md): Read-only field with a folder icon that opens the file dialog and accepts a drop.
+- [FormWrapper](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/form-wrapper.md): White card of a fixed width that the portal's sign-in and wizard forms sit on.
+- [InputBlock](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/input-block.md): Text field with an icon at the end and room for a prefix before it, inside one border.
+- [Label](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/label.md): Caption for a form field, with an optional required asterisk and an error colour.
+- [PasswordInput](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/password-input.md): Password field with a reveal eye, a strength tooltip and a generator.
+- [QuantityPicker](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/quantity-picker.md): Minus and plus around a number, with an optional slider and quick-add chips.
+- [RadioButtonGroup](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/radio-button-group.md): A set of radio buttons built from an array, with the selected value handled for you.
+- [RadioButton](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/radio-button.md): One option of a single-choice set, drawn as a labelled circle.
+- [SearchInput](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/search-input.md): Search field with a magnifier, an optional clear button and a debounced change callback.
+- [Slider](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/slider.md): Range input with the kit's own track and handle.
+- [TextInput](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/text-input.md): Controlled single-line text field in three fixed widths, with optional masking, error and warning states.
+- [Textarea](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/textarea.md): Multi-line text field that grows with its content, with optional line numbers, a copy button and a JSON mode.
+- [TimePicker](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/time-picker.md): Two small fields, hours and minutes, that move the caret along as you type.
+- [ToggleButton](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/form-controls/toggle-button.md): Switch for one on/off setting, with an optional label beside it.
+- [Interactive elements](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/interactive-elements.md): Buttons in their variants -- plain, icon, floating, main-menu -- and the drag-and-drop surfaces: components whose job is to be clicked or dragged.
+- [ActionButton](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/interactive-elements/action-button.md): Small tinted button for a secondary action, optionally rendered as another element.
+- [AddButton](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/interactive-elements/add-button.md): Square icon button with an optional label beside it, for adding one more of something.
+- [Button](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/interactive-elements/button.md): Labelled action button with an optional icon, a loading state and a tooltip, in a primary or secondary variant.
+- [ContextMenuButton](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/interactive-elements/context-menu-button.md): Icon that opens a menu of actions, built afresh from a callback each time it is clicked.
+- [DragAndDrop](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/interactive-elements/drag-and-drop.md): Wrapper that turns whatever is inside it into a drop target for files, with no interface of its own.
+- [Dropzone](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/interactive-elements/dropzone.md): Dashed upload area with a picture, a prompt and a format list, which turns into a loader while the upload runs.
+- [FloatingButton](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/interactive-elements/floating-button.md): Round corner badge that shows the progress of a background operation and opens its panel.
+- [HelpButton](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/interactive-elements/help-button.md): Info icon that opens an explanation on click, for a label that needs more than a label.
+- [IconButton](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/interactive-elements/icon-button.md): Icon that acts as a button, with hover and pressed colours and an optional tooltip.
+- [ImageEditor](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/interactive-elements/image-editor.md): Crop window with drag, zoom and a replace control, for turning an uploaded picture into an avatar or a logo.
+- [LinkWithDropdown](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/interactive-elements/link-with-dropdown.md): Dashed link that opens a menu under itself.
+- [MainButtonMobile](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/interactive-elements/main-button-mobile.md): Floating round button in the corner of the screen that opens a full-width sheet of actions.
+- [MainButton](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/interactive-elements/main-button.md): Accent button at the top of a side menu that opens a menu of the things a user can create.
+- [Status components](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/status-components.md): Loaders and progress: spinners, the full-screen application loader, the infinite-scroll loader and the progress bar.
+- [AppLoader](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/status-components/app-loader.md): The blank first screen: a fixed sheet over the whole viewport with the kit's rombs animation on it.
+- [InfiniteLoader](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/status-components/infinite-loader.md): Virtualised list or grid that asks for the next page as the user scrolls towards the end.
+- [LoaderWrapper](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/status-components/loader-wrapper.md): Dims whatever is inside it and stops the mouse reaching it while something is loading.
+- [Loader](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/status-components/loader.md): Spinner in one of four animations, for work whose duration is unknown.
+- [ProgressBar](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/status-components/progress-bar.md): A labelled bar for an operation whose progress you can measure, with a status or error line under it.
+- [Layout](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/layout.md): The page's plumbing: portals, scroll areas, the selection rectangle and the theme wrapper.
+- [Article](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/layout/article.md): The ONLYOFFICE Apps left panel: a fixed column with a header slot, a main button, a scrolling body and the profile block.
+- [Portal](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/layout/portal.md): Renders a node into another part of the document, after mount, keeping it inside the React tree.
+- [Scrollbar](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/layout/scrollbar.md): Scrolling region with the kit's own thin tracks, which fade out when nothing is happening.
+- [Section](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/layout/section.md): The ONLYOFFICE Apps page body: a sticky header and filter, a scrolling body, and the info and chat panels beside it.
+- [SelectionArea](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/layout/selection-area.md): Rubber-band selection: a dragged rectangle that reports which items it covers, frame by frame.
+- [ThemeProviderComponent](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/layout/theme-provider.md): The older theme provider: it writes the theme onto the document and supplies the kit's theme context.
+- [Layout components](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/layout-components.md): Screens for the moments a view has nothing to show: an empty folder, a search with no results, an error.
+- [ArticleItem](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/layout-components/article-item.md): One catalog entry of the Article panel's body: an icon, a label and an optional badge.
+- [EmptyScreenContainer](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/layout-components/empty-screen-container.md): Centred empty state: an illustration, a heading, up to two lines of explanation and a column of actions.
+- [EmptyView](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/layout-components/empty-view.md): Centred empty state with an icon, a title, a description and a list of things the user can do next.
+- [ErrorContainer](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/layout-components/error-container.md): Full-screen error page: an animated landscape, a heading, an explanation and one action button.
+- [Overlays](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/overlays.md): Everything drawn above the page: modal dialogs and side panels, drop-downs and context menus, tooltips and the selector.
+- [Aside](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/overlays/aside.md): Panel that slides in from the side of the viewport, with a header and a scrolling body.
+- [AsideHeader](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/overlays/aside-header.md): Title bar of a side panel or a dialog, with a back arrow, extra icons and the close cross.
+- [AvatarEditorDialog](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/overlays/avatar-editor-dialog.md): Modal that frames an uploaded picture: the kit's crop window between a title and a save and cancel pair.
+- [Backdrop](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/overlays/backdrop.md): Full-screen layer behind an overlay, transparent by default, that catches the click meant to close it.
+- [ContextMenu](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/overlays/context-menu.md): Menu opened at the pointer through a ref, with submenus, a mobile sheet form and working keyboard navigation.
+- [DropDownItem](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/overlays/drop-down-item.md): One row of a dropdown menu: a label, an optional icon and badges, or a separator.
+- [DropDown](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/overlays/drop-down.md): Menu anchored to a control, rendered in a portal and positioned against the element you point it at.
+- [ModalDialog](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/overlays/modal-dialog.md): Dialog rendered in a portal, as a centred modal or a side panel, assembled from Header, Body, Footer and Container slots.
+- [RoomLogoCoverDialog](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/overlays/room-logo-cover-dialog.md): Dialog for a room's generated logo: a colour from the palette and an optional glyph, over a live preview.
+- [Selector](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/overlays/selector.md): Panel for picking one or many things out of a list too long to render at once.
+- [Tooltip](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/overlays/tooltip.md): Floating hint attached to one or more anchors, rendered in a portal and positioned to stay in the viewport.
+- [Data display](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/data-display.md): Components that show a value rather than take one: text and headings, avatars, badges and tags, room icons and logos, and cards.
+- [Avatar](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/data-display/avatar.md): Round picture of a person or a group, falling back to initials, with an optional role badge and an edit menu.
+- [Badge](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/data-display/badge.md): Small coloured pill for a count or a short marker, announced as a live status region.
+- [Card](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/data-display/card.md): Grey panel with an optional header row, for a block of related information.
+- [CategoryItem](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/data-display/category-item.md): Settings-page entry: a linked title, a line of explanation, an arrow, and an optional paid badge.
+- [CollapsibleCard](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/data-display/collapsible-card.md): Panel whose header is a button that expands and collapses the body under it.
+- [Heading](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/data-display/heading.md): Section title rendered as a real heading element, sized by a preset rather than by its level.
+- [MCPIcon](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/data-display/mcp-icon.md): Square icon for an MCP server: its logo, or the first letter of its name on a grey tile.
+- [PortalLogo](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/data-display/portal-logo.md): The portal's white-label logo, fetched from the ONLYOFFICE Apps server and swapped for the theme.
+- [QuickActions](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/data-display/quick-actions.md): Horizontal strip of large icon tiles that scrolls when the tiles no longer fit.
+- [RoomIcon](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/data-display/room-icon.md): Square room tile that shows the room's logo, or its initials on a colour when there is none.
+- [RoomLogo](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/data-display/room-logo.md): Fixed 32px glyph saying which kind of room this is, with an optional selection checkbox.
+- [RoomType](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/data-display/room-type.md): Row offering one kind of room, with its glyph, its translated name and its description.
+- [SelectedItem](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/data-display/selected-item.md): Chip with a cross, for a value the user has picked and can take back.
+- [Tag](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/data-display/tag.md): Small outlined label for one keyword, clickable and optionally removable.
+- [Tags](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/data-display/tags.md): One row of tags that keeps to its width, collapsing the rest into an overflow tag.
+- [Text](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/data-display/text.md): Body text at the kit's size and weight, rendered through whichever element you name.
+- [Skeletons](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/skeletons.md): Placeholder shapes shown while content loads, so the layout does not jump when it arrives.
+- [CircleSkeleton](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/skeletons/circle.md): Round loading placeholder with a sweeping highlight, for an avatar or an icon that has not arrived yet.
+- [RectangleSkeleton](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/skeletons/rectangle.md): Rectangular loading placeholder with a sweeping highlight, sized to the content it stands in for.
+- [Feedback](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/feedback.md): Components that tell the user what happened or what is happening: toasts and snack bars, status messages, info bars and progress for long operations.
+- [ColumnarInfoBar](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/feedback/columnar-info-bar.md): Bar of label-and-value columns for context the reader does not have to act on.
+- [LoadingButton](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/feedback/loading-button.md): 16px progress ring with a cross in the middle, for cancelling what it is measuring.
+- [OperationsProgressButton](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/feedback/operations-progress-button.md): Corner badge that reports every background operation of the portal and lists them when there is more than one.
+- [PublicRoomBar](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/feedback/public-room-bar.md): Grey note above a screen's content: an icon, a bold line and a paragraph, with an optional close cross.
+- [SnackBar](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/feedback/snackbar.md): Full-width notification bar that sits at the top of a section until it is dismissed.
+- [StatusMessage](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/feedback/status-message.md): A full-width bar with a danger glyph that fades one message out before fading the next one in.
+- [Toast](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/feedback/toast.md): Container the transient notifications are stacked in, driven by the imperative `toastr`.
+- [TopLoaderService](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/feedback/top-loading-indicator.md): The thin bar at the top of the page, driven by three static calls rather than by React.
+- [Navigation](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/navigation.md): Links, tabs, paging and the side menu that moves the user between views.
+- [FilterInput](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/navigation/filter.md): The bar above a file listing: search, a filter panel, a sort menu, a view switch and the chips for what is in force.
+- [Link](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/navigation/link.md): Anchor styled to the kit's conventions, for navigation or for an in-place action.
+- [NavMenu](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/navigation/nav-menu.md): Sidebar navigation: groups of items, each with an optional sub-menu, a badge and a collapsed rail form.
+- [Navigation](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/navigation/navigation-component.md): The file manager's header: breadcrumb title, back arrow, and the row of buttons that acts on the current folder.
+- [Paging](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/navigation/paging.md): Previous and next buttons with a page selector between them and a page-size selector at the end.
+- [TabItem](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/navigation/tab-item.md): Rounded pill that fills in when it is selected.
+- [Tabs](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/navigation/tabs.md): Sticky tab bar that scrolls sideways and renders the selected tab's content under itself.
+- [TwoStateToggle](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/navigation/two-state-toggle.md): Pill that switches the portal between its classic view and the new dashboard.
+- [Rows](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/rows.md): The file list of the ONLYOFFICE Apps portal, in three parts: the container, the row and the row's content.
+- [RowContainer](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/rows/row-container.md): Scrolling list the rows go in, virtualised and paged in as the user reaches the end.
+- [RowContent](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/rows/row-content.md): The text of a row, laid out by the position of its children rather than by named slots.
+- [Row](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/rows/row.md): One row of the file list: an optional checkbox, a start element, the content and a context menu.
+- [RowsSkeleton](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/rows/rows-skeleton.md): Placeholder in the shape of a list of rows, shown while the rows themselves are loading.
+- [Table](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/table.md): Columnar list with resizable, sortable and hideable columns, laid out by a CSS grid the header writes.
+- [GroupMenuItem](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/table/group-menu-item.md): GroupMenuItem is one action button of a TableGroupMenu, the toolbar that replaces the table header while rows are selected.
+- [TableCell](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/table/table-cell.md): TableCell is one cell of a TableRow: a fixed-height box that sits in the column the table's grid gives it.
+- [TableHeaderCell](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/table/table-header-cell.md): TableHeaderCell is the title of one column in a TableHeader, with its sort arrow and the handle that resizes it.
+- [TableSettings](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/table/table-settings.md): TableSettings is the cog at the end of a TableHeader that opens a list of the columns, each with a checkbox that shows or hides it.
+- [TableBody](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/table/table-body.md): TableBody holds the rows of a table and, for a long list, renders only the rows in view and asks for the next page as the user scrolls.
+- [TableContainer](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/table/table-container.md): TableContainer is the outer element of a table, the grid that the header, the group menu and the rows are laid out in.
+- [TableGroupMenu](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/table/table-group-menu.md): TableGroupMenu is the toolbar that takes the place of the table header while rows are selected, with a select-all checkbox and the actions that apply to the selection.
+- [TableHeader](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/table/table-header.md): TableHeader is the row of column titles at the top of a table; it also decides the width of every column and writes them onto the table's grid.
+- [TableRow](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/table/table-row.md): TableRow is one row of a table: its cells followed by a last cell with the row's context menu button.
+- [Tiles](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/tiles.md): The card view of the ONLYOFFICE Apps listing: a sorting container, four kinds of tile and the slot their names go in.
+- [BaseTile](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/tiles/base-tile.md): The tile shell: an icon that turns into a checkbox, a slot for the content, a three-dot menu and a lower half.
+- [FileTile](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/tiles/file-tile.md): Tile for a document: a thumbnail with badges over it, and a name row with a checkbox and a menu.
+- [FolderTile](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/tiles/folder-tile.md): Tile for a folder, as a single name row or, with one flag, a tall card with a picture on top.
+- [RoomTile](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/tiles/room-tile.md): Tile for a room: the logo and name on top, and the room's tags along the bottom.
+- [TilesSkeleton](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/tiles/tiles-skeleton.md): Placeholder in the shape of a tile listing, shown while the tiles themselves are loading.
+- [TemplateTile](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/tiles/template-tile.md): Tile for a room template: the name on top, and an owner and storage pair along the bottom.
+- [TileContainer](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/tiles/tile-container.md): Grid that sorts the tiles it is given into rooms, templates, folders and files and gives two of them a heading.
+- [TileContent](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/ui/tiles/tile-content.md): The title slot of a tile: three nested wrappers that give the name its width and its truncation.

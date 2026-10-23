@@ -1,0 +1,41 @@
+# GetFormKey
+
+Returns the current form key.
+
+Inherited from [ApiFormBase.GetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetFormKey.md).
+
+## Syntax
+
+```javascript
+expression.GetFormKey();
+```
+
+`expression` - A variable that represents an [ApiPictureForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+string
+
+## Example
+
+Read the unique identifier assigned to a picture form field in a document.
+
+```javascript editor-forms
+// How do I find the identifier that links a picture form field to other fields in a document?
+
+// Confirm which key is associated with a picture form field by retrieving it in a document.
+
+let doc = Api.GetDocument();
+let pictureForm = Api.CreatePictureForm({"key": "Personal information", "tip": "Upload your photo", "required": true, "placeholder": "Photo", "scaleFlag": "tooBig", "lockAspectRatio": true, "respectBorders": false, "shiftX": 50, "shiftY": 50});
+let paragraph = doc.GetElement(0);
+paragraph.AddElement(pictureForm);
+pictureForm.SetImage("https://static.onlyoffice.com/assets/docs/samples/img/onlyoffice_logo.png", Api.MillimetersToEmus(70), Api.MillimetersToEmus(80));
+let key = pictureForm.GetFormKey();
+paragraph = Api.CreateParagraph();
+paragraph.AddText("Form key: " + key);
+doc.Push(paragraph);
+```

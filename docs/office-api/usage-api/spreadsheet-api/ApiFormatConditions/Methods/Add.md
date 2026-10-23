@@ -1,0 +1,52 @@
+# Add
+
+Adds a new format condition to the collection.
+
+## Syntax
+
+```javascript
+expression.Add(Type, Operator, Formula1, Formula2);
+```
+
+`expression` - A variable that represents an [ApiFormatConditions](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiFormatConditions.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| Type | Required | [XlFormatConditionType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/XlFormatConditionType.md) |  | The format condition type. |
+| Operator | Optional | [XlFormatConditionOperator](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/XlFormatConditionOperator.md) |  | The format condition operator. |
+| Formula1 | Optional | string \| number \| [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) |  | The first formula. |
+| Formula2 | Optional | string \| number \| [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) |  | The second formula. |
+
+## Returns
+
+[ApiFormatCondition](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiFormatCondition.md) \| null
+
+## Example
+
+Highlight cells automatically when their values meet a condition in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I create a rule that colors cells based on whether they are above or below a threshold in a spreadsheet?
+
+// Set up automatic cell formatting that reacts to the data entered in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+
+worksheet.GetRange("A1").SetValue("Sales Data");
+worksheet.GetRange("A2").SetValue(100);
+worksheet.GetRange("A3").SetValue(250);
+worksheet.GetRange("A4").SetValue(150);
+worksheet.GetRange("A5").SetValue(300);
+worksheet.GetRange("A6").SetValue(75);
+
+let dataRange = worksheet.GetRange("A2:A6");
+
+let formatConditions = dataRange.GetFormatConditions();
+
+let condition1 = formatConditions.Add("xlCellValue", "xlGreater", "200");
+if (condition1) {
+    condition1.SetFillColor(Api.RGB(255, 0, 0));
+}
+```

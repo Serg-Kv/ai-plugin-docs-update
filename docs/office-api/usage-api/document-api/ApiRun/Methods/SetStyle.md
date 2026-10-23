@@ -1,0 +1,52 @@
+# SetStyle
+
+The text style base method.
+
+:::note
+This method is not used by itself, as it only forms the basis for the [ApiRun#SetStyle](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiRun/Methods/SetStyle.md) method which sets the selected or created style to the text.
+:::
+
+Inherited from [ApiTextPr.SetStyle](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTextPr/Methods/SetStyle.md).
+
+## Syntax
+
+```javascript
+expression.SetStyle(style);
+```
+
+`expression` - A variable that represents an [ApiRun](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiRun.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| style | Required | [ApiStyle](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiStyle.md) \| string \| null \| undefined |  | The style which must be applied to the text character, or the name of an existing style, or *undefined*/*null* to remove the style. |
+
+## Returns
+
+[ApiTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTextPr.md)
+
+## Example
+
+Apply a named character style to a text run in a document.
+
+```javascript editor-docx
+// How do I attach a predefined style to a specific run of text in a document?
+
+// Reuse a saved set of formatting rules by linking it to a text run in a document.
+
+let doc = Api.GetDocument();
+let myNewRunStyle = doc.CreateStyle("My New Run Style", "run");
+let textPr = myNewRunStyle.GetTextPr();
+textPr.SetCaps(true);
+textPr.SetFontFamily("Calibri Light");
+let paragraph = doc.GetElement(0);
+let run = Api.CreateRun();
+run.AddText("This is just a sample text. ");
+run.AddText("The text properties are changed and the style is added to the paragraph. ");
+paragraph.AddElement(run);
+run = Api.CreateRun();
+run.SetStyle(myNewRunStyle);
+run.AddText("This is a text run with its own style.");
+paragraph.AddElement(run);
+```

@@ -1,0 +1,36 @@
+# IMDIV
+
+Returns the quotient of two complex numbers.
+
+## Syntax
+
+```javascript
+expression.IMDIV(arg1, arg2);
+```
+
+`expression` - A variable that represents an [ApiWorksheetFunction](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiWorksheetFunction.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| arg1 | Required | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| number \| string |  | The complex numerator or dividend in the *x + yi* or *x + yj* form. |
+| arg2 | Required | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| number \| string |  | The complex denominator or divisor in the *x + yi* or *x + yj* form. |
+
+## Returns
+
+string
+
+## Example
+
+Divide one complex number by another in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I divide two complex numbers in a spreadsheet?
+
+// Get the quotient of complex numbers in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+let func = Api.WorksheetFunction;
+worksheet.GetRange("A1").SetValue(func.IMDIV("-2+2.5i", "0.1+1.5j"));
+```

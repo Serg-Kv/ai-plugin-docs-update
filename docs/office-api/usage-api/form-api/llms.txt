@@ -1,0 +1,464 @@
+# ONLYOFFICE Docs: Office API — Form API
+
+> A form document has exactly the same structure as a document. The only difference is a new forms entity placed with other paragraph elements – text runs, inline text content controls and hyperlinks. There are seven form types: text field, combo box, dropdown list, checkbox, radio button, picture form, and complex field.
+
+Links below point to the Markdown version of each page. This file covers one part of the [section index](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/llms.txt); for the other sections of this documentation, see the [index](https://api.onlyoffice.com/ai-plugin-docs-update/llms.txt).
+
+## Overview
+
+- [Form API](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api.md): A form document has exactly the same structure as a document. The only difference is a new forms entity placed with other paragraph elements – text runs, inline text content controls and hyperlinks. There are seven form types: text field, combo box, dropdown list, checkbox, radio button, picture form, and complex field.
+
+## Api
+
+- [Api](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Api.md): The main class of the Form API. Use it to create forms: text fields, combo boxes, checkboxes and radio buttons, date fields, picture forms, signature forms, and complex fields.
+- [Api.ConvertDocument](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Api/Methods/ConvertDocument.md): Converts a document to Markdown or HTML text.
+- [Api.CreateCheckBoxForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Api/Methods/CreateCheckBoxForm.md): Creates a checkbox / radio button with the specified checkbox / radio button properties.
+- [Api.CreateComboBoxForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Api/Methods/CreateComboBoxForm.md): Creates a combo box / dropdown list with the specified combo box / dropdown list properties.
+- [Api.CreateComplexForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Api/Methods/CreateComplexForm.md): Creates a complex form with the specified complex form properties.
+- [Api.CreateDateForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Api/Methods/CreateDateForm.md): Creates a date form with the specified date form properties.
+- [Api.CreatePictureForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Api/Methods/CreatePictureForm.md): Creates a picture form with the specified picture form properties.
+- [Api.CreateSignatureForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Api/Methods/CreateSignatureForm.md): Creates a signature form with the specified form properties.
+- [Api.CreateTextForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Api/Methods/CreateTextForm.md): Creates a text field with the specified text field properties.
+- [Api.ReplaceTextSmart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Api/Methods/ReplaceTextSmart.md): Replaces each paragraph (or text in cell) in the select with the corresponding text from an array of strings.
+
+## ApiCheckBoxForm
+
+- [ApiCheckBoxForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm.md): Class representing a document checkbox / radio button.
+- [ApiCheckBoxForm.Clear](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/Clear.md): Clears the current form.
+- [ApiCheckBoxForm.Copy](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/Copy.md): Copies the current form (copies with the shape if it exists).
+- [ApiCheckBoxForm.Delete](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/Delete.md): Removes a form and its content.
+- [ApiCheckBoxForm.GetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetBackgroundColor.md): Returns the background color of the current form.
+- [ApiCheckBoxForm.GetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetBorderColor.md): Returns the border color of the current form.
+- [ApiCheckBoxForm.GetChoiceName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetChoiceName.md): Returns the choice name of the current radio button.
+- [ApiCheckBoxForm.GetClassType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetClassType.md): Returns a type of the ApiCheckBoxForm class.
+- [ApiCheckBoxForm.GetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetFormKey.md): Returns the current form key.
+- [ApiCheckBoxForm.GetFormType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetFormType.md): Returns a type of the current form.
+- [ApiCheckBoxForm.GetGroupValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetGroupValue.md): Returns the choice name of the currently selected radio button in the group.
+- [ApiCheckBoxForm.GetInternalId](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetInternalId.md): Returns an internal id of the current form.
+- [ApiCheckBoxForm.GetLabel](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetLabel.md): Returns the label of the current check box.
+- [ApiCheckBoxForm.GetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetLock.md): Returns the lock state of the current form.
+- [ApiCheckBoxForm.GetParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetParent.md): Returns the parent element (a paragraph or an inline content control) that directly contains the current form.
+- [ApiCheckBoxForm.GetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetPlaceholderText.md): Returns the placeholder text from the current form.
+- [ApiCheckBoxForm.GetPosInParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetPosInParent.md): Returns the position (index) of the current form within its parent element.
+- [ApiCheckBoxForm.GetRadioGroup](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetRadioGroup.md): Returns the radio group key if the current checkbox is a radio button.
+- [ApiCheckBoxForm.GetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetRole.md): Returns the role of the current form.
+- [ApiCheckBoxForm.GetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetTag.md): Returns the tag attribute for the current form.
+- [ApiCheckBoxForm.GetText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetText.md): Returns the text from the current form.
+- [ApiCheckBoxForm.GetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetTextPr.md): Returns the text properties from the current form.
+- [ApiCheckBoxForm.GetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetTipText.md): Returns the tip text of the current form.
+- [ApiCheckBoxForm.GetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetValue.md): Returns the current state of the checkbox form as a boolean value.
+- [ApiCheckBoxForm.GetWrapperShape](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/GetWrapperShape.md): Returns a shape in which the form is placed to control the position and size of the fixed size form frame.
+- [ApiCheckBoxForm.IsChecked](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/IsChecked.md): Returns the state of the current checkbox (checked or not).
+- [ApiCheckBoxForm.IsFilled](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/IsFilled.md): Checks if the current form is filled.
+- [ApiCheckBoxForm.IsFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/IsFixed.md): Checks if the current form is fixed size.
+- [ApiCheckBoxForm.IsRadioButton](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/IsRadioButton.md): Checks if the current checkbox is a radio button.
+- [ApiCheckBoxForm.IsRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/IsRequired.md): Checks if the current form is required.
+- [ApiCheckBoxForm.MoveCursorOutside](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/MoveCursorOutside.md): Places a cursor before/after the current form.
+- [ApiCheckBoxForm.SetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/SetBackgroundColor.md): Sets the background color to the current form.
+- [ApiCheckBoxForm.SetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/SetBorderColor.md): Sets the border color to the current form.
+- [ApiCheckBoxForm.SetChecked](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/SetChecked.md): Checks the current checkbox.
+- [ApiCheckBoxForm.SetChoiceName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/SetChoiceName.md): Sets the choice name for the current radio button.
+- [ApiCheckBoxForm.SetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/SetFormKey.md): Sets a key to the current form.
+- [ApiCheckBoxForm.SetGroupValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/SetGroupValue.md): Selects the radio button with the specified choice name in the group.
+- [ApiCheckBoxForm.SetLabel](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/SetLabel.md): Sets the label for the current check box.
+- [ApiCheckBoxForm.SetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/SetLock.md): Sets the lock state of the current form.
+- [ApiCheckBoxForm.SetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/SetPlaceholderText.md): Sets the placeholder text to the current form.
+- [ApiCheckBoxForm.SetRadioGroup](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/SetRadioGroup.md): Sets the radio group key to the current radio button.
+- [ApiCheckBoxForm.SetRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/SetRequired.md): Specifies if the current form should be required.
+- [ApiCheckBoxForm.SetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/SetRole.md): Sets the role to the current form.
+- [ApiCheckBoxForm.SetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/SetTag.md): Sets the tag attribute to the current form.
+- [ApiCheckBoxForm.SetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/SetTextPr.md): Sets the text properties to the current form.
+- [ApiCheckBoxForm.SetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/SetTipText.md): Sets the tip text to the current form.
+- [ApiCheckBoxForm.SetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/SetValue.md): Sets the state of the checkbox form.
+- [ApiCheckBoxForm.ToFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/ToFixed.md): Converts the current form to a fixed size form.
+- [ApiCheckBoxForm.ToInline](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiCheckBoxForm/Methods/ToInline.md): Converts the current form to an inline form.
+
+## ApiComboBoxForm
+
+- [ApiComboBoxForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm.md): Class representing a document combo box / drop-down list.
+- [ApiComboBoxForm.Clear](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/Clear.md): Clears the current form.
+- [ApiComboBoxForm.Copy](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/Copy.md): Copies the current form (copies with the shape if it exists).
+- [ApiComboBoxForm.Delete](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/Delete.md): Removes a form and its content.
+- [ApiComboBoxForm.GetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetBackgroundColor.md): Returns the background color of the current form.
+- [ApiComboBoxForm.GetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetBorderColor.md): Returns the border color of the current form.
+- [ApiComboBoxForm.GetClassType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetClassType.md): Returns a type of the ApiComboBoxForm class.
+- [ApiComboBoxForm.GetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetFormKey.md): Returns the current form key.
+- [ApiComboBoxForm.GetFormType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetFormType.md): Returns a type of the current form.
+- [ApiComboBoxForm.GetInternalId](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetInternalId.md): Returns an internal id of the current form.
+- [ApiComboBoxForm.GetListValues](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetListValues.md): Returns the list values from the current combo box.
+- [ApiComboBoxForm.GetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetLock.md): Returns the lock state of the current form.
+- [ApiComboBoxForm.GetParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetParent.md): Returns the parent element (a paragraph or an inline content control) that directly contains the current form.
+- [ApiComboBoxForm.GetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetPlaceholderText.md): Returns the placeholder text from the current form.
+- [ApiComboBoxForm.GetPosInParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetPosInParent.md): Returns the position (index) of the current form within its parent element.
+- [ApiComboBoxForm.GetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetRole.md): Returns the role of the current form.
+- [ApiComboBoxForm.GetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetTag.md): Returns the tag attribute for the current form.
+- [ApiComboBoxForm.GetText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetText.md): Returns the text from the current form.
+- [ApiComboBoxForm.GetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetTextPr.md): Returns the text properties from the current form.
+- [ApiComboBoxForm.GetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetTipText.md): Returns the tip text of the current form.
+- [ApiComboBoxForm.GetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetValue.md): Returns the current text value of the combo box form.
+- [ApiComboBoxForm.GetWrapperShape](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/GetWrapperShape.md): Returns a shape in which the form is placed to control the position and size of the fixed size form frame.
+- [ApiComboBoxForm.IsEditable](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/IsEditable.md): Checks if the combo box text can be edited.
+- [ApiComboBoxForm.IsFilled](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/IsFilled.md): Checks if the current form is filled.
+- [ApiComboBoxForm.IsFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/IsFixed.md): Checks if the current form is fixed size.
+- [ApiComboBoxForm.IsRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/IsRequired.md): Checks if the current form is required.
+- [ApiComboBoxForm.MoveCursorOutside](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/MoveCursorOutside.md): Places a cursor before/after the current form.
+- [ApiComboBoxForm.SelectListValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/SelectListValue.md): Selects the specified value from the combo box list values.
+- [ApiComboBoxForm.SetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/SetBackgroundColor.md): Sets the background color to the current form.
+- [ApiComboBoxForm.SetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/SetBorderColor.md): Sets the border color to the current form.
+- [ApiComboBoxForm.SetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/SetFormKey.md): Sets a key to the current form.
+- [ApiComboBoxForm.SetListValues](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/SetListValues.md): Sets the list values to the current combo box.
+- [ApiComboBoxForm.SetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/SetLock.md): Sets the lock state of the current form.
+- [ApiComboBoxForm.SetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/SetPlaceholderText.md): Sets the placeholder text to the current form.
+- [ApiComboBoxForm.SetRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/SetRequired.md): Specifies if the current form should be required.
+- [ApiComboBoxForm.SetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/SetRole.md): Sets the role to the current form.
+- [ApiComboBoxForm.SetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/SetTag.md): Sets the tag attribute to the current form.
+- [ApiComboBoxForm.SetText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/SetText.md): Sets the text to the current combo box.
+- [ApiComboBoxForm.SetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/SetTextPr.md): Sets the text properties to the current form.
+- [ApiComboBoxForm.SetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/SetTipText.md): Sets the tip text to the current form.
+- [ApiComboBoxForm.SetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/SetValue.md): Sets the value of the combo box form.
+- [ApiComboBoxForm.ToFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/ToFixed.md): Converts the current form to a fixed size form.
+- [ApiComboBoxForm.ToInline](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComboBoxForm/Methods/ToInline.md): Converts the current form to an inline form.
+
+## ApiComplexForm
+
+- [ApiComplexForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm.md): Class representing a complex field.
+- [ApiComplexForm.Add](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/Add.md): Appends the text content of the given form to the end of the current complex form.
+- [ApiComplexForm.Clear](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/Clear.md): Clears the current form.
+- [ApiComplexForm.ClearContent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/ClearContent.md): Clears all content from the current complex form, resetting it to its placeholder state.
+- [ApiComplexForm.Copy](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/Copy.md): Copies the current form (copies with the shape if it exists).
+- [ApiComplexForm.Delete](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/Delete.md): Removes a form and its content.
+- [ApiComplexForm.GetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetBackgroundColor.md): Returns the background color of the current form.
+- [ApiComplexForm.GetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetBorderColor.md): Returns the border color of the current form.
+- [ApiComplexForm.GetClassType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetClassType.md): Returns a type of the ApiComplexForm class.
+- [ApiComplexForm.GetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetFormKey.md): Returns the current form key.
+- [ApiComplexForm.GetFormType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetFormType.md): Returns a type of the current form.
+- [ApiComplexForm.GetInternalId](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetInternalId.md): Returns an internal id of the current form.
+- [ApiComplexForm.GetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetLock.md): Returns the lock state of the current form.
+- [ApiComplexForm.GetParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetParent.md): Returns the parent element (a paragraph or an inline content control) that directly contains the current form.
+- [ApiComplexForm.GetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetPlaceholderText.md): Returns the placeholder text from the current form.
+- [ApiComplexForm.GetPosInParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetPosInParent.md): Returns the position (index) of the current form within its parent element.
+- [ApiComplexForm.GetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetRole.md): Returns the role of the current form.
+- [ApiComplexForm.GetSubForms](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetSubForms.md): Returns an ordered list of subforms.
+- [ApiComplexForm.GetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetTag.md): Returns the tag attribute for the current form.
+- [ApiComplexForm.GetText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetText.md): Returns the text from the current form.
+- [ApiComplexForm.GetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetTextPr.md): Returns the text properties from the current form.
+- [ApiComplexForm.GetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetTipText.md): Returns the tip text of the current form.
+- [ApiComplexForm.GetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetValue.md): Returns the current text value of the complex form.
+- [ApiComplexForm.GetWrapperShape](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/GetWrapperShape.md): Returns a shape in which the form is placed to control the position and size of the fixed size form frame.
+- [ApiComplexForm.IsFilled](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/IsFilled.md): Checks if the current form is filled.
+- [ApiComplexForm.IsFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/IsFixed.md): Checks if the current form is fixed size.
+- [ApiComplexForm.IsRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/IsRequired.md): Checks if the current form is required.
+- [ApiComplexForm.MoveCursorOutside](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/MoveCursorOutside.md): Places a cursor before/after the current form.
+- [ApiComplexForm.SetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/SetBackgroundColor.md): Sets the background color to the current form.
+- [ApiComplexForm.SetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/SetBorderColor.md): Sets the border color to the current form.
+- [ApiComplexForm.SetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/SetFormKey.md): Sets a key to the current form.
+- [ApiComplexForm.SetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/SetLock.md): Sets the lock state of the current form.
+- [ApiComplexForm.SetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/SetPlaceholderText.md): Sets the placeholder text to the current form.
+- [ApiComplexForm.SetRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/SetRequired.md): Specifies if the current form should be required.
+- [ApiComplexForm.SetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/SetRole.md): Sets the role to the current form.
+- [ApiComplexForm.SetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/SetTag.md): Sets the tag attribute to the current form.
+- [ApiComplexForm.SetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/SetTextPr.md): Sets the text properties to the current form.
+- [ApiComplexForm.SetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/SetTipText.md): Sets the tip text to the current form.
+- [ApiComplexForm.SetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/SetValue.md): Sets the value of the form field.
+- [ApiComplexForm.ToFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/ToFixed.md): Converts the current form to a fixed size form.
+- [ApiComplexForm.ToInline](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm/Methods/ToInline.md): Converts the current form to an inline form.
+
+## ApiDateForm
+
+- [ApiDateForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm.md): Class representing a document date field.
+- [ApiDateForm.Clear](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/Clear.md): Clears the current form.
+- [ApiDateForm.Copy](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/Copy.md): Copies the current form (copies with the shape if it exists).
+- [ApiDateForm.Delete](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/Delete.md): Removes a form and its content.
+- [ApiDateForm.GetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetBackgroundColor.md): Returns the background color of the current form.
+- [ApiDateForm.GetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetBorderColor.md): Returns the border color of the current form.
+- [ApiDateForm.GetClassType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetClassType.md): Returns a type of the ApiDateForm class.
+- [ApiDateForm.GetDate](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetDate.md): Returns the date of the current form.
+- [ApiDateForm.GetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetFormKey.md): Returns the current form key.
+- [ApiDateForm.GetFormType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetFormType.md): Returns a type of the current form.
+- [ApiDateForm.GetFormat](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetFormat.md): Gets the date format of the current form.
+- [ApiDateForm.GetInternalId](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetInternalId.md): Returns an internal id of the current form.
+- [ApiDateForm.GetLanguage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetLanguage.md): Gets the used date language of the current form.
+- [ApiDateForm.GetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetLock.md): Returns the lock state of the current form.
+- [ApiDateForm.GetParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetParent.md): Returns the parent element (a paragraph or an inline content control) that directly contains the current form.
+- [ApiDateForm.GetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetPlaceholderText.md): Returns the placeholder text from the current form.
+- [ApiDateForm.GetPosInParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetPosInParent.md): Returns the position (index) of the current form within its parent element.
+- [ApiDateForm.GetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetRole.md): Returns the role of the current form.
+- [ApiDateForm.GetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetTag.md): Returns the tag attribute for the current form.
+- [ApiDateForm.GetText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetText.md): Returns the text from the current form.
+- [ApiDateForm.GetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetTextPr.md): Returns the text properties from the current form.
+- [ApiDateForm.GetTime](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetTime.md): Returns the timestamp of the current form.
+- [ApiDateForm.GetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetTipText.md): Returns the tip text of the current form.
+- [ApiDateForm.GetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetValue.md): Returns the date of the current form.
+- [ApiDateForm.GetWrapperShape](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/GetWrapperShape.md): Returns a shape in which the form is placed to control the position and size of the fixed size form frame.
+- [ApiDateForm.IsFilled](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/IsFilled.md): Checks if the current form is filled.
+- [ApiDateForm.IsFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/IsFixed.md): Checks if the current form is fixed size.
+- [ApiDateForm.IsRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/IsRequired.md): Checks if the current form is required.
+- [ApiDateForm.MoveCursorOutside](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/MoveCursorOutside.md): Places a cursor before/after the current form.
+- [ApiDateForm.SetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/SetBackgroundColor.md): Sets the background color to the current form.
+- [ApiDateForm.SetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/SetBorderColor.md): Sets the border color to the current form.
+- [ApiDateForm.SetDate](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/SetDate.md): Sets the date to the current form.
+- [ApiDateForm.SetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/SetFormKey.md): Sets a key to the current form.
+- [ApiDateForm.SetFormat](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/SetFormat.md): Sets the date format to the current form.
+- [ApiDateForm.SetLanguage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/SetLanguage.md): Sets the date language to the current form.
+- [ApiDateForm.SetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/SetLock.md): Sets the lock state of the current form.
+- [ApiDateForm.SetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/SetPlaceholderText.md): Sets the placeholder text to the current form.
+- [ApiDateForm.SetRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/SetRequired.md): Specifies if the current form should be required.
+- [ApiDateForm.SetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/SetRole.md): Sets the role to the current form.
+- [ApiDateForm.SetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/SetTag.md): Sets the tag attribute to the current form.
+- [ApiDateForm.SetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/SetTextPr.md): Sets the text properties to the current form.
+- [ApiDateForm.SetTime](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/SetTime.md): Sets the timestamp to the current form.
+- [ApiDateForm.SetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/SetTipText.md): Sets the tip text to the current form.
+- [ApiDateForm.SetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/SetValue.md): Sets the date of the current form.
+- [ApiDateForm.ToFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/ToFixed.md): Converts the current form to a fixed size form.
+- [ApiDateForm.ToInline](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm/Methods/ToInline.md): Converts the current form to an inline form.
+
+## ApiDocument
+
+- [ApiDocument](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDocument.md): Class representing a document.
+- [ApiDocument.ClearAllFields](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDocument/Methods/ClearAllFields.md): Clears all forms in the document.
+- [ApiDocument.GetAllForms](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDocument/Methods/GetAllForms.md): Returns all existing forms in the document.
+- [ApiDocument.GetFormKeysByRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDocument/Methods/GetFormKeysByRole.md): Returns a list of all form keys attached to the specified role.
+- [ApiDocument.GetFormRoles](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDocument/Methods/GetFormRoles.md): Returns a collection of form roles.
+- [ApiDocument.GetFormValueByKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDocument/Methods/GetFormValueByKey.md): Returns the form value for the specified key.
+- [ApiDocument.GetFormsByKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDocument/Methods/GetFormsByKey.md): Returns a list of all forms in the document with the specified key.
+- [ApiDocument.GetFormsByRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDocument/Methods/GetFormsByRole.md): Returns a list of all forms in the document with the specified role name.
+- [ApiDocument.GetFormsByTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDocument/Methods/GetFormsByTag.md): Returns a list of all forms in the document with the specified tag name.
+- [ApiDocument.GetFormsData](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDocument/Methods/GetFormsData.md): Returns the data from all forms present in the current document.
+- [ApiDocument.GetFormsHighlight](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDocument/Methods/GetFormsHighlight.md): Returns the highlight color of the forms in the document.
+- [ApiDocument.GetTagsOfAllForms](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDocument/Methods/GetTagsOfAllForms.md): Returns a list of all tags that are used for all forms in the document.
+- [ApiDocument.InsertTextForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDocument/Methods/InsertTextForm.md): Inserts a text box with the specified text box properties over the selected text.
+- [ApiDocument.SetFormsData](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDocument/Methods/SetFormsData.md): Sets the data to the specified forms.
+- [ApiDocument.SetFormsHighlight](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDocument/Methods/SetFormsHighlight.md): Sets the highlight to the forms in the document.
+
+## ApiFormBase
+
+- [ApiFormBase](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase.md): Class representing a document form base.
+- [ApiFormBase.Clear](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/Clear.md): Clears the current form.
+- [ApiFormBase.Copy](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/Copy.md): Copies the current form (copies with the shape if it exists).
+- [ApiFormBase.Delete](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/Delete.md): Removes a form and its content.
+- [ApiFormBase.GetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetBackgroundColor.md): Returns the background color of the current form.
+- [ApiFormBase.GetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetBorderColor.md): Returns the border color of the current form.
+- [ApiFormBase.GetClassType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetClassType.md): Returns a type of the ApiFormBase class.
+- [ApiFormBase.GetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetFormKey.md): Returns the current form key.
+- [ApiFormBase.GetFormType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetFormType.md): Returns a type of the current form.
+- [ApiFormBase.GetInternalId](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetInternalId.md): Returns an internal id of the current form.
+- [ApiFormBase.GetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetLock.md): Returns the lock state of the current form.
+- [ApiFormBase.GetParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetParent.md): Returns the parent element (a paragraph or an inline content control) that directly contains the current form.
+- [ApiFormBase.GetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetPlaceholderText.md): Returns the placeholder text from the current form.
+- [ApiFormBase.GetPosInParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetPosInParent.md): Returns the position (index) of the current form within its parent element.
+- [ApiFormBase.GetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetRole.md): Returns the role of the current form.
+- [ApiFormBase.GetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetTag.md): Returns the tag attribute for the current form.
+- [ApiFormBase.GetText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetText.md): Returns the text from the current form.
+- [ApiFormBase.GetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetTextPr.md): Returns the text properties from the current form.
+- [ApiFormBase.GetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetTipText.md): Returns the tip text of the current form.
+- [ApiFormBase.GetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetValue.md): Returns the current value of the form field.
+- [ApiFormBase.GetWrapperShape](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetWrapperShape.md): Returns a shape in which the form is placed to control the position and size of the fixed size form frame.
+- [ApiFormBase.IsFilled](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/IsFilled.md): Checks if the current form is filled.
+- [ApiFormBase.IsFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/IsFixed.md): Checks if the current form is fixed size.
+- [ApiFormBase.IsRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/IsRequired.md): Checks if the current form is required.
+- [ApiFormBase.MoveCursorOutside](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/MoveCursorOutside.md): Places a cursor before/after the current form.
+- [ApiFormBase.SetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/SetBackgroundColor.md): Sets the background color to the current form.
+- [ApiFormBase.SetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/SetBorderColor.md): Sets the border color to the current form.
+- [ApiFormBase.SetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/SetFormKey.md): Sets a key to the current form.
+- [ApiFormBase.SetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/SetLock.md): Sets the lock state of the current form.
+- [ApiFormBase.SetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/SetPlaceholderText.md): Sets the placeholder text to the current form.
+- [ApiFormBase.SetRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/SetRequired.md): Specifies if the current form should be required.
+- [ApiFormBase.SetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/SetRole.md): Sets the role to the current form.
+- [ApiFormBase.SetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/SetTag.md): Sets the tag attribute to the current form.
+- [ApiFormBase.SetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/SetTextPr.md): Sets the text properties to the current form.
+- [ApiFormBase.SetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/SetTipText.md): Sets the tip text to the current form.
+- [ApiFormBase.SetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/SetValue.md): Sets the value of the form field.
+- [ApiFormBase.ToFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/ToFixed.md): Converts the current form to a fixed size form.
+- [ApiFormBase.ToInline](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/ToInline.md): Converts the current form to an inline form.
+
+## ApiFormRoles
+
+- [ApiFormRoles](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormRoles.md): Class representing a collection of form roles.
+- [ApiFormRoles.Add](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormRoles/Methods/Add.md): Adds a new form role.
+- [ApiFormRoles.GetAllRoles](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormRoles/Methods/GetAllRoles.md): Lists all available roles.
+- [ApiFormRoles.GetCount](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormRoles/Methods/GetCount.md): Returns a number of form roles.
+- [ApiFormRoles.GetRoleColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormRoles/Methods/GetRoleColor.md): Returns the RGB color of the specified role.
+- [ApiFormRoles.HaveRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormRoles/Methods/HaveRole.md): Checks if a role with the specified name exists.
+- [ApiFormRoles.MoveDown](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormRoles/Methods/MoveDown.md): Moves a role down in filling order.
+- [ApiFormRoles.MoveUp](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormRoles/Methods/MoveUp.md): Moves a role up in filling order.
+- [ApiFormRoles.Remove](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormRoles/Methods/Remove.md): Removes a role with the specified name.
+- [ApiFormRoles.SetRoleColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormRoles/Methods/SetRoleColor.md): Sets the color for the specified role.
+
+## ApiPictureForm
+
+- [ApiPictureForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm.md): Class representing a document picture form.
+- [ApiPictureForm.Clear](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/Clear.md): Clears the current form.
+- [ApiPictureForm.Copy](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/Copy.md): Copies the current form (copies with the shape if it exists).
+- [ApiPictureForm.Delete](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/Delete.md): Removes a form and its content.
+- [ApiPictureForm.GetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetBackgroundColor.md): Returns the background color of the current form.
+- [ApiPictureForm.GetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetBorderColor.md): Returns the border color of the current form.
+- [ApiPictureForm.GetClassType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetClassType.md): Returns a type of the ApiPictureForm class.
+- [ApiPictureForm.GetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetFormKey.md): Returns the current form key.
+- [ApiPictureForm.GetFormType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetFormType.md): Returns a type of the current form.
+- [ApiPictureForm.GetImage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetImage.md): Returns an image in the base64 format from the current picture form.
+- [ApiPictureForm.GetInternalId](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetInternalId.md): Returns an internal id of the current form.
+- [ApiPictureForm.GetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetLock.md): Returns the lock state of the current form.
+- [ApiPictureForm.GetParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetParent.md): Returns the parent element (a paragraph or an inline content control) that directly contains the current form.
+- [ApiPictureForm.GetPicturePosition](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetPicturePosition.md): Returns the picture position inside the current form.
+- [ApiPictureForm.GetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetPlaceholderText.md): Returns the placeholder text from the current form.
+- [ApiPictureForm.GetPosInParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetPosInParent.md): Returns the position (index) of the current form within its parent element.
+- [ApiPictureForm.GetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetRole.md): Returns the role of the current form.
+- [ApiPictureForm.GetScaleFlag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetScaleFlag.md): Returns the current scaling condition of the picture form.
+- [ApiPictureForm.GetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetTag.md): Returns the tag attribute for the current form.
+- [ApiPictureForm.GetText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetText.md): Returns the text from the current form.
+- [ApiPictureForm.GetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetTextPr.md): Returns the text properties from the current form.
+- [ApiPictureForm.GetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetTipText.md): Returns the tip text of the current form.
+- [ApiPictureForm.GetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetValue.md): Returns the current image of the picture form as a base64 encoded string.
+- [ApiPictureForm.GetWrapperShape](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/GetWrapperShape.md): Returns a shape in which the form is placed to control the position and size of the fixed size form frame.
+- [ApiPictureForm.IsFilled](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/IsFilled.md): Checks if the current form is filled.
+- [ApiPictureForm.IsFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/IsFixed.md): Checks if the current form is fixed size.
+- [ApiPictureForm.IsLockAspectRatio](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/IsLockAspectRatio.md): Checks if the aspect ratio of the current picture form is locked or not.
+- [ApiPictureForm.IsRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/IsRequired.md): Checks if the current form is required.
+- [ApiPictureForm.IsRespectBorders](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/IsRespectBorders.md): Checks if the form border width is respected or not.
+- [ApiPictureForm.MoveCursorOutside](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/MoveCursorOutside.md): Places a cursor before/after the current form.
+- [ApiPictureForm.SetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/SetBackgroundColor.md): Sets the background color to the current form.
+- [ApiPictureForm.SetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/SetBorderColor.md): Sets the border color to the current form.
+- [ApiPictureForm.SetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/SetFormKey.md): Sets a key to the current form.
+- [ApiPictureForm.SetImage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/SetImage.md): Sets an image to the current picture form.
+- [ApiPictureForm.SetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/SetLock.md): Sets the lock state of the current form.
+- [ApiPictureForm.SetLockAspectRatio](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/SetLockAspectRatio.md): Locks the aspect ratio of the current picture form.
+- [ApiPictureForm.SetPicturePosition](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/SetPicturePosition.md): Sets the picture position inside the current form:
+- [ApiPictureForm.SetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/SetPlaceholderText.md): Sets the placeholder text to the current form.
+- [ApiPictureForm.SetRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/SetRequired.md): Specifies if the current form should be required.
+- [ApiPictureForm.SetRespectBorders](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/SetRespectBorders.md): Respects the form border width when scaling the image.
+- [ApiPictureForm.SetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/SetRole.md): Sets the role to the current form.
+- [ApiPictureForm.SetScaleFlag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/SetScaleFlag.md): Sets the scaling condition to the current picture form.
+- [ApiPictureForm.SetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/SetTag.md): Sets the tag attribute to the current form.
+- [ApiPictureForm.SetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/SetTextPr.md): Sets the text properties to the current form.
+- [ApiPictureForm.SetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/SetTipText.md): Sets the tip text to the current form.
+- [ApiPictureForm.SetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/SetValue.md): Sets an image to the picture form.
+- [ApiPictureForm.ToFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/ToFixed.md): Converts the current form to a fixed size form.
+- [ApiPictureForm.ToInline](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiPictureForm/Methods/ToInline.md): Converts the current form to an inline form.
+
+## ApiSignatureForm
+
+- [ApiSignatureForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm.md): Class representing a document picture form.
+- [ApiSignatureForm.Clear](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/Clear.md): Clears the current form.
+- [ApiSignatureForm.Copy](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/Copy.md): Copies the current form (copies with the shape if it exists).
+- [ApiSignatureForm.Delete](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/Delete.md): Removes a form and its content.
+- [ApiSignatureForm.GetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetBackgroundColor.md): Returns the background color of the current form.
+- [ApiSignatureForm.GetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetBorderColor.md): Returns the border color of the current form.
+- [ApiSignatureForm.GetClassType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetClassType.md): Returns a type of the ApiSignatureForm class.
+- [ApiSignatureForm.GetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetFormKey.md): Returns the current form key.
+- [ApiSignatureForm.GetFormType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetFormType.md): Returns a type of the current form.
+- [ApiSignatureForm.GetImage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetImage.md): Returns an image in the base64 format from the current signature form.
+- [ApiSignatureForm.GetInternalId](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetInternalId.md): Returns an internal id of the current form.
+- [ApiSignatureForm.GetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetLock.md): Returns the lock state of the current form.
+- [ApiSignatureForm.GetParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetParent.md): Returns the parent element (a paragraph or an inline content control) that directly contains the current form.
+- [ApiSignatureForm.GetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetPlaceholderText.md): Returns the placeholder text from the current form.
+- [ApiSignatureForm.GetPosInParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetPosInParent.md): Returns the position (index) of the current form within its parent element.
+- [ApiSignatureForm.GetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetRole.md): Returns the role of the current form.
+- [ApiSignatureForm.GetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetTag.md): Returns the tag attribute for the current form.
+- [ApiSignatureForm.GetText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetText.md): Returns the text from the current form.
+- [ApiSignatureForm.GetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetTextPr.md): Returns the text properties from the current form.
+- [ApiSignatureForm.GetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetTipText.md): Returns the tip text of the current form.
+- [ApiSignatureForm.GetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetValue.md): Returns the current image of the signature form as a base64 encoded string.
+- [ApiSignatureForm.GetWrapperShape](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/GetWrapperShape.md): Returns a shape in which the form is placed to control the position and size of the fixed size form frame.
+- [ApiSignatureForm.IsFilled](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/IsFilled.md): Checks if the current form is filled.
+- [ApiSignatureForm.IsFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/IsFixed.md): Checks if the current form is fixed size.
+- [ApiSignatureForm.IsRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/IsRequired.md): Checks if the current form is required.
+- [ApiSignatureForm.MoveCursorOutside](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/MoveCursorOutside.md): Places a cursor before/after the current form.
+- [ApiSignatureForm.SetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/SetBackgroundColor.md): Sets the background color to the current form.
+- [ApiSignatureForm.SetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/SetBorderColor.md): Sets the border color to the current form.
+- [ApiSignatureForm.SetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/SetFormKey.md): Sets a key to the current form.
+- [ApiSignatureForm.SetImage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/SetImage.md): Sets an image to the current picture form.
+- [ApiSignatureForm.SetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/SetLock.md): Sets the lock state of the current form.
+- [ApiSignatureForm.SetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/SetPlaceholderText.md): Sets the placeholder text to the current form.
+- [ApiSignatureForm.SetRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/SetRequired.md): Specifies if the current form should be required.
+- [ApiSignatureForm.SetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/SetRole.md): Sets the role to the current form.
+- [ApiSignatureForm.SetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/SetTag.md): Sets the tag attribute to the current form.
+- [ApiSignatureForm.SetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/SetTextPr.md): Sets the text properties to the current form.
+- [ApiSignatureForm.SetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/SetTipText.md): Sets the tip text to the current form.
+- [ApiSignatureForm.SetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/SetValue.md): Sets an image to the signature form.
+- [ApiSignatureForm.ToFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/ToFixed.md): Converts the current form to a fixed size form.
+- [ApiSignatureForm.ToInline](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiSignatureForm/Methods/ToInline.md): Converts the current form to an inline form.
+
+## ApiTextForm
+
+- [ApiTextForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm.md): Class representing a document text field.
+- [ApiTextForm.Clear](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/Clear.md): Clears the current form.
+- [ApiTextForm.Copy](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/Copy.md): Copies the current form (copies with the shape if it exists).
+- [ApiTextForm.Delete](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/Delete.md): Removes a form and its content.
+- [ApiTextForm.GetAllowedSymbols](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetAllowedSymbols.md): Returns the allowed symbols for the current text field.
+- [ApiTextForm.GetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetBackgroundColor.md): Returns the background color of the current form.
+- [ApiTextForm.GetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetBorderColor.md): Returns the border color of the current form.
+- [ApiTextForm.GetCharactersLimit](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetCharactersLimit.md): Returns a limit of the text field characters.
+- [ApiTextForm.GetClassType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetClassType.md): Returns a type of the ApiTextForm class.
+- [ApiTextForm.GetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetFormKey.md): Returns the current form key.
+- [ApiTextForm.GetFormType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetFormType.md): Returns a type of the current form.
+- [ApiTextForm.GetFormat](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetFormat.md): Returns the format of the current text field.
+- [ApiTextForm.GetInternalId](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetInternalId.md): Returns an internal id of the current form.
+- [ApiTextForm.GetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetLock.md): Returns the lock state of the current form.
+- [ApiTextForm.GetParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetParent.md): Returns the parent element (a paragraph or an inline content control) that directly contains the current form.
+- [ApiTextForm.GetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetPlaceholderText.md): Returns the placeholder text from the current form.
+- [ApiTextForm.GetPosInParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetPosInParent.md): Returns the position (index) of the current form within its parent element.
+- [ApiTextForm.GetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetRole.md): Returns the role of the current form.
+- [ApiTextForm.GetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetTag.md): Returns the tag attribute for the current form.
+- [ApiTextForm.GetText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetText.md): Returns the text from the current form.
+- [ApiTextForm.GetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetTextPr.md): Returns the text properties from the current form.
+- [ApiTextForm.GetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetTipText.md): Returns the tip text of the current form.
+- [ApiTextForm.GetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetValue.md): Returns the current text value of the text form.
+- [ApiTextForm.GetWrapperShape](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/GetWrapperShape.md): Returns a shape in which the form is placed to control the position and size of the fixed size form frame.
+- [ApiTextForm.IsAutoFit](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/IsAutoFit.md): Checks if the text field content is autofit, i.e. whether the font size adjusts to the size of the fixed size form.
+- [ApiTextForm.IsComb](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/IsComb.md): Checks if the text field is a comb of characters with the same cell width.
+- [ApiTextForm.IsFilled](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/IsFilled.md): Checks if the current form is filled.
+- [ApiTextForm.IsFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/IsFixed.md): Checks if the current form is fixed size.
+- [ApiTextForm.IsMultiline](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/IsMultiline.md): Checks if the current text field is multiline.
+- [ApiTextForm.IsRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/IsRequired.md): Checks if the current form is required.
+- [ApiTextForm.MoveCursorOutside](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/MoveCursorOutside.md): Places a cursor before/after the current form.
+- [ApiTextForm.SetAllowedSymbols](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetAllowedSymbols.md): Sets the allowed symbols for the current text field.
+- [ApiTextForm.SetAutoFit](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetAutoFit.md): Specifies if the text field content should be autofit, i.e. whether the font size adjusts to the size of the fixed size form.
+- [ApiTextForm.SetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetBackgroundColor.md): Sets the background color to the current form.
+- [ApiTextForm.SetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetBorderColor.md): Sets the border color to the current form.
+- [ApiTextForm.SetCellWidth](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetCellWidth.md): Sets the cell width to the applied comb of characters.
+- [ApiTextForm.SetCharactersLimit](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetCharactersLimit.md): Sets a limit to the text field characters.
+- [ApiTextForm.SetComb](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetComb.md): Specifies if the text field should be a comb of characters with the same cell width.
+- [ApiTextForm.SetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetFormKey.md): Sets a key to the current form.
+- [ApiTextForm.SetFormat](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetFormat.md): Sets the format for the current text field.
+- [ApiTextForm.SetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetLock.md): Sets the lock state of the current form.
+- [ApiTextForm.SetMultiline](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetMultiline.md): Specifies if the current text field should be miltiline.
+- [ApiTextForm.SetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetPlaceholderText.md): Sets the placeholder text to the current form.
+- [ApiTextForm.SetRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetRequired.md): Specifies if the current form should be required.
+- [ApiTextForm.SetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetRole.md): Sets the role to the current form.
+- [ApiTextForm.SetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetTag.md): Sets the tag attribute to the current form.
+- [ApiTextForm.SetText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetText.md): Sets the text to the current text field.
+- [ApiTextForm.SetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetTextPr.md): Sets the text properties to the current form.
+- [ApiTextForm.SetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetTipText.md): Sets the tip text to the current form.
+- [ApiTextForm.SetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/SetValue.md): Sets the text value of the text form.
+- [ApiTextForm.ToFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/ToFixed.md): Converts the current form to a fixed size form.
+- [ApiTextForm.ToInline](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm/Methods/ToInline.md): Converts the current form to an inline form.
+
+## Enumeration
+
+- [ApiForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/ApiForm.md): Types of all supported forms.
+- [Base64Img](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/Base64Img.md): The Base64 image string.
+- [CheckBoxFormPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/CheckBoxFormPr.md): Checkbox / radio button properties.
+- [CheckBoxFormPrBase](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/CheckBoxFormPrBase.md): Specific checkbox / radio button properties.
+- [CheckboxOption](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/CheckboxOption.md): Option for checkbox
+- [ChoiceOption](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/ChoiceOption.md): Option for radio groups, dropdowns and combo boxes.
+- [ComboBoxFormPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/ComboBoxFormPr.md): Combo box / dropdown list properties.
+- [ComboBoxFormPrBase](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/ComboBoxFormPrBase.md): Specific combo box / dropdown list properties.
+- [DateFormPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/DateFormPr.md): The date form properties.
+- [DateFormPrBase](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/DateFormPrBase.md): Specific date form properties.
+- [FormData](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/FormData.md): Form data.
+- [FormInsertPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/FormInsertPr.md): Form insertion specific properties.
+- [FormPrBase](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/FormPrBase.md): Common form properties.
+- [FormSpecificType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/FormSpecificType.md): The specific form type.
+- [FormType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/FormType.md): Form type.
+- [ParagraphLikeContainer](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/ParagraphLikeContainer.md): A paragraph-like container that can directly hold inline-level content (Hyperlink, InlineLvlSdt, etc.).
+- [PictureFormPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/PictureFormPr.md): Picture form properties.
+- [PictureFormPrBase](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/PictureFormPrBase.md): Specific picture form properties.
+- [RoleProperties](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/RoleProperties.md): The role properties.
+- [ScaleFlag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/ScaleFlag.md): The condition to scale an image in the picture form.
+- [TextFormFormat](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/TextFormFormat.md): The text field format data.
+- [TextFormInsertPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/TextFormInsertPr.md): Properties for inserting a text field.
+- [TextFormPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/TextFormPr.md): Text field properties.
+- [TextFormPrBase](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/TextFormPrBase.md): Specific text field properties.
+- [mm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/mm.md): 1 millimetre equals 1/10th of a centimetre.
+- [percentage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/percentage.md): Value from 0 to 100.
+- [twips](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/twips.md): Twentieths of a point (equivalent to 1/1440th of an inch).

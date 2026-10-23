@@ -1,0 +1,43 @@
+# SetStyle
+
+The paragraph style base method.
+
+:::note
+This method is not used by itself, as it only forms the basis for the [ApiParagraph#SetStyle](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParagraph/Methods/SetStyle.md) method which sets the selected or created style for the paragraph.
+:::
+
+## Syntax
+
+```javascript
+expression.SetStyle(style);
+```
+
+`expression` - A variable that represents an [ApiParaPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParaPr.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| style | Required | [ApiStyle](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiStyle.md) \| string \| null \| undefined |  | The style of the paragraph to be set, or the name of an existing style, or *undefined*/*null* to remove the style. |
+
+## Returns
+
+[ApiParaPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParaPr.md)
+
+## Example
+
+Apply a named style to a paragraph to control its appearance in a document.
+
+```javascript editor-docx
+// How do I assign a built-in style such as a heading to a paragraph in a document?
+
+// Reuse a predefined heading style on a paragraph instead of applying formatting manually.
+
+let doc = Api.GetDocument();
+let heading6Style = doc.GetStyle("Heading 6");
+let paraPr = heading6Style.GetParaPr();
+paraPr.SetJc("center");
+let paragraph = doc.GetElement(0);
+paragraph.SetStyle(heading6Style);
+paragraph.AddText("This is a text in a paragraph styled with the 'Heading 6' style.");
+```

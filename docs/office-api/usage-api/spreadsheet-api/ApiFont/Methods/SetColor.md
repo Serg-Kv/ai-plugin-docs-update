@@ -1,0 +1,43 @@
+# SetColor
+
+Sets the font color property to the specified font.
+
+:::note
+This method will work only with the text format of the cell.
+:::
+
+## Syntax
+
+```javascript
+expression.SetColor(Color);
+```
+
+`expression` - A variable that represents an [ApiFont](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiFont.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| Color | Required | [ApiColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiColor.md) |  | Font color. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+Change the color of specific text characters in a cell in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I apply a custom color to part of the text inside a cell in a spreadsheet?
+
+// Paint a selected run of characters with an RGB color value in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+let range = worksheet.GetRange("B1");
+range.SetValue("This is just a sample text.");
+let characters = range.GetCharacters(9, 4);
+let font = characters.GetFont();
+let color = Api.RGB(255, 111, 61);
+font.SetColor(color);
+```

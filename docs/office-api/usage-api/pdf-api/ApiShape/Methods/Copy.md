@@ -1,0 +1,42 @@
+# Copy
+
+Creates a copy of the current shape.
+
+## Syntax
+
+```javascript
+expression.Copy();
+```
+
+`expression` - A variable that represents an [ApiShape](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiShape.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiShape](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiShape.md)
+
+## Example
+
+Duplicate a shape and place the copy on another page in a PDF.
+
+```javascript editor-pdf
+// Make a copy of a shape in a PDF.
+
+// Create an exact duplicate of a shape and add it to a new page in a PDF.
+
+const doc = Api.GetDocument();
+const page = doc.GetPage(0);
+
+const fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape("flowChartMagneticTape", 150 * 36000, 65 * 36000, fill, stroke);
+shape.SetPosition(608400, 1267200);
+page.AddObject(shape);
+
+const copyShape = shape.Copy();
+const newPage = doc.AddPage(0);
+newPage.AddObject(copyShape);
+```

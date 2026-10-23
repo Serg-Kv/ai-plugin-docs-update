@@ -1,0 +1,44 @@
+# SetTableCellMarginTop
+
+Specifies an amount of space which will be left between the top extent of the cell contents and the top border of all table cells within the parent table (or table row).
+
+Inherited from [ApiTablePr.SetTableCellMarginTop](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTablePr/Methods/SetTableCellMarginTop.md).
+
+## Syntax
+
+```javascript
+expression.SetTableCellMarginTop(nValue);
+```
+
+`expression` - A variable that represents an [ApiTable](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTable.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| nValue | Required | [twips](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/twips.md) |  | The value for the amount of space above the top extent of the cell measured in twentieths of a point (1/1440 of an inch). |
+
+## Returns
+
+boolean
+
+## Example
+
+Set the spacing between cell content and the top edge of every cell in a table in a document.
+
+```javascript editor-docx
+// How do I add breathing room above the text inside every table cell in a document?
+
+// Push cell content away from the top border of each cell in a table in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+let tableStyle = doc.CreateStyle("CustomTableStyle", "table");
+tableStyle.SetBasedOn(doc.GetStyle("Bordered"));
+let table = Api.CreateTable(3, 3);
+table.SetWidth("percent", 100);
+table.SetStyle(tableStyle);
+let cell = table.GetCell(0, 0).GetContent().GetElement(0).AddText("This is just a sample text to show that the top cell margin is 36 points.");
+table.SetTableCellMarginTop(720);
+doc.Push(table);
+```

@@ -1,0 +1,36 @@
+# HEX2BIN
+
+Converts a hexadecimal number to binary.
+
+## Syntax
+
+```javascript
+expression.HEX2BIN(arg1, arg2);
+```
+
+`expression` - A variable that represents an [ApiWorksheetFunction](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiWorksheetFunction.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| arg1 | Required | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| number \| string |  | The hexadecimal number to convert. |
+| arg2 | Optional | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| number |  | The number of characters to use. |
+
+## Returns
+
+string
+
+## Example
+
+Convert a hexadecimal number to binary in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I convert hexadecimal values to binary format in a spreadsheet?
+
+// Transform a hex value into its binary representation in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+let func = Api.WorksheetFunction;
+worksheet.GetRange("A1").SetValue(func.HEX2BIN("FFFFFFFF9C"));
+```

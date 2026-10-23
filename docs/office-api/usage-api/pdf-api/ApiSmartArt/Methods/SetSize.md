@@ -1,0 +1,51 @@
+# SetSize
+
+Sets the size of the object (image, shape, chart) bounding box.
+
+Inherited from [ApiDrawing.SetSize](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiDrawing/Methods/SetSize.md).
+
+## Syntax
+
+```javascript
+expression.SetSize(width, height);
+```
+
+`expression` - A variable that represents an [ApiSmartArt](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiSmartArt.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| width | Required | [EMU](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Enumeration/EMU.md) |  | The object width measured in English measure units. |
+| height | Required | [EMU](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Enumeration/EMU.md) |  | The object height measured in English measure units. |
+
+## Returns
+
+boolean
+
+## Example
+
+Resize a drawing object to specific dimensions in a PDF.
+
+```javascript editor-pdf
+// How do I make a shape larger or smaller in a PDF?
+
+// Modify the width and height of a drawing element in a PDF.
+
+const doc = Api.GetDocument();
+const page = doc.GetPage(0);
+
+const fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape("flowChartMagneticTape", 150 * 36000, 65 * 36000, fill, stroke);
+shape.SetPosition(608400, 1267200);
+shape.SetSize(150 * 36000, 65 * 36000);
+
+const docContent = shape.GetContent();
+docContent.RemoveAllElements();
+const paragraph = Api.CreateParagraph();
+paragraph.SetJc("left");
+paragraph.AddText("This is an example of a paragraph inside a shape. Nothing special.");
+docContent.Push(paragraph);
+page.AddObject(shape);
+```

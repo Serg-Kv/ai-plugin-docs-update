@@ -1,0 +1,49 @@
+# GroupDrawings
+
+Groups an array of drawings in the current document.
+
+## Syntax
+
+```javascript
+expression.GroupDrawings(aDrawings);
+```
+
+`expression` - A variable that represents an [ApiDocument](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiDocument.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| aDrawings | Required | [DrawingForGroup](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/DrawingForGroup.md)[] |  | An array of drawings to group. |
+
+## Returns
+
+[ApiGroup](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiGroup.md)
+
+## Example
+
+Group multiple shapes into a single drawing object in a document.
+
+```javascript editor-docx
+// How do I combine several shapes into one group in a document?
+
+// Treat two independently placed rectangles as a single unit so they move and resize together.
+
+let doc = Api.GetDocument();
+let fill1 = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+let fill2 = Api.CreateSolidFill(Api.RGB(51, 51, 51));
+let stroke = Api.CreateStroke(0, Api.CreateNoFill());
+let shape1 = Api.CreateShape("rect", 60 * 36000, 40 * 36000, fill1, stroke);
+let shape2 = Api.CreateShape("rect", 60 * 36000, 40 * 36000, fill2, stroke);
+let paragraph = Api.CreateParagraph();
+paragraph.AddDrawing(shape1);
+paragraph.AddDrawing(shape2);
+doc.Push(paragraph);
+shape1.SetWrappingStyle("inFront");
+shape1.SetHorPosition("page", 30 * 36000);
+shape1.SetVerPosition("page", 40 * 36000);
+shape2.SetWrappingStyle("inFront");
+shape2.SetHorPosition("page", 100 * 36000);
+shape2.SetVerPosition("page", 90 * 36000);
+doc.GroupDrawings([shape1, shape2]);
+```

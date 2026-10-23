@@ -1,0 +1,42 @@
+# GetAll
+
+Returns all custom XML parts from the XML manager.
+
+## Syntax
+
+```javascript
+expression.GetAll();
+```
+
+`expression` - A variable that represents an [ApiCustomXmlParts](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiCustomXmlParts.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiCustomXmlPart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiCustomXmlPart.md)[]
+
+## Example
+
+List every custom XML part stored in a document.
+
+```javascript editor-docx
+// Retrieve all custom XML parts at once in a document.
+
+// Iterate over every embedded XML part to audit or process stored data in a document.
+
+let doc = Api.GetDocument();
+let xmlManager = doc.GetCustomXmlParts();
+let xmlText1 = '<products><item><name>Laptop</name><price>999</price></item></products>';
+let xmlText2 = '<user><name>John Doe</name><email>john@example.com</email></user>';
+
+let xml1 = xmlManager.Add(xmlText1);
+let xml2 = xmlManager.Add(xmlText2);
+
+let allXmlParts = xmlManager.GetAll();
+let infoParagraph = Api.CreateParagraph();
+infoParagraph.AddText("All custom XML parts: " + allXmlParts.map(xml => xml.GetXml()).join(", "));
+doc.Push(infoParagraph);
+```

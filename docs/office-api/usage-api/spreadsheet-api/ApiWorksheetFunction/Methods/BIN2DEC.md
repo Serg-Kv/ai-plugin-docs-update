@@ -1,0 +1,35 @@
+# BIN2DEC
+
+Converts a binary number to decimal.
+
+## Syntax
+
+```javascript
+expression.BIN2DEC(arg1);
+```
+
+`expression` - A variable that represents an [ApiWorksheetFunction](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiWorksheetFunction.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| arg1 | Required | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| number |  | The binary number which will be convertrd. |
+
+## Returns
+
+number
+
+## Example
+
+Transform binary notation into standard decimal numbers in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I change a binary code into the regular number system in a spreadsheet?
+
+// Translate base-2 values to base-10 format for everyday calculations in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+let func = Api.WorksheetFunction;
+worksheet.GetRange("A1").SetValue(func.BIN2DEC(1110011100));
+```

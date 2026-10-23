@@ -1,0 +1,38 @@
+# FormData
+
+Form data.
+
+## Type
+
+Object
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| format | string | The date format string (e.g. **MM/DD/YYYY**). Present only for date picker fields. |
+| key | string | The form key. If the current form is a radio button, then this field contains the group key. |
+| label | string | The checkbox label. Present only for checkbox fields. |
+| lang | string | The date language/locale name (e.g. **en-US**). Present only for date picker fields. |
+| options | [ChoiceOption](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/ChoiceOption.md)[] \| [CheckboxOption](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/CheckboxOption.md)[] | The list of available options for the field. Present for checkboxes, radio button groups, dropdown lists, and combo boxes. |
+| role | string | The form role. |
+| roleColor | string | The form role color in hex format. |
+| tag | string | The form tag. |
+| type | [FormSpecificType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/FormSpecificType.md) | The form type. |
+| value | string \| boolean | The current field value. |
+
+## Example
+
+Specify the form data that can be used to create the form.
+
+```javascript editor-docx
+// How do I create form data with a key and a value?
+
+// Create a data to add it to the form.
+
+let formData = {
+	key: "CompanyName",
+	value: "ONLYOFFICE",
+	type: "text"
+};
+```

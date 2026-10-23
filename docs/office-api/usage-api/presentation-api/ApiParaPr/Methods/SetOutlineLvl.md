@@ -1,0 +1,50 @@
+# SetOutlineLvl
+
+Sets the outline level for the specified properties.
+
+## Syntax
+
+```javascript
+expression.SetOutlineLvl(lvl);
+```
+
+`expression` - A variable that represents an [ApiParaPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiParaPr.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| lvl | Optional | Number \| null \| undefined |  | The outline level. Possible values: 1-9. The 1 value means the basic outline level. To set no outline level, use this method without a parameter. |
+
+## Returns
+
+boolean
+
+## Example
+
+Assign an outline level to a paragraph in a presentation.
+
+```javascript editor-pptx
+// How do I set the outline hierarchy level of a paragraph in a presentation?
+
+// Configure the outline depth of a paragraph using paragraph properties in a presentation.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const rgb = Api.RGB(50, 100, 150);
+const fill = Api.CreateSolidFill(rgb);
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape('rect', 200 * 36000, 50 * 36000, fill, stroke);
+shape.SetPosition(10 * 36000, 10 * 36000);
+slide.AddObject(shape);
+
+const outlineLvlIndex = 8;
+
+const content = shape.GetDocContent();
+const paragraph = content.GetElement(0);
+const paraPr = paragraph.GetParaPr();
+paraPr.SetOutlineLvl(outlineLvlIndex);
+paragraph.AddText("This is a paragraph with outline level parameter set to " + (outlineLvlIndex + 1));
+```

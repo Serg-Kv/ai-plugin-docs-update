@@ -1,0 +1,40 @@
+# IsRequired
+
+Checks if the current form is required.
+
+Inherited from [ApiFormBase.IsRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiFormBase/Methods/IsRequired.md).
+
+## Syntax
+
+```javascript
+expression.IsRequired();
+```
+
+`expression` - A variable that represents an [ApiComboBoxForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiComboBoxForm.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+boolean
+
+## Example
+
+Verify whether a combo box form is marked as mandatory in a document.
+
+```javascript editor-docx
+// How do I check if a combo box form must be filled out before submitting a document?
+
+// Read the required flag on a form field to enforce completion rules in a document.
+
+let doc = Api.GetDocument();
+let comboBoxForm = Api.CreateComboBoxForm({"key": "Personal information", "tip": "Choose your country", "required": true, "placeholder": "Country", "editable": false, "autoFit": false, "items": ["Latvia", "USA", "UK"]});
+let paragraph = doc.GetElement(0);
+paragraph.AddElement(comboBoxForm);
+let required = comboBoxForm.IsRequired();
+paragraph = Api.CreateParagraph();
+paragraph.AddText("The first form from this document is required: " + required);
+doc.Push(paragraph);
+```

@@ -1,0 +1,40 @@
+# AddHyperlink
+
+Adds a hyperlink to the current run.
+
+## Syntax
+
+```javascript
+expression.AddHyperlink(link, screenTipText, bookmarkName);
+```
+
+`expression` - A variable that represents an [ApiRun](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiRun.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| link | Required | string |  | The link address. |
+| screenTipText | Required | string |  | The screen tip text. |
+| bookmarkName | Required | string |  | name of a bookmark |
+
+## Returns
+
+[ApiHyperlink](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiHyperlink.md) \| null \| undefined
+
+## Example
+
+Turn a text run into a clickable link pointing to a web address in a document.
+
+```javascript editor-docx
+// How do I make a piece of text open a website when clicked in a document?
+
+// Attach a URL and a tooltip title to a run of text so readers can follow it in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+let run = Api.CreateRun();
+run.AddText("ONLYOFFICE Document Builder");
+paragraph.AddElement(run);
+run.AddHyperlink("https://www.onlyoffice.com", "main page");
+```

@@ -1,0 +1,36 @@
+# Copy
+
+Copies the range to the specified range or to the clipboard.
+
+## Syntax
+
+```javascript
+expression.Copy(destination);
+```
+
+`expression` - A variable that represents an [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| destination | Optional | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| null \| undefined |  | Specifies the new range to which the specified range will be copied. If this argument is omitted, the range will be copied to the clipboard. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+Copy a range of cells to another location in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I duplicate a group of cells without retyping the content in a spreadsheet?
+
+// Replicate cell content from one place to another without removing the original in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+let range = worksheet.GetRange("A1");
+range.SetValue("This is a sample text which is copied to the range A3.");
+range.Copy(worksheet.GetRange("A3"));
+```

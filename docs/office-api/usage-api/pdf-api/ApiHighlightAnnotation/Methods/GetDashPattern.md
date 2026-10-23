@@ -1,0 +1,39 @@
+# GetDashPattern
+
+Gets annotation dash pattern.
+
+Inherited from [ApiBaseAnnotation.GetDashPattern](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiBaseAnnotation/Methods/GetDashPattern.md).
+
+## Syntax
+
+```javascript
+expression.GetDashPattern();
+```
+
+`expression` - A variable that represents an [ApiHighlightAnnotation](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiHighlightAnnotation.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+number[]
+
+## Example
+
+Retrieve the dash pattern of a dashed border on an annotation in a PDF.
+
+```javascript editor-pdf
+// What dash pattern is used for an annotation's border in a PDF?
+
+// Check the spacing and length of dashes on an annotation's border in a PDF.
+
+let doc = Api.GetDocument();
+let squareAnnot = Api.CreateSquareAnnot([10, 10, 160, 32]);
+squareAnnot.SetBorderStyle("dashed");
+squareAnnot.SetDashPattern([8, 4, 4, 4]);
+let page = doc.GetPage(0);
+page.AddObject(squareAnnot);
+console.log(`Annotation dash pattern is: ${squareAnnot.GetDashPattern()}`);
+```

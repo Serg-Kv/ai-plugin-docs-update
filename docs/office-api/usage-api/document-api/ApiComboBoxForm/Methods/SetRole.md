@@ -1,0 +1,45 @@
+# SetRole
+
+Sets the role to the current form.
+
+Inherited from [ApiFormBase.SetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiFormBase/Methods/SetRole.md).
+
+## Syntax
+
+```javascript
+expression.SetRole(role);
+```
+
+`expression` - A variable that represents an [ApiComboBoxForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiComboBoxForm.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| role | Required | string |  | The role which will be attached to the current form. |
+
+## Returns
+
+boolean
+
+## Example
+
+Assign a role to a combo box form in a document.
+
+```javascript editor-docx
+// How do I assign a role to a combo box form in a document?
+
+// Restrict a combo box to a specific participant role so only that role can fill it in a document.
+
+let doc = Api.GetDocument();
+let roles = doc.GetFormRoles();
+roles.Add("Customer");
+let comboBoxForm = Api.CreateComboBoxForm({"key": "Personal information", "tip": "Choose your country", "required": true, "placeholder": "Country", "editable": false, "autoFit": false, "items": ["Latvia", "USA", "UK"]});
+comboBoxForm.SetRole("Customer");
+let paragraph = doc.GetElement(0);
+paragraph.AddElement(comboBoxForm);
+let role = comboBoxForm.GetRole();
+paragraph = Api.CreateParagraph();
+paragraph.AddText("Form role: " + role);
+doc.Push(paragraph);
+```

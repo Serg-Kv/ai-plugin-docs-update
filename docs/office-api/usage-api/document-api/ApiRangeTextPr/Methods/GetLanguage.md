@@ -1,0 +1,52 @@
+# GetLanguage
+
+Gets the language from the current text properties.
+
+Inherited from [ApiTextPr.GetLanguage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTextPr/Methods/GetLanguage.md).
+
+## Syntax
+
+```javascript
+expression.GetLanguage();
+```
+
+`expression` - A variable that represents an [ApiRangeTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiRangeTextPr.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+string \| null \| undefined
+
+## Example
+
+Read the language assigned to a run of text in a document.
+
+```javascript editor-docx
+// How do I find out which language is set on a piece of text in a document?
+
+// Inspect a text run to confirm the locale currently applied to it in a document.
+
+let doc = Api.GetDocument();
+let myNewRunStyle = doc.CreateStyle("My New Run Style", "run");
+let textPr = myNewRunStyle.GetTextPr();
+textPr.SetCaps(true);
+textPr.SetFontFamily("Calibri Light");
+let paragraph = doc.GetElement(0);
+let run = Api.CreateRun();
+run.AddText("This is just a sample text. ");
+run.AddText("The text properties are changed and the style is added to the paragraph. ");
+paragraph.AddElement(run);
+run = Api.CreateRun();
+run.SetStyle(myNewRunStyle);
+run.AddText("This is a text run with its own style.");
+textPr = run.GetTextPr();
+textPr.SetLanguage("en-CA");
+paragraph.AddElement(run);
+paragraph = Api.CreateParagraph();
+let language = textPr.GetLanguage();
+paragraph.AddText("Language: " + language);
+doc.Push(paragraph);
+```

@@ -1,0 +1,39 @@
+# SetDisplay
+
+Sets annotation display type.
+
+Inherited from [ApiBaseAnnotation.SetDisplay](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiBaseAnnotation/Methods/SetDisplay.md).
+
+## Syntax
+
+```javascript
+expression.SetDisplay(display);
+```
+
+`expression` - A variable that represents an [ApiFreeTextAnnotation](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiFreeTextAnnotation.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| display | Required | [DisplayType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Enumeration/DisplayType.md) |  | The display type for the annotation. |
+
+## Returns
+
+boolean
+
+## Example
+
+Control the visibility of an annotation in a PDF.
+
+```javascript editor-pdf
+// Toggle whether an annotation appears or stays hidden in a PDF.
+
+// Set the display mode to show or conceal an annotation in a PDF.
+
+let doc = Api.GetDocument();
+let squareAnnot = Api.CreateSquareAnnot([10, 10, 160, 32]);
+let page = doc.GetPage(0);
+page.AddObject(squareAnnot);
+squareAnnot.SetDisplay("hidden");
+```

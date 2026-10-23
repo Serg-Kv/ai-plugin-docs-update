@@ -1,0 +1,39 @@
+# GetQuoteText
+
+Returns the quote text of the current comment.
+
+## Syntax
+
+```javascript
+expression.GetQuoteText();
+```
+
+`expression` - A variable that represents an [ApiComment](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiComment.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+Number \| null \| undefined
+
+## Example
+
+Retrieve the quoted text associated with a comment in a document.
+
+```javascript editor-docx
+// How do I get the text passage that a comment refers to in a document?
+
+// Extract the exact excerpt a reviewer highlighted when leaving a comment.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+paragraph.AddText("This is just a sample text");
+Api.AddComment(paragraph, "comment", "John Smith");
+let comments = doc.GetAllComments();
+let quoteText = comments[0].GetQuoteText();
+paragraph = Api.CreateParagraph();
+paragraph.AddText("Comment quote text: " + quoteText);
+doc.Push(paragraph);
+```

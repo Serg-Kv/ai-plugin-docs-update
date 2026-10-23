@@ -1,0 +1,43 @@
+# SetLock
+
+Sets the lock state of the current form.
+
+Inherited from [ApiFormBase.SetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiFormBase/Methods/SetLock.md).
+
+## Syntax
+
+```javascript
+expression.SetLock(isLock);
+```
+
+`expression` - A variable that represents an [ApiSignatureForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiSignatureForm.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| isLock | Required | boolean |  | Specifies whether to lock the form (true) or unlock it (false). |
+
+## Returns
+
+boolean
+
+## Example
+
+Restrict or allow editing of a signature field in a document.
+
+```javascript editor-docx
+// How do I prevent users from modifying a signature field in a document?
+
+// Protect a completed signature field from being changed or deleted in a document.
+
+let doc = Api.GetDocument();
+let signatureForm = Api.CreateSignatureForm({"key": "Signature", "tip": "Please sign here", "required": true, "placeholder": "Signature"});
+let paragraph = doc.GetElement(0);
+paragraph.AddElement(signatureForm);
+signatureForm.SetLock(true);
+let lock = signatureForm.GetLock();
+paragraph = Api.CreateParagraph();
+paragraph.AddText("The form is locked: " + lock);
+doc.Push(paragraph);
+```

@@ -1,0 +1,59 @@
+# GetTriggerType
+
+Returns the trigger type for the animation effect.
+
+## Syntax
+
+```javascript
+expression.GetTriggerType();
+```
+
+`expression` - A variable that represents an [ApiAnimationEffect](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiAnimationEffect.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[AnimationTriggerType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/Enumeration/AnimationTriggerType.md)
+
+## Example
+
+Get the trigger type of an animation effect in a presentation.
+
+```javascript editor-pptx
+// How do I read the trigger type of an animation effect in a presentation?
+
+// Retrieve the setting that controls when an animation plays in a presentation.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+
+const shape = Api.CreateShape(
+	'rect',
+	150 * 36000, 100 * 36000,
+	Api.CreateSolidFill(Api.RGB(61, 74, 107)),
+	Api.CreateStroke(0, Api.CreateNoFill())
+);
+shape.SetPosition(100 * 36000, 80 * 36000);
+slide.AddObject(shape);
+
+const timeLine = slide.GetTimeLine();
+const mainSequence = timeLine.GetMainSequence();
+const effect = mainSequence.AddEffect(shape, 'entranceFade', 'afterprevious');
+
+const triggerType = effect.GetTriggerType();
+
+const infoShape = Api.CreateShape(
+	'rect',
+	150 * 36000, 40 * 36000,
+	Api.CreateSolidFill(Api.RGB(200, 200, 200)),
+	Api.CreateStroke(0, Api.CreateNoFill())
+);
+infoShape.SetPosition(20 * 36000, 10 * 36000);
+const content = infoShape.GetDocContent();
+const paragraph = content.GetElement(0);
+paragraph.AddText('Trigger type: ' + triggerType);
+slide.AddObject(infoShape);
+```

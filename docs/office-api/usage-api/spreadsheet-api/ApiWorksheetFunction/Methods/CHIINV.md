@@ -1,0 +1,37 @@
+# CHIINV
+
+Returns the inverse of the right-tailed probability of the chi-squared distribution.
+
+## Syntax
+
+```javascript
+expression.CHIINV(arg1, arg2);
+```
+
+`expression` - A variable that represents an [ApiWorksheetFunction](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiWorksheetFunction.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| arg1 | Required | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| number |  | A probability associated with the chi-squared distribution, a value between 0 and 1 inclusive. |
+| arg2 | Required | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| number |  | The number of degrees of freedom, a number between 1 and 10^10, excluding 10^10. |
+
+## Returns
+
+number
+
+## Example
+
+Convert a right-tail probability into the matching chi-squared critical value in a spreadsheet.
+
+```javascript editor-xlsx
+// Identify the threshold where the upper tail of the chi-squared distribution starts in a spreadsheet.
+
+// Establish the boundary point for statistical significance at a given probability level in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+let func = Api.WorksheetFunction;
+let ans = func.CHIINV(0.4, 10);
+worksheet.GetRange("B2").SetValue(ans);
+```

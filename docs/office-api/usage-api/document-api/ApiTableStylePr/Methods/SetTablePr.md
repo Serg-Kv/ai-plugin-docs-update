@@ -1,0 +1,50 @@
+# SetTablePr
+
+Sets the table properties to the current table style properties.
+
+## Syntax
+
+```javascript
+expression.SetTablePr(tablePr);
+```
+
+`expression` - A variable that represents an [ApiTableStylePr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTableStylePr.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| tablePr | Required | [ApiTablePr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTablePr.md) |  | The table properties that will be set. |
+
+## Returns
+
+[ApiTableStylePr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTableStylePr.md)
+
+## Example
+
+Apply overall table formatting to a conditional region of a table style in a document.
+
+```javascript editor-docx
+// How do I define the border settings for a specific part of a table style in a document?
+
+// Attach table-level layout properties to a targeted section of a styled table in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+paragraph.AddText("We create a 3x3 table and set the bottom 4 point black border to it:");
+
+let tableStyle = doc.CreateStyle("CustomTableStyle", "table");
+tableStyle.SetBasedOn(doc.GetStyle("Bordered"));
+
+let table = Api.CreateTable(3, 3);
+table.SetWidth("percent", 100);
+
+let tableStylePr = tableStyle.GetConditionalTableStyle("wholeTable");
+table.SetTableLook(true, true, true, true, true, true);
+let tablePr = tableStylePr.GetTablePr();
+tablePr.SetTableBorderBottom("single", 32, 0, Api.Color(51, 51, 51));
+tableStylePr.SetTablePr(tablePr);
+
+table.SetStyle(tableStyle);
+doc.Push(table);
+```

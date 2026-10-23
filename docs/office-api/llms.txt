@@ -1,0 +1,112 @@
+# ONLYOFFICE Docs: Office API
+
+> Use our JavaScript library to build plugins, macros, and scripts across all document types: documents, spreadsheets, presentations, and forms.
+
+Links below point to the Markdown version of each page, except those to a further llms.txt: the full index of the pages under that entry. For the other sections of this documentation, see the [index](https://api.onlyoffice.com/ai-plugin-docs-update/llms.txt).
+
+## Get started
+
+- [Overview](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/get-started/overview.md): Office API allows you to insert content into a document and format it to your liking quickly and easily. Any document is a composite object: a tree of larger nodes (paragraphs and tables) into which you can insert smaller document elements (text runs, images, charts, shapes).
+- [Playground](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/get-started/playground.md): The Playground serves as an interactive platform for users to explore and test the capabilities of the ONLYOFFICE Docs APIs without registration and installing anything. It provides users with various API functionalities, allowing them to experiment with different document types seamlessly.
+
+## API usage
+
+- [Document API](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/llms.txt): Although a document consists of various elements, most of them are nested in each other and three main elements can be outlined: paragraph, table and block content control. All the other elements are a part of these three larger ones.
+- [Spreadsheet API](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/llms.txt): A spreadsheet document has a more simple structure than that of a document, most of the spreadsheet elements are nested within the worksheet element with all the other elements placed on it.
+- [Presentation API](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/llms.txt): A presentation document has a more simple structure than that of a document, most of the presentation elements are nested within the slide element with all the other elements placed on it. The single or multiple slide elements are a part of the presentation element.
+- [Form API](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/llms.txt): A form document has exactly the same structure as a document. The only difference is a new forms entity placed with other paragraph elements – text runs, inline text content controls and hyperlinks. There are seven form types: text field, combo box, dropdown list, checkbox, radio button, picture form, and complex field.
+- [PDF API](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/llms.txt): A PDF document is organized as a sequence of pages. Each page can contain several types of content: paragraphs, tables, drawings (images, shapes, charts), annotations, and interactive form fields.
+
+## Samples
+
+- [Adding date and company footer](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/adding-date-company-footer.md): Create a footer with a company name and current date.
+- [Adding header and footer with logo](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/adding-header-footer-logo.md): Add a header with a company logo and organization name.
+- [Adding page numbering in footer](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/adding-page-numbering-footer.md): Add automatic page numbering in the document footer.
+- [Adding text watermark](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/adding-text-watermark.md): Add a diagonal text watermark to a document.
+- [Adding image watermark](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/adding-watermark.md): Add an image watermark with custom opacity and direction.
+- [Applying paragraph styles](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/applying-paragraph-styles.md): Copy and apply formatting styles between paragraphs.
+- [Auto-filling fields from JSON](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/auto-filling-fields-from-json.md): Auto-populate content control fields from JSON data.
+- [Checking unfilled content controls](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/checking-unfilled-content-controls.md): Validate and highlight unfilled required content controls.
+- [Clearing all fields](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/clearing-all-fields.md): Clear all content control field values in a document.
+- [Creating auto-width table](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-auto-width-table.md): Create a table with auto-width columns based on content.
+- [Creating borderless table document](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-borderless-table-document.md): Create a borderless table for structured data display.
+- [Creating a bulleted task list](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-bulleted-task-list.md): Create a bulleted list for task enumeration.
+- [Creating colored border paragraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-colored-border-paragraph.md): Create a paragraph with a colored bottom border.
+- [Creating a custom symbol list](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-custom-symbol-list.md): Create a bullet list with custom Unicode symbols.
+- [Creating document with comments](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-document-with-comments.md): Add review comments to paragraphs and text fragments.
+- [Creating event invitation](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-event-invitation.md): Create a custom-sized event invitation with borders.
+- [Creating fixed-width table](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-fixed-width-table.md): Create a table with fixed-width columns.
+- [Creating formal document](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-formal-document.md): Create a formal document with multi-column layout and charts.
+- [Creating formatted table](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-formatted-table.md): Create a table with bold headers and gray background.
+- [Creating landscape document](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-landscape-document.md): Create a landscape-oriented section with a wide table.
+- [Creating nested list](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-nested-list.md): Create a multi-level list with numbered and bulleted items.
+- [Creating nested table document](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-nested-table-document.md): Create a table with nested tables for hierarchical data.
+- [Creating note blocks](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-note-blocks.md): Create styled note paragraphs with a colored left border.
+- [Creating a numbered steps list](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-numbered-steps-list.md): Create a numbered list for step-by-step instructions.
+- [Creating product catalog document](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-product-catalog-document.md): Create a product catalog table with images and details.
+- [Creating quote paragraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-quote-paragraph.md): Create a styled quote block with indent and background.
+- [Creating report document](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-report-document.md): Generate a comments review report with status tracking.
+- [Creating sales report table](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-sales-report-table.md): Create a sales report table with merged cells and totals.
+- [Creating signature block](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-signature-block.md): Add a signature block with name, position, and signature line.
+- [Creating structured report](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-structured-report.md): Create a structured report with sections and page breaks.
+- [Creating table document](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-table-document.md): Create a table with styled headers and alternating row colors.
+- [Creating table from JSON data](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-table-from-json-data.md): Create and populate a table from a JSON data array.
+- [Creating table in header or footer](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-table-in-header-footer.md): Create a borderless table in the footer with company info.
+- [Creating table with nested headers](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-table-with-nested-headers.md): Create a table with merged header cells for grouped data.
+- [Creating title page document](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-title-page-document.md): Create a formatted title page with centered text.
+- [Creating two-column document](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/creating-two-column-text.md): Create a two-column text layout in a document.
+- [Extracting filled fields](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/extracting-filled-fields.md): Extract all filled content control values as key-value pairs.
+- [Extracting text from document](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/extracting-text-from-document.md): Extract all text from a document as a string or array.
+- [Finding field by tag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/finding-field-by-tag.md): Find content controls by tag and retrieve their values.
+- [Formatting variables in text](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/formatting-variables-in-text.md): Mix regular text with italic variables and monospace values.
+- [Highlighting background color](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/highlighting-background-color.md): Apply background color highlighting to text fragments.
+- [Highlighting key terms](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/highlighting-key-terms.md): Search and highlight key terms with bold and color formatting.
+- [Inserting hyperlink into sentence](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/inserting-hyperlink-into-sentence.md): Insert a clickable hyperlink within paragraph text.
+- [Inserting new content controls](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/inserting-new-content-controls.md): Insert content controls at various document positions.
+- [Inserting special symbols](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/inserting-special-symbols.md): Insert Unicode symbols with custom formatting.
+- [Inserting text into a document](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/document-editor/inserting-text-into-a-document.md): Add formatted text with bold, italic, and color styles.
+- [Adding sequential numbers](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/spreadsheet-editor/adding-sequential-numbers.md): Add auto-incrementing row numbers to a spreadsheet.
+- [Checking duplicates](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/spreadsheet-editor/checking-duplicates.md): Find and highlight duplicate values in a spreadsheet column.
+- [Commenting spreadsheet errors](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/spreadsheet-editor/commenting-spreadsheet-errors.md): Detect formula errors in cells and add comments to them.
+- [Creating cell types spreadsheet](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/spreadsheet-editor/creating-cell-types-spreadsheet.md): Create a spreadsheet with different cell data types.
+- [Creating formatted table](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/spreadsheet-editor/creating-formatted-table.md): Create a formatted table with styled headers and borders.
+- [Creating pivot table by categories](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/spreadsheet-editor/creating-pivot-table-by-categories.md): Create a pivot table grouped by category with sum totals.
+- [Creating spreadsheet chart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/spreadsheet-editor/creating-spreadsheet-chart.md): Create a chart from spreadsheet data.
+- [Creating spreadsheet with filters](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/spreadsheet-editor/creating-spreadsheet-with-filters.md): Apply autofilters to a spreadsheet header row.
+- [Exporting table to JSON](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/spreadsheet-editor/exporting-table-to-json.md): Export spreadsheet table data to a JSON array.
+- [Filling spreadsheet](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/spreadsheet-editor/filling-spreadsheet.md): Populate a spreadsheet with data from arrays.
+- [Formatting alternating row colors](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/spreadsheet-editor/formatting-alternating-row-colors.md): Format a table with alternating row colors.
+- [Inserting formulas](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/spreadsheet-editor/inserting-formulas.md): Add SUM formulas to calculate totals with formatting.
+- [Removing empty rows](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/spreadsheet-editor/removing-empty-rows.md): Identify and remove empty rows from a data range.
+- [Sorting data](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/spreadsheet-editor/sorting-data.md): Sort spreadsheet data by multiple columns.
+- [Applying color scheme](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/presentation-editor/applying-color-scheme.md): Create and apply a custom color scheme to a presentation.
+- [Creating background image slide](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/presentation-editor/creating-background-image-slide.md): Create a slide with a background image and text overlay.
+- [Creating bulleted list slide](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/presentation-editor/creating-bulleted-list-slide.md): Create a slide with a title and bulleted list.
+- [Creating chart presentation](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/presentation-editor/creating-chart-presentation.md): Create a slide with a gradient background and line chart.
+- [Creating chart slide](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/presentation-editor/creating-chart-slide.md): Create a slide with a title and column chart.
+- [Creating numbered list slide](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/presentation-editor/creating-numbered-list-slide.md): Create a slide with a title and numbered list.
+- [Creating presentation](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/presentation-editor/creating-presentation.md): Create a multi-slide presentation with styled text.
+- [Creating table slide](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/presentation-editor/creating-table-slide.md): Create a slide with a formatted data table.
+- [Creating title slide](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/presentation-editor/creating-title-slide.md): Create a title slide with a main title and subtitle.
+- [Adding comment based on form](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/adding-comment-based-on-form.md): Add comments to a document based on form field selections.
+- [Clearing all form values](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/clearing-all-form-values.md): Clear all form field values to reset a PDF form.
+- [Creating advanced form](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/creating-advanced-form.md): Create a complex form with tables, text fields, and checkboxes.
+- [Creating basic form](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/creating-basic-form.md): Create a basic PDF form with text and checkbox fields.
+- [Creating event form](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/creating-event-form.md): Create an event registration form with various field types.
+- [Creating exam form](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/creating-exam-form.md): Create an exam form with questions and answer fields.
+- [Creating feedback form](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/creating-feedback-form.md): Create a feedback form with rating and comment fields.
+- [Creating form from JSON](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/creating-form-from-json.md): Generate a PDF form from a JSON data structure.
+- [Creating multiple NDA documents](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/creating-multiple-nda-documents.md): Generate multiple NDA documents from a template with data.
+- [Creating onboarding checklist](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/creating-onboarding-checklist.md): Create an employee onboarding checklist form.
+- [Creating purchase order](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/creating-purchase-order.md): Create a purchase order form with vendor and item details.
+- [Filling form](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/filling-form.md): Fill PDF form fields with data from an object.
+- [Getting all form values](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/getting-all-form-values.md): Extract all form field values as structured data.
+- [Getting form values by ID](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/getting-form-values-by-id.md): Get specific form field values by key and validate them.
+- [Removing individual fields](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/removing-individual-fields.md): Remove form fields by key based on user role.
+- [Setting default values](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/setting-default-values.md): Set default values for PDF form fields.
+- [Updating placeholders](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/updating-placeholders.md): Update form field placeholders based on user language.
+- [Validating exam form](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/pdf-editor/validating-exam-form.md): Validate exam form answers and highlight incorrect fields.
+
+## More information
+
+- [Changelog](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/more-information/changelog.md): The list of changes for Office JavaScript API.

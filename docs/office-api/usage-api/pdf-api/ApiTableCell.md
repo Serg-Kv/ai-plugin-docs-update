@@ -1,0 +1,44 @@
+# ApiTableCell
+
+Class representing a table cell.
+
+## Methods
+
+The following table lists the available methods.
+
+| Method | Returns | Description |
+| ------ | ------- | ----------- |
+| [AddColumns](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/AddColumns.md) | [ApiTable](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTable.md) \| null | Adds the new columns to the current table. |
+| [AddRows](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/AddRows.md) | [ApiTable](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTable.md) \| null | Adds the new rows to the current table. |
+| [AddText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/AddText.md) | [ApiRun](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiRun.md) | Appends text to the end of the cell content. |
+| [Clear](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/Clear.md) | boolean | Clears the content from the current cell. |
+| [GetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/GetBackgroundColor.md) | [ApiColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiColor.md) \| null | Returns the background color of the current table cell. |
+| [GetClassType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/GetClassType.md) | "tableCell" | Returns the type of the ApiTableCell class. |
+| [GetContent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/GetContent.md) | [ApiDocumentContent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiDocumentContent.md) | Returns the current cell content. |
+| [GetIndex](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/GetIndex.md) | Number | Returns the current cell index. |
+| [GetInternalId](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/GetInternalId.md) | string | Returns an internal id of the current table cell. |
+| [GetNext](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/GetNext.md) | [ApiTableCell](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell.md) \| null | Returns the next cell if exists. |
+| [GetParentRow](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/GetParentRow.md) | [ApiTableRow](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableRow.md) \| null | Returns a parent row of the current cell. |
+| [GetParentTable](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/GetParentTable.md) | [ApiTable](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTable.md) \| null | Returns a parent table of the current cell. |
+| [GetPrevious](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/GetPrevious.md) | [ApiTableCell](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell.md) \| null | Returns the previous cell if exists. |
+| [GetRowIndex](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/GetRowIndex.md) | number \| null | Returns an index of the parent row. |
+| [GetText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/GetText.md) | string | Returns the inner text of the current table cell. |
+| [RemoveColumn](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/RemoveColumn.md) | boolean | Removes a column containing the current cell. |
+| [RemoveRow](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/RemoveRow.md) | boolean | Removes a row containing the current cell. |
+| [Select](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/Select.md) | boolean | Selects the current table cell. |
+| [SetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/SetBackgroundColor.md) | boolean | Sets the background color of the current cell. |
+| [SetCellBorderBottom](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/SetCellBorderBottom.md) | boolean | Sets the border which shall be displayed at the bottom of the current table cell. |
+| [SetCellBorderLeft](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/SetCellBorderLeft.md) | boolean | Sets the border which shall be displayed at the left of the current table cell. |
+| [SetCellBorderRight](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/SetCellBorderRight.md) | boolean | Sets the border which shall be displayed at the right of the current table cell. |
+| [SetCellBorderTop](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/SetCellBorderTop.md) | boolean | Sets the border which shall be displayed at the top of the current table cell. |
+| [SetCellMarginBottom](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/SetCellMarginBottom.md) | boolean | Specifies an amount of space which shall be left between the bottom extent of the cell contents and the border of a specific individual table cell within a table. |
+| [SetCellMarginLeft](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/SetCellMarginLeft.md) | boolean | Specifies an amount of space which shall be left between the left extent of the current cell contents and the left edge border of a specific individual table cell within a table. |
+| [SetCellMarginRight](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/SetCellMarginRight.md) | boolean | Specifies an amount of space which shall be left between the right extent of the current cell contents and the right edge border of a specific individual table cell within a table. |
+| [SetCellMarginTop](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/SetCellMarginTop.md) | boolean | Specifies an amount of space which shall be left between the top extent of the current cell contents and the top edge border of a specific individual table cell within a table. |
+| [SetColumnBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/SetColumnBackgroundColor.md) | boolean | Sets the background color to all cells in the column containing the current cell. |
+| [SetShd](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/SetShd.md) | boolean | Specifies the shading which shall be applied to the extents of the current table cell. |
+| [SetText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/SetText.md) | [ApiRun](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiRun.md) | Replaces all content of the current table cell with the specified text, preserving the formatting of the first paragraph. |
+| [SetTextDirection](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/SetTextDirection.md) | boolean | Specifies the direction of the text flow for the current table cell. |
+| [SetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/SetTextPr.md) | boolean | Sets the text properties to the content of the current cell. |
+| [SetVerticalAlign](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/SetVerticalAlign.md) | boolean | Specifies the vertical alignment for text within the current table cell. |
+| [SetWidth](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTableCell/Methods/SetWidth.md) | boolean | Specifies the preferred width for this cell. |

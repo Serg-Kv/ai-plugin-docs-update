@@ -1,0 +1,60 @@
+# GetAllCharts
+
+Returns a collection of chart objects from the document content.
+
+Inherited from [ApiDocumentContent.GetAllCharts](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiDocumentContent/Methods/GetAllCharts.md).
+
+## Syntax
+
+```javascript
+expression.GetAllCharts();
+```
+
+`expression` - A variable that represents an [ApiDocument](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiDocument.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiChart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiChart.md)[]
+
+## Example
+
+Retrieve all charts from a document and add gridlines to one of them in a document.
+
+```javascript editor-docx
+// How do I access every chart in a document so I can modify a specific one in a document?
+
+// Style a particular chart after gathering the full list of chart objects already placed in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+let chart1 = Api.CreateChart("3DColumnClustered", [
+	[200, 240, 280],
+	[250, 260, 280]
+], ["Projected Revenue", "Estimated Costs"], [2014, 2015, 2016], 4051300, 2347595, 24);
+paragraph.AddDrawing(chart1);
+let fill = Api.CreateSolidFill(Api.RGB(51, 51, 51));
+chart1.SetSeriesFill(fill, 0, false);
+fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+chart1.SetSeriesFill(fill, 1, false);
+let chart2 = Api.CreateChart("3DColumnClustered", [
+	[200, 240, 280],
+	[250, 260, 280]
+], ["Projected Revenue", "Estimated Costs"], [2014, 2015, 2016], 4051300, 2347595, 24);
+fill = Api.CreateSolidFill(Api.RGB(51, 51, 51));
+chart2.SetSeriesFill(fill, 0, false);
+fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+chart2.SetSeriesFill(fill, 1, false);
+chart2.SetVerAxisTitle("USD In Hundred Thousands", 20);
+chart2.SetHorAxisTitle("Year", 22);
+chart2.SetLegendPos("bottom");
+chart2.SetShowDataLabels(false, false, true, false);
+chart2.SetTitle("Financial Overview", 26);
+paragraph.AddDrawing(chart2);
+let charts = doc.GetAllCharts();
+let stroke = Api.CreateStroke(1 * 150, Api.CreateSolidFill(Api.RGB(255, 111, 61)));
+charts[1].SetMinorHorizontalGridlines(stroke);
+```

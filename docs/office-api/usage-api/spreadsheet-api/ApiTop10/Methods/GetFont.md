@@ -1,0 +1,51 @@
+# GetFont
+
+Returns the font formatting for the top 10 conditional formatting rule.
+
+## Syntax
+
+```javascript
+expression.GetFont();
+```
+
+`expression` - A variable that represents an [ApiTop10](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiTop10.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiFont](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiFont.md)
+
+## Example
+
+Read the text style applied by a top 10 conditional formatting rule in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I access the font settings of a top 10 conditional formatting rule in a spreadsheet?
+
+// Inspect bold, color, and other text properties that mark top values in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+
+worksheet.GetRange("A1").SetValue("Sales Data");
+worksheet.GetRange("A2").SetValue(100);
+worksheet.GetRange("A3").SetValue(250);
+worksheet.GetRange("A4").SetValue(150);
+worksheet.GetRange("A5").SetValue(300);
+worksheet.GetRange("A6").SetValue(75);
+
+let dataRange = worksheet.GetRange("A2:A6");
+let formatConditions = dataRange.GetFormatConditions();
+
+let condition1 = formatConditions.AddTop10();
+condition1.SetFillColor(Api.RGB(255, 255, 0));
+
+let font = condition1.GetFont();
+font.SetBold(true);
+font.SetColor(Api.RGB(255, 0, 0));
+
+worksheet.GetRange("C1").SetValue("Font formatting applied");
+worksheet.GetRange("C2").SetValue("Top 2 values have bold red text");
+```

@@ -1,0 +1,39 @@
+# SetFillColor
+
+Sets the background color to the current cell range with the previously created color object.
+
+Sets 'No Fill' when the previously created color object is 'No Fill' or null.
+
+## Syntax
+
+```javascript
+expression.SetFillColor(color);
+```
+
+`expression` - A variable that represents an [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| color | Required | [ApiColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiColor.md) \| 'No Fill' \| null |  | The color object which specifies the color to be set to the background in the cell / cell range. Pass 'No Fill' or null to clear the background color. |
+
+## Returns
+
+boolean
+
+## Example
+
+Fill the background of a cell range with a color in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I set a background color on a group of cells in a spreadsheet?
+
+// Paint the background of cells with a chosen color to visually distinguish them in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+worksheet.SetColumnWidth(0, 50);
+worksheet.GetRange("A2").SetFillColor(Api.RGB(255, 213, 191));
+worksheet.GetRange("A2").SetValue("This is the cell with a color set to its background");
+worksheet.GetRange("A4").SetValue("This is the cell with a default background color");
+```

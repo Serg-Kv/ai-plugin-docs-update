@@ -1,0 +1,36 @@
+# GetPage
+
+Gets page by index from document.
+
+## Syntax
+
+```javascript
+expression.GetPage(index);
+```
+
+`expression` - A variable that represents an [ApiDocument](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiDocument.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| index | Required | number |  | page index. |
+
+## Returns
+
+[ApiPage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiPage.md)
+
+## Example
+
+Access a single page from a PDF.
+
+```javascript editor-pdf
+// Useful for working with a specific page in a PDF.
+
+// Retrieve a page and rotate it in a PDF.
+
+let doc = Api.GetDocument();
+doc.AddPage(0);
+let page = doc.GetPage(0);
+page.SetRotation(90);
+```

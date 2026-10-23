@@ -1,0 +1,39 @@
+# WEIBULL
+
+Returns the Weibull distribution.
+
+## Syntax
+
+```javascript
+expression.WEIBULL(arg1, arg2, arg3, arg4);
+```
+
+`expression` - A variable that represents an [ApiWorksheetFunction](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiWorksheetFunction.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| arg1 | Required | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| number |  | The value at which to evaluate the function, a nonnegative number. |
+| arg2 | Required | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| number |  | The alpha parameter of the distribution, a positive number. |
+| arg3 | Required | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| number |  | The beta parameter of the distribution, a positive number. |
+| arg4 | Required | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| boolean |  | A logical value (**true** or **false**) that determines the function form. If it is **true**, the function returns the cumulative distribution function. If it is **false**, the function returns the probability mass function. |
+
+## Returns
+
+number
+
+## Example
+
+Calculate the Weibull distribution using the WEIBULL compatibility function in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I compute the Weibull distribution for probability calculations in a spreadsheet?
+
+// Evaluate the Weibull probability distribution with specific parameters in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+let func = Api.WorksheetFunction;
+let result = func.WEIBULL(12, 2, 5, true);
+worksheet.GetRange("B2").SetValue(result);
+```

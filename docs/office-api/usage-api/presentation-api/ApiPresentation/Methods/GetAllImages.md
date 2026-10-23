@@ -1,0 +1,52 @@
+# GetAllImages
+
+Returns an array with all the image objects from the presentation slides, excluding slide layouts and slide masters.
+
+## Syntax
+
+```javascript
+expression.GetAllImages();
+```
+
+`expression` - A variable that represents an [ApiPresentation](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiPresentation.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiImage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiImage.md)[]
+
+## Example
+
+Find all image files in a presentation.
+
+```javascript editor-pptx
+// Access every picture inserted on the presentation slides.
+
+// Retrieve images from slides and count them in a presentation.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const copiesCount = 3;
+for (let i = 0; i < copiesCount; i++) {
+	const imageSource = 'https://static.onlyoffice.com/assets/docs/samples/img/onlyoffice_logo.png';
+	const drawing = Api.CreateImage(imageSource, 174 * 36000, 38 * 36000);
+	drawing.SetPosition(0, i * 38 * 36000);
+	slide.AddObject(drawing);
+}
+
+const fill = Api.CreateSolidFill(Api.RGB(255, 153, 204));
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape('heart', 80 * 36000, 80 * 36000, fill, stroke);
+shape.SetPosition(184 * 36000, 0 * 36000);
+slide.AddObject(shape);
+
+const docContent = shape.GetDocContent();
+const paragraph = docContent.GetElement(0);
+const imagesCount = presentation.GetAllImages().length;
+paragraph.AddText('Images in presentation excluding slide layouts and master slides: ' + imagesCount);
+```

@@ -1,0 +1,178 @@
+# ONLYOFFICE Apps: Embed SDK
+
+> Embed ONLYOFFICE Apps in your web app: the full workspace, a room, a document editor or viewer, or a file picker.
+
+Links below point to the Markdown version of each page. For the other sections of this documentation, see the [index](https://api.onlyoffice.com/ai-plugin-docs-update/llms.txt).
+
+## Get Started
+
+- [Introduction](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/get-started.md): The ONLYOFFICE Apps Embed SDK, based on JavaScript, lets you embed ONLYOFFICE Apps directly inside your web application. You can integrate a full document workspace, a standalone editor, a file picker, or a background authentication frame — with just a few lines of code.
+- [Quickstart](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/get-started/quickstart.md): Before you begin, make sure you meet the prerequisites.
+- [Playground](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/get-started/playground.md): The Playground serves as an interactive platform for users to explore and test the capabilities of the ONLYOFFICE Apps Embed SDK without registration and installing anything. It provides users with various embedding modes, allowing them to experiment with different ONLYOFFICE Apps configurations seamlessly.
+- [Authentication and security](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/get-started/authentication-security.md): How authentication works in the ONLYOFFICE Apps Embed SDK and how to configure your integration securely.
+
+## Embedding modes
+
+- [Manager mode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/embedding-modes/manager-mode.md): Manager mode embeds the full ONLYOFFICE Apps interface inside your application, including rooms, folders, files, navigation, and settings. It is the most complete embedding mode and gives users an entire ONLYOFFICE Apps window without having to leave the application.
+- [Viewer mode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/embedding-modes/viewer-mode.md): Viewer mode embeds a read-only document inside your application. It opens a file by ID and renders it in a non-editable state, allowing users to read and review documents without exposing editing controls. If you want users to have editing controls, use the Editor mode instead.
+- [Editor mode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/embedding-modes/editor-mode.md): Editor mode embeds a fully functional document editor inside your application. It opens a file by ID and gives the users all document editor capabilities like real-time co-authoring, comments, and track changes, depending on the user's ONLYOFFICE Apps permissions.
+- [Room selector mode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/embedding-modes/room-selector-mode.md): Room selector mode integrates a room picker interface inside your application. It presents users with a list of ONLYOFFICE Apps rooms and returns the selected room's data via a callback function. If you are looking to embed a fully functional ONLYOFFICE Apps interface, check out the Manager mode and Frame mode.
+- [File selector mode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/embedding-modes/file-selector-mode.md): File selector mode integrates a file picker interface inside your application. It allows users to view, browse and select from a list of ONLYOFFICE Apps files. The selected file's data is returned via a callback function.
+- [System mode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/embedding-modes/system-mode.md): System mode initializes a lightweight, hidden SDK frame that displays a blank page with a loader. It renders no visible ONLYOFFICE Apps UI. Instead, it provides access to a focused set of system-level methods for managing user sessions programmatically, such as authentication, hash generation, and user info retrieval — without embedding a visible interface.
+- [Uploader mode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/embedding-modes/uploader-mode.md): Uploader mode embeds a file upload interface inside your application. It targets a specific ONLYOFFICE Apps folder by ID and lets users upload files directly into it, with optional controls over accepted file types and multi-file selection.
+- [Forms mode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/embedding-modes/forms-mode.md): Forms mode embeds the Forms UI for a specific Form filling room. Users can browse, fill out, and track forms without leaving your application, and the host page can extend the file/folder context menu with its own custom actions.
+- [Chat mode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/embedding-modes/chat-mode.md): Chat mode embeds a full-page AI chat interface. It can be bound to a specific ONLYOFFICE Apps AI agent or opened as the current user's own general AI chat, giving users a conversational interface without leaving your application.
+- [Public room mode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/embedding-modes/public-room-mode.md): Public room mode embeds a specific ONLYOFFICE Apps room for anonymous viewers — no ONLYOFFICE Apps account or sign-in required. Access is scoped to that one room through a requestToken, and depending on the external link's access level (set on the portal — see Set the room external or invitation link), users can view, edit, comment on, and review documents inside it.
+- [Personal mode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/embedding-modes/personal-mode.md): Personal mode embeds the current user's personal space — My Documents, Favorites, Recent, Shared with me, and Trash — without exposing the rest of the portal's rooms.
+- [Frame mode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/embedding-modes/frame-mode.md): The Frame mode is a general-purpose initialization method. Using initFrame() leaves the mode configurable, allowing you to load any other mode at runtime using the mode parameter. By default, initFrame() runs in the Manager mode.
+
+## Customization
+
+- [Appearance and language](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/customization/appearance-and-language.md): This page walks through the settings that affect how the embedded frame looks and what language it uses matching your app's dark mode and language, and switching either at runtime.
+- [Hiding UI elements and frame layout](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/customization/ui-elements.md): Most embedding modes expose parameters to hide chrome you don't need — menus, headers, selector buttons — so the embedded frame blends into your application instead of looking like a separate product.
+
+## Events and callbacks
+
+- [Events and callbacks](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/events-and-callbacks.md): The SDK reports what's happening inside the embedded frame through callbacks — there is no separate addEventListener()/removeEventListener() API. All events are attached through the events key of the frame config, either at initialization or later via setConfig().
+
+## SDK usage
+
+- [Classes](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/classes.md): The classes an integration works with. SDK creates frames and keeps them in a registry, SDKInstance drives one embedded iframe and exposes the methods that call into it, and SDKError is what a failed call rejects with.
+- [SDK](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/classes/SDK.md): Manages multiple SDKInstance objects and provides convenience wrappers
+- [SDKError](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/classes/SDKError.md): The SDK's structured error class. Thrown or passed to TFrameEvents.onAppError
+- [SDKInstance](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/classes/SDKInstance.md): Manages a single ONLYOFFICE Apps iframe, handles postMessage communication,
+- [Type Aliases](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases.md): Configuration, event, filter and data shapes exchanged with the embedded frame. Most integrations only need TFrameConfig and TFrameEvents; the remaining types describe what the instance methods accept and return.
+- [TAppReadyPayload](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TAppReadyPayload.md): Payload of TFrameEvents.onAppReady.
+- [TAuthError](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TAuthError.md): Payload of TFrameEvents.onAuthError.
+- [TAuthErrorCode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TAuthErrorCode.md): Failure categories reported through TFrameEvents.onAuthError in OAuth mode.
+- [TBannerDisplaying](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TBannerDisplaying.md): String literal union of all HeaderBannerDisplaying values.
+- [TCreatedBy](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TCreatedBy.md): User reference in file/folder/room metadata.
+- [TCreateRoomOptions](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TCreateRoomOptions.md): Optional settings for SDKInstance.createRoom.
+- [TCustomActionEvent](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TCustomActionEvent.md): Payload of TFrameEvents.onCustomAction.
+- [TCustomActionsConfig](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TCustomActionsConfig.md): Custom actions of a frame, set with TFrameConfig.customActions or SDKInstance.setCustomActions.
+- [TCustomActionSection](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TCustomActionSection.md): A section a custom action can be limited to: a TManagerSection, a TPersonalSection
+- [TCustomContextMenuAction](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TCustomContextMenuAction.md): A custom context menu item. Every condition that is set must hold for the item to be shown;
+- [TCustomContextMenuActions](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TCustomContextMenuActions.md): Custom context menu actions grouped by the entity type they apply to.
+- [TCustomCreateAction](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TCustomCreateAction.md): A custom item of the create ("+") menu. Clicking it fires TFrameEvents.onCustomAction
+- [TEditorAction](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TEditorAction.md): Editor action the manager requests when it opens a file: "view" read-only, "fill" form filling, "edit" editing.
+- [TEditorAnonymous](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TEditorAnonymous.md): Anonymous user settings for the editor, passed via TEditorCustomization.anonymous.
+- [TEditorCustomization](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TEditorCustomization.md): Editor customization options passed via TFrameConfig.editorCustomization.
+- [TEditorOpenPayload](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TEditorOpenPayload.md): Payload of TFrameEvents.onEditorOpen: the file the frame is about to open plus the
+- [TEditorType](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TEditorType.md): String literal union of all EditorType values.
+- [TEntityBase](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TEntityBase.md): Common fields shared by file, folder, and room metadata.
+- [TFileInfo](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TFileInfo.md): File information returned by SDK methods.
+- [TFilesResponse](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TFilesResponse.md): Response wrapper for file/folder listing methods.
+- [TFilterSearchPayload](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TFilterSearchPayload.md): Payload of TFrameEvents.onFilterSearch.
+- [TFilterSortBy](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TFilterSortBy.md): String literal union of all FilterSortBy values.
+- [TFilterSortOrder](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TFilterSortOrder.md): String literal union of all FilterSortOrder values.
+- [TFolderInfo](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TFolderInfo.md): Folder information returned by SDK methods.
+- [TFormsSection](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TFormsSection.md): Navigation sections available in SDKMode.Forms mode.
+- [TFrameConfig](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TFrameConfig.md): The main configuration object for initializing an ONLYOFFICE Apps frame.
+- [TFrameEvents](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TFrameEvents.md): Event handler map for the ONLYOFFICE Apps iframe. Passed via TFrameConfig.events.
+- [TFrameFilter](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TFrameFilter.md): Filter and pagination parameters for the file list in SDKMode.Manager mode.
+- [TFrameMode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TFrameMode.md): String literal union of all SDKMode values.
+- [TGetExternalDataRequest](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TGetExternalDataRequest.md): Payload the ONLYOFFICE Apps iframe sends when it asks the host to read a value from external storage.
+- [THashSettings](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/THashSettings.md): Password hash settings returned by SDKInstance.getHashSettings.
+- [TInitConfig](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TInitConfig.md): Configuration accepted by the mode-specific SDK.init* wrappers (SDK.initManager,
+- [TListResponse\<TFolder\>](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TListResponse.md): Response wrapper for paginated listing methods.
+- [TLoginResult](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TLoginResult.md): Result of SDKInstance.login. The portal answers by resolving, never by rejecting.
+- [TLogo](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TLogo.md): Room logo information.
+- [TManagerSection](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TManagerSection.md): Sections of SDKMode.Manager a custom action can be limited to, named after the root folder
+- [TManagerViewMode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TManagerViewMode.md): String literal union of all ManagerViewMode values.
+- [TNavigatePayload](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TNavigatePayload.md): Payload of TFrameEvents.onNavigate.
+- [TPathParts](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TPathParts.md): Breadcrumb path segment in file/room listing responses.
+- [TPersonalSection](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TPersonalSection.md): Navigation sections available in SDKMode.Personal mode.
+- [TRejectedFile](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TRejectedFile.md): A file the SDKMode.Uploader dialog refused before uploading. Nested in TUploaderUploadError.rejectedFiles.
+- [TRequestTokenInfo](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TRequestTokenInfo.md): One external link of a selected room or file, attached to selector payloads.
+- [TRoomInfo](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TRoomInfo.md): Room information returned by SDK methods.
+- [TRoomsResponse](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TRoomsResponse.md): Response wrapper for room listing methods.
+- [TSDKErrorDetails](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TSDKErrorDetails.md): Extra details attached to an SDKError.
+- [TSelectedFile](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TSelectedFile.md): The SDKMode.FileSelector payload of TFrameEvents.onSelectCallback: a single object, not an array.
+- [TSelectedRoom](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TSelectedRoom.md): One selected room in the SDKMode.RoomSelector payload. TFrameEvents.onSelectCallback
+- [TSelectorType](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TSelectorType.md): String literal union of all SelectorFilterType values.
+- [TSetExternalDataPayload](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TSetExternalDataPayload.md): Payload the ONLYOFFICE Apps iframe sends when it asks the host to persist a value in external storage.
+- [TTheme](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TTheme.md): String literal union of all Theme values.
+- [TUploadedFile](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TUploadedFile.md): A file stored by the SDKMode.Uploader dialog: the upload session response of the portal.
+- [TUploadError](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TUploadError.md): Payload of TFrameEvents.onUploadError in SDKMode.Forms and SDKMode.Personal:
+- [TUploaderUploadError](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TUploaderUploadError.md): Payload of TFrameEvents.onUploadError in SDKMode.Uploader: the batch failed or some files were refused.
+- [TUploaderUploadResult](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TUploaderUploadResult.md): One element of the TFrameEvents.onUploadSuccess payload in SDKMode.Uploader:
+- [TUploadProgress](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TUploadProgress.md): Payload of TFrameEvents.onUploadProgress in SDKMode.Uploader: one event per uploaded chunk of each file.
+- [TUploadRejection](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TUploadRejection.md): One reason a file was rejected by the SDKMode.Uploader dialog. Nested in TRejectedFile.errors.
+- [TUploadResult](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TUploadResult.md): Payload of TFrameEvents.onUploadSuccess in SDKMode.Forms and SDKMode.Personal:
+- [TUserGroup](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TUserGroup.md): A group the user belongs to, as listed in TUserInfo.groups.
+- [TUserInfo](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TUserInfo.md): User information returned by SDKInstance.getUserInfo.
+- [Enumerations](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/enumerations.md): Typed constants for frame modes, themes, editor layouts, sort options and error codes. Use them in place of the raw string values they stand for.
+- [EditorType](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/enumerations/EditorType.md): The editor/viewer platform layout. Used in two config fields:
+- [FilterSortBy](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/enumerations/FilterSortBy.md): The sort criterion for file/folder lists. Passed via TFrameFilter.sortBy.
+- [FilterSortOrder](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/enumerations/FilterSortOrder.md): The sort direction for file/folder lists. Passed via TFrameFilter.sortOrder.
+- [HeaderBannerDisplaying](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/enumerations/HeaderBannerDisplaying.md): The header banner visibility. Passed via TFrameConfig.showHeaderBanner.
+- [ManagerViewMode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/enumerations/ManagerViewMode.md): The item layout in SDKMode.Manager mode.
+- [RoomType](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/enumerations/RoomType.md): Room types accepted by SDKInstance.createRoom and returned as roomType in TRoomInfo
+- [SDKErrorCode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/enumerations/SDKErrorCode.md): Error codes for SDKError. Each code identifies a specific failure category
+- [SDKMode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/enumerations/SDKMode.md): The SDK initialization mode. Passed via TFrameConfig.mode.
+- [SelectorFilterType](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/enumerations/SelectorFilterType.md): The content filter for selector modes (SDKMode.RoomSelector, SDKMode.FileSelector).
+- [Theme](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/enumerations/Theme.md): The UI color theme. Passed via TFrameConfig.theme.
+- [Variables](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/variables.md): Exported constants: the default frame configuration, the iframe name prefix, the CSP validation endpoint and the error messages the SDK shows.
+- [connectErrorText](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/variables/connectErrorText.md): Error message passed to TFrameEvents.onAppError when a method is called
+- [CSPApiUrl](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/variables/CSPApiUrl.md): The ONLYOFFICE Apps CSP validation endpoint. Used internally to check
+- [cspErrorText](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/variables/cspErrorText.md): Error message shown when the host domain is not in the ONLYOFFICE Apps CSP allowlist.
+- [defaultConfig](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/variables/defaultConfig.md): The default configuration applied to every frame before user overrides.
+- [FRAME\_NAME](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/variables/FRAME_NAME.md): The prefix for iframe name attribute. The full name is _#{frameId}.
+- [TOKEN\_REFRESH\_LEAD\_MS](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/variables/TOKEN_REFRESH_LEAD_MS.md)
+
+## Samples
+
+- [Basic samples](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples.md): Overview of basic Embed SDK samples, grouped by SDK area.
+- [Add tags to room](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/add-tags-to-room.md): Add custom tags to an ONLYOFFICE Apps room using the JS SDK.
+- [Create file](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/create-file.md): Create a new file inside an ONLYOFFICE Apps room using the JS SDK.
+- [Create folder](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/create-folder.md): Create a folder in an ONLYOFFICE Apps room using the JS SDK.
+- [Create password hash](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/create-hash.md): Generate a password hash using the ONLYOFFICE Apps JS SDK.
+- [Create room](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/create-room.md): Create a new shared room using the ONLYOFFICE Apps JS SDK.
+- [Create tag](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/create-tag.md): Create a custom tag in ONLYOFFICE Apps using the JS SDK.
+- [Destroy frame](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/destroy-frame.md): Remove the embedded ONLYOFFICE Apps iframe using the JS SDK.
+- [Get config](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/get-config.md): Retrieve the embedded frame configuration using the JS SDK.
+- [Get files and folders list](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/get-files-and-folders-list.md): Retrieve files and folders from a room using the JS SDK.
+- [Get files](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/get-files.md): Retrieve a list of files from a room using the JS SDK.
+- [Get folder info](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/get-folder-info.md): Retrieve current folder information using the JS SDK.
+- [Get folders](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/get-folders.md): Retrieve a list of folders from a room using the JS SDK.
+- [Get hash settings](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/get-hash-settings.md): Retrieve hash settings from the ONLYOFFICE Apps frame using the JS SDK.
+- [Get rooms](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/get-rooms.md): Retrieve available rooms using the ONLYOFFICE Apps JS SDK.
+- [Get selection](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/get-selection.md): Retrieve the current selection in ONLYOFFICE Apps using the JS SDK.
+- [Get user info](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/get-user-info.md): Retrieve user information using the ONLYOFFICE Apps JS SDK.
+- [Initialize editor](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/init-editor.md): Open a document in the ONLYOFFICE Apps editor using the JS SDK.
+- [Initialize file selector](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/init-file-selector.md): Initialize the ONLYOFFICE Apps file selector using the JS SDK.
+- [Initialize frame](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/init-frame.md): Initialize an ONLYOFFICE Apps frame in the mode set by the config using the JS SDK.
+- [Initialize manager](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/init-manager.md): Initialize the ONLYOFFICE Apps manager using the JS SDK.
+- [Initialize room selector](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/init-room-selector.md): Embed the room selection interface using the JS SDK.
+- [Initialize system](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/init-system.md): Initialize the ONLYOFFICE Apps system interface using the JS SDK.
+- [Initialize viewer](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/init-viewer.md): Embed a read-only document viewer using the JS SDK.
+- [Login](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/login.md): Log in to ONLYOFFICE Apps using the JS SDK with password hashing.
+- [Logout](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/logout.md): Log out a user from the ONLYOFFICE Apps session using the JS SDK.
+- [Mark iframe as loaded](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/mark-iframe-as-loaded.md): Mark the ONLYOFFICE Apps iframe as loaded using the JS SDK.
+- [Open modal](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/open-modal.md): Open a modal window in ONLYOFFICE Apps using the JS SDK.
+- [Remove tags from room](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/remove-tags-from-room.md): Remove tags from an ONLYOFFICE Apps room using the JS SDK.
+- [Set config](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/set-config.md): Update the embedded frame configuration using the JS SDK.
+- [Set list view](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/set-list-view.md): Change the file list display mode using the JS SDK.
+- [Advanced samples](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples.md): Overview of advanced Embed SDK samples, grouped by use-case scenario.
+- [Document approval workflow](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/approval-workflow.md): Route a document through reviewer sign-off before it's approved.
+- [Authorization](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/authorization.md): Log in to an ONLYOFFICE Apps account using email and password hash.
+- [Create basic task](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/basic-task-create.md): Create a task management table with auto-generated ONLYOFFICE Apps rooms.
+- [Create file in selected folder](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/create-file-in-selected-folder.md): Create a file in a selected folder and open it in the editor.
+- [Tabbed manager UI](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/create-tabbed-docspace-manager.md): Embed ONLYOFFICE Apps in a tabbed interface with multiple manager instances.
+- [Customize editors](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/customize-editors.md): Customize the editor interface with branded buttons, logos, and links.
+- [Draggable resizable modals](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/draggable-resizable-modals.md): Embed ONLYOFFICE Apps in draggable and resizable modal windows.
+- [File manager with task attachments](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/file-manager-task-attachments.md): Attach files to tasks using an ONLYOFFICE Apps file selector modal.
+- [Collaborative project workflow](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/freelance-platform-docspace.md): Build a freelance project workspace with rooms and file management.
+- [ONLYOFFICE Apps chat commands](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/insert-rooms-and-files-into-chat.md): Insert room and file links into a chat using slash commands.
+- [Open file in ONLYOFFICE editors](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/open-file-in-onlyoffice-editors.md): Select a file and open it in ONLYOFFICE editors via the SDK.
+- [Manage project folders](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/project-manager-folder-integration.md): Track projects as folders in a shared room with file locking.
+- [Structured room creation](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/room-creation-with-folder-structure.md): Create client rooms with predefined folders and document templates.
+- [Create files in rooms](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/task-file-create.md): Create tasks linked to ONLYOFFICE Apps rooms and add files inside them.
+- [Room selector](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/task-room-selector.md): Link tasks to ONLYOFFICE Apps rooms using the room selector component.
+- [Two-factor authentication](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/two-factor-authentication.md): Verify users with a phone code before granting ONLYOFFICE Apps access.
+- [React component](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/react-samples.md): Integrate ONLYOFFICE Apps into React projects.
+
+## More information
+
+- [Changelog](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/more-information/changelog.md): The list of changes for the ONLYOFFICE Apps Embed SDK (docspace-sdk-js).
+- [Troubleshooting & FAQ](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/more-information/troubleshooting-faq.md): Common errors and fixes, debugging tips, and known limitations when integrating the ONLYOFFICE Apps Embed SDK.

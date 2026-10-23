@@ -1,0 +1,54 @@
+# SetVertAxisMinorTickMark
+
+Specifies minor tick mark for the vertical axis.
+
+## Syntax
+
+```javascript
+expression.SetVertAxisMinorTickMark(sTickMark);
+```
+
+`expression` - A variable that represents an [ApiChart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiChart.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sTickMark | Required | [TickMark](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Enumeration/TickMark.md) |  | The type of tick mark appearance. |
+
+## Returns
+
+boolean
+
+## Example
+
+Set minor tick marks on a vertical axis in a PDF.
+
+```javascript editor-pdf
+// How do I display tick marks on a chart's vertical axis in a PDF?
+
+// Configure the style and appearance of tick marks for the vertical axis of a chart in a PDF.
+
+const doc = Api.GetDocument();
+const page = doc.GetPage(0);
+
+const chart = Api.CreateChart("XYScatter", [
+	[200, 240, 280],
+	[250, 260, 280]
+], ["Projected Revenue", "Estimated Costs"], [2014, 2015, 2016], 4051300, 2347595, 24);
+chart.SetVerAxisTitle("USD In Hundred Thousands", 20);
+chart.SetHorAxisTitle("Year", 22);
+chart.SetTitle("Financial Overview", 26);
+chart.SetSize(150 * 36000, 65 * 36000);
+chart.SetVertAxisMinorTickMark("out");
+chart.SetPosition(608400, 1267200);
+
+let fill = Api.CreateSolidFill(Api.RGB(51, 51, 51));
+let stroke = Api.CreateStroke(0.5 * 36000, Api.CreateSolidFill(Api.RGB(51, 51, 51)));
+chart.SetMarkerFill(fill, 0, 0, true);
+chart.SetMarkerOutLine(stroke, 0, 0, true);
+fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+chart.SetMarkerFill(fill, 1, 0, true);
+chart.SetMarkerOutLine(stroke, 1, 0, true);
+page.AddObject(chart);
+```

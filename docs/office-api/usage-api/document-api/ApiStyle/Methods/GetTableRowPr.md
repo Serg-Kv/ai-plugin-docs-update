@@ -1,0 +1,42 @@
+# GetTableRowPr
+
+Returns the table row properties of the current style.
+
+## Syntax
+
+```javascript
+expression.GetTableRowPr();
+```
+
+`expression` - A variable that represents an [ApiStyle](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiStyle.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiTableRowPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTableRowPr.md) \| null \| undefined
+
+## Example
+
+Set a minimum height for table rows through a style in a document.
+
+```javascript editor-docx
+// How do I define the row height for a table using a style in a document?
+
+// Enforce a consistent row size across a table by updating the style in a document.
+
+let doc = Api.GetDocument();
+let tableStyle = doc.CreateStyle("CustomTableStyle", "table");
+let table = Api.CreateTable(2, 2);
+table.SetWidth("percent", 100);
+doc.Push(table);
+table.SetStyle(tableStyle);
+table.SetTableLook(true, true, true, true, false, false);
+tableStyle.GetTableRowPr().SetHeight("atLeast", 1440);
+tableStyle.GetConditionalTableStyle("topLeftCell").GetTableCellPr().SetShd(Api.CreateShd("clear", Api.Color(255, 111, 61)));
+tableStyle.GetConditionalTableStyle("topRightCell").GetTableCellPr().SetShd(Api.CreateShd("clear", Api.Color(51, 51, 51)));
+tableStyle.GetConditionalTableStyle("bottomLeftCell").GetTableCellPr().SetShd(Api.CreateShd("clear", Api.Color(128, 128, 128)));
+tableStyle.GetConditionalTableStyle("bottomRightCell").GetTableCellPr().SetShd(Api.CreateShd("clear", Api.Color(255, 213, 191)));
+```

@@ -1,0 +1,1510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog</id>
+    <title>ONLYOFFICE Blog</title>
+    <updated>2026-10-20T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog"/>
+    <subtitle>ONLYOFFICE Blog</subtitle>
+    <icon>https://api.onlyoffice.com/ai-plugin-docs-update/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Version 10.1.0]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/20/version-10-1-0</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/20/version-10-1-0"/>
+        <updated>2026-10-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="new-features">New features<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/20/version-10-1-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Added an FAQ entry on <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/more-information/faq/editing#how-to-get-the-form-field-values-from-a-document-that-is-open-in-the-editor">reading form field values</a> from a document that is open in the editor.</li>
+</ul>
+</li>
+<li class=""><strong>Samples</strong>:<!-- -->
+<ul>
+<li class="">Search now covers every Docs, DocSpace and AI sample, whatever category is selected.</li>
+<li class="">Added a clear button to the samples search.</li>
+</ul>
+</li>
+<li class=""><strong>ONLYOFFICE Apps</strong>:<!-- -->
+<ul>
+<li class="">Added the Chat, Personal, Public room and Forms mode pages to the Embed SDK.</li>
+<li class="">Added the Customization (locale, theming, UI elements) and Events and callbacks sections to the Embed SDK.</li>
+<li class="">Documented OAuth authentication in the Embed SDK, including token refresh, session guards and sign-out.</li>
+<li class="">Documented custom actions and the expanded Manager mode methods in the Embed SDK.</li>
+<li class="">Added the Embed SDK changelog page.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="improvements">Improvements<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/20/version-10-1-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Documented the <code>wopi.requireIpFilterRule</code> setting and the explicit IP filter rule that the <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/using-wopi/overview#requiring-an-explicit-rule-for-the-wopi-host">WOPI host</a> requires from 10.0.</li>
+<li class="">Listed the WOPI request checks that always apply and explained how the Request Filtering Agent lists interact with the IP filter.</li>
+</ul>
+</li>
+<li class=""><strong>ONLYOFFICE Apps</strong>:<!-- -->
+<ul>
+<li class="">Renamed DocSpace to ONLYOFFICE Apps in site labels, page copy, samples, SDK pages and code comments.</li>
+<li class="">Updated the API backend get-started screenshots and texts for v4.0.0, including the API keys, OAuth 2.0 and Developer Tools menu paths.</li>
+<li class="">Clarified which OAuth app settings can be changed after creation.</li>
+<li class="">Synced the MCP server docs with the <code>docspace-mcp</code> repository, refreshed the quickstart screenshots and described the tool confirmation dialog.</li>
+<li class="">Polished the MCP server getting started, tutorials and troubleshooting pages.</li>
+<li class="">Moved Troubleshooting &amp; FAQ into More information in the Embed SDK.</li>
+<li class="">Linked the Desktop Editors MCP setup steps from the MCP server clients page instead of duplicating them.</li>
+<li class="">Showed the build script in its <code>package.json</code> context in the Plugins SDK migration guide.</li>
+<li class="">Used plugin package names as shown in the plugins list on the Plugins SDK sample pages.</li>
+</ul>
+</li>
+<li class=""><strong>AI</strong>:<!-- -->
+<ul>
+<li class="">Renamed the AI tab to AI Tools across the AI guides.</li>
+<li class="">Clarified the setup steps on the server-wide AI providers page.</li>
+</ul>
+</li>
+<li class=""><strong>Desktop</strong>:<!-- -->
+<ul>
+<li class="">Updated screenshots and UI steps for 10.0.</li>
+<li class="">Renamed the MCP chat to AI Chat, clarified the MCP version history and noted which setup steps predate 10.0.</li>
+<li class="">Dropped DocSpace from the placeholder URL in the MCP server samples.</li>
+</ul>
+</li>
+<li class=""><strong>Localization</strong>:<!-- -->
+<ul>
+<li class="">Replaced 协作空间 with ONLYOFFICE Apps and spaced product names, Latin text and numbers from adjacent Chinese text.</li>
+<li class="">Switched zh-CN pages to full-width quotes, brackets and <code>——</code> dashes, <code>：</code> between terms and descriptions, and <code>、</code> between list items.</li>
+<li class="">Translated remaining English UI labels, menu names and image alt text in plugin samples, MCP and AI guides, and the WOPI overview.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="bugfixes">Bugfixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/20/version-10-1-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed the WOPI IP filter example address not matching the step that describes it.</li>
+<li class="">Fixed inaccuracies in the Embed SDK authentication, events, customization and forms pages.</li>
+<li class="">Fixed broken API doc links and switched to case-sensitive <code>APITable</code> anchors in the Embed SDK.</li>
+<li class="">Fixed installation anchors in the MCP server use cases and removed leftover generator markers.</li>
+<li class="">Fixed spacing around bold text next to Chinese characters in zh-CN pages.</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 10.0.0]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/15/version-10-0-0</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/15/version-10-0-0"/>
+        <updated>2026-10-15T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="new-features">New features<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/15/version-10-0-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Added the Comparing documents sample.</li>
+<li class="">Added the File upload request page for <code>/converter/from-file</code> and documented <code>/docbuilder/from-file</code>.</li>
+<li class="">Documented the <code>customization.ai</code> parameter.</li>
+<li class="">Added the <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/ai/guides/server-ai-providers">Configuring AI providers for all users</a> guide for the Admin Panel.</li>
+<li class="">Documented the <code>interactivepreview</code> WOPI discovery action.</li>
+<li class="">Documented the <code>requestRoles</code> method, the <code>disconnect</code> parameter of <code>startFilling</code> and the <code>sendEvent</code> method of the Connector class.</li>
+<li class="">Added the <code>ofd</code> format and <code>xls</code> as a spreadsheet conversion target.</li>
+<li class="">Added the 10.0 changelog covering server, Admin Panel and API changes.</li>
+</ul>
+</li>
+<li class=""><strong>Office API</strong>:<!-- -->
+<ul>
+<li class="">Added the 10.0 changelog with breaking changes, changed methods, and new methods and classes.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Documented the <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/overview/how-to-call-methods"><code>Editor</code></a> object for calling editor methods and <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/overview/how-to-call-commands"><code>Editor.RunMacro</code></a> as the replacement for <code>callCommand</code>.</li>
+<li class="">Added the 10.0 changelog.</li>
+</ul>
+</li>
+<li class=""><strong>Desktop</strong>:<!-- -->
+<ul>
+<li class="">Documented the <code>--prefer-alternate-url</code> flag and added the 10.0 changelog.</li>
+</ul>
+</li>
+<li class=""><strong>Document Builder</strong>:<!-- -->
+<ul>
+<li class="">Documented opening PDF files in <code>OpenFile</code> and creating PDF forms with the <code>form</code> file type in <code>CreateFile</code>, and added the 10.0 changelog.</li>
+</ul>
+</li>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Added the UI Kit section to the DocSpace menu and landing page.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="improvements">Improvements<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/15/version-10-0-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Documented the <code>operation</code> field in incoming and outgoing request tokens and <code>purposeCheck</code> for incoming ones.</li>
+<li class="">Documented the <code>convertServiceEnable</code> and <code>docbuilderEnable</code> settings and the WOPI IP filter requirement.</li>
+<li class="">Documented the <code>purposeCheck</code> and <code>wopi.requireIpFilterRule</code> settings and the new default <code>User-Agent</code> of outgoing requests in the 10.0 changelog.</li>
+<li class="">Rewrote the integration examples overview and the Node.js, Go, Java, Java Spring, .NET, PHP, PHP Laravel, Python and Ruby examples.</li>
+<li class="">Formatted parameters, status values and identifiers as inline code in the FAQ and the changelog.</li>
+<li class="">Added ellipsis comments to partial config examples in the FAQ.</li>
+</ul>
+</li>
+<li class=""><strong>Office API</strong>:<!-- -->
+<ul>
+<li class="">Updated the Document, Spreadsheet, Presentation, PDF and Form API references for 10.0.</li>
+<li class="">Linked the PDF API overview classes.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Updated the plugin API references for 10.0.</li>
+<li class="">Described the <code>executeMethod</code> signature and callback in How to call methods.</li>
+</ul>
+</li>
+<li class=""><strong>AI</strong>:<!-- -->
+<ul>
+<li class="">Reordered the AI guides sidebar so the setup pages come first.</li>
+</ul>
+</li>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Built the API backend reference from DocSpace-server instead of the OpenAPI spec.</li>
+<li class="">Updated the API backend, JavaScript SDK, Plugins SDK and UI Kit references.</li>
+</ul>
+</li>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Gave each deployment target its own site URL.</li>
+</ul>
+</li>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Updated the plugin template to use the built-in <code>Editor</code> object.</li>
+</ul>
+</li>
+<li class=""><strong>Localization</strong>:<!-- -->
+<ul>
+<li class="">Synced the zh-CN pages with all of the above changes.</li>
+<li class="">Kept the per-editor API names (Document API, Form API and others) in English on zh-CN pages.</li>
+<li class="">Translated the missing customizing FAQ sections and the 9.3 section of the plugins changelog.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="bugfixes">Bugfixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/15/version-10-0-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed <code>serverVersion</code> in <code>refreshHistory</code> and the callback handler sample to be a version string rather than a number.</li>
+<li class="">Fixed the <code>ipfilter</code> example to nest under <code>services.CoAuthoring</code>.</li>
+<li class="">Fixed Office API changelog links to renamed and removed methods.</li>
+<li class="">Fixed the form widgets listed in the PDF API overview.</li>
+<li class="">Fixed DocSpace API backend links to point at the generated pages.</li>
+<li class="">Fixed the AI service reference to point at <code>aichat</code>.</li>
+<li class="">Fixed the UI Kit sidebar to open on its first generated page.</li>
+<li class="">Fixed the form builder sample in the Playground to create and save a PDF form.</li>
+<li class="">Fixed the PDF builder sample in the Playground to open a PDF file.</li>
+<li class="">Fixed the upload/download direction, the "Access denied" heading and the formatting on the troubleshooting page.</li>
+<li class="">Fixed the <code>fillForms</code> typo in the sharing FAQ.</li>
+<li class="">Fixed full-width punctuation and spacing on zh-CN pages and in the zh-CN announcement bar.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="breaking-changes">Breaking changes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/15/version-10-0-0#breaking-changes" class="hash-link" aria-label="Direct link to Breaking changes" title="Direct link to Breaking changes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Removed the deprecated <code>reviewDisplay</code>, <code>showReviewChanges</code> and <code>trackChanges</code> customization parameters.</li>
+</ul>
+</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 9.3.1]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/13/version-9-3-1</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/13/version-9-3-1"/>
+        <updated>2026-10-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Improvements]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="improvements">Improvements<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/13/version-9-3-1#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Updated the announcement bar to announce ONLYOFFICE Docs 10.0.</li>
+<li class="">Pointed the forum links in the footer, landing pages, and plugin, macro and AI get-started guides to community.onlyoffice.com.</li>
+</ul>
+</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 9.3.0]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/03/version-9-3-0</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/03/version-9-3-0"/>
+        <updated>2026-10-03T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="new-features">New features<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/03/version-9-3-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Added llms.txt generation: a root index with an Optional section, one file per section, and separate Office API and plugin API indexes for each editor.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="improvements">Improvements<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/03/version-9-3-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Reworked the React, Angular, and Vue guides around a signed configuration.</li>
+<li class="">Documented <code>callCommand</code> and the document key in the frontend framework guides.</li>
+<li class="">Highlighted the callback and key notes in the frontend framework guides.</li>
+<li class="">Scaffolded the Vue demo with the <code>--ts</code> flag.</li>
+<li class="">Showed the full nesting of the <code>angular.json</code> and <code>package.json</code> snippets in the Angular guide.</li>
+<li class="">Wrapped the Angular method snippets in the <code>App</code> class and highlighted commented JSON as <code>json5</code>.</li>
+<li class="">Moved the <code>otherWindow</code> definition out of the WOPI <code>targetOrigin</code> row and inlined the <code>CopyPasteRestrictions</code> values.</li>
+<li class="">Replaced hard <code>&lt;br/&gt;</code> line breaks in the WOPI config table.</li>
+<li class="">Clarified that <code>setRequestedDocument</code> can also be called directly once <code>onDocumentReady</code> has fired, not only from the <code>onRequestSelectDocument</code> handler.</li>
+</ul>
+</li>
+<li class=""><strong>Office API</strong>:<!-- -->
+<ul>
+<li class="">Added Automation API and PDF API to the Get started overview.</li>
+<li class="">Expanded the main <code>Api</code> class descriptions in the editor API references.</li>
+<li class="">Added Syntax, Parameters and Returns sections to inherited method pages, and shortened method table descriptions to their first sentence.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Expanded the custom functions guide to cover the <code>this</code> context, async return values, sheet-qualified addresses and the required JSDoc comment, and changed the example to return a value.</li>
+<li class="">Replaced the custom functions note with an intro paragraph and made the sample link text descriptive.</li>
+<li class="">Documented the <code>*</code> icon fallback and dropped the duplicated selection steps from the scale row.</li>
+<li class="">Linked each plugin API overview to its Office API counterpart and clarified the <code>SetProperties</code> watermark parameter.</li>
+<li class="">Rewrote the plugins overview intro, troubleshooting and resources sections, and dropped the development time estimates.</li>
+<li class="">Linked the overview's distribution line to the marketplace submission and private distribution pages.</li>
+<li class="">Clarified the framework support row in the overview comparison table.</li>
+<li class="">Moved colons outside bold labels on the overview, common errors, and plugins, macros and AI get started pages.</li>
+</ul>
+</li>
+<li class=""><strong>Desktop</strong>:<!-- -->
+<ul>
+<li class="">Described <code>uiTheme</code> in <code>login</code> as the cloud tab color, accepting a string or an object.</li>
+<li class="">Promoted the login and logout example headings to h3.</li>
+</ul>
+</li>
+<li class=""><strong>Workspace</strong>:<!-- -->
+<ul>
+<li class="">Rewrote the Community Server and Hosted Solutions API references as Markdown pages.</li>
+</ul>
+</li>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Site URLs no longer end with a trailing slash.</li>
+<li class="">Page Markdown is now served from the build instead of GitHub.</li>
+<li class="">Sharpened the Document Builder, Embed SDK and Plugins SDK descriptions.</li>
+<li class="">Moved the colon outside bold property labels (<code>**type**:</code> instead of <code>**type:**</code>).</li>
+</ul>
+</li>
+<li class=""><strong>Localization</strong>:<!-- -->
+<ul>
+<li class="">Synced the zh-CN frontend framework guides with the English version.</li>
+<li class="">Added dark mode icon variants to the zh-CN custom functions guide.</li>
+<li class="">Removed the UTF-8 BOM from zh-CN pages.</li>
+<li class="">Used full-width colons after bold labels in zh-CN pages.</li>
+<li class="">Added <code>hml</code> to the zh-CN text document conversion table.</li>
+<li class="">Dropped the duplicated <code>meta.title</code> description from the zh-CN <code>meta</code> row.</li>
+<li class="">Translated the zh-CN Office API overview page.</li>
+<li class="">Translated table headers and the Parameters/Example labels on the zh-CN methods, events and conversion API pages.</li>
+<li class="">Translated English image alt text on the zh-CN customization, embedded, events, external data, plugin configuration and macros pages.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="bugfixes">Bugfixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/10/03/version-9-3-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed the description of what <code>this.args</code> holds in custom functions.</li>
+<li class="">Fixed <code>APITable</code> row anchors to use the property name's exact casing.</li>
+<li class="">Fixed broken cross-page links and pointed links at the new per-editor API index pages.</li>
+<li class="">Fixed the Automation API sample cards linking to the wrong pages.</li>
+<li class="">Fixed the font and text size units of chart, paragraph, range and PDF widget methods: they take half-points (<code>hps</code>), not points (<code>pt</code>).</li>
+<li class="">Fixed a stray asterisk before <code>otherWindow</code> in the WOPI postMessage <code>targetOrigin</code> description.</li>
+<li class="">Fixed Python sample indentation in the DocSpace basic samples.</li>
+<li class="">Fixed DocSpace samples that use <code>await</code> inside callbacks not marked <code>async</code>.</li>
+<li class="">Fixed a Cyrillic "с" in the <code>const</code> keyword in the DocSpace move file sample.</li>
+<li class="">Fixed the <code>isViewer</code> key casing in the plugin button examples.</li>
+<li class="">Fixed trailing slashes in Playground and editor links.</li>
+<li class="">Fixed the missing <code>:::note</code> admonition keyword on the zh-CN conversion tables page.</li>
+<li class="">Fixed zh-CN keyword search, windows and panels code examples that were out of sync with the English pages.</li>
+<li class="">Fixed stray spaces after full-width punctuation on zh-CN pages.</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 9.2.0]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/07/14/version-9-2-0</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/07/14/version-9-2-0"/>
+        <updated>2026-07-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="new-features">New features<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/07/14/version-9-2-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Added Searching in PDF automation API sample.</li>
+<li class="">Added Changing text in PDF automation API sample.</li>
+<li class="">Added Redacting in PDF automation API sample.</li>
+<li class="">Documented the <code>title</code> config parameter.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Added Wrap characters with dashes macro sample for the spreadsheet editor.</li>
+<li class="">Added Adding custom providers guide to the AI section.</li>
+</ul>
+</li>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Added Styling plugin page to the Plugins SDK.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="improvements">Improvements<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/07/14/version-9-2-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Reworked React, Angular, and Vue component pages and reordered the frontend frameworks section.</li>
+<li class="">Added Automation API section to the Angular component page.</li>
+<li class="">Described configuration signing on frontend framework pages.</li>
+<li class="">Documented connector lifecycle in the Automation API.</li>
+<li class="">Clarified behavior of commands sent to a destroyed editor.</li>
+<li class="">Synced the Nextcloud integration article with upstream README changes.</li>
+<li class="">Documented Angular 22 support and replaced the removed <code>IConfig</code> type with <code>Config</code>.</li>
+<li class="">Explained iframe rendering and styling in the DocEditor.</li>
+<li class="">Updated the <code>uiTheme</code> parameter description with the <code>theme-system</code> and <code>theme-gray</code> themes, corrected the default light and dark theme IDs, and documented the theme priority order.</li>
+<li class="">Added a preview image for the Changing text in PDF automation API sample.</li>
+</ul>
+</li>
+<li class=""><strong>Office API</strong>:<!-- -->
+<ul>
+<li class="">Added Breaking changes section to the 9.4 changelog.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Replaced section index pages with overview pages in plugins, macros, and AI sections.</li>
+<li class="">Marked the Check spelling AI sample as a draft.</li>
+<li class="">Added a FAQ entry on empty model lists for custom providers.</li>
+</ul>
+</li>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Promoted Migration to a top-level heading in the plugin template page.</li>
+<li class="">Switched Plugins SDK build instructions from yarn to npm.</li>
+<li class="">Refreshed CLI, folder, and Adding plugin screenshots and added dark theme variants.</li>
+<li class="">Removed outdated version notes from the Adding plugin page.</li>
+<li class="">Structured the Plugins SDK sidebar into Get started, SDK usage, Samples, and More information.</li>
+<li class="">Synced generated Plugins SDK docs and repointed links to the typedoc structure.</li>
+<li class="">Added a dark theme variant for the plugin structure image on the Coding plugin page.</li>
+</ul>
+</li>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Updated Docusaurus to 3.10.2 and upgraded search/UI dependencies.</li>
+<li class="">Replaced deprecated <code>:::caution</code> admonitions with <code>:::warning</code>.</li>
+<li class="">Moved site redirects to Terraform management and enabled production deploy.</li>
+<li class="">Added docspace-plugin-sdk rebuild workflow and pinned Node 22 in SDK rebuilds.</li>
+<li class="">Updated <code>@onlyoffice/doceditor-types</code> to 9.4.1.</li>
+<li class="">Added a <code>/docs/document-builder/</code> redirect to the Get started overview.</li>
+<li class="">Added section root redirects to the Get started pages.</li>
+</ul>
+</li>
+<li class=""><strong>Localization</strong>:<!-- -->
+<ul>
+<li class="">Synced the zh-CN <code>uiTheme</code> description with the English version.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="bugfixes">Bugfixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/07/14/version-9-2-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Corrected onRequestHistory and onRequestHistoryData version history notes.</li>
+<li class="">Fixed sidebar position of the Searching in PDF sample.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Improved the Ollama CORS configuration guide.</li>
+</ul>
+</li>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Fixed inaccuracies and grammar in the Plugins SDK usage docs.</li>
+<li class="">Restored Plugins SDK content lost in the typedoc link repoint.</li>
+<li class="">Restored Plugins SDK screenshots.</li>
+<li class="">Fixed wording, heading levels, and a broken link on the MCP server installation page.</li>
+<li class="">Removed tabs that broke navigation on the MCP server installation page.</li>
+</ul>
+</li>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Disconnected the connector before editor teardown.</li>
+</ul>
+</li>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Fixed broken redirect targets and repointed legacy Office API, Document Builder, plugin, filters, and apisystem redirects.</li>
+<li class="">Fixed the 9.1.0 changelog file name.</li>
+<li class="">Fixed broken plugins Get started links in earlier changelog entries.</li>
+</ul>
+</li>
+<li class=""><strong>Localization</strong>:<!-- -->
+<ul>
+<li class="">Fixed mistranslation of "editor" and a missing space on zh-CN frontend framework pages.</li>
+<li class="">Added zh-CN translation for the Searching in PDF sample.</li>
+<li class="">Fixed half-width punctuation, ASCII double hyphens, and product name spacing on zh-CN pages.</li>
+</ul>
+</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 9.1.0]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/07/10/version-9-1-0</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/07/10/version-9-1-0"/>
+        <updated>2026-07-10T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Improvements]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="improvements">Improvements<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/07/10/version-9-1-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Unified plugin installation paths in ready-to-use samples.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="bugfixes">Bugfixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/07/10/version-9-1-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Common</strong>: Updated download-docs URLs to new /download path. Removed .aspx extensions and added ?from=api tracking to onlyoffice.com URLs. Fixed text jump in ConfigEditor form inputs. Added batch language support to Docusaurus code block highlighting.</li>
+<li class=""><strong>Docs API</strong>: Fixed typos, grammar, and identifier formatting in the self-hosted installation page. Fixed code block language identifier in iOS integration page.</li>
+<li class=""><strong>Plugins and macros</strong>: Updated marketplace name, URLs, and CSS filename across plugin documentation. Normalized front matter in AI sample pages. Fixed invalid environment variables and CORS configuration in the Ollama guide. Fixed skipped heading levels in for-web-editors debugging page. Fixed code block language identifiers in Ollama and localization pages. Fixed code block identifiers and headings in custom-providers page.</li>
+<li class=""><strong>Desktop</strong>: Fixed plugin references and heading in the adding-plugins page. Fixed code block language identifiers in command-line-flags page.</li>
+<li class=""><strong>DocSpace</strong>: Fixed code errors, formatting, typos, and navigation paths across plugins-sdk samples. Fixed code block language identifier in global-configuration page.</li>
+<li class=""><strong>Playground</strong>: Fixed window.connector cleanup on PlaygroundPreview unmount.</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 9.0.0]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/06/17/version-9-0-0</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/06/17/version-9-0-0"/>
+        <updated>2026-06-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="new-features">New features<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/06/17/version-9-0-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Desktop</strong>:<!-- -->
+<ul>
+<li class="">Added command-line flags page for Desktop editors.</li>
+</ul>
+</li>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Added Uploader embedding mode documentation for Embed SDK.</li>
+<li class="">Added Authentication &amp; Security page to Embed SDK.</li>
+</ul>
+</li>
+<li class=""><strong>Homepage</strong>:<!-- -->
+<ul>
+<li class="">Added icons to navbar dropdowns and split Plugins/Macros/AI sections.</li>
+<li class="">Added separators between Docs dropdown groups.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Added Asc.plugin reference page with consolidated API documentation.</li>
+<li class="">Added step-by-step plugin tutorial pages.</li>
+<li class="">Added quick-start pages for macros and AI sections.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="improvements">Improvements<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/06/17/version-9-0-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Desktop</strong>:<!-- -->
+<ul>
+<li class="">Restructured debugging documentation into per-platform pages.</li>
+</ul>
+</li>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Renamed JavaScript SDK to Embed SDK throughout documentation.</li>
+<li class="">Updated Embed SDK version to 2.2.0 for DocSpace v3.7.0.</li>
+<li class="">Restructured Get Started section with quickstart, overview, and authentication guides.</li>
+<li class="">Improved embedding mode pages with use cases and reduced duplication.</li>
+<li class="">Improved Basic Concepts and authentication overview pages.</li>
+</ul>
+</li>
+<li class=""><strong>Office API</strong>:<!-- -->
+<ul>
+<li class="">Updated office-js-api reference documentation.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Restructured plugin documentation by dissolving legacy sections and promoting content to top level.</li>
+<li class="">Consolidated API reference into the Asc.plugin page.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="bugfixes">Bugfixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/06/17/version-9-0-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Desktop</strong>: Fixed broken links to the moved debugging page.</li>
+<li class=""><strong>DocSpace</strong>: Fixed broken links and formatting issues in Embed SDK documentation.</li>
+<li class=""><strong>Plugins and macros</strong>: Fixed broken links, anchor references, and code examples across plugin, macro, and AI docs. Fixed broken links to consolidated debugging page.</li>
+<li class=""><strong>Localization</strong>: Fixed broken links in zh-CN translations for plugins, macros, and AI sections. Fixed broken custom functions guide link in zh-CN weighted average sample.</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 8.8.0]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/29/version-8-8-0</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/29/version-8-8-0"/>
+        <updated>2026-05-29T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="new-features">New features<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/29/version-8-8-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Added row permalink anchors to API tables.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="improvements">Improvements<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/29/version-8-8-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Consolidated server configuration documentation into a single page.</li>
+</ul>
+</li>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Updated MCP server documentation with improved formatting and restructured reference section.</li>
+</ul>
+</li>
+<li class=""><strong>Homepage</strong>:<!-- -->
+<ul>
+<li class="">Redesigned homepage with system fonts, design tokens, and theme-aware icons.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="bugfixes">Bugfixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/29/version-8-8-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Common</strong>: Fixed PageActions visibility on doc pages.</li>
+<li class=""><strong>Docs API</strong>: Fixed broken references after server configuration page consolidation.</li>
+<li class=""><strong>DocSpace</strong>: Fixed version in MCP server configuration documentation.</li>
+<li class=""><strong>Playground</strong>: Fixed Monaco API library loading to use GitHub raw instead of document server.</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 8.7.0]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/25/version-8-7-0</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/25/version-8-7-0"/>
+        <updated>2026-05-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="new-features">New features<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/25/version-8-7-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Added <code>editorConfig.plugins.disable</code> parameter documentation.</li>
+<li class="">Added Croatian language to version 9.4 changelog.</li>
+<li class="">Removed deprecated <code>editorConfig.customization.commentAuthorOnly</code> parameter.</li>
+<li class="">Added <code>roles</code> parameter to <code>onStartFilling</code> event and <code>destroyEditor</code> memory leak fix for v9.4.</li>
+</ul>
+</li>
+<li class=""><strong>Office API</strong>:<!-- -->
+<ul>
+<li class="">Updated office-js-api reference documentation for version 9.4.</li>
+<li class="">Added version 9.4 changelog with MergeDocuments and Color methods.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Updated plugins API reference documentation for version 9.4 (text annotations, form methods, comment events).</li>
+<li class="">Added version 9.4 changelog.</li>
+<li class="">Improved <code>callCommand</code> documentation and added <code>asc_plugin_commands_log</code> debugging guide.</li>
+<li class="">Added warning against calling API methods in <code>onTranslate</code> handler.</li>
+</ul>
+</li>
+<li class=""><strong>Document Builder</strong>:<!-- -->
+<ul>
+<li class="">Published document comparison documentation and fixed CompareDocuments signature.</li>
+<li class="">Added ability to select a specific sample via link.</li>
+</ul>
+</li>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Added Video component and migrated all raw video tags.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="improvements">Improvements<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/25/version-8-7-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Office API</strong>:<!-- -->
+<ul>
+<li class="">Updated office-js-api reference documentation.</li>
+<li class="">Fixed <code>CreateTable</code> argument order to match new (rows, cols) signature in samples.</li>
+</ul>
+</li>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Updated screenshots with dark theme support across editor, customization, events, permissions, co-editing, reviewing, and other pages.</li>
+<li class="">Added onRequestStartFilling screenshot to events page.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Normalized formatting to use backtick references across plugin configuration and customization pages.</li>
+<li class="">Moved default values to header format on plugin configuration page.</li>
+<li class="">Replaced static images with webm videos in macro samples.</li>
+<li class="">Replaced generic "here" links with descriptive anchor text.</li>
+</ul>
+</li>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Replaced custom URL utilities with native URLSearchParams.</li>
+<li class="">Loaded Monaco type libraries from Document Server.</li>
+</ul>
+</li>
+<li class=""><strong>Localization</strong>:<!-- -->
+<ul>
+<li class="">Added dark theme support for zh-CN documentation screenshots.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="bugfixes">Bugfixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/25/version-8-7-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Fixed <code>onMakeActionLink</code> action.type to use string literal union.</li>
+<li class="">Restructured <code>event.data</code> parameter tables on events page.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Fixed <code>doc</code> variable usage in <code>callCommand</code> error handling example.</li>
+<li class="">Aligned <code>callCommand</code> parameter table column widths.</li>
+</ul>
+</li>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Fixed developer plugin installation to only apply for plugin script type.</li>
+<li class="">Fixed null URL parameters coalesced to undefined.</li>
+<li class="">Disabled Run button until editor is ready.</li>
+<li class="">Fixed word type library loading for form editor.</li>
+<li class="">Removed <code>installDeveloperPlugin</code> shim for v9.3.1.</li>
+</ul>
+</li>
+<li class=""><strong>Localization</strong>:<!-- -->
+<ul>
+<li class="">Fixed stray Latin letters in zh-CN changelog.</li>
+<li class="">Added missing Video import and frontmatter to zh-CN plugin pages.</li>
+<li class="">Fixed ASCII quotes and spacing in zh-CN pages.</li>
+</ul>
+</li>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Fixed broken anchor link to command logging in changelog.</li>
+</ul>
+</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 8.6.0]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/19/version-8-6-0</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/19/version-8-6-0"/>
+        <updated>2026-05-19T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="new-features">New features<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/19/version-8-6-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Added custom theme customization guide.</li>
+</ul>
+</li>
+<li class=""><strong>Desktop</strong>:<!-- -->
+<ul>
+<li class="">Added custom theme customization guide.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="improvements">Improvements<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/19/version-8-6-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Removed "Defines"/"Specifies" prefix from parameter descriptions across config, editor, customization, document, methods, callback, connector, command service, additional API, and WOPI pages.</li>
+<li class="">Renamed "Parameters" headings to "Request/Response parameters" in command service and additional API pages.</li>
+<li class="">Redesigned API vs WOPI comparison table to feature-per-row format.</li>
+<li class="">Renamed <code>DocEditor</code> constructor parameter from <code>placeholder</code> to <code>id</code>.</li>
+<li class="">Improved license command response parameter table.</li>
+<li class="">Updated connector window class introduction and removed italic parameter names.</li>
+<li class="">Added <code>@onlyoffice/doceditor-types</code> package tip to DocEditor page.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Removed "Defines" prefix from plugin customization parameter descriptions.</li>
+</ul>
+</li>
+<li class=""><strong>Desktop</strong>:<!-- -->
+<ul>
+<li class="">Removed "Defines" prefix from desktop editors usage API parameter descriptions.</li>
+</ul>
+</li>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Replaced local config.d.ts with <code>@onlyoffice/doceditor-types</code> npm package.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="bugfixes">Bugfixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/19/version-8-6-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Fixed WOPI config and conversion API page errors.</li>
+<li class="">Corrected broken relative links in editor config docs.</li>
+</ul>
+</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 8.5.0]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/07/version-8-5-0</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/07/version-8-5-0"/>
+        <updated>2026-05-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="new-features">New features<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/07/version-8-5-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Added <code>DocEditor</code> class with typed method signatures to TypeScript definition file.</li>
+<li class="">Added <code>mobile.disableForceDesktop</code> customization parameter.</li>
+<li class="">Added <code>editorConfig.wopi</code> section documentation.</li>
+<li class="">Added <code>user.roles</code> parameter for PDF form filling.</li>
+<li class="">Added <code>reviewPermissions</code> customization parameter.</li>
+<li class="">Added <code>startFillingForm</code> customization parameter.</li>
+<li class="">Added <code>onSaveDocument</code> event documentation.</li>
+<li class="">Added <code>onRequestFillingStatus</code> event documentation.</li>
+<li class="">Added <code>onStartFilling</code> event documentation.</li>
+<li class="">Added <code>roles</code> parameter to <code>onRequestStartFilling</code> event.</li>
+</ul>
+</li>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Added auto-generated JSON schema from TypeScript types for Config Editor.</li>
+<li class="">Added tri-state toggle (unset/true/false) and dimmed labels for unset controls in Config Editor.</li>
+<li class="">Added Config section grouping for root-level primitive fields.</li>
+<li class="">Added event handler checkboxes to Config Editor.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="improvements">Improvements<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/07/version-8-5-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Rewrote config reference pages with standardized formatting, backtick identifiers, and improved examples across document, editor, customization, permissions, embedded, plugins, and events sections.</li>
+<li class="">Improved usage API method documentation with parameter headers, examples, and error descriptions.</li>
+<li class="">Removed deprecated parameters: changeHistory, rename, author, created, onReady, user.firstname, user.lastname, plugins.url.</li>
+<li class="">Standardized array type notation to TypeName[] format across all config pages.</li>
+<li class="">Added missing document, editorConfig, and events sections to config overview page.</li>
+<li class="">Updated images for the events page.</li>
+<li class="">Documented removal of deprecated params in changelog entries for v6.1 and v6.3.</li>
+<li class="">Used literal union types for mode, macrosMode, pointerMode, reviewDisplay, unit, tabStyle, and tabBackground config parameters.</li>
+<li class="">Added supported language codes to lang parameter and regional settings to region parameter.</li>
+<li class="">Documented actionLink sub-properties and insert/layout toolbar sub-properties in white label config.</li>
+<li class="">Improved onMakeActionLink event documentation and extracted onRequestInsertImage undeclared note into callout.</li>
+<li class="">Used danger admonitions for deprecated mailmerge and spellcheck.change events.</li>
+<li class="">Rewrote editor, embedded, plugins, and white label config parameter descriptions for clarity.</li>
+<li class="">Added JSDoc descriptions to all types and interfaces in TypeScript definition file.</li>
+<li class="">Removed dead <code>permissions.reader</code>, <code>canCoAuthoring</code>, and embedded <code>onBack</code> event properties from config type definitions.</li>
+</ul>
+</li>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Unified form/JSON dirty tracking with bidirectional sync on tab switch.</li>
+<li class="">Improved config schema types with per-document-type FileType unions and PlatformType alias.</li>
+<li class="">Cleaned up playground editor config defaults and reduced re-renders.</li>
+<li class="">Moved Run and Copy buttons from floating overlay to config editor header tab bar.</li>
+<li class="">Added Reset button to config editor header tab bar.</li>
+<li class="">Added toggleable sections for optional object and array properties in Config Editor.</li>
+</ul>
+</li>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Added boolean token color to code syntax highlighting.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="bugfixes">Bugfixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/07/version-8-5-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Added missing autostart, isLink, and hml properties to config documentation.</li>
+<li class="">Removed hardcoded permission values from sharingSettings.permissions.</li>
+<li class="">Fixed broken anchors, links, and incorrect examples across config reference pages.</li>
+<li class="">Corrected isForm type, commentGroups.view example, and grammar inconsistencies.</li>
+<li class="">Removed .ashx extension and trailing slash from example URLs.</li>
+<li class="">Fixed MCP documentation formatting issues.</li>
+<li class="">Added deprecated fileChoiceUrl, mergeFolderUrl, saveAsUrl, and sharingSettingsUrl parameters to editor config documentation.</li>
+<li class="">Restructured event sections with consistent description flow, typed parameters, and improved cross-references.</li>
+<li class="">Simplified config section descriptions and updated JSDoc comments.</li>
+<li class="">Cleaned up code examples in customization docs.</li>
+<li class="">Used backtick formatting for types in methods parameter tables.</li>
+<li class="">Used info admonitions for licensing notes in methods page.</li>
+<li class="">Synced config descriptions across TypeScript definitions, docs, and zh-CN translations.</li>
+<li class="">Added interface-level JSDoc to <code>RecentDocument</code> and <code>DocumentTemplate</code> types.</li>
+</ul>
+</li>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Fixed JSON editor changes not syncing to config on Run.</li>
+<li class="">Fixed editor re-initialization and script replacement prompts.</li>
+<li class="">Fixed enum deduplication and fileType grouping by documentType.</li>
+<li class="">Fixed button style scoping and ArrayControl schema resolution.</li>
+<li class="">Fixed anonymous mode, dark mode compatibility, and PDF form document names.</li>
+<li class="">Fixed config editor section content padding and removed short descriptions from object section headers.</li>
+<li class="">Fixed form state sync when applying config from code tab.</li>
+<li class="">Fixed event handler function signatures in Config Editor.</li>
+<li class="">Replaced inline descriptions with tooltips in config editor section headers.</li>
+<li class="">Fixed bold and code formatting in config editor tooltips.</li>
+<li class="">Fixed tooltip display for array-type properties in Config Editor.</li>
+<li class="">Added italic markdown support in Config Editor tooltips.</li>
+</ul>
+</li>
+<li class=""><strong>Homepage</strong>:<!-- -->
+<ul>
+<li class="">Linked home page Try buttons directly to playgrounds.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Updated macro code samples and synced Chinese localization.</li>
+<li class="">Fixed method links and table formatting in custom AI tool samples.</li>
+<li class="">Removed trailing slash before anchor in Asc.scope object link.</li>
+</ul>
+</li>
+<li class=""><strong>Localization</strong>:<!-- -->
+<ul>
+<li class="">Fixed zh-CN product name spacing and synced translations for config pages.</li>
+</ul>
+</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 8.4.1]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/04/version-8-4-1</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/04/version-8-4-1"/>
+        <updated>2026-05-04T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Bugfixes]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="bugfixes">Bugfixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/04/version-8-4-1#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Fixed editor re-initialization when script value changes in playground.</li>
+<li class="">Fixed prompt before replacing modified script on script type change.</li>
+</ul>
+</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 8.4.0]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/02/version-8-4-0</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/02/version-8-4-0"/>
+        <updated>2026-05-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="new-features">New features<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/02/version-8-4-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Added <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docspace/mcp-server/getting-started">MCP server</a> documentation section with getting started guides, client connection instructions, tutorials, use cases, troubleshooting, distribution guides, configuration reference, tools reference, and glossary.</li>
+<li class="">Added MCP server homepage card and sidebar navigation.</li>
+</ul>
+</li>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Added <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/get-started/playground">Config Playground</a> for the Docs API with interactive JSON Forms editor, live document preview, and split-pane layout.</li>
+<li class="">Added screenshots for Config Playground cards.</li>
+</ul>
+</li>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Added new entry-point page for the DocsAPI.DocEditor class.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="improvements">Improvements<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/02/version-8-4-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Merged Config Playground into unified playground page.</li>
+<li class="">Renamed toolbar labels for clarity (Preview→Mode, Document→File, Connector→Automation API).</li>
+<li class="">Replaced tooltip with popover for click-based interaction in Config Playground.</li>
+<li class="">Unified playground card components into a single shared module.</li>
+<li class="">Removed redundant Builder card from playground cards.</li>
+</ul>
+</li>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Rewrote over 25 integration guides for improved integrator clarity, including how-it-works, saving-file, co-editing, document-history, security, JWT signature samples, and more.</li>
+<li class="">Renamed Advanced parameters to Configuration overview and connected with DocEditor and Config pages.</li>
+<li class="">Added cross-links to the DocEditor page from methods, preload, and installation pages.</li>
+<li class="">Updated images for the commenting page.</li>
+</ul>
+</li>
+<li class=""><strong>Office API</strong>:<!-- -->
+<ul>
+<li class="">Updated office-js-api documentation.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Removed broken PDF API method links from plugin changelog.</li>
+</ul>
+</li>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Consolidated MCP server distribution into a combined page.</li>
+<li class="">Revised MCP server tutorial titles for clarity.</li>
+<li class="">Refactored MCP server connection instructions.</li>
+</ul>
+</li>
+<li class=""><strong>Localization</strong>:<!-- -->
+<ul>
+<li class="">Added Chinese translation for the Config Playground page.</li>
+<li class="">Synced zh-CN config pages with English source.</li>
+<li class="">Fixed Chinese localization for macro code snippets and paths.</li>
+</ul>
+</li>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Consolidated Window type augmentations into global.d.ts.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="bugfixes">Bugfixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/05/02/version-8-4-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Fixed Config Playground styling: improved color tokens, tooltips, focus indicators, section spacing, and SEO metadata.</li>
+<li class="">Fixed Config Playground performance: optimized rendering with memoization, lazy serialization, and debounced updates.</li>
+<li class="">Fixed Config Playground UI: consolidated action buttons into floating panel, corrected heading hierarchy, and hidden Ask AI button.</li>
+<li class="">Fixed playground document key generation to use crypto.randomUUID.</li>
+<li class="">Fixed File dropdown to show Sample before Blank.</li>
+<li class="">Fixed Config Playground to use PDF format for form document type.</li>
+<li class="">Fixed Config Playground info icon style and color.</li>
+</ul>
+</li>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Fixed Try page PDF using blank instead of demo document.</li>
+<li class="">Fixed opening-file and saving-file overview step lists.</li>
+<li class="">Fixed action-link semicolon consistency.</li>
+<li class="">Added missing onMakeActionLink event to complete config example.</li>
+<li class="">Sorted word file extensions alphabetically.</li>
+</ul>
+</li>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Fixed grammar, punctuation, and broken links across MCP server docs.</li>
+<li class="">Fixed sidebar labels and configuration category structure in MCP server docs.</li>
+<li class="">Fixed capitalization issues in MCP server documentation.</li>
+<li class="">Fixed broken links in MCP server use-cases sections.</li>
+<li class="">Fixed troubleshooting pages order.</li>
+</ul>
+</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 8.3.1]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/04/22/version-8-3-1</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/04/22/version-8-3-1"/>
+        <updated>2026-04-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Fixes]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="fixes">Fixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/04/22/version-8-3-1#fixes" class="hash-link" aria-label="Direct link to Fixes" title="Direct link to Fixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Fixed Try page documents not opening due to placeholder URLs overriding actual document URLs in editor configuration.</li>
+</ul>
+</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 8.3.0]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/04/17/version-8-3-0</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/04/17/version-8-3-0"/>
+        <updated>2026-04-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="new-features">New features<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/04/17/version-8-3-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Added live Public room embed example to the SDK get-started page.</li>
+<li class="">Added embedding modes comparison table to the DocSpace SDK get-started page.</li>
+<li class="">Added DocSpace SDK playground page with interactive editor and live preview.</li>
+</ul>
+</li>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Added Document Server settings dialog to playground toolbar.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="improvements">Improvements<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/04/17/version-8-3-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Updated main page button to link to playground instead of cloud registration.</li>
+<li class="">Replaced upload-and-summarize-document use case with a refocused chat-summary text flow.</li>
+<li class="">Updated DocSpace playground to new portal.</li>
+</ul>
+</li>
+<li class=""><strong>Office API</strong>:<!-- -->
+<ul>
+<li class="">Updated office-js-api documentation.</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Updated Freeze panes macro sample code snippet.</li>
+<li class="">Updated complete-address-information macro sample code snippet.</li>
+</ul>
+</li>
+<li class=""><strong>Localization</strong>:<!-- -->
+<ul>
+<li class="">Added missing Chinese localization and frontmatter to macro samples.</li>
+<li class="">Removed zh-CN DocSpace and workspace translations.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="bugfixes">Bugfixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/04/17/version-8-3-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Playground</strong>:<!-- -->
+<ul>
+<li class="">Fixed playground settings button: updated icon, colors, and click feedback.</li>
+<li class="">Fixed DocSpace playground: added notice about Safari and incognito mode limitations.</li>
+<li class="">Fixed DocSpace playground: removed undocumented buttonWithLogo from selector snippets.</li>
+<li class="">Fixed DocSpace playground: added permission comments to Manager config params.</li>
+<li class="">Fixed DocSpace playground: prevented iframe from overlapping resize handle.</li>
+<li class="">Fixed DocSpace playground: re-run script on theme change to update preview.</li>
+<li class="">Fixed DocSpace playground: allowed user-specified src to override default portal URL.</li>
+<li class="">Fixed playground pages: moved JSX imports to top level instead of mdx-code-block fence.</li>
+<li class="">Fixed playground builder mode: stripped single-line comments before collapsing newlines.</li>
+</ul>
+</li>
+<li class=""><strong>DocSpace</strong>:<!-- -->
+<ul>
+<li class="">Fixed DocSpace auth: use SDK iframe login with hash instead of cross-origin fetch.</li>
+</ul>
+</li>
+<li class=""><strong>Docs API</strong>:<!-- -->
+<ul>
+<li class="">Fixed Document API overview: wrong method prefix, fragile line refs, stray "spreadsheet".</li>
+</ul>
+</li>
+<li class=""><strong>Common</strong>:<!-- -->
+<ul>
+<li class="">Fixed button being required in Features type for Workspace and Samples pages.</li>
+<li class="">Replaced console.log with visible actions in Playground connector examples.</li>
+<li class="">Renamed "Word" to "Text Document" in Playground editor selector.</li>
+<li class="">Fixed inconsistent admonition types for definitional and prerequisite notes.</li>
+<li class="">Removed redundant "Please note" prefixes from admonitions, fixed "extrenal" typo.</li>
+<li class="">Fixed blockquotes formatting across documentation.</li>
+</ul>
+</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 8.2.0]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/04/08/version-8-2-0</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/04/08/version-8-2-0"/>
+        <updated>2026-04-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="new-features">New features<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/04/08/version-8-2-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p><strong>DocSpace</strong>:</p>
+<ul>
+<li class="">Added <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docspace/api-backend/get-started/sdks">SDK documentation</a> with quick-start guides for C#, Java, PHP, Python, TypeScript, and Postman.</li>
+<li class="">Added MCP server use-case samples to the Samples page.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Common</strong>:</p>
+<ul>
+<li class="">Added a new <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/samples">Samples</a> page with filterable sample cards across all documentation sections.</li>
+<li class="">Added search input with optimized filtering to the Samples page.</li>
+<li class="">Added <code>?doctype=</code> URL parameter support to the Samples page.</li>
+<li class="">Added pagination and tag-based filtering to the Samples page.</li>
+<li class="">Added Document Builder samples to the Samples page.</li>
+<li class="">Added Document Connectors samples to the Samples page.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="improvements">Improvements<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/04/08/version-8-2-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p><strong>Common</strong>:</p>
+<ul>
+<li class="">Upgraded React to 19.2.0.</li>
+<li class="">Upgraded Docusaurus to 3.10.0 and openapi-docs to 5.0.0.</li>
+<li class="">Added description metadata to all sample pages across documentation.</li>
+<li class="">Added tags and descriptions to sample pages across all documentation sections.</li>
+<li class="">Shortened sample filenames and headers for better readability and URL consistency.</li>
+<li class="">Added clickable tag filtering on the Samples page.</li>
+<li class="">Renamed "Favorite/Recommended" to "Favorites/Frequently used" on the Samples page.</li>
+<li class="">Renamed "AI" to "AI Tools" tag.</li>
+<li class="">Renamed "Documents Editors" to "Document Editors".</li>
+<li class="">Removed tag display limit on the Samples page.</li>
+<li class="">Translated the playground to Chinese (zh-CN).</li>
+<li class="">Cleaned up unused CSS styles, variables, comments, and normalized hex values.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Homepage</strong>:</p>
+<ul>
+<li class="">Updated tag labels in favorites samples.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Docs API</strong>:</p>
+<ul>
+<li class="">Fixed unnecessary backslash escaping from fragment links in WOPI docs.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Plugins and Macros</strong>:</p>
+<ul>
+<li class="">Fixed heading level for <em>localeTranslate</em> in plugin configuration docs.</li>
+<li class="">Updated AI plugin and converting VBA macros documentation.</li>
+<li class="">Renamed custom AI tools files to kebab-case and headers to sentence case.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Playground</strong>:</p>
+<ul>
+<li class="">Updated form inputs on template fill and restyled radio buttons.</li>
+<li class="">Fixed redundant <em>onChangeContentControl</em> updates.</li>
+<li class="">Restored playground plugin config.json.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="bugfixes">Bugfixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/04/08/version-8-2-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed homepage sample card links and cleaned up descriptions.</li>
+<li class="">Fixed flash of favorites on first load with doctype parameter on the Samples page.</li>
+<li class="">Fixed Samples page loading speed.</li>
+<li class="">Removed unnecessary min-height from description and tags row on the Samples page.</li>
+<li class="">Fixed curly quotes replaced with straight quotes in import statements.</li>
+<li class="">Fixed pipe character alignment with table headers across EN and zh-CN docs.</li>
+<li class="">Fixed missing table cell and closing pipe in zh-CN WOPI config.</li>
+<li class="">Fixed extra space inside bold marker in content controls navigation.</li>
+<li class="">Fixed extra indentation for list items in managing-versions FAQ.</li>
+<li class="">Fixed missing blank lines before code blocks, tables, and lists.</li>
+<li class="">Fixed heading levels: use H2 instead of H3 for top-level sections.</li>
+<li class="">Fixed typos across documentation (<em>raws</em> → <em>rows</em>, <em>standart</em> → <em>standard</em>, <em>exabled</em> → <em>enabled</em>, <em>DocSpaace</em> → <em>DocSpace</em>).</li>
+<li class="">Fixed punctuation: use Chinese period in zh-CN working-with-content-controls.</li>
+<li class="">Fixed links to renamed custom AI tools pages.</li>
+<li class="">Fixed active navbar link highlight to use accent color.</li>
+<li class="">Fixed duplicate <code>.menu__link</code> CSS rule.</li>
+<li class="">Fixed missing space before brace in CSS selector.</li>
+<li class="">Fixed broken links to language-specific-examples in changelog.</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 8.1.0]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/03/27/version-8-1-0</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/03/27/version-8-1-0"/>
+        <updated>2026-03-27T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="new-features">New features<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/03/27/version-8-1-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p><strong>Plugins and Macros</strong>:</p>
+<ul>
+<li class="">Reworked the <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/get-started/overview">Get Started</a> section with improved quick-start tutorials.</li>
+<li class="">Added <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/get-started/quick-start">Hello World Plugin</a> guide.</li>
+<li class="">Added <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/macros/get-started/quick-start">Hello World Macro</a> guide.</li>
+<li class="">Added <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/ai/get-started/quick-start">Comment Text AI Tool</a> tutorial.</li>
+<li class="">Added <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/macros/samples/spreadsheet-editor/insert-formulas-row">Insert Formulas Row</a> macro sample for spreadsheet editor.</li>
+<li class="">Added <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/ai/guides/ai-agent#create-ai-assistant">Create AI assistant</a> documentation with example.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Docs API</strong>:</p>
+<ul>
+<li class="">Added comprehensive <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/get-started/configuration/server-config">Document Server configuration</a> documentation.</li>
+<li class="">New configuration sections include ActiveMQ, RabbitMQ, Redis, AI settings, security, token, storage, WOPI integration, and more.</li>
+<li class="">Restructured <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/usage-api/automation-api">Automation API</a> documentation into a dedicated section with separate pages for <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/usage-api/automation-api/connector-class">Connector class</a> and <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/usage-api/automation-api/connector-window">Connector window</a> methods.</li>
+<li class="">Added <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/samples/automation-api/working-with-content-controls">Working with content controls</a> sample for Automation API.</li>
+<li class="">Added links to all editor methods (document, spreadsheet, presentation, PDF, form) in the connector <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/usage-api/automation-api/connector-class#executemethod">executeMethod</a> section.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Office API</strong>:</p>
+<ul>
+<li class="">Added <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/samples/spreadsheet-editor/formatting-alternating-row-colors">Formatting alternating row colors</a> sample for Spreadsheet API.</li>
+<li class="">Updated PDF API documentation (ApiRun, ApiRichRun, ApiTextPr, ApiShape classes).</li>
+<li class="">Updated Presentation API documentation.</li>
+<li class="">Updated Spreadsheet API documentation.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="improvements">Improvements<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/03/27/version-8-1-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p><strong>Common</strong>:</p>
+<ul>
+<li class="">Updated 165 images across the documentation with higher quality screenshots.</li>
+<li class="">Added new dark mode variants for plugin-related images (<code>plugin-manager.dark.png</code>, <code>submit-plugin.dark.png</code>).</li>
+<li class="">Enhanced visual clarity for plugin screenshots and structure diagrams.</li>
+<li class="">Added <code>rebuild-server-config.yaml</code> workflow for automated DocServer config documentation rebuilds.</li>
+<li class="">Removed legacy GIF assets and replaced with webm videos.</li>
+<li class="">Renamed webm files from camelCase to kebab-case for consistent naming.</li>
+<li class="">Replaced non-breaking spaces (U+00A0) with regular spaces across documentation.</li>
+<li class="">Enabled new S3 sync scheme for production deployment.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Docs API</strong>:</p>
+<ul>
+<li class="">Removed outdated Office JavaScript API limitation notes.</li>
+<li class="">Removed redundant callback descriptions from how-to-call-commands.</li>
+<li class="">Consolidated <code>ContextMenuItem</code> type definitions in connector class documentation.</li>
+<li class="">Updated server config link to internal documentation.</li>
+<li class="">Redesigned review changes sample with live demo UI and change counter.</li>
+<li class="">Updated filling out the form and working with comments samples.</li>
+<li class="">Added List toggle button to content controls panel header.</li>
+<li class="">Improved content controls external toolbar with additional color options.</li>
+<li class="">Removed live demo labels from external toolbars.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Plugins and Macros</strong>:</p>
+<ul>
+<li class="">Converted blockquotes to admonitions in macro samples.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Homepage</strong>:</p>
+<ul>
+<li class="">Redesigned SamplesGrid cards with icons, features list, view links, and pastel tags.</li>
+<li class="">Swapped DocSpace/Docs positioning on the first screen.</li>
+<li class="">Replaced blog articles on homepage.</li>
+<li class="">Fixed Cyrillic "С" (U+0421) replaced with Latin "C" in CSS class names.</li>
+<li class="">Reduced DOM nesting and removed unused assets.</li>
+<li class="">Changed navbar sorting.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Localization</strong>:</p>
+<ul>
+<li class="">Localized external links on zh-CN plugin and macro pages with Chinese equivalents.</li>
+<li class="">Added zh-CN translation for AI plugin page with localized links.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Playground</strong>:</p>
+<ul>
+<li class="">Removed unused legacy scripts (<code>cell/api.js</code>, <code>slide/api.js</code>, <code>word/api.js</code>).</li>
+<li class="">Removed deprecated plugin folder.</li>
+<li class="">Restructured <code>DEFAULT_SCRIPTS</code> configuration for better flexibility.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="bugfixes">Bugfixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/03/27/version-8-1-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed link in documentation.</li>
+<li class="">Fixed Docusaurus configuration to exclude <code>index.md</code> from category index convention.</li>
+<li class="">Fixed unnecessary <code>setTimeout</code> wrapper in insert-formulas-row macro sample.</li>
+<li class="">Fixed example in macro documentation.</li>
+<li class="">Changed warning admonition to info where appropriate.</li>
+<li class="">Fixed broken links across documentation.</li>
+<li class="">Fixed external components.</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 8.0.0]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/03/25/version-8-0-0</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/03/25/version-8-0-0"/>
+        <updated>2026-03-25T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="new-features">New features<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/03/25/version-8-0-0#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p><strong>Document Builder</strong>:</p>
+<ul>
+<li class="">Restructured documentation to concatenate all programming languages on single pages instead of separate pages per language.</li>
+<li class="">Rewrote the <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/document-builder/builder-framework/overview">Builder Framework overview</a> to emphasize runtime usage patterns.</li>
+<li class="">Added comprehensive <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/document-builder/using-cli/overview">CLI documentation</a> with improved examples.</li>
+<li class="">Changed code examples from <code>.docbuilder</code> extension to <code>.js</code> for better IDE support.</li>
+<li class="">Improved the <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/additional-api/document-builder-api">Document Builder API</a> async workflow documentation with detailed response parameters.</li>
+<li class="">Added curl command examples throughout the API documentation.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Plugins and Macros</strong>:</p>
+<ul>
+<li class="">Added <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/ai/guides/custom-ai-tools">AI custom tools text annotations</a> feature documentation.</li>
+<li class="">Added new <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/samples?doctype=docs&amp;text=macros">PDF macros samples</a>.</li>
+<li class="">Added <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/samples?doctype=docs&amp;text=macros">freeze panes macro example</a>.</li>
+<li class="">Added <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/macros/samples/document-editor/bookmark-last-view">bookmark last view macro example</a>.</li>
+<li class="">Added <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/samples?doctype=docs&amp;text=plugin">OData plugin</a> to plugin examples.</li>
+<li class="">Added Chinese translations for the entire Plugins API section.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Office API</strong>:</p>
+<ul>
+<li class="">Added <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/get-started/playground">PDF section support</a> in the Playground.</li>
+<li class="">Updated the Playground with new default scripts for SSE.</li>
+<li class="">Added comprehensive Chinese translations for Office API usage documentation.</li>
+<li class="">Added Document type selector to the Playground toolbar for choosing between documents with blank or sample content.</li>
+<li class="">The Playground now opens with a sample document when accessed from the Playground overview pages.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>DocSpace</strong>:</p>
+<ul>
+<li class="">Added <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docspace/mcp-server/getting-started">MCP server use cases</a> documentation.</li>
+<li class="">Added <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/samples?doctype=docspace&amp;text=rest+api">new samples</a> to API Backend documentation.</li>
+<li class="">Updated <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docspace/plugins-sdk/get-started">Plugins SDK</a> documentation with improved structure and examples.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="improvements">Improvements<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/03/25/version-8-0-0#improvements" class="hash-link" aria-label="Direct link to Improvements" title="Direct link to Improvements" translate="no">​</a></h2>
+<ul>
+<li class="">
+<p><strong>Common</strong>:</p>
+<ul>
+<li class="">Simplified Playground implementation by removing redundant variables.</li>
+<li class="">Improved code quality by removing unused comments across the codebase.</li>
+<li class="">Updated integration documentation for WordPress, SuiteCRM, Strapi, SharePoint, Redmine, Plone, ownCloud, Odoo, Nuxeo, Moodle, and Mattermost with Chinese translations.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Document Builder</strong>:</p>
+<ul>
+<li class="">Added link to supported properties in argument parameter descriptions.</li>
+<li class="">Improved API page formatting and readability.</li>
+<li class="">Standardized Parameters section with tabs for all languages.</li>
+<li class="">Updated Python examples in CDocBuilderValue docs to use direct method calls.</li>
+<li class="">Improved signature documentation consistency and formatting.</li>
+<li class="">Moved debugging docs to using-cli section.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Docs API</strong>:</p>
+<ul>
+<li class="">Updated <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/usage-api/methods">connectors documentation</a>.</li>
+<li class="">Fixed grammar in integration docs.</li>
+</ul>
+</li>
+<li class="">
+<p><strong>Office API</strong>:</p>
+<ul>
+<li class="">Updated input-helper pages.</li>
+<li class="">Added deprecation info for legacy methods.</li>
+<li class="">Fixed <code>scrollWidth</code> null reference issue in code blocks.</li>
+<li class="">Fixed select popup position in Playground.</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="bugfixes">Bugfixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/03/25/version-8-0-0#bugfixes" class="hash-link" aria-label="Direct link to Bugfixes" title="Direct link to Bugfixes" translate="no">​</a></h2>
+<ul>
+<li class="">Fixed broken links across Document Builder documentation.</li>
+<li class="">Fixed broken links throughout the documentation site.</li>
+<li class="">Fixed wrong arguments in some Office API methods.</li>
+<li class="">Fixed Recording macros page.</li>
+<li class="">Fixed editor type for forms in Office API.</li>
+<li class="">Corrected <code>review.reviewDisplay</code> documentation.</li>
+<li class="">Fixed styles for announcement bar with multistring content.</li>
+<li class="">Fixed problem with previous merge deleting files.</li>
+<li class="">Fixed <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/macros/samples/spreadsheet-editor/currency-conversion">Currency Conversion</a> macro to use proper <code>RecalculateAllFormulas</code> API instead of internal method with timeout.</li>
+<li class="">Fixed <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/macros/samples/spreadsheet-editor/hide-or-unhide-rows-and-columns">Hide or Unhide Rows and Columns</a> macro example.</li>
+<li class="">Fixed Java syntax highlighting in CDocBuilder and CDocBuilderValue method examples.</li>
+<li class="">Fixed C++, Java, .Net, Python, and COM code samples in Document Builder methods (SaveFile, SetProperty, Execute, ExecuteCommand, CreateInstance).</li>
+<li class="">Fixed delete-annotations sample.</li>
+<li class="">Fixed markdown table alignment in <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/additional-api/document-builder-api">Document Builder API</a> page.</li>
+<li class="">Fixed markdown formatting in Mattermost and Nextcloud integration docs.</li>
+<li class="">Fixed broken markdown link in Chinese writing-macros.md.</li>
+<li class="">Fixed ASCII punctuation in Chinese saving-file.md translation.</li>
+<li class="">Fixed editor type in Playground.</li>
+<li class="">Standardized note format in builder-framework docs.</li>
+<li class="">Hidden comparing-documents.md pages.</li>
+<li class="">Fixed usage API documentation examples and improved consistency.</li>
+<li class="">Fixed AI Tools samples video.</li>
+<li class="">Fixed default scripts for PDF, builder, and mobile in Playground.</li>
+<li class="">Fixed announcement bar on try-docs example page.</li>
+<li class="">Updated PDF document name from 'demo' to 'blank' in Playground.</li>
+<li class="">Shortened case titles.</li>
+<li class="">Fixed Playground initialization issue with document type when opening via URL parameters.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="breaking-changes">Breaking changes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/03/25/version-8-0-0#breaking-changes" class="hash-link" aria-label="Direct link to Breaking changes" title="Direct link to Breaking changes" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Document Builder</strong>: Documentation structure changed from separate language pages to unified multi-language pages. Update any direct links to language-specific builder documentation pages.</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 7.6.6]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/03/05/version-7-6-6</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/03/05/version-7-6-6"/>
+        <updated>2026-03-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="new-features">New features<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/03/05/version-7-6-6#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Common</strong>: Added the announcement bar at the top containing information about new releases.</li>
+<li class=""><strong>Office API</strong>: Updated the <a class="" href="https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/get-started/overview">Office API documentation</a> for version 9.3.0.</li>
+</ul>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Version 7.6.5]]></title>
+        <id>https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/02/20/version-7-6-5</id>
+        <link href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/02/20/version-7-6-5"/>
+        <updated>2026-02-20T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[New features]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="new-features">New features<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/02/20/version-7-6-5#new-features" class="hash-link" aria-label="Direct link to New features" title="Direct link to New features" translate="no">​</a></h2>
+<ul>
+<li class=""><strong>Desktop</strong>:<!-- -->
+<ul>
+<li class="">Added MCP server connection documentation for Desktop Editors v9.2</li>
+</ul>
+</li>
+<li class=""><strong>Docspace</strong>:<!-- -->
+<ul>
+<li class="">Enhanced MCP server documentation with AI agent capabilities and examples</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class=""><strong>Docs API</strong>
+<ul>
+<li class="">Updated parameters of NextCloud integration</li>
+<li class="">Added configuration parameters section to Chinese Nextcloud docs</li>
+<li class="">Added Working with forms info to Odoo connector page</li>
+</ul>
+</li>
+<li class=""><strong>Document Builder</strong>:<!-- -->
+<ul>
+<li class="">Added <code>Creating form from JSON</code> sample</li>
+<li class="">Added <code>Getting form values by ID</code> sample</li>
+<li class="">Added <code>Removing individual fields</code> sample</li>
+<li class="">Added <code>Setting default values</code> sample</li>
+<li class="">Added <code>Updating placeholders</code> sample</li>
+<li class="">Added <code>Creating multiple NDA documents</code> sample</li>
+<li class="">Added <code>Creating employee onboarding checklist</code> sample</li>
+<li class="">Added <code>Creating purchase order</code> sample</li>
+<li class="">Added <code>Creating event form</code> sample</li>
+<li class="">Added <code>Validating exam form</code> sample</li>
+<li class="">Added Chinese translations for new samples</li>
+</ul>
+</li>
+<li class=""><strong>Plugins and macros</strong>:<!-- -->
+<ul>
+<li class="">Updated plugin installation docs with correct paths</li>
+<li class="">Updated plugin-and-macros changelog with v9.1 and v9.2 changes</li>
+<li class="">Improved adding custom functions documentation</li>
+<li class="">Edited 'Creating plugin template' page (moved info about old template to the Migration section)</li>
+</ul>
+</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_jD0_" id="fixes">Fixes<a href="https://api.onlyoffice.com/ai-plugin-docs-update/changelog/2026/02/20/version-7-6-5#fixes" class="hash-link" aria-label="Direct link to Fixes" title="Direct link to Fixes" translate="no">​</a></h2>
+<ul>
+<li class="">Updated Docusaurus to 3.9.2</li>
+<li class="">Updated DocSearch to 4.6.0</li>
+<li class="">Fixed broken links across documentation</li>
+<li class="">Fixed incorrect DOM selector methods and code formatting in localization docs</li>
+<li class="">Improved conversion API documentation formatting</li>
+</ul>]]></content>
+    </entry>
+</feed>

@@ -1,0 +1,100 @@
+# ONLYOFFICE Docs: Plugins
+
+> Build interactive tools with HTML, CSS, and JavaScript that embed native-feeling features directly into the editors.
+
+Links below point to the Markdown version of each page, except those to a further llms.txt: the full index of the pages under that entry. For the other sections of this documentation, see the [index](https://api.onlyoffice.com/ai-plugin-docs-update/llms.txt).
+
+## Get started
+
+- [Overview](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/get-started/overview.md): Build ONLYOFFICE plugins with HTML, CSS, and JavaScript to add panels, toolbar buttons, and third-party integrations to the document, spreadsheet, presentation, and PDF editors.
+- [Quick start](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/get-started/quick-start.md): Build the simplest possible plugin — a button that inserts "Hello World" into your document.
+- [Playground](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/get-started/playground.md): The Playground serves as an interactive platform for users to explore and test the capabilities of the ONLYOFFICE Docs APIs without registration and installing anything. It provides users with various API functionalities, allowing them to experiment with different document types seamlessly.
+
+## Configuration
+
+- [Configuration](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/configuration.md): The config.json file is a plugin configuration file containing the information about the main plugin data needed to register the plugin in the editors.
+- [Entry point](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/configuration/entry-point.md): Each plugin acts in its own iframe. The editor will connect the index.html file, specified in the config.json plugin configuration file. The index.html file is the plugin entry point, connecting the plugin.js file - the base file needed for work with plugins in the editors.
+- [Icons](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/configuration/icons-and-branding.md): Learn how to add and configure icons for your ONLYOFFICE plugins.
+- [Localization](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/configuration/localization.md): All the plugins are created in English by default. If you want them to be available in your language, you can add translations to them.
+- [Types](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/configuration/types.md): The plugin type is specified with the type parameter in the config.json file. The available values are system, background, window, panel, panelRight, and unvisible.
+- [Styles](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/configuration/styles-and-theming.md): Learn how to style your ONLYOFFICE plugin interface using the provided CSS classes and components.
+- [Variations](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/configuration/variations.md): Plugin variations - subplugins that are created inside the origin plugin for the following purposes:
+
+## Customization
+
+- [Context menu](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/customization/context-menu.md): The plugin can be accessed via the context menu.
+- [Toolbar](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/customization/toolbar.md): Plugins can be placed on the toolbar: create their own tabs and fill them, add buttons to the standard tabs.
+- [Windows and panels](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/customization/windows-and-panels.md): Plugins can be represented as modal windows or panels.
+- [Input helper](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/customization/input-helper.md): Learn how to create and use input helpers in ONLYOFFICE plugins.
+- [Buttons](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/customization/custom-buttons.md): To process buttons which are specified in the plugin variations (not in the modal windows / panels), use the button method. This function is called when any of the plugin buttons is clicked.
+- [Content control buttons](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/customization/content-control-buttons.md): Starting from version 9.0, you can add custom buttons to content controls using the Asc.ButtonContentControl class:
+
+## Interacting with editors
+
+- [Overview](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/overview.md): The plugins and macros can interact with the editors using the Asc.plugin object — its events, methods, and commands. Here you will find how to use them.
+- [Asc.plugin](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/overview/asc-plugin.md): window.Asc.plugin is the main object of the ONLYOFFICE Plugin SDK. It is available in every plugin and provides methods, properties, and events for interacting with the editor.
+- [How to customize themes](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/overview/how-to-customize-themes.md): Plugins can detect and react to the current editor theme to keep their appearance consistent with the interface. Theme information is provided through the onThemeChanged event, which is triggered when the plugin loads and whenever the user switches themes.
+- [How to call methods](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/overview/how-to-call-methods.md): To execute editor methods using the plugin, call them on the Editor object. In editors before version 10.0, use the executeMethod method instead.
+- [How to call commands](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/overview/how-to-call-commands.md): To call commands and send the data back to the editor, use the Editor.RunMacro method. In editors before version 10.0, use the callCommand method instead. Both methods allow the plugin to send structured data that can be inserted to the resulting document file (formatted paragraphs, tables, text parts, and separate words, etc.).
+- [How to attach events](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/overview/how-to-attach-events.md): There are two options to attach events from the editor.
+- [Document API](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/document-api/llms.txt): The Document API lists the methods and events a plugin can use when working with a text document in ONLYOFFICE Docs. To work with the document content directly, such as paragraphs and tables, run Office API code in callCommand. See Document API.
+- [Spreadsheet API](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/spreadsheet-api/llms.txt): The Spreadsheet API lists the methods and events a plugin can use when working with a spreadsheet in ONLYOFFICE Docs. To work with the spreadsheet content directly, such as worksheets and ranges, run Office API code in callCommand. See Spreadsheet API.
+- [Presentation API](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/presentation-api/llms.txt): The Presentation API lists the methods and events a plugin can use when working with a presentation in ONLYOFFICE Docs. To work with the presentation content directly, such as slides and shapes, run Office API code in callCommand. See Presentation API.
+- [Form API](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/llms.txt): The Form API lists the methods and events a plugin can use when working with a form in ONLYOFFICE Docs. To work with the form content directly, such as form fields, run Office API code in callCommand. See Form API.
+- [PDF API](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/pdf-api/llms.txt): The PDF API lists the methods and events a plugin can use when working with a PDF file in ONLYOFFICE Docs. To work with the PDF content directly, such as pages and annotations, run Office API code in callCommand. See PDF API.
+
+## Development workflow
+
+- [ONLYOFFICE Desktop Editors](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/development-workflow/installing-and-testing/desktop-editors-installation.md): There are two ways to add plugins: through the plugin manager and through the plugin folder.
+- [ONLYOFFICE Docs on-premises](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/development-workflow/installing-and-testing/docs-on-premises-installation.md): There are three ways to add plugins: through the plugin manager, through the sdkjs-plugins folder, or through the config.json file.
+- [ONLYOFFICE Cloud](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/development-workflow/installing-and-testing/cloud-saas-installation.md): You can add a plugin to the Cloud service as an extension. It can be done for Google Chrome, Opera, or Microsoft Edge browsers.
+- [Developing plugins](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/development-workflow/developing-plugins.md): Load a plugin you are developing into the ONLYOFFICE web or desktop editors and reload it after each change.
+- [Debugging plugins](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/development-workflow/debugging-plugins.md): Debug ONLYOFFICE plugins with browser DevTools in the web and desktop editors, including code that runs in the editor through callCommand.
+- [Common errors and solutions](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/development-workflow/common-errors-solutions.md): This guide covers the most common errors encountered during ONLYOFFICE plugin development and their solutions.
+- [Submit to marketplace](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/development-workflow/publishing/submit-to-marketplace.md): If you want your plugin to be available to other users in the ONLYOFFICE Plugin Marketplace, suggest it for publishing:
+- [Preparing for release](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/development-workflow/publishing/preparing-for-release.md): Before distributing your plugin, verify that it is complete, stable, and ready for other users.
+- [Private distribution](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/development-workflow/publishing/private-distribution.md): Distribute your plugin within your organization without publishing to the public marketplace.
+- [Versioning and updates](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/development-workflow/publishing/versioning-and-updates.md): Once your plugin is published in the ONLYOFFICE Plugin Marketplace, you will need to release updates to fix bugs, add features, or maintain compatibility with new ONLYOFFICE versions.
+
+## Samples
+
+- [Add comment in cell](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/add-comment-in-cell.md): Add comments to spreadsheet cells.
+- [Add custom fields](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/add-custom-fields.md): Insert custom text fields and dropdowns into a document.
+- [AI](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/ai.md): Use AI models for text generation, editing, and summarization.
+- [Autocomplete](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/autocomplete.md): Provide input suggestions from a dictionary while typing.
+- [Chess](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/chess.md): Embed a chess board as an OLE object in the editor.
+- [Clippy](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/clippy.md): Add an animated clippy assistant to the editor.
+- [Content controls navigation](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/content-controls-navigation.md): Navigate and select content controls in a document.
+- [Context menu and events](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/context-menu-and-events.md): Track context menu events and cursor position changes.
+- [Count words and characters](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/count-words-and-characters.md): Count paragraphs, words, and characters in a document.
+- [Extended comments](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/extended-comments.md): Manage comments with categories and severity levels.
+- [Get and paste html](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/get-and-paste-html.md): Get, modify, and paste back HTML content in the editor.
+- [Hello world](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/hello-world.md): Insert 'Hello world!' text on button click.
+- [Highlight code](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/highlight-code.md): Apply syntax highlighting to code snippets.
+- [Invoices](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/invoices.md): Insert template fields for invoice information.
+- [Language tool](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/language-tool.md): Check grammar, spelling, and style using LanguageTool.
+- [Load custom fields](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/load-custom-fields.md): Load custom fields with questions and dropdowns.
+- [Move cursor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/move-cursor.md): Move the cursor to the document start or end.
+- [OCR](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/ocr.md): Extract text from images using TesseractJS OCR.
+- [OData Import](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/odata.md): Import external data via the OData protocol.
+- [Photo editor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/photo-editor.md): Edit images using the Toast UI Image Editor.
+- [Search and change background](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/search-and-change-background.md): Search for text and change its background color.
+- [Search and replace on start](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/search-and-replace-on-start.md): Search and replace text automatically on document open.
+- [Search and replace](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/search-and-replace.md): Search for text and replace it interactively.
+- [Settings](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/settings.md): Protect documents with a watermark overlay.
+- [Speech](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/speech.md): Convert selected text to speech using Web Speech API.
+- [Symbol table](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/symbol-table.md): Insert special symbols from a character table.
+- [Telegram](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/telegram.md): Connect Telegram for instant messaging in the editor.
+- [Templates](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/templates.md): Insert document templates from Document Builder scripts.
+- [Thesaurus](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/thesaurus.md): Search for word synonyms and antonyms.
+- [Translator](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/translator.md): Translate text using machine translation services.
+- [Typograf](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/typograf.md): Fix typography and grammar issues in text.
+- [Work with content controls content](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/work-with-content-controls-content.md): Copy content between content controls.
+- [Work with content controls tags](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/work-with-content-controls-tags.md): Get a list of content control tags in a document.
+- [YouTube](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/youtube.md): Embed YouTube videos as OLE objects in the editor.
+- [Zotero](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/samples/zotero.md): Add references and citations from a Zotero library.
+
+## More information
+
+- [FAQ](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/more-information/faq.md): How to install plugins to the ONLYOFFICE editors?
+- [Changelog](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/more-information/changelog.md): The list of changes for ONLYOFFICE Plugins and Macros API.

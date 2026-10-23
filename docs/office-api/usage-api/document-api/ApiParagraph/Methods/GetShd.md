@@ -1,0 +1,43 @@
+# GetShd
+
+Returns the shading applied to the contents of the paragraph.
+
+Inherited from [ApiParaPr.GetShd](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParaPr/Methods/GetShd.md).
+
+## Syntax
+
+```javascript
+expression.GetShd();
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParagraph.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiShd](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiShd.md) \| undefined
+
+## Example
+
+Read the background shading applied to a paragraph in a document.
+
+```javascript editor-docx
+// How do I get the shading color and type from a paragraph in a document?
+
+// Copy the shading from one paragraph and apply the same background to another paragraph in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+paragraph.AddText('This is the first paragraph with a custom shading applied.');
+paragraph.SetShd(Api.CreateShd('clear', Api.HexColor('#FF6F3D')));
+
+let shd = paragraph.GetShd();
+
+let paragraph2 = Api.CreateParagraph();
+paragraph2.AddText('This is the second paragraph. The shading from the first paragraph is applied here.');
+paragraph2.SetShd(shd);
+doc.Push(paragraph2);
+```

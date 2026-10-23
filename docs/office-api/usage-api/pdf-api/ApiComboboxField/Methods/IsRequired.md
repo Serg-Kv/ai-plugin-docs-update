@@ -1,0 +1,38 @@
+# IsRequired
+
+Checks if field is required
+
+Inherited from [ApiBaseField.IsRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiBaseField/Methods/IsRequired.md).
+
+## Syntax
+
+```javascript
+expression.IsRequired();
+```
+
+`expression` - A variable that represents an [ApiComboboxField](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiComboboxField.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+boolean
+
+## Example
+
+Check if a form field must be filled before submitting in a PDF.
+
+```javascript editor-pdf
+// How can I determine if a form field is required in a PDF?
+
+// Verify whether a form field must have a value in a PDF.
+
+let doc = Api.GetDocument();
+let page = doc.GetPage(0);
+let textField = Api.CreateTextField([10, 10, 160, 30]);
+page.AddObject(textField);
+
+textField.SetValue('Required: ' + textField.IsRequired());
+```

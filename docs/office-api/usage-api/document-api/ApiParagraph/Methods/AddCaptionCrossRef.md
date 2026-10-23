@@ -1,0 +1,55 @@
+# AddCaptionCrossRef
+
+Adds a caption cross-reference to the current paragraph.
+
+:::note
+This paragraph must be in the document.
+:::
+
+## Syntax
+
+```javascript
+expression.AddCaptionCrossRef(sCaption, sRefType, oParaTo, bLink, bAboveBelow);
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParagraph.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sCaption | Required | [CaptionLabel](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/CaptionLabel.md) \| string |  | The caption label ("Equation", "Figure", "Table", or another caption label). |
+| sRefType | Required | [captionRefTo](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/captionRefTo.md) |  | The text or numeric value of a caption reference you want to insert. |
+| oParaTo | Required | [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParagraph.md) |  | The caption paragraph to be referred to (must be in the document). |
+| bLink | Optional | boolean | true | Specifies if the reference will be inserted as a hyperlink. |
+| bAboveBelow | Optional | boolean | false | Specifies if the above/below words indicating the position of the reference should be included (used only with the "pageNum" sRefType). |
+
+## Returns
+
+boolean
+
+## Example
+
+Insert a cross-reference that links to a figure caption in a document.
+
+```javascript editor-docx
+// How do I add a reference to a numbered caption from another paragraph in a document?
+
+// Point readers to a specific captioned figure using an automated cross-reference link in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+let drawing = Api.CreateImage(
+	'https://static.onlyoffice.com/assets/docs/samples/img/onlyoffice_logo.png',
+	60 * 36000, 60 * 36000
+);
+paragraph.AddDrawing(drawing);
+paragraph = Api.CreateParagraph();
+doc.Push(paragraph);
+paragraph.AddCaption('', 'Figure', false, 'Arabic', false, undefined, 'hyphen');
+paragraph = Api.CreateParagraph();
+doc.Push(paragraph);
+paragraph.AddText('Link to ');
+let captionParagraphs = doc.GetAllCaptionParagraphs('Figure');
+paragraph.AddCaptionCrossRef('Figure', 'entireCaption', captionParagraphs[0], true, false);
+```

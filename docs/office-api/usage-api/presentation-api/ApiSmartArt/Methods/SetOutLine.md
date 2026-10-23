@@ -1,0 +1,43 @@
+# SetOutLine
+
+Sets the outline properties to the specified graphic object.
+
+Inherited from [ApiDrawing.SetOutLine](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiDrawing/Methods/SetOutLine.md).
+
+## Syntax
+
+```javascript
+expression.SetOutLine(stroke);
+```
+
+`expression` - A variable that represents an [ApiSmartArt](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiSmartArt.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| stroke | Required | [ApiStroke](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiStroke.md) |  | The stroke used to create the graphic object outline. |
+
+## Returns
+
+boolean
+
+## Example
+
+Add a border to a shape on a slide in a presentation.
+
+```javascript editor-pptx
+// How do I add an outline to a shape in a presentation?
+
+// Create a shape and apply a colored stroke as its border in a presentation.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+const fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+let stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const drawing2 = Api.CreateShape("cube", 150 * 36000, 80 * 36000, fill, stroke);
+drawing2.SetPosition(608400, 3267200);
+let stroke2 = Api.CreateStroke(36000, Api.CreateSolidFill(Api.RGB(51, 51, 51)));
+drawing2.SetOutLine(stroke2);
+slide.AddObject(drawing2);
+```

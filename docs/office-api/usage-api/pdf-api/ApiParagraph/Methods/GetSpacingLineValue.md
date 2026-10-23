@@ -1,0 +1,54 @@
+# GetSpacingLineValue
+
+Returns the paragraph line spacing value.
+
+Inherited from [ApiParaPr.GetSpacingLineValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiParaPr/Methods/GetSpacingLineValue.md).
+
+## Syntax
+
+```javascript
+expression.GetSpacingLineValue();
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiParagraph.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[twips](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Enumeration/twips.md) \| [line240](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Enumeration/line240.md) \| undefined
+
+## Example
+
+Find the distance between lines in a paragraph in a PDF.
+
+```javascript editor-pdf
+// How do I check the line spacing measurement for a paragraph in a PDF?
+
+// Extract the line spacing value used within a paragraph in a PDF.
+
+const doc = Api.GetDocument();
+const page = doc.GetPage(0);
+
+const gs1 = Api.CreateGradientStop(Api.RGB(255, 213, 191), 0);
+const gs2 = Api.CreateGradientStop(Api.RGB(255, 111, 61), 100000);
+const fill = Api.CreateRadialGradientFill([gs1, gs2]);
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape("flowChartMagneticTape", 150 * 36000, 65 * 36000, fill, stroke);
+shape.SetPosition(608400, 1267200);
+page.AddObject(shape);
+
+const docContent = shape.GetContent();
+const paragraph = docContent.GetElement(0);
+paragraph.SetSpacingLine(3 * 240, "auto");
+paragraph.AddText("Paragraph 1. Spacing: 3 times of a common paragraph line spacing.");
+paragraph.AddLineBreak();
+paragraph.AddText("These sentences are used to add lines for demonstrative purposes. ");
+paragraph.AddText("These sentences are used to add lines for demonstrative purposes. ");
+paragraph.AddLineBreak();
+
+const spacingLineValue = paragraph.GetSpacingLineValue();
+paragraph.AddText("Spacing line value: " + spacingLineValue);
+```

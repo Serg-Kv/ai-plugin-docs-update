@@ -1,0 +1,26 @@
+# AxisPos
+
+Axis position in the chart.
+
+## Type
+
+Enumeration
+
+## Values
+
+- "top"
+- "bottom"
+- "right"
+- "left"
+
+## Example
+
+Set the axis values to the top position of the chart.
+
+```javascript editor-pdf
+// How do I change the axis label format of a chart?
+
+// Set axis values to the top.
+
+chart.SetAxisNumFormat("0.00", "top");
+```

@@ -1,0 +1,34 @@
+# Paste
+
+Pastes the contents of the clipboard to the current sheet.
+
+## Syntax
+
+```javascript
+expression.Paste(destination);
+```
+
+`expression` - A variable that represents an [ApiWorksheet](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiWorksheet.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| destination | Optional | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| null \| undefined |  | The cell range where the clipboard contents should be pasted. If this argument is omitted, the current selection is used. |
+
+## Returns
+
+boolean
+
+## Example
+
+Paste clipboard contents onto the active sheet in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I paste copied or cut data from the clipboard in a spreadsheet?
+
+// Insert clipboard data into the current worksheet in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+worksheet.Paste();
+```

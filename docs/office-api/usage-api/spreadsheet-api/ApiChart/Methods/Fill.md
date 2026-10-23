@@ -1,0 +1,42 @@
+# Fill
+
+Sets the fill formatting properties to the current graphic object.
+
+Inherited from [ApiDrawing.Fill](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiDrawing/Methods/Fill.md).
+
+## Syntax
+
+```javascript
+expression.Fill(fill);
+```
+
+`expression` - A variable that represents an [ApiChart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiChart.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| fill | Required | [ApiFill](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiFill.md) |  | The fill type used to fill the graphic object. |
+
+## Returns
+
+boolean
+
+## Example
+
+Apply a gradient fill to a shape already placed on a sheet in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I change the background of a shape to a radial gradient in a spreadsheet?
+
+// Replace a solid fill with a smooth color blend across a shape in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+let fill = Api.CreateSolidFill(Api.RGB(51, 51, 51));
+let stroke = Api.CreateStroke(0, Api.CreateNoFill());
+let drawing = worksheet.AddShape("cube", 90 * 36000, 27 * 36000, fill, stroke, 0, 2 * 36000, 0, 3 * 36000);
+let gs1 = Api.CreateGradientStop(Api.RGB(255, 213, 191), 0);
+let gs2 = Api.CreateGradientStop(Api.RGB(255, 111, 61), 100000);
+fill = Api.CreateRadialGradientFill([gs1, gs2]);
+drawing.Fill(fill);
+```

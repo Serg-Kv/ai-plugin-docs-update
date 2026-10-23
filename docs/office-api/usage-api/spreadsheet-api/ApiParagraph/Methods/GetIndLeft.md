@@ -1,0 +1,45 @@
+# GetIndLeft
+
+Returns the paragraph left side indentation.
+
+Inherited from [ApiParaPr.GetIndLeft](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiParaPr/Methods/GetIndLeft.md).
+
+## Syntax
+
+```javascript
+expression.GetIndLeft();
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiParagraph.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[twips](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/twips.md) \| undefined
+
+## Example
+
+Read the left indent value applied to a paragraph in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I check how much space is added to the left side of a paragraph in a spreadsheet?
+
+// Set a left indent on a paragraph and then retrieve the stored measurement in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+let fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+let stroke = Api.CreateStroke(0, Api.CreateNoFill());
+let shape = worksheet.AddShape("flowChartOnlineStorage", 120 * 36000, 70 * 36000, fill, stroke, 0, 2 * 36000, 0, 3 * 36000);
+let content = shape.GetContent();
+let paragraph = content.GetElement(0);
+paragraph.AddText("This is a paragraph with the indent of 2 inches set to it. ");
+paragraph.AddText("These sentences are used to add lines for demonstrative purposes. ");
+paragraph.SetIndLeft(2880);
+let indLeft = paragraph.GetIndLeft();
+paragraph = Api.CreateParagraph();
+paragraph.AddText("Left indent: " + indLeft);
+content.Push(paragraph);
+```

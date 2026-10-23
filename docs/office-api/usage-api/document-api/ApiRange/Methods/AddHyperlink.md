@@ -1,0 +1,39 @@
+# AddHyperlink
+
+Adds a hyperlink to the specified range.
+
+## Syntax
+
+```javascript
+expression.AddHyperlink(link, screenTipText, bookmarkName);
+```
+
+`expression` - A variable that represents an [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiRange.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| link | Required | string |  | The link address. |
+| screenTipText | Required | string |  | The screen tip text. |
+| bookmarkName | Required | string |  | name of a bookmark |
+
+## Returns
+
+[ApiHyperlink](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiHyperlink.md) \| null \| undefined
+
+## Example
+
+Turn a selected portion of text into a clickable hyperlink in a document.
+
+```javascript editor-docx
+// How do I attach a web address to a specific word or phrase in a document?
+
+// Make a passage navigable by binding it to an external URL in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+paragraph.AddText("ONLYOFFICE Document Builder");
+let range = doc.GetRange(0, 11);
+range.AddHyperlink("https://www.onlyoffice.com/", "Main portal");
+```

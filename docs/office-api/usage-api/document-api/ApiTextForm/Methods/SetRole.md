@@ -1,0 +1,45 @@
+# SetRole
+
+Sets the role to the current form.
+
+Inherited from [ApiFormBase.SetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiFormBase/Methods/SetRole.md).
+
+## Syntax
+
+```javascript
+expression.SetRole(role);
+```
+
+`expression` - A variable that represents an [ApiTextForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTextForm.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| role | Required | string |  | The role which will be attached to the current form. |
+
+## Returns
+
+boolean
+
+## Example
+
+Assign a role to a text form in a document.
+
+```javascript editor-docx
+// How do I designate which role is responsible for filling out a text form in a document?
+
+// Restrict a text form to a specific group of users by giving it a role in a document.
+
+let doc = Api.GetDocument();
+let roles = doc.GetFormRoles();
+roles.Add("Employee");
+let textForm = Api.CreateTextForm({"key": "Personal information", "tip": "Enter your first name", "required": true, "placeholder": "First name", "comb": true, "maxCharacters": 10, "cellWidth": 3, "multiLine": false, "autoFit": false});
+textForm.SetRole("Employee");
+let paragraph = doc.GetElement(0);
+paragraph.AddElement(textForm);
+let role = textForm.GetRole();
+paragraph = Api.CreateParagraph();
+paragraph.AddText("Form key: " + role);
+doc.Push(paragraph);
+```

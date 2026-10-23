@@ -1,0 +1,55 @@
+# GetSpacingLineRule
+
+Returns the paragraph line spacing rule.
+
+Inherited from [ApiParaPr.GetSpacingLineRule](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiParaPr/Methods/GetSpacingLineRule.md).
+
+## Syntax
+
+```javascript
+expression.GetSpacingLineRule();
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiParagraph.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+"auto" \| "atLeast" \| "exact" \| undefined
+
+## Example
+
+Get the paragraph line spacing rule in a presentation.
+
+```javascript editor-pptx
+// How do I find the line spacing setting applied to a paragraph in a presentation?
+
+// Apply line spacing and retrieve its rule type in a presentation.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const gs1 = Api.CreateGradientStop(Api.RGB(255, 213, 191), 0);
+const gs2 = Api.CreateGradientStop(Api.RGB(255, 111, 61), 100000);
+const fill = Api.CreateRadialGradientFill([gs1, gs2]);
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape("flowChartMagneticTape", 300 * 36000, 130 * 36000, fill, stroke);
+shape.SetPosition(608400, 1267200);
+slide.AddObject(shape);
+
+const docContent = shape.GetDocContent();
+const paragraph = docContent.GetElement(0);
+paragraph.SetSpacingLine(3 * 240, "auto");
+paragraph.AddText("Paragraph 1. Spacing: 3 times of a common paragraph line spacing.");
+paragraph.AddLineBreak();
+paragraph.AddText("These sentences are used to add lines for demonstrative purposes. ");
+paragraph.AddText("These sentences are used to add lines for demonstrative purposes. ");
+paragraph.AddLineBreak();
+
+const spacingLineRule = paragraph.GetSpacingLineRule();
+paragraph.AddText("Spacing line rule: " + spacingLineRule);
+```

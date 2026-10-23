@@ -1,0 +1,54 @@
+# GetOutlineLvl
+
+Returns the outline level of the specified properties.
+
+Inherited from [ApiParaPr.GetOutlineLvl](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiParaPr/Methods/GetOutlineLvl.md).
+
+## Syntax
+
+```javascript
+expression.GetOutlineLvl();
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiParagraph.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+Number \| undefined
+
+## Example
+
+Get the outline level of the specified paragraph in a presentation.
+
+```javascript editor-pptx
+// How do I check the hierarchy level of a paragraph in a presentation?
+
+// Read and display the outline level setting in a presentation.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const rgb = Api.RGB(50, 100, 150);
+const fill = Api.CreateSolidFill(rgb);
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape('rect', 200 * 36000, 50 * 36000, fill, stroke);
+shape.SetPosition(10 * 36000, 10 * 36000);
+slide.AddObject(shape);
+
+const content = shape.GetDocContent();
+const paragraph = content.GetElement(0);
+
+const levelBefore = paragraph.GetOutlineLvl();
+paragraph.SetOutlineLvl(8);
+const levelAfter = paragraph.GetOutlineLvl();
+
+let text =  'Outline level (index) for this paragraph is currently set to ' + levelAfter;
+text += ',\n';
+text += 'but originally was set to ' + levelBefore;
+paragraph.AddText(text);
+```

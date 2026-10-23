@@ -1,0 +1,51 @@
+# GetClassType
+
+Returns a type of the ApiChart class.
+
+## Syntax
+
+```javascript
+expression.GetClassType();
+```
+
+`expression` - A variable that represents an [ApiChart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiChart.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+"chart"
+
+## Example
+
+Identify the class type of a chart object in a PDF.
+
+```javascript editor-pdf
+// How do I determine what kind of object a chart is in a PDF?
+
+// Retrieve and display the class type of a chart in a PDF.
+
+const doc = Api.GetDocument();
+const page = doc.GetPage(0);
+
+const chart = Api.CreateChart("3DColumnClustered", [
+	[200, 240, 280],
+	[250, 260, 280]
+], ["Projected Revenue", "Estimated Costs"], [2014, 2015, 2016], 4051300, 2347595, 24);
+const classType = chart.GetClassType();
+chart.SetVerAxisTitle("USD In Hundred Thousands", 20);
+chart.SetHorAxisTitle("Year", 22);
+chart.SetLegendPos("bottom");
+chart.SetShowDataLabels(false, false, true, false);
+chart.SetTitle("Financial Overview: Class Type = " + classType, 40);
+chart.SetSize(150 * 36000, 65 * 36000);
+chart.SetPosition(608400, 1267200);
+
+let fill = Api.CreateSolidFill(Api.RGB(51, 51, 51));
+chart.SetSeriesFill(fill, 0, false);
+fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+chart.SetSeriesFill(fill, 1, false);
+page.AddObject(chart);
+```

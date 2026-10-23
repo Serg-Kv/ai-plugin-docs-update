@@ -1,0 +1,50 @@
+# AddShape
+
+Adds a shape to the current sheet with the parameters specified.
+
+:::note
+The horizontal and vertical offsets are calculated within the limits of the specified column and row cells only. If this value exceeds the cell width or height, another vertical/horizontal position will be set.
+:::
+
+## Syntax
+
+```javascript
+expression.AddShape(sType, nWidth, nHeight, oFill, oStroke, nFromCol, nColOffset, nFromRow, nRowOffset);
+```
+
+`expression` - A variable that represents an [ApiWorksheet](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiWorksheet.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sType | Optional | [ShapeType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/ShapeType.md) | "rect" | The shape type which specifies the preset shape geometry. The "textRect" type creates a text box as the editor inserts it: a light fill and a thin black outline. |
+| nWidth | Required | [EMU](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/EMU.md) |  | The shape width in English measure units. |
+| nHeight | Required | [EMU](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/EMU.md) |  | The shape height in English measure units. |
+| oFill | Optional | [ApiFill](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiFill.md) |  | The color or pattern used to fill the shape. If not specified, the default shape style fill (theme accent) is used. |
+| oStroke | Optional | [ApiStroke](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiStroke.md) |  | The stroke used to draw the shape outline. If not specified, the default shape style outline (theme accent) is used. |
+| nFromCol | Required | number |  | The number of the column where the beginning of the shape will be placed. |
+| nColOffset | Required | [EMU](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/EMU.md) |  | The offset from the nFromCol column to the left part of the shape measured in English measure units. |
+| nFromRow | Required | number |  | The number of the row where the beginning of the shape will be placed. |
+| nRowOffset | Required | [EMU](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/EMU.md) |  | The offset from the nFromRow row to the upper part of the shape measured in English measure units. |
+
+## Returns
+
+[ApiShape](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiShape.md) \| null
+
+## Example
+
+Draw a shape with a custom fill and position on a sheet in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I place a colored geometric shape onto a worksheet in a spreadsheet?
+
+// Decorate a sheet by adding a gradient-filled shape at defined coordinates.
+
+let worksheet = Api.GetActiveSheet();
+let gradientStop1 = Api.CreateGradientStop(Api.RGB(255, 213, 191), 0);
+let gradientStop2 = Api.CreateGradientStop(Api.RGB(255, 111, 61), 100000);
+let fill = Api.CreateLinearGradientFill([gradientStop1, gradientStop2], 5400000);
+let stroke = Api.CreateStroke(0, Api.CreateNoFill());
+worksheet.AddShape("flowChartOnlineStorage", 60 * 36000, 35 * 36000, fill, stroke, 0, 2 * 36000, 0, 3 * 36000);
+```

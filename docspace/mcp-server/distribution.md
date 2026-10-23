@@ -1,0 +1,45 @@
+---
+sidebar_label: Distribution
+sidebar_position: 1
+title: Distribution overview
+---
+
+The ONLYOFFICE Apps MCP server is available in several formats from different distribution sources.
+
+## Available formats
+
+The ONLYOFFICE Apps MCP server is distributed in four formats.
+
+- **Docker Image**: A containerized version of the ONLYOFFICE Apps MCP server.
+- **Docker MCP Server**: An MCP server available through Docker's MCP Catalog and Toolkit.
+- **MCP Bundle**: A bundled MCP server for applications that support the MCP Bundles format.
+- **Node.js Application**: A standalone application that can be run on systems with Node.js.
+
+## Distribution matrix
+
+The following table shows which formats are available from each distribution
+source:
+
+| Distribution Source | Docker Image | Docker MCP Server | MCP Bundle | Node.js Application |
+| ------------------- | :----------: | :---------------: | :--------: | :-----------------: |
+| [Build From Source] |      +       |         -         |     +      |          +          |
+| [Docker Hub]        |      +       |         -         |     -      |          -          |
+| [Docker MCP]        |      -       |         +         |     -      |          -          |
+| [GitHub Releases]   |      -       |         -         |     +      |          +          |
+| [npm Registry]      |      -       |         -         |     -      |          +          |
+
+## References
+
+- [Docker Docs: What is an image?]
+- [Docker Docs: MCP Catalog and Toolkit]
+- [GitHub Anthropic: MCP Bundles]
+
+[Docker Docs: What is an image?]: https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-an-image/
+[Docker Docs: MCP Catalog and Toolkit]: https://docs.docker.com/ai/mcp-catalog-and-toolkit/
+[GitHub Anthropic: MCP Bundles]: https://github.com/anthropics/mcpb/
+
+[Build From Source]: https://api.onlyoffice.com/ai-plugin-docs-update/docspace/mcp-server/distribution/distribution-combined.md#build-the-mcp-server-from-source
+[Docker Hub]: https://api.onlyoffice.com/ai-plugin-docs-update/docspace/mcp-server/distribution/distribution-combined.md#pull-from-docker-hub
+[Docker MCP]: https://api.onlyoffice.com/ai-plugin-docs-update/docspace/mcp-server/distribution/distribution-combined.md#build-with-docker-mcp-toolkit
+[GitHub Releases]: https://api.onlyoffice.com/ai-plugin-docs-update/docspace/mcp-server/distribution/distribution-combined.md#download-the-github-release
+[npm Registry]: https://api.onlyoffice.com/ai-plugin-docs-update/docspace/mcp-server/distribution/distribution-combined.md#build-with-npm-registry

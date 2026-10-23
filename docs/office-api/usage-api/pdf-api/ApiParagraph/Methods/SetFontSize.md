@@ -1,0 +1,44 @@
+# SetFontSize
+
+Sets the font size to the characters of the current paragraph.
+
+## Syntax
+
+```javascript
+expression.SetFontSize(fontSize);
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiParagraph.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| fontSize | Required | [hps](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Enumeration/hps.md) \| null |  | The text size value measured in half-points (1/144 of an inch). Pass *null* to remove the font size. |
+
+## Returns
+
+[ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiParagraph.md)
+
+## Example
+
+Adjust the text size of a paragraph in a PDF.
+
+```javascript editor-pdf
+// How do I change the font size in a paragraph in a PDF?
+
+// Enlarge or shrink text in a paragraph in a PDF.
+
+const doc = Api.GetDocument();
+const page = doc.GetPage(0);
+
+const fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape('rect', Api.MillimetersToEmus(300), Api.MillimetersToEmus(130), fill, stroke);
+shape.SetPosition(Api.MillimetersToEmus(20), Api.MillimetersToEmus(35));
+const docContent = shape.GetContent();
+const paragraph = docContent.GetElement(0);
+paragraph.AddText('This is a paragraph with the font size set to 24 points.');
+paragraph.SetFontSize(48);
+page.AddObject(shape);
+```

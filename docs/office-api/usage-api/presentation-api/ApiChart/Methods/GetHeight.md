@@ -1,0 +1,46 @@
+# GetHeight
+
+Returns the height of the current drawing.
+
+Inherited from [ApiDrawing.GetHeight](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiDrawing/Methods/GetHeight.md).
+
+## Syntax
+
+```javascript
+expression.GetHeight();
+```
+
+`expression` - A variable that represents an [ApiChart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiChart.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[EMU](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/Enumeration/EMU.md)
+
+## Example
+
+Retrieve the height of a shape and display it in a presentation.
+
+```javascript editor-pptx
+// How do I find the vertical size of a shape in a presentation?
+
+// Get the height measurement of a shape and show it on the slide in a presentation.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape("flowChartMagneticTape", 300 * 36000, 130 * 36000, fill, stroke);
+shape.SetPosition(608400, 1267200);
+
+const height = shape.GetHeight();
+const docContent = shape.GetDocContent();
+const paragraph = docContent.GetElement(0);
+paragraph.AddText("Drawing height: " + height);
+slide.AddObject(shape);
+```

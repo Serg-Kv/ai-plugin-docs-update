@@ -1,0 +1,52 @@
+# AddCaption
+
+Adds a caption paragraph after (or before) the current paragraph.
+
+:::note
+The current paragraph must be in the document (not in the footer/header). And if the current paragraph is placed in a shape, then a caption is added after (or before) the parent shape.
+:::
+
+## Syntax
+
+```javascript
+expression.AddCaption(sAdditional, sLabel, bExludeLabel, sNumberingFormat, bBefore, nHeadingLvl, sCaptionSep);
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParagraph.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sAdditional | Required | string |  | The additional text. |
+| sLabel | Optional | [CaptionLabel](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/CaptionLabel.md) \| String | "Table" | The caption label. |
+| bExludeLabel | Optional | boolean | false | Specifies whether to exclude the label from the caption. |
+| sNumberingFormat | Optional | [CaptionNumberingFormat](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/CaptionNumberingFormat.md) | "Arabic" | The possible caption numbering format. |
+| bBefore | Optional | boolean | false | Specifies whether to insert the caption before the current paragraph (true) or after (false) (after/before the shape if it is placed in the shape). |
+| nHeadingLvl | Optional | Number |  | The heading level (used if you want to specify the chapter number). The value is zero-based: 0 is "Heading 1", 1 is "Heading 2", and so on. |
+| sCaptionSep | Optional | [CaptionSep](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/CaptionSep.md) | "hyphen" | The caption separator (used if you want to specify the chapter number). |
+
+## Returns
+
+boolean
+
+## Example
+
+Insert a caption below an image paragraph in a document.
+
+```javascript editor-docx
+// How do I label a figure with a numbered caption in a document?
+
+// Automatically number an inserted image using a formatted figure caption in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+let drawing = Api.CreateImage(
+	'https://static.onlyoffice.com/assets/docs/samples/img/onlyoffice_logo.png',
+	60 * 36000, 60 * 36000
+);
+paragraph.AddDrawing(drawing);
+paragraph = Api.CreateParagraph();
+doc.Push(paragraph);
+paragraph.AddCaption('', 'Figure', false, 'Arabic', false, undefined, 'hyphen');
+```

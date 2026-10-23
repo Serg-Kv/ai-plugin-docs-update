@@ -1,0 +1,70 @@
+---
+sidebar_position: -6
+---
+
+# Creating OAuth app
+
+To create a new OAuth application, send a POST request to the [api/2.0/clients](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/api-backend/usage-api/oauth-2-0/client-management/create-client.md) address.
+
+You can also create and manage OAuth clients in your workspace from the **Developer Tools** page:
+
+1. Click the **Developer Tools** banner at the bottom of the left panel.
+
+2. Select **OAuth 2.0** in the left menu.
+
+3. Click **Register new application**.
+
+   ![OAuth new app](https://api.onlyoffice.com/assets/images/docspace/oauth-new-app.png#gh-light-mode-only)![OAuth new app](https://api.onlyoffice.com/assets/images/docspace/oauth-new-app.dark.png#gh-dark-mode-only)
+
+4. Specify the following settings to configure the behavior of your OAuth app. These settings are grouped into **Basic info**, **Access scopes**, and **Support and legal info**.
+
+## Basic info
+
+- **App name (Required):** The application name that will be displayed on all consent screens and in the app list.
+- **Website URL (Required):** The URL to the home page of the application website.
+- **App icon (Required):** The application icon that will be displayed on all consent screens and in the app list. Available icon extensions: JPG, PNG, or SVG. The required icon size is 32x32.
+- **Description (Optional):** A brief description of the application.
+- **Authentication method (Optional):** The verification method when receiving a JWT token. To receive the token, you will need to send the SHA key. Check **Allow public client (PKCE)** to use PKCE.
+   PKCE ([RFC 7636](https://www.rfc-editor.org/rfc/rfc7636)) is an extension to the [Authorization Code flow](https://oauth.net/2/grant-types/authorization-code/) to prevent CSRF and authorization code injection attacks.
+
+   PKCE is not a form of client authentication, and PKCE is not a replacement for a client secret or other client authentication. PKCE is recommended even if a client is using a client secret or other form of [client authentication](https://oauth.net/2/client-authentication/) like [private_key_jwt](https://oauth.net/private-key-jwt/).
+
+   Because PKCE is not a replacement for client authentication, it does not allow treating a public client as a confidential client.
+- **Redirects URLs (Required):** The URLs where the user will be redirected after successfully passing the consent screen. Enter the address and click **+**. You can specify several URLs by clicking the **+** icon. For example, to add test and production versions.
+- **Allowed origins (Required):** The URLs of sources that will be able to make requests to the ONLYOFFICE Apps API without CORS blocking. Enter the address and click **+**. You can also specify several URLs by clicking **+**.
+
+![Basic info](https://api.onlyoffice.com/assets/images/docspace/basic-info.png#gh-light-mode-only)![Basic info](https://api.onlyoffice.com/assets/images/docspace/basic-info.dark.png#gh-dark-mode-only)
+
+## Access scopes
+
+This parameter defines the capabilities of a third-party application in relation to the ONLYOFFICE Apps API. Scopes are used to limit your app's access to all user-related data, and they'll let you specify exactly what kind of access you need. This parameter is required.
+
+| Scope           | Read                                                              | Write                                                                         |
+| --------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| Profile         | `accounts.self:read` - view basic information about your profile. | `accounts.self:write` - view and manage basic information about your profile. |
+| Accounts        | `accounts:read` - view all accounts.                              | `accounts:write` - view and manage all accounts.                              |
+| Rooms           | `rooms:read` - view all rooms.                                    | `rooms:write` - view and manage all rooms.                                    |
+| Files & Folders | `files:read` - view all files and folders.                        | `files:write` - view and manage all files and folders.                        |
+| Open ID         | `openid` - view your personal data.                               |                                                                               |
+
+Check **Read** or **Write** options near each scope. When selecting the **Write** capability, the **Read** option is automatically enabled.
+
+For more information about the OpenID Connect and the `openid` scope, view its [documentation](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/api-backend/get-started/authentication/openid-connect.md).
+
+![Access scopes](https://api.onlyoffice.com/assets/images/docspace/access-scopes.png#gh-light-mode-only)![Access scopes](https://api.onlyoffice.com/assets/images/docspace/access-scopes.dark.png#gh-dark-mode-only)
+
+## Support and legal info
+
+Parameters in this group ensure compliance with data and privacy regulations.
+
+- **Privacy policy URL (Required):** The URL to the Privacy Policy that must comply with applicable laws and regulations and that make clear how the application collects, uses, shares, retains and otherwise processes personal information.
+- **Terms of service URL (Required):** The terms and conditions that users must comply with when using this application.
+
+![Support and legal info](https://api.onlyoffice.com/assets/images/docspace/support-and-legal-info.png#gh-light-mode-only)![Support and legal info](https://api.onlyoffice.com/assets/images/docspace/support-and-legal-info.dark.png#gh-dark-mode-only)
+
+When all settings are specified, click **Save**. A new application will appear in the application list.
+
+:::note
+You cannot change the **Website URL**, **Privacy policy URL**, and **Terms of service URL** after the app is created. **Redirect URLs** and **Access scopes** cannot be changed in the editing form either, but you can update them with the [update client](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/api-backend/usage-api/oauth-2-0/client-management/update-client.md) method.
+:::
+

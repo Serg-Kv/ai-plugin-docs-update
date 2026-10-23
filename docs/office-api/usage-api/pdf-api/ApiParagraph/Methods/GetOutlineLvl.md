@@ -1,0 +1,53 @@
+# GetOutlineLvl
+
+Returns the outline level of the specified properties.
+
+Inherited from [ApiParaPr.GetOutlineLvl](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiParaPr/Methods/GetOutlineLvl.md).
+
+## Syntax
+
+```javascript
+expression.GetOutlineLvl();
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiParagraph.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+Number \| undefined
+
+## Example
+
+Check the heading level assigned to a paragraph in a PDF.
+
+```javascript editor-pdf
+// How do I determine the outline level of a paragraph in a PDF?
+
+// Read the current heading level setting for a paragraph in a PDF.
+
+const doc = Api.GetDocument();
+const page = doc.GetPage(0);
+
+const rgb = Api.RGB(50, 100, 150);
+const fill = Api.CreateSolidFill(rgb);
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape('rect', 200 * 36000, 50 * 36000, fill, stroke);
+shape.SetPosition(10 * 36000, 10 * 36000);
+page.AddObject(shape);
+
+const content = shape.GetContent();
+const paragraph = content.GetElement(0);
+
+const levelBefore = paragraph.GetOutlineLvl();
+paragraph.SetOutlineLvl(8);
+const levelAfter = paragraph.GetOutlineLvl();
+
+let text =  'Outline level (index) for this paragraph is currently set to ' + levelAfter;
+text += ',\n';
+text += 'but originally was set to ' + levelBefore;
+paragraph.AddText(text);
+```

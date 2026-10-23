@@ -1,0 +1,38 @@
+# GetInternalId
+
+Returns an internal ID of the current paragraph.
+
+## Syntax
+
+```javascript
+expression.GetInternalId();
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParagraph.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+string
+
+## Example
+
+Retrieve the unique internal identifier assigned to a paragraph in a document.
+
+```javascript editor-docx
+// How do I obtain the internal ID of a paragraph in a document?
+
+// Display the internal ID alongside the paragraph text to identify it in a document.
+
+const doc = Api.GetDocument();
+const paragraph = doc.GetElement(0);
+paragraph.AddText('This is a sample paragraph.');
+
+const internalId = paragraph.GetInternalId();
+const paragraph2 = Api.CreateParagraph();
+paragraph2.AddText('First paragraph internal ID: ' + internalId);
+doc.Push(paragraph2);
+```

@@ -1,0 +1,29 @@
+# ONLYOFFICE API Documentation
+
+> API documentation for ONLYOFFICE Docs and ONLYOFFICE Apps: editor integration and configuration, plugins, macros, and the Office JavaScript API.
+
+Each section below links to its own llms.txt, a full index of the pages under that section.
+
+## ONLYOFFICE Docs
+
+- [Docs API](https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/llms.txt): Integrate and configure ONLYOFFICE Docs into your web app to enable document editing, co-authoring, and sharing for your users.
+- [Office API](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/llms.txt): Use our JavaScript library to build plugins, macros, and scripts across all document types: documents, spreadsheets, presentations, and forms.
+- [Plugins](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/llms.txt): Build interactive tools with HTML, CSS, and JavaScript that embed native-feeling features directly into the editors.
+- [Macros](https://api.onlyoffice.com/ai-plugin-docs-update/docs/macros/llms.txt): Write lightweight JavaScript scripts that run directly inside documents to automate repetitive tasks.
+- [AI](https://api.onlyoffice.com/ai-plugin-docs-update/docs/ai/llms.txt): Build AI-powered editor extensions that combine the plugin framework with an AI provider integration.
+- [Document Builder](https://api.onlyoffice.com/ai-plugin-docs-update/docs/document-builder/llms.txt): Add document generation, editing, and conversion to your application: DOCX, XLSX, PPTX, and PDF via the CLI, Python, Java, .NET, or C++.
+- [Desktop Editors](https://api.onlyoffice.com/ai-plugin-docs-update/docs/desktop-editors/llms.txt): Extend and customize ONLYOFFICE Desktop Editors by integrating with document management systems.
+
+## ONLYOFFICE Apps
+
+- [API Reference](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/api-backend/llms.txt): Integrate ONLYOFFICE Apps into your application to interact with its REST API using GET, POST, PUT, and DELETE methods.
+- [Embed SDK](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/llms.txt): Embed ONLYOFFICE Apps in your web app: the full workspace, a room, a document editor or viewer, or a file picker.
+- [Plugins SDK](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/plugins-sdk/llms.txt): Extend the ONLYOFFICE Apps portal with your own plugins: context menu items, main button actions, or third-party services.
+- [UI Kit](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/ui-kit/llms.txt): Build ONLYOFFICE Apps plugin screens and interfaces with the React components the portal itself uses: form controls, overlays, selectors, and theming.
+- [MCP Server](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/mcp-server/llms.txt): Connect AI tools directly to ONLYOFFICE Apps to execute actions through natural language interactions.
+
+## Optional
+
+- [Changelog](https://api.onlyoffice.com/ai-plugin-docs-update/changelog): Release notes for this documentation and the products it covers, newest first.
+- [Playground](https://api.onlyoffice.com/ai-plugin-docs-update/playground): Interactive browser app for running API scripts against a live editor, not readable as text.
+- [Developer forum](https://community.onlyoffice.com/): Community questions, answers, and announcements.

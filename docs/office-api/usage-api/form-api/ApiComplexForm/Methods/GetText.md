@@ -1,0 +1,42 @@
+# GetText
+
+Returns the text from the current form.
+
+Inherited from [ApiFormBase.GetText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetText.md).
+
+## Syntax
+
+```javascript
+expression.GetText();
+```
+
+`expression` - A variable that represents an [ApiComplexForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiComplexForm.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+string
+
+## Example
+
+Extract the combined text content of a complex form in a document.
+
+```javascript editor-forms
+// How do I read the text entered across all parts of a form in a document?
+
+// Capture the assembled text from a multi-part form to display or validate it in a document.
+
+let doc = Api.GetDocument();
+let complexForm = Api.CreateComplexForm({"key": "Complex1"});
+complexForm.Add(Api.CreateTextForm({"placeholder" : "username"}));
+complexForm.Add("@onlyoffice.com");
+let paragraph = doc.GetElement(0);
+paragraph.AddElement(complexForm);
+let text = complexForm.GetText();
+paragraph = Api.CreateParagraph();
+paragraph.AddText("Form text: " + text);
+doc.Push(paragraph);
+```

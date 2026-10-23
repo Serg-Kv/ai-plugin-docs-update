@@ -1,0 +1,37 @@
+# GetStyle
+
+Returns a style by its name.
+
+## Syntax
+
+```javascript
+expression.GetStyle(styleName);
+```
+
+`expression` - A variable that represents an [ApiDocument](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiDocument.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| styleName | Required | string |  | The style name. |
+
+## Returns
+
+[ApiStyle](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiStyle.md) \| null
+
+## Example
+
+Get a built-in style by its name and apply it to a paragraph in a document.
+
+```javascript editor-docx
+// How do I retrieve and apply a built-in heading style in a document?
+
+// Reuse an existing style from the style gallery to format text without defining custom properties.
+
+let doc = Api.GetDocument();
+let noSpacingStyle = doc.GetStyle("Heading 6");
+let paragraph = doc.GetElement(0);
+paragraph.SetStyle(noSpacingStyle);
+paragraph.AddText("This is a text in a paragraph styled with the 'Heading 6' style.");
+```

@@ -1,0 +1,35 @@
+# N
+
+Converts a value to a number, dates to serial numbers, **true** to 1, error to [ErrorValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/ErrorValue.md), anything else to 0 (zero).
+
+## Syntax
+
+```javascript
+expression.N(arg1);
+```
+
+`expression` - A variable that represents an [ApiWorksheetFunction](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiWorksheetFunction.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| arg1 | Required | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| number \| string \| boolean |  | The value to be converted. The value can be a logical value, text, or number. |
+
+## Returns
+
+number
+
+## Example
+
+Convert any value to a number in a spreadsheet.
+
+```javascript editor-xlsx
+// Transform values into numeric form for calculations in a spreadsheet.
+
+// Change boolean values and dates into numbers in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+let func = Api.WorksheetFunction;
+worksheet.GetRange("A1").SetValue(func.N(false));
+```

@@ -1,0 +1,37 @@
+# GetOpacity
+
+Gets annotation opacity.
+
+Inherited from [ApiBaseAnnotation.GetOpacity](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiBaseAnnotation/Methods/GetOpacity.md).
+
+## Syntax
+
+```javascript
+expression.GetOpacity();
+```
+
+`expression` - A variable that represents an [ApiCaretAnnotation](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiCaretAnnotation.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+string
+
+## Example
+
+Retrieve the transparency level of an annotation in a PDF.
+
+```javascript editor-pdf
+// How transparent is an annotation in a PDF?
+
+// Check the opacity value that controls how see-through an annotation appears in a PDF.
+
+let doc = Api.GetDocument();
+let squareAnnot = Api.CreateSquareAnnot([10, 10, 160, 32]);
+let page = doc.GetPage(0);
+page.AddObject(squareAnnot);
+console.log(`Annotation opacity is: ${squareAnnot.GetOpacity()}`);
+```

@@ -1,0 +1,60 @@
+# ToJSON
+
+Converts the ApiThemeColorScheme object into the JSON object.
+
+## Syntax
+
+```javascript
+expression.ToJSON();
+```
+
+`expression` - A variable that represents an [ApiThemeColorScheme](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiThemeColorScheme.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+JSON
+
+## Example
+
+Convert a color scheme to JSON format in a presentation.
+
+```javascript editor-pptx
+// How can I export a color scheme as JSON data in a presentation?
+
+// Create a color scheme, export it to JSON, and recreate it from the JSON in a presentation.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const master = presentation.GetMaster(0);
+const colorScheme = Api.CreateThemeColorScheme([
+	Api.RGB(255, 111, 61), Api.RGB(51, 51, 51), Api.RGB(230, 179, 117), Api.RGB(235, 235, 235),
+	Api.RGB(163, 21, 21), Api.RGB(128, 43, 43), Api.RGB(0, 0, 0), Api.RGB(128, 128, 128),
+	Api.RGB(176, 196, 222), Api.RGB(65, 105, 225), Api.RGB(255, 255, 255), Api.RGB(255, 213, 191)
+], "New color scheme");
+
+const json = colorScheme.ToJSON();
+const colorSchemeFromJSON = Api.FromJSON(json);
+
+const theme = slide.GetTheme();
+theme.SetColorScheme(colorSchemeFromJSON);
+const sType = colorSchemeFromJSON.GetClassType();
+
+const chart = Api.CreateChart("3DColumnClustered", [
+	[200, 240, 280],
+	[250, 260, 280]
+], ["Projected Revenue", "Estimated Costs"], [2014, 2015, 2016], 4051300, 2347595, 24);
+chart.SetVerAxisTitle("USD In Hundred Thousands", 20);
+chart.SetHorAxisTitle("Year", 22);
+chart.SetLegendPos("bottom");
+chart.SetShowDataLabels(false, false, true, false);
+chart.SetTitle("Class type = " + sType, 40);
+chart.SetSize(300 * 36000, 130 * 36000);
+chart.SetPosition(608400, 1267200);
+slide.AddObject(chart);
+```

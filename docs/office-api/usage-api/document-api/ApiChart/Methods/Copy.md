@@ -1,0 +1,40 @@
+# Copy
+
+Creates a copy of the current chart.
+
+## Syntax
+
+```javascript
+expression.Copy();
+```
+
+`expression` - A variable that represents an [ApiChart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiChart.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiChart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiChart.md) \| null
+
+## Example
+
+Duplicate a chart and add the copy to the same paragraph in a document.
+
+```javascript editor-docx
+// How do I make a copy of a chart in a document?
+
+// Clone a chart so that the duplicate appears alongside the original in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+let chart = Api.CreateChart("3DColumnClustered", [
+    [200, 240, 280],
+    [250, 260, 280]
+], ["Projected Revenue", "Estimated Costs"], [2014, 2015, 2016], 4051300, 2347595);
+paragraph.AddDrawing(chart);
+
+let copyChart = chart.Copy();
+paragraph.AddDrawing(copyChart);
+```

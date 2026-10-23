@@ -1,0 +1,94 @@
+---
+sidebar_position: -5
+---
+
+# Editing
+
+## What is the 'Callback handler' and why do I need it?
+
+The **document editing service** informs the **document storage service** about the status of the document editing and sends the response with all the necessary data via the `callbackUrl`, which is specified in the configuration file like this:
+
+  ``` ts
+  const config = {
+    // ...
+    editorConfig: {
+      // ...
+      callbackUrl: "https://example.com/url-to-callback",
+    },
+  };
+
+  const docEditor = new DocsAPI.DocEditor("placeholder", config);
+  ```
+
+Here the `https://example.com/url-to-callback` is the address of the special handler which can process the response from the **document editing service** and response with the `"error": 0` status code. This handler can be written in the programming language of your choice.
+
+All the parameters which can be sent to the callback handler and their description can be found at [this page](https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/usage-api/callback-handler.md).
+
+There are also [examples](https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/usage-api/callback-handler.md#document-save-examples) in several programming languages of how this handler can be implemented: .Net (C#), Java, Node.js, PHP, Ruby.
+
+## What is the 'document.key' parameter?
+
+The `document.key` parameter is a unique document identifier which helps distinguish the document among the others and univocally identify it by the editing service.
+
+Each time the document is changed, the `document.key` parameter must also be generated anew as the documents with the known key are taken from cache.
+
+For more information, see [document.key](https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/usage-api/config/document.md#key).
+
+## How to define the mode that the file should be opened in (viewing or editing)?
+
+To define the document opening mode the `editorConfig.mode` parameter is used. It can acquire two values:
+
+- **edit** is used by default and allows to open the document file for editing (if the corresponding [document.permissions](https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/usage-api/config/document/permissions.md) parameters are also set to `true`);
+- **view** allows to open the document for viewing with the main toolbar and editing disabled.
+
+Set the mode using the `editorConfig` section of the configuration file:
+
+  ``` ts
+  const config = {
+    // ...
+    editorConfig: {
+      // ...
+      mode: "edit",
+    },
+  };
+
+  const docEditor = new DocsAPI.DocEditor("placeholder", config);
+  ```
+
+For more information, see [editorConfig.mode](https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/usage-api/config/editor.md#mode).
+
+## How to get the form field values from a document that is open in the editor?
+
+To read the fields of a document that is open in the editor, including unsaved changes, use the [Automation API](https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/usage-api/automation-api.md). Create a connector after the [onDocumentReady](https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/usage-api/config/events.md#ondocumentready) event. From then on, you can read the fields at any moment, for example in [onRequestStartFilling](https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/usage-api/config/events.md#onrequeststartfilling) to check the form before you call the [startFilling](https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/usage-api/methods.md#startfilling) method. The method to use depends on the editor that opens the form:
+
+- ONLYOFFICE forms ([document.isForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/usage-api/config/document.md#isform) is `true`) open in the document editor. Call the [GetAllForms](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetAllForms.md) method. Each returned object contains the field key in `FormKey` and its current value in `FormValue`:
+
+  ``` ts
+  function onRequestStartFilling() {
+    connector.executeMethod("GetAllForms", null, (forms) => {
+      for (const form of forms) {
+        console.log(form.FormKey, form.FormValue);
+      }
+      docEditor.startFilling();
+    });
+  }
+  ```
+
+- Other PDF files open in the PDF editor. Run the [GetAllFields](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiDocument/Methods/GetAllFields.md) method of the PDF API with [callCommand](https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/usage-api/automation-api/connector-class.md#callcommand) and return the name and value of each field:
+
+  ``` ts
+  connector.callCommand(() => {
+    return Api.GetDocument().GetAllFields().map((field) => ({
+      name: field.GetFullName(),
+      value: field.GetValue(),
+    }));
+  }, (fields) => {
+    console.log(fields);
+  });
+  ```
+
+:::info
+Automation API is available only for **ONLYOFFICE Docs Developer**.
+:::
+
+If you need only the values of a submitted form, the Automation API is not required. After the user clicks *Complete & Submit*, the [callback handler](https://api.onlyoffice.com/ai-plugin-docs-update/docs/docs-api/usage-api/callback-handler.md#formsdataurl) receives a link to them in the `formsdataurl` parameter.
