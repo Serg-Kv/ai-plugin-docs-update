@@ -1,0 +1,88 @@
+# ONLYOFFICE Docs: Plugins — Form API
+
+> The Form API lists the methods and events a plugin can use when working with a form in ONLYOFFICE Docs. To work with the form content directly, such as form fields, run Office API code in callCommand. See Form API.
+
+Links below point to the Markdown version of each page. This file covers one part of the [section index](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/llms.txt); for the other sections of this documentation, see the [index](https://api.onlyoffice.com/ai-plugin-docs-update/llms.txt).
+
+## Overview
+
+- [Form API](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api.md): The Form API lists the methods and events a plugin can use when working with a form in ONLYOFFICE Docs. To work with the form content directly, such as form fields, run Office API code in callCommand. See Form API.
+
+## Methods
+
+- [AddOleObject](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/AddOleObject.md): Adds an OLE object to the current document position.
+- [CoAuthoringChatSendMessage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/CoAuthoringChatSendMessage.md): Sends a message to the co-authoring chat.
+- [ConvertDocument](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/ConvertDocument.md): Converts a document to Markdown or HTML text.
+- [EditOleObject](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/EditOleObject.md): Edits an OLE object in the document.
+- [EndAction](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/EndAction.md): Specifies the end action for long operations.
+- [FocusEditor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/FocusEditor.md): Returns focus to the editor.
+- [GetAllForms](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetAllForms.md): Returns information about all the forms that have been added to the document.
+- [GetDocumentLang](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetDocumentLang.md): Returns the document language.
+- [GetFileToDownload](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetFileToDownload.md): Returns the current file to download in the specified format.
+- [GetFontList](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetFontList.md): Returns the fonts list.
+- [GetFormValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetFormValue.md): Returns a value of the specified form.
+- [GetFormsByTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetFormsByTag.md): Returns information about all the forms that have been added to the document with specified tag.
+- [GetImageDataFromSelection](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetImageDataFromSelection.md): Returns the image data from the first of the selected drawings.
+- [GetInstalledPlugins](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetInstalledPlugins.md): Returns all the installed plugins.
+- [GetMacros](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetMacros.md): Returns the document macros.
+- [GetOFormRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetOFormRole.md): Returns the current role name for the OForm document.
+- [GetRestrictions](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetRestrictions.md): Returns the restrictions the editor currently applies to the document.
+- [GetSelectedContent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetSelectedContent.md): Returns the selected content in the specified format.
+- [GetSelectedOleObjects](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetSelectedOleObjects.md): Returns an array of the selected OLE objects.
+- [GetSelectedText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetSelectedText.md): Returns the selected text from the document.
+- [GetSelectionType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetSelectionType.md): Returns the type of the current selection.
+- [GetVBAMacros](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetVBAMacros.md): Returns all VBA macros from the document.
+- [GetVersion](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/GetVersion.md): Returns the editor version.
+- [InputText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/InputText.md): Inserts text into the document.
+- [InstallPlugin](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/InstallPlugin.md): Installs a plugin using the specified plugin config.
+- [IsEditingPdfForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/IsEditingPdfForm.md): Checks if the document is in the editing PDF form mode.
+- [IsFillingForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/IsFillingForm.md): Checks if the document is in the filling form mode.
+- [IsFillingPdfForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/IsFillingPdfForm.md): Checks if the document is in the filling PDF form mode.
+- [IsFormSigned](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/IsFormSigned.md): Checks whether the specified form has been digitally signed.
+- [MouseMoveWindow](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/MouseMoveWindow.md): Sends an event to the plugin when the mouse button is moved inside the plugin iframe.
+- [MouseUpWindow](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/MouseUpWindow.md): Sends an event to the plugin when the mouse button is released inside the plugin iframe.
+- [OnDropEvent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/OnDropEvent.md): Implements the external drag&drop emulation.
+- [OnEncryption](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/OnEncryption.md): Encrypts the document.
+- [PasteHtml](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/PasteHtml.md): Pastes text in the HTML format into the document.
+- [PasteText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/PasteText.md): Pastes text into the document.
+- [PutImageDataToSelection](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/PutImageDataToSelection.md): Replaces the first selected drawing with the image specified in the parameters.
+- [RemovePlugin](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/RemovePlugin.md): Removes a plugin with the specified GUID.
+- [ReplaceTextSmart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/ReplaceTextSmart.md): Replaces each paragraph (or text in cell) in the select with the corresponding text from an array of strings.
+- [SetFormValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/SetFormValue.md): Sets a value to the specified form.
+- [SetMacros](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/SetMacros.md): Sets macros to the document.
+- [SetPluginsOptions](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/SetPluginsOptions.md): Configures plugins from an external source.
+- [SetProperties](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/SetProperties.md): Sets the properties to the document.
+- [ShowButton](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/ShowButton.md): Shows or hides buttons in the header.
+- [ShowError](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/ShowError.md): Shows an error/warning message.
+- [ShowInputHelper](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/ShowInputHelper.md): Shows the input helper.
+- [StartAction](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/StartAction.md): Specifies the start action for long operations.
+- [UnShowInputHelper](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/UnShowInputHelper.md): Unshows the input helper.
+- [UpdatePlugin](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Methods/UpdatePlugin.md): Updates a plugin using the specified plugin config.
+
+## Events
+
+- [onChangeRestrictions](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Events/onChangeRestrictions.md): The function called when the restrictions in the editor are changed.
+- [onClick](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Events/onClick.md): The function called when the user clicks the element.
+- [onDocumentContentReady](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Events/onDocumentContentReady.md): The function called when the document is completely loaded.
+- [onEnableMouseEvent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Events/onEnableMouseEvent.md): The function called to turn the mouse or touchpad events on/off.
+- [onExternalMouseUp](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Events/onExternalMouseUp.md): The function called when the mouse button is released outside the plugin iframe.
+- [onFloatActionButtonClick](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Events/onFloatActionButtonClick.md): The function called when the floating action button has been clicked.
+- [onSubmitForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Events/onSubmitForm.md): The function called when the user clicks the "Complete & Submit" button.
+- [onTargetPositionChanged](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Events/onTargetPositionChanged.md): The function called when the target position in the editor is changed.
+
+## Enumeration
+
+- [ContentControl](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Enumeration/ContentControl.md): The content control object.
+- [ContentControlLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Enumeration/ContentControlLock.md): A value that defines if it is possible to delete and/or edit the content control or not:
+- [EditorRestrictions](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Enumeration/EditorRestrictions.md): The current editing restrictions, a combination of the flags: 0x00 - no editing restrictions, 0x01 - allows editing form fields, 0x02 - allows editing comments and regions delimited by range permissions, 0x04 - the document is signed and cannot be changed, 0x80 - does not allow editing.
+- [FontInfo](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Enumeration/FontInfo.md): An object containing the font information.
+- [ImageData](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Enumeration/ImageData.md): An object containing the information about the base64 encoded png image.
+- [Macros](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Enumeration/Macros.md): An object containing the data about all the macros from the document.
+- [OLEProperties](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Enumeration/OLEProperties.md): The OLE object properties
+- [PluginData](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Enumeration/PluginData.md): The plugin object.
+- [PluginOptions](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Enumeration/PluginOptions.md): The plugin options.
+- [ReplaceImageMode](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Enumeration/ReplaceImageMode.md): Specifies how to adjust the image object in case of replacing the selected image.
+- [SelectionType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Enumeration/SelectionType.md): The current selection type ("none", "text", "drawing", or "slide").
+- [ShapeType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Enumeration/ShapeType.md): This type specifies the preset shape geometry that will be used for a shape.
+- [fillForms](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Enumeration/fillForms.md): An object containing the form properties.
+- [watermark_on_draw](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Enumeration/watermark_on_draw.md): An object containing the watermark properties.

@@ -1,0 +1,43 @@
+# Fill
+
+Sets the fill formatting properties to the current graphic object.
+
+## Syntax
+
+```javascript
+expression.Fill(oFill);
+```
+
+`expression` - A variable that represents an [ApiDrawing](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiDrawing.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| oFill | Required | [ApiFill](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiFill.md) |  | The fill type used to fill the graphic object. |
+
+## Returns
+
+boolean
+
+## Example
+
+Apply a gradient color fill to a shape in a presentation.
+
+```javascript editor-pptx
+// How do I add a color gradient effect to a shape in a presentation?
+
+// Set the background fill of a shape with a radial gradient in a presentation.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+const fill = Api.CreateSolidFill(Api.RGB(51, 51, 51));
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const drawing = Api.CreateShape("cube", 150 * 36000, 80 * 36000, fill, stroke);
+drawing.SetPosition(608400, 1267200);
+slide.AddObject(drawing);
+const gs1 = Api.CreateGradientStop(Api.RGB(255, 213, 191), 0);
+const gs2 = Api.CreateGradientStop(Api.RGB(255, 111, 61), 100000);
+const gradientFill = Api.CreateRadialGradientFill([gs1, gs2]);
+drawing.Fill(gradientFill);
+```

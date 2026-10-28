@@ -1,0 +1,51 @@
+# AddText
+
+Adds some text to the current paragraph.
+
+## Syntax
+
+```javascript
+expression.AddText(text, widths);
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiParagraph.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| text | Required | string \| number[] |  | The text that we want to insert into the current document element. It can be a string or an array of Unicode code points. |
+| widths | Optional | number[] |  | An array of character widths (in millimeters). It should be the same length as the array of code points passed in the "text" parameter. When the widths are specified, the characters are added preserving these exact widths. |
+
+## Returns
+
+[ApiRun](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiRun.md)
+
+## Example
+
+Add text to a paragraph in a presentation.
+
+```javascript editor-pptx
+// How do I add text to a paragraph in a presentation?
+
+// Insert text content and line breaks into a text box in a presentation.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const gs1 = Api.CreateGradientStop(Api.RGB(255, 213, 191), 0);
+const gs2 = Api.CreateGradientStop(Api.RGB(255, 111, 61), 100000);
+const fill = Api.CreateRadialGradientFill([gs1, gs2]);
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape("flowChartMagneticTape", 300 * 36000, 130 * 36000, fill, stroke);
+shape.SetPosition(608400, 1267200);
+const docContent = shape.GetDocContent();
+const paragraph = docContent.GetElement(0);
+
+paragraph.SetJc("left");
+paragraph.AddText("This is a text inside the shape aligned left.");
+paragraph.AddLineBreak();
+paragraph.AddText("This is a text after the line break.");
+slide.AddObject(shape);
+```

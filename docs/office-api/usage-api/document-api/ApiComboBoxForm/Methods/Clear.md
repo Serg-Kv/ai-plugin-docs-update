@@ -1,0 +1,41 @@
+# Clear
+
+Clears the current form.
+
+Inherited from [ApiFormBase.Clear](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiFormBase/Methods/Clear.md).
+
+## Syntax
+
+```javascript
+expression.Clear();
+```
+
+`expression` - A variable that represents an [ApiComboBoxForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiComboBoxForm.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+boolean
+
+## Example
+
+Clear the selected value from a combo box form field in a document.
+
+```javascript editor-docx
+// How do I reset a combo box form field to its empty state in a document?
+
+// Remove a previously entered answer from a combo box so the field shows its placeholder again in a document.
+
+let doc = Api.GetDocument();
+let comboBoxForm = Api.CreateComboBoxForm({"key": "Personal information", "tip": "Choose your country", "required": true, "placeholder": "Country", "editable": false, "autoFit": false, "items": ["Latvia", "USA", "UK"]});
+let paragraph = doc.GetElement(0);
+paragraph.AddElement(comboBoxForm);
+comboBoxForm.SetText("John Smith");
+comboBoxForm.Clear();
+paragraph = Api.CreateParagraph();
+paragraph.AddText("The first form from this document was cleared.");
+doc.Push(paragraph);
+```

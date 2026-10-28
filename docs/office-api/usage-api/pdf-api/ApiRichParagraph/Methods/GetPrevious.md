@@ -1,0 +1,46 @@
+# GetPrevious
+
+Returns the previous paragraph.
+
+## Syntax
+
+```javascript
+expression.GetPrevious();
+```
+
+`expression` - A variable that represents an [ApiRichParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiRichParagraph.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiRichParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiRichParagraph.md) \| null \| undefined
+
+## Example
+
+Access the preceding paragraph and modify it in a PDF.
+
+```javascript editor-pdf
+// How do I get the previous paragraph in a PDF?
+
+// Navigate backward to the previous paragraph in a PDF.
+
+let doc = Api.GetDocument();
+let freeTextAnnot = Api.CreateFreeTextAnnot([160, 50, 360, 135]);
+let page = doc.GetPage(0);
+page.AddObject(freeTextAnnot);
+freeTextAnnot.SetIntent("freeTextCallout");
+freeTextAnnot.SetCallout([{x: 161, y: 51}, {x: 249, y: 125}, {x: 261, y: 125}]);
+freeTextAnnot.SetRectDiff([100, 64, 0.5, 0.5]);
+
+let richContent = freeTextAnnot.GetContent();
+let para = Api.CreateRichParagraph();
+para.AddText("Example text");
+richContent.AddElement(1, para);
+let previousPara = para.GetPrevious();
+previousPara.AddText("This is previous paragraph");
+
+console.log(`We got previous paragraph and added some text to it`);
+```

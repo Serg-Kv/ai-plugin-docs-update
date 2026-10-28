@@ -1,0 +1,43 @@
+# SetReadingOrder
+
+Specifies the reading order for the current paragraph.
+
+Possible values are:
+
+- **null** - use the standart direction parameter;
+- **"ltr"** - left-to-right text direction;
+- **"rtl"** - right-to-left text direction.
+
+## Syntax
+
+```javascript
+expression.SetReadingOrder(readingOrder);
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParagraph.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| readingOrder | Optional | [ReadingOrder](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/ReadingOrder.md) \| null \| undefined |  | The reading order. |
+
+## Returns
+
+[ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParagraph.md)
+
+## Example
+
+Set the reading direction of a paragraph to left-to-right or right-to-left in a document.
+
+```javascript editor-docx
+// How do I make a paragraph display text in a right-to-left reading order in a document?
+
+// Switch a paragraph's text flow to match a language that reads from right to left in a document.
+
+const doc = Api.GetDocument();
+const paragraph = Api.CreateParagraph();
+paragraph.AddText('Hello! مرحبا! 你好!');
+doc.Push(paragraph);
+paragraph.SetReadingOrder('rtl');
+```

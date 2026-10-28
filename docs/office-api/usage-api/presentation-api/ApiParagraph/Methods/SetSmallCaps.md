@@ -1,0 +1,45 @@
+# SetSmallCaps
+
+Specifies that all the small letter characters in this paragraph are formatted for display only as their capital letter character equivalents which are two points smaller than the actual font size specified for this text.
+
+## Syntax
+
+```javascript
+expression.SetSmallCaps(isSmallCaps);
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiParagraph.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| isSmallCaps | Required | boolean |  | Specifies if the contents of the current paragraph are displayed capitalized two points smaller or not. |
+
+## Returns
+
+[ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiParagraph.md)
+
+## Example
+
+Apply small capitals formatting to text in a presentation.
+
+```javascript editor-pptx
+// How do I use small caps styling on paragraph text in a presentation?
+
+// Format letters as small capitals for text effects in a presentation.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape('rect', Api.MillimetersToEmus(300), Api.MillimetersToEmus(130), fill, stroke);
+shape.SetPosition(Api.MillimetersToEmus(20), Api.MillimetersToEmus(35));
+const docContent = shape.GetContent();
+const paragraph = docContent.GetElement(0);
+paragraph.AddText('This is a paragraph with the font set to small capitalized letters.');
+paragraph.SetSmallCaps(true);
+slide.AddObject(shape);
+```

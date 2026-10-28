@@ -1,0 +1,54 @@
+# SetUnderline
+
+Specifies that the contents of the run are displayed along with a line appearing directly below the character (less than all the spacing above and below the characters on the line).
+
+Inherited from [ApiTextPr.SetUnderline](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiTextPr/Methods/SetUnderline.md).
+
+## Syntax
+
+```javascript
+expression.SetUnderline(isUnderline);
+```
+
+`expression` - A variable that represents an [ApiRun](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiRun.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| isUnderline | Required | boolean |  | Specifies that the contents of the current run are displayed underlined. |
+
+## Returns
+
+[ApiTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiTextPr.md)
+
+## Example
+
+Display text with an underline in a presentation.
+
+```javascript editor-pptx
+// Add underline formatting to emphasize or highlight text content.
+
+// Create a text run and apply underline formatting.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape("flowChartMagneticTape", 300 * 36000, 130 * 36000, fill, stroke);
+shape.SetPosition(608400, 1267200);
+
+const docContent = shape.GetDocContent();
+const paragraph = docContent.GetElement(0);
+let run = Api.CreateRun();
+run.AddText("This is just a sample text. ");
+paragraph.AddElement(run);
+
+run = Api.CreateRun();
+run.SetUnderline(true);
+run.AddText("This is a text run with the text underlined with a single line.");
+paragraph.AddElement(run);
+slide.AddObject(shape);
+```

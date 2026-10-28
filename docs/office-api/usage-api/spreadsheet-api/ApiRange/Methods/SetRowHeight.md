@@ -1,0 +1,34 @@
+# SetRowHeight
+
+Sets the row height value.
+
+## Syntax
+
+```javascript
+expression.SetRowHeight(nHeight);
+```
+
+`expression` - A variable that represents an [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| nHeight | Required | [pt](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/pt.md) |  | The row height in the current range measured in points. |
+
+## Returns
+
+boolean
+
+## Example
+
+Adjust the height of a row to a specific size in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I make a row taller or shorter in a spreadsheet?
+
+// Resize a row to fit content or improve the visual layout in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+worksheet.GetRange("A1").SetRowHeight(32);
+```

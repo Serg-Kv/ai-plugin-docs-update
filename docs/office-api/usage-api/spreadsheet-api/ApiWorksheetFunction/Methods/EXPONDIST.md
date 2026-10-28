@@ -1,0 +1,38 @@
+# EXPONDIST
+
+Returns the exponential distribution.
+
+## Syntax
+
+```javascript
+expression.EXPONDIST(arg1, arg2, arg3);
+```
+
+`expression` - A variable that represents an [ApiWorksheetFunction](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiWorksheetFunction.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| arg1 | Required | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| number |  | The value of the x function, a nonnegative number. |
+| arg2 | Required | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| number |  | The lambda parameter value, a positive number. |
+| arg3 | Required | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| boolean |  | A logical value that determines the function form. If this parameter is **true**, the function will return the cumulative distribution function, if it is **false**, it will return the probability density function. |
+
+## Returns
+
+number
+
+## Example
+
+Return the exponential distribution using the EXPONDIST compatibility function in a spreadsheet.
+
+```javascript editor-xlsx
+// Calculate exponential distribution values.
+
+// Apply EXPONDIST function to get the exponential distribution in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+let func = Api.WorksheetFunction;
+let ans = func.EXPONDIST(0.5, 3, false);
+worksheet.GetRange("B2").SetValue(ans);
+```

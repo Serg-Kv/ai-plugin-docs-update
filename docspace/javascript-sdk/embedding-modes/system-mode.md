@@ -1,0 +1,171 @@
+---
+sidebar_position: 6
+---
+
+# System mode
+
+System mode initializes a lightweight, hidden SDK frame that displays a blank page with a loader. It renders no visible ONLYOFFICE Apps UI. Instead, it provides access to a focused set of system-level methods for managing user sessions programmatically, such as authentication, hash generation, and user info retrieval — without embedding a visible interface.
+
+File and room operations such as `getFiles()`, `createFile()`, and `createRoom()` aren't available from a system frame — use [Manager mode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/embedding-modes/manager-mode.md) for those instead.
+
+:::note
+Calling `createRoom()` from a system frame rejects the returned promise with `SDKErrorCode.ModeMismatch` (message naming the method and the mode) instead of resolving with a room object, and no room is created. See [Method-call errors](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/events-and-callbacks.md#method-call-errors) for how this generalizes to any method the current mode has no handler for.
+:::
+
+## Initialization
+
+```javascript
+const docSpace = DocSpace.SDK.initSystem({
+  frameId: "ds-frame",
+  src: "https://your-docspace.com",
+});
+```
+
+Only the parameters `frameId` and `src` are required. All other parameters are optional and have sensible defaults.
+
+For setup instructions (connecting the script, CSP configuration, npm package), see [Get started](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/get-started.md). For a complete HTML example, see [Initialize system](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/init-system.md).
+
+## Configuration parameters
+
+### Required
+
+| Parameter | Type | Description |
+| ----------- | ------ | ------------- |
+| `frameId` | string | The ID of the `div` element where the frame will be rendered. Also used to reference this SDK instance later via `DocSpace.SDK.frames[frameId]`. |
+| `src` | string | The URL of your ONLYOFFICE Apps server. |
+
+### Lifecycle
+
+| Parameter | Type | Description |
+| ----------- | ------ | ------------- |
+| `destroyText` | string | Text inserted into the frame's `div` element when `destroyFrame()` is called. |
+
+## Events
+
+Events are passed as an object to the `events` key in the config.
+
+```javascript
+const docSpace = DocSpace.SDK.initSystem({
+  frameId: "ds-frame",
+  src: "https://your-docspace.com",
+  events: {
+    onAppReady: function () {},
+    onAppError: function (error) {},
+  },
+});
+```
+
+| Event | Description |
+| ------- | ------------- |
+| `onAppReady` | Fires when the SDK frame has finished initializing and system methods are ready to call. |
+| `onAppError` | Fires when an error occurs during initialization. |
+
+## Methods
+
+After initialization, the SDK instance can be accessed by its `frameId`:
+
+```javascript
+const frame = DocSpace.SDK.frames["ds-frame"];
+```
+
+System mode exposes a focused set of methods for session management. Calling file or room operations such as `getFiles()`, `createRoom()`, or `getRooms()` on a system frame isn't blocked at the type level, but the ONLYOFFICE Apps client has no handler for them in this mode — the call rejects instead of doing anything.
+
+| Method | Description |
+| -------- | ------------- |
+| `setConfig(config)` | Updates the frame configuration — `theme`, `locale`, `stylesUrl`, and `customActions` are all applied, though System mode has no visible UI for most of them to affect. |
+| `getUserInfo()` | Returns information about the currently authenticated user. Resolves with an empty value — not `null`, and not a rejection — when nobody is signed in; check `user && user.id` rather than a falsy/`catch` check. |
+| `getHashSettings()` | Returns the ONLYOFFICE Apps hash settings used for generating a password hash. |
+| `createHash(password, hashSettings)` | Generates a hash string from a plain-text password using the specified hash settings. |
+| `login(email, passwordHash, password?, session?, code?)` | Logs in to ONLYOFFICE Apps using the specified credentials. See [Two-factor authentication](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/two-factor-authentication.md) for the `code` argument. |
+| `logout()` | Logs out the current user. |
+
+## Use cases
+
+`initSystem()` has multiple use cases. It can be used as an auth proxy to authenticate a user in the background, to switch between user accounts or to check authorization status. See some examples below.
+
+### Application authentication (SSO Bridge)
+
+Authenticate a user in the background without displaying a login form, for example, from a third-party application. See also: [Authorization](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/advanced-samples/authorization.md).
+
+```javascript
+const system = DocSpace.SDK.initSystem({ frameId: "ds-auth", src: "https://your-docspace.com" });
+
+const settings = await system.getHashSettings();
+const hash = await system.createHash("p@ssw0rd", settings);
+const result = await system.login("user@example.com", hash);
+
+if (result.url === "/") {
+  console.log("Signed in");
+} else if (result.url && result.url.startsWith("/confirm/")) {
+  console.log("Two-factor code required"); // see Two-factor authentication
+} else {
+  console.error("Login failed"); // don't log `result` itself — see Method-call errors
+}
+```
+
+`login()` never rejects due to a portal-side failure — it always resolves, even with wrong credentials, so check `result.url` rather than wrapping the call in `try`/`catch` for that case. It can still reject for an SDK-level problem (`SDKErrorCode.Timeout`, `SDKErrorCode.Disconnected`) or if the frame is in [OAuth mode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/get-started/authentication-security.md#oauth-authentication). Never log or forward the resolved `result` object as-is on failure: see [Method-call errors](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/events-and-callbacks.md#method-call-errors) for why.
+
+### Switching users
+
+Log out the current user and authenticate a different account:
+
+```javascript
+const system = DocSpace.SDK.frames["ds-auth"];
+
+await system.logout();
+const settings = await system.getHashSettings();
+const hash = await system.createHash("otherPassword", settings);
+const result = await system.login("other@example.com", hash);
+
+if (result.url !== "/") {
+  console.error("Login failed"); // see the result-checking note above
+} else {
+  // Reinitialize the Manager frame for the new user
+}
+```
+
+### Checking authorization status
+
+Check whether a user is already authenticated before deciding what to display.
+
+```javascript
+const system = DocSpace.SDK.initSystem({ frameId: "ds-auth", src: "https://your-docspace.com" });
+
+try {
+  const user = await system.getUserInfo();
+  if (user && user.id) {
+    // User is authenticated — open Manager
+    DocSpace.SDK.initManager({ frameId: "ds-frame", src: "https://your-docspace.com" });
+  } else {
+    // User is not authenticated — show your own login form
+    showLoginForm();
+  }
+} catch {
+  // A genuine SDK-level failure (e.g. a timeout) — not the same as "not authenticated"
+  showLoginForm();
+}
+```
+
+`getUserInfo()` doesn't reject, and doesn't resolve with `null`, when nobody is signed in — it resolves with an empty value, so check for a real user object rather than relying on a `catch` for that case; the `catch` here is only for genuine SDK-level failures.
+
+### Changing the theme/locale
+
+Change the theme and locale without rebooting the ONLYOFFICE Apps instance:
+
+```javascript
+const system = DocSpace.SDK.frames["ds-auth"];
+await system.setConfig({ theme: 'Dark', locale: 'de' });
+```
+
+### Custom login UI
+
+Hide the system frame visually and use it as a backend for your own login form. The frame can be hidden using `width: 0px` and `height: 0px`.
+
+```javascript
+const system = DocSpace.SDK.initSystem({
+  frameId: "ds-auth",
+  src: "https://your-docspace.com",
+  width: "0px",
+  height: "0px",
+});
+```

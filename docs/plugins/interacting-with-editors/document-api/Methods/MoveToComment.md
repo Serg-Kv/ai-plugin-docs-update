@@ -1,0 +1,27 @@
+# MoveToComment
+
+Moves a cursor to the specified comment.
+
+## Syntax
+
+```javascript
+expression.MoveToComment(sId);
+```
+
+`expression` - A variable that represents an [Api](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/document-api.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sId | Required | string |  | The comment ID. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("MoveToComment", ["1_631"]);
+```

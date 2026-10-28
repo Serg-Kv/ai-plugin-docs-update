@@ -1,0 +1,43 @@
+# SetFormula
+
+Sets a formula or value to the current cell or cell range.
+
+:::note
+This functionality is available in paid ONLYOFFICE Docs editions.
+:::
+
+## Syntax
+
+```javascript
+expression.SetFormula(data);
+```
+
+`expression` - A variable that represents an [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| data | Required | string \| number \| boolean \| (string \| number \| boolean)[] \| (string \| number \| boolean)[][] |  | The formula or value for the cell or cell range. |
+
+## Returns
+
+boolean
+
+## Example
+
+Set a formula to a range in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I set a formula to a cell?
+
+// Set a formula to a cell and get it back to display in the worksheet.
+
+let worksheet = Api.GetActiveSheet();
+worksheet.GetRange("B1").SetValue(1);
+worksheet.GetRange("C1").SetValue(2);
+let range = worksheet.GetRange("A1");
+range.SetFormula("=SUM(B1:C1)");
+let formula = range.GetFormula();
+worksheet.GetRange("A3").SetValue("Formula from cell A1: " + formula);
+```

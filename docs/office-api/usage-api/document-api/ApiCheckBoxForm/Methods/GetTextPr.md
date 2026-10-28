@@ -1,0 +1,54 @@
+# GetTextPr
+
+Returns the text properties from the current form.
+
+:::note
+Used if possible for this type of form.
+:::
+
+Inherited from [ApiFormBase.GetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiFormBase/Methods/GetTextPr.md).
+
+## Syntax
+
+```javascript
+expression.GetTextPr();
+```
+
+`expression` - A variable that represents an [ApiCheckBoxForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiCheckBoxForm.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTextPr.md)
+
+## Example
+
+Access and modify the text formatting properties of a checkbox form in a document.
+
+```javascript editor-docx
+// How do I change the font style of a checkbox form's text in a document?
+
+// Apply bold and italic formatting to a checkbox form by reading and updating its text properties in a document.
+
+let doc = Api.GetDocument();
+let checkBoxForm = Api.CreateCheckBoxForm({"tip": "Specify your marital status", "required": true, "placeholder": "Marital status", "radio": false});
+checkBoxForm.SetFormKey("Marital status 1");
+let paragraph = doc.GetElement(0);
+paragraph.AddElement(checkBoxForm);
+paragraph.AddText(" Married");
+paragraph.AddLineBreak();
+checkBoxForm = Api.CreateCheckBoxForm({"tip": "Specify your marital status", "required": true, "placeholder": "Marital status", "radio": false});
+checkBoxForm.SetFormKey("Marital status 2");
+paragraph.AddElement(checkBoxForm);
+paragraph.AddText(" Single");
+let textPr = Api.CreateTextPr();
+textPr.SetFontSize(30);
+textPr.SetBold(true);
+checkBoxForm.SetTextPr(textPr);
+let formTextPr = checkBoxForm.GetTextPr();
+formTextPr.SetItalic(true);
+checkBoxForm.SetTextPr(formTextPr);
+```

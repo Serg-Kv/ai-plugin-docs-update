@@ -1,0 +1,43 @@
+# SetFormKey
+
+Sets a key to the current form.
+
+Inherited from [ApiFormBase.SetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/SetFormKey.md).
+
+## Syntax
+
+```javascript
+expression.SetFormKey(sKey);
+```
+
+`expression` - A variable that represents an [ApiTextForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiTextForm.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sKey | Required | string |  | Form key. |
+
+## Returns
+
+boolean
+
+## Example
+
+Assign an identifying key to a text field in a document.
+
+```javascript editor-forms
+// How do I give a text field a unique identifier for referencing it later in a document?
+
+// Label a text field with a key so it can be found and grouped with related fields in a document.
+
+let doc = Api.GetDocument();
+let textForm = Api.CreateTextForm({"tip": "Enter your first name", "required": true, "placeholder": "First name", "comb": true, "maxCharacters": 10, "cellWidth": 3, "multiLine": false, "autoFit": false});
+let paragraph = doc.GetElement(0);
+paragraph.AddElement(textForm);
+textForm.SetFormKey("Personal information");
+let key = textForm.GetFormKey();
+paragraph = Api.CreateParagraph();
+paragraph.AddText("Form key: " + key);
+doc.Push(paragraph);
+```

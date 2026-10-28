@@ -1,0 +1,45 @@
+# SetSpacing
+
+Sets the text spacing measured in twentieths of a point.
+
+## Syntax
+
+```javascript
+expression.SetSpacing(spacing);
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiParagraph.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| spacing | Required | [twips](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/Enumeration/twips.md) \| null |  | The value of the text spacing measured in twentieths of a point (1/1440 of an inch). Pass *null* to remove the text spacing. |
+
+## Returns
+
+[ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiParagraph.md)
+
+## Example
+
+Control the space between characters in text in a presentation.
+
+```javascript editor-pptx
+// How do I adjust character spacing in a paragraph in a presentation?
+
+// Apply custom spacing measurements to text for readability in a presentation.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const fill = Api.CreateSolidFill(Api.HexColor('#FF6F3D'));
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape('roundRect', Api.MillimetersToEmus(300), Api.MillimetersToEmus(130), fill, stroke);
+shape.SetPosition(Api.MillimetersToEmus(20), Api.MillimetersToEmus(35));
+const docContent = shape.GetContent();
+const paragraph = docContent.GetElement(0);
+paragraph.AddText('This is a paragraph with the text spacing set to 5 points.');
+paragraph.SetSpacing(60);
+slide.AddObject(shape);
+```

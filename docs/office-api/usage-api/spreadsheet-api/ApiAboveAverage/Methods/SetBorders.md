@@ -1,0 +1,58 @@
+# SetBorders
+
+Sets the border style for the conditional formatting rule.
+
+Inherited from [ApiFormatCondition.SetBorders](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiFormatCondition/Methods/SetBorders.md).
+
+## Syntax
+
+```javascript
+expression.SetBorders(bordersIndex, lineStyle, oColor);
+```
+
+`expression` - A variable that represents an [ApiAboveAverage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiAboveAverage.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| bordersIndex | Required | [BordersIndex](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/BordersIndex.md) |  | Specifies the cell border position. |
+| lineStyle | Required | [LineStyle](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/LineStyle.md) |  | Specifies the line style used to form the cell border. |
+| oColor | Required | [ApiColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiColor.md) |  | The color object which specifies the color to be set to the cell border. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+Add colored borders to cells that match a conditional formatting rule in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I make matching cells show a border when a formatting condition is met in a spreadsheet?
+
+// Highlight qualifying cells with edge lines through a conditional formatting rule in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+
+worksheet.GetRange("A1").SetValue("Sales Data");
+worksheet.GetRange("A2").SetValue(100);
+worksheet.GetRange("A3").SetValue(250);
+worksheet.GetRange("A4").SetValue(150);
+worksheet.GetRange("A5").SetValue(300);
+worksheet.GetRange("A6").SetValue(75);
+
+let dataRange = worksheet.GetRange("A2:A6");
+
+let formatConditions = dataRange.GetFormatConditions();
+
+let condition1 = formatConditions.Add("xlCellValue", "xlGreater", "200");
+condition1.SetFillColor(Api.RGB(255, 255, 0));
+
+let borderColor = Api.RGB(255, 0, 0);
+condition1.SetBorders("Top", "Thick", borderColor);
+condition1.SetBorders("Bottom", "Thick", borderColor);
+
+worksheet.GetRange("C1").SetValue("Borders applied:");
+worksheet.GetRange("C2").SetValue("Red thick top/bottom borders");
+```

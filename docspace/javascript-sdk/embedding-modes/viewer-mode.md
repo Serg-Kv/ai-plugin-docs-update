@@ -1,0 +1,54 @@
+---
+sidebar_position: 2
+---
+
+# Viewer mode
+
+Viewer mode embeds a read-only document inside your application. It opens a file by ID and renders it in a non-editable state, allowing users to read and review documents without exposing editing controls. If you want users to have editing controls, use the [Editor mode](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/embedding-modes/editor-mode.md) instead.
+
+## Initialization
+
+```javascript
+const docSpace = DocSpace.SDK.initViewer({
+  frameId: "ds-frame",
+  src: "https://your-docspace.com",
+  id: "your-file-id",
+});
+```
+
+Only the parameters `frameId`, `src`, and `id` are required. All other parameters are optional and have sensible defaults.
+
+For setup instructions (connecting the script, CSP configuration, npm package), see [Get started](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/get-started.md). For a complete HTML example, see [Initialize viewer](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/samples/basic-samples/init-viewer.md).
+
+## Configuration, events, and methods
+
+`initViewer()` accepts the full [`TFrameConfig`](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/type-aliases/TFrameConfig.md) configuration object and returns an [`SDKInstance`](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/classes/SDKInstance.md).
+
+## Use cases
+
+### Viewing a public document without login
+
+Use `requestToken` to let unauthenticated users view a document shared via a public link:
+
+```javascript
+const docSpace = DocSpace.SDK.initViewer({
+  frameId: "ds-frame",
+  src: "https://your-docspace.com",
+  id: "your-file-id",
+  requestToken: "public-share-token",
+});
+```
+
+### Embedding a document preview in mobile layout
+
+`editorType: "mobile"` switches to a mobile-optimized layout; `editorGoBack: false` additionally hides the "Open file location" button — see [Hiding UI elements and frame layout](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/customization/ui-elements.md#editor-mode) for its other two values:
+
+```javascript
+const docSpace = DocSpace.SDK.initViewer({
+  frameId: "ds-frame",
+  src: "https://your-docspace.com",
+  id: "your-file-id",
+  editorType: "mobile",
+  editorGoBack: false,
+});
+```

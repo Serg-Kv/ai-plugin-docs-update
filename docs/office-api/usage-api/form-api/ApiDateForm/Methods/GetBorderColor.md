@@ -1,0 +1,41 @@
+# GetBorderColor
+
+Returns the border color of the current form.
+
+Inherited from [ApiFormBase.GetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiFormBase/Methods/GetBorderColor.md).
+
+## Syntax
+
+```javascript
+expression.GetBorderColor();
+```
+
+`expression` - A variable that represents an [ApiDateForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/ApiDateForm.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiColor.md) \| null \| undefined
+
+## Example
+
+Read the border color of a date form field in a document.
+
+```javascript editor-forms
+// How do I get the border color of a date form in a document?
+
+// Verify that a custom border color was applied correctly by reading it back from a date form in a document.
+
+let doc = Api.GetDocument();
+let dateForm = Api.CreateDateForm({"key": "Nowadays", "tip": "Enter current date", "required": true, "placeholder": "Your date here", "format": "mm.dd.yyyy", "lang": "en-US"});
+let paragraph = doc.GetElement(0);
+paragraph.AddElement(dateForm);
+dateForm.SetBorderColor(Api.RGB(255, 111, 61));
+let borderColor = dateForm.GetBorderColor();
+paragraph = Api.CreateParagraph();
+paragraph.AddText("Border color (RGB): (" + borderColor.r + ", " + borderColor.g + ", " + borderColor.b + ")");
+doc.Push(paragraph);
+```

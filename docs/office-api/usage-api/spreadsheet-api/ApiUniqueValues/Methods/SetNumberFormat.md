@@ -1,0 +1,47 @@
+# SetNumberFormat
+
+Sets the number format for the unique values conditional formatting rule.
+
+## Syntax
+
+```javascript
+expression.SetNumberFormat(NumberFormat);
+```
+
+`expression` - A variable that represents an [ApiUniqueValues](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiUniqueValues.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| NumberFormat | Required | string |  | The number format to apply. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+Assign a number display format to cells matched by a unique values rule in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I control how numbers appear in cells highlighted by a unique values rule in a spreadsheet?
+
+// Format the numeric output of uniquely matched cells using a custom pattern in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+
+worksheet.GetRange("A1").SetValue("Numbers");
+worksheet.GetRange("A2").SetValue(10.5);
+worksheet.GetRange("A3").SetValue(20.3);
+worksheet.GetRange("A4").SetValue(10.5);
+worksheet.GetRange("A5").SetValue(30.7);
+
+let range = worksheet.GetRange("A2:A5");
+let formatConditions = range.GetFormatConditions();
+let uniqueValuesCondition = formatConditions.AddUniqueValues();
+
+uniqueValuesCondition.SetNumberFormat("0.00%");
+
+worksheet.GetRange("C1").SetValue("Number format set to percentage");
+```

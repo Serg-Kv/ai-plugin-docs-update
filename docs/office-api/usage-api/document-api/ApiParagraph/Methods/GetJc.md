@@ -1,0 +1,42 @@
+# GetJc
+
+Returns the paragraph contents justification.
+
+Inherited from [ApiParaPr.GetJc](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParaPr/Methods/GetJc.md).
+
+## Syntax
+
+```javascript
+expression.GetJc();
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParagraph.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+"left" \| "right" \| "both" \| "center" \| undefined
+
+## Example
+
+Read the text alignment setting applied to a paragraph in a document.
+
+```javascript editor-docx
+// How do I find out the justification type of a paragraph in a document?
+
+// Verify a center-aligned paragraph by printing its justification value in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+paragraph.AddText("This is a paragraph with the text in it aligned by the center. ");
+paragraph.AddText("These sentences are used to add lines for demonstrative purposes. ");
+paragraph.AddText("These sentences are used to add lines for demonstrative purposes.");
+paragraph.SetJc("center");
+let paraJc = paragraph.GetJc();
+paragraph = Api.CreateParagraph();
+paragraph.AddText("Justification: " + paraJc);
+doc.Push(paragraph);
+```

@@ -1,0 +1,38 @@
+# Add
+
+Adds a new custom XML part to the XML manager.
+
+## Syntax
+
+```javascript
+expression.Add(xml);
+```
+
+`expression` - A variable that represents an [ApiCustomXmlParts](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiCustomXmlParts.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| xml | Required | string |  | The XML string to be added. |
+
+## Returns
+
+[ApiCustomXmlPart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiCustomXmlPart.md)
+
+## Example
+
+Attach a new custom XML part to a document.
+
+```javascript editor-docx
+// Add a custom XML part with specific content to a document.
+
+// Embed structured XML data to store metadata alongside the content in a document.
+
+let doc = Api.GetDocument();
+let xmlManager = doc.GetCustomXmlParts();
+let newXml = xmlManager.Add("<content xmlns='http://example.com' version='1.0'></content>");
+let infoParagraph = Api.CreateParagraph();
+infoParagraph.AddText("New XML part added: " + newXml.GetXml());
+doc.Push(infoParagraph);
+```

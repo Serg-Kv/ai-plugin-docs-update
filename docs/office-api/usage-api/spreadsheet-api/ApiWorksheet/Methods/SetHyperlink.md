@@ -1,0 +1,39 @@
+# SetHyperlink
+
+Adds a hyperlink to the specified range.
+
+## Syntax
+
+```javascript
+expression.SetHyperlink(range, address, subAddress, screenTip, textToDisplay);
+```
+
+`expression` - A variable that represents an [ApiWorksheet](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiWorksheet.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| range | Required | string |  | The range where the hyperlink will be added to. |
+| address | Required | string |  | The link address. |
+| subAddress | Optional | string |  | The link subaddress to insert internal sheet hyperlinks. |
+| screenTip | Optional | string |  | The screen tip text. |
+| textToDisplay | Optional | string |  | The link text that will be displayed on the sheet. |
+
+## Returns
+
+boolean
+
+## Example
+
+Attach a clickable hyperlink to a cell range in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I add a hyperlink to a cell in a spreadsheet?
+
+// Link a cell to an external URL so users can navigate to it directly in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+const logoUrl = 'https://static.onlyoffice.com/assets/docs/samples/img/onlyoffice_logo.png';
+worksheet.SetHyperlink('A1', logoUrl, null, 'ONLYOFFICE for developers', 'Api ONLYOFFICE');
+```

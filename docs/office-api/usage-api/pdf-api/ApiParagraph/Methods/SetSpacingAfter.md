@@ -1,0 +1,58 @@
+# SetSpacingAfter
+
+Sets the spacing after the current paragraph.
+
+If the value of the isAfterAuto parameter is true, then any value of the nAfter is ignored. If isAfterAuto parameter is not specified, then it  will be interpreted as false.
+
+Inherited from [ApiParaPr.SetSpacingAfter](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiParaPr/Methods/SetSpacingAfter.md).
+
+## Syntax
+
+```javascript
+expression.SetSpacingAfter(nAfter, isAfterAuto);
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiParagraph.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| nAfter | Required | [twips](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Enumeration/twips.md) |  | The value of the spacing after the current paragraph measured in twentieths of a point (1/1440 of an inch). |
+| isAfterAuto | Optional | boolean | false | The true value disables the spacing after the current paragraph. |
+
+## Returns
+
+boolean
+
+## Example
+
+Add space below a paragraph directly in a PDF.
+
+```javascript editor-pdf
+// Useful for creating a gap after a paragraph in a PDF.
+
+// Control the margin between a paragraph and the next element in a PDF.
+
+const doc = Api.GetDocument();
+const page = doc.GetPage(0);
+
+const gs1 = Api.CreateGradientStop(Api.RGB(255, 213, 191), 0);
+const gs2 = Api.CreateGradientStop(Api.RGB(255, 111, 61), 100000);
+const fill = Api.CreateRadialGradientFill([gs1, gs2]);
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape("flowChartMagneticTape", 150 * 36000, 65 * 36000, fill, stroke);
+shape.SetPosition(608400, 1267200);
+
+const docContent = shape.GetContent();
+const paragraph = docContent.GetElement(0);
+paragraph.AddText("This is an example of setting a space after a paragraph. ");
+paragraph.AddText("The second paragraph will have an offset of one inch from the top. ");
+paragraph.AddText("This is due to the fact that the first paragraph has this offset enabled.");
+paragraph.SetSpacingAfter(1440);
+
+const paragraph2 = Api.CreateParagraph();
+paragraph2.AddText("This is the second paragraph and it is one inch away from the first paragraph.");
+docContent.Push(paragraph2);
+page.AddObject(shape);
+```

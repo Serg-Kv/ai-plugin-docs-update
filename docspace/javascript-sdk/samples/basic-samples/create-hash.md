@@ -1,0 +1,160 @@
+---
+description: Generate a password hash using the ONLYOFFICE Apps JS SDK.
+tags: ["Apps", "Embed SDK", "Integration"]
+---
+
+# Create password hash
+
+This example demonstrates how to generate a secure hash from a plain-text password using ONLYOFFICE Apps SDK methods.
+
+Complete source code on GitHub: [JavaScript](https://github.com/ONLYOFFICE/docspace-samples/blob/master/js-sdk/basic-samples/create-hash.html)
+
+## Before you start
+
+Please make sure you are using a server environment to run the HTML file because the Embed SDK must be launched on the server.
+You need to [add the URL](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/get-started/authentication-security.md#registering-allowed-embed-origins) of your server's root directory to the **Developer Tools** section of ONLYOFFICE Apps.
+
+<details>
+  <summary>Full example</summary>
+
+``` html
+<!-- Step 1: HTML Setup -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Create Hash</title>
+
+    <!-- Replace with your actual portal URL -->
+    <script src="{PORTAL_SRC}/static/scripts/sdk/2.2.0/api.js"></script>
+
+    <style>
+      #button {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- SDK iframe -->
+    <iframe id="ds-frame"></iframe>
+
+    <!-- Trigger Button -->
+    <button id="button">Create Hash</button>
+  </body>
+
+  <!-- Step 2: Embed SDK Logic -->
+  <script>
+    document.getElementById("button").onclick = async () => {
+      let password = "qwerty12345";
+      let hashSettings = await docSpace.getHashSettings();
+      let passwordHash = await docSpace.createHash(password, hashSettings);
+      console.log(passwordHash);
+    };
+
+    function onAppReady() {
+      const frame = DocSpace.SDK.frames["ds-frame"];
+      console.log(frame);
+    }
+
+    const config = {
+      frameId: "ds-frame",
+      src: "{PORTAL_SRC}",
+      width: "100%",
+      height: "700px",
+      events: {
+        onAppReady,
+      },
+    };
+
+    const docSpace = DocSpace.SDK.initManager(config);
+  </script>
+</html>
+```
+
+</details>
+
+## Step 1. Set HTML structure
+
+Create a basic HTML page with an ONLYOFFICE Apps iframe and a button to trigger the hashing logic:
+
+``` html
+<!-- Step 1: HTML Setup -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Create Hash</title>
+
+    <!-- Replace with your actual portal URL -->
+    <script src="{PORTAL_SRC}/static/scripts/sdk/2.2.0/api.js"></script>
+
+    <style>
+      #button {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- SDK iframe -->
+    <iframe id="ds-frame"></iframe>
+
+    <!-- Trigger Button -->
+    <button id="button">Create Hash</button>
+  </body>
+</html>
+```
+
+:::info
+The API JavaScript file can normally be found in the following ONLYOFFICE Apps folder: **\{PORTAL_SRC\}/static/scripts/sdk/2.2.0/api.js** where **\{PORTAL_SRC\}** is the name of the server with the ONLYOFFICE Apps installed.
+:::
+
+## Step 2. Embed SDK logic
+
+Create a script block to initialize the SDK and trigger the [createHash()](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/classes/SDKInstance.md#createhash) method using settings returned by [getHashSettings()](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/classes/SDKInstance.md#gethashsettings).
+``` ts
+document.getElementById("button").onclick = async () => {
+  let password = "qwerty12345";
+  let hashSettings = await docSpace.getHashSettings();
+  let passwordHash = await docSpace.createHash(password, hashSettings);
+  console.log(passwordHash);
+};
+
+function onAppReady() {
+  const frame = DocSpace.SDK.frames["ds-frame"];
+  console.log(frame);
+}
+
+const config = {
+  frameId: "ds-frame",
+  src: "{PORTAL_SRC}",
+  width: "100%",
+  height: "700px",
+  events: {
+    onAppReady,
+  },
+};
+
+const docSpace = DocSpace.SDK.initManager(config);
+```

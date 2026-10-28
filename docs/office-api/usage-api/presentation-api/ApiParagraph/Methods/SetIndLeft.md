@@ -1,0 +1,58 @@
+# SetIndLeft
+
+Sets the paragraph left side indentation.
+
+Inherited from [ApiParaPr.SetIndLeft](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiParaPr/Methods/SetIndLeft.md).
+
+## Syntax
+
+```javascript
+expression.SetIndLeft(nValue);
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiParagraph.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| nValue | Required | [twips](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/Enumeration/twips.md) |  | The paragraph left side indentation value measured in twentieths of a point (1/1440 of an inch). |
+
+## Returns
+
+boolean
+
+## Example
+
+Set left indentation for a paragraph in a presentation.
+
+```javascript editor-pptx
+// How do I indent the left side of a paragraph in a presentation?
+
+// Apply a specific left margin distance to paragraph text in a presentation.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const gs1 = Api.CreateGradientStop(Api.RGB(255, 213, 191), 0);
+const gs2 = Api.CreateGradientStop(Api.RGB(255, 111, 61), 100000);
+const fill = Api.CreateRadialGradientFill([gs1, gs2]);
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape("flowChartMagneticTape", 300 * 36000, 130 * 36000, fill, stroke);
+shape.SetPosition(608400, 1267200);
+
+const docContent = shape.GetDocContent();
+let paragraph = docContent.GetElement(0);
+paragraph.AddText("This is a paragraph with the indent of 2 inches set to it. ");
+paragraph.AddText("These sentences are used to add lines for demonstrative purposes. ");
+paragraph.AddText("These sentences are used to add lines for demonstrative purposes. ");
+paragraph.SetIndLeft(2880);
+
+paragraph = Api.CreateParagraph();
+paragraph.AddText("This is a paragraph without any indent set to it. ");
+paragraph.AddText("These sentences are used to add lines for demonstrative purposes. ");
+paragraph.AddText("These sentences are used to add lines for demonstrative purposes.");
+docContent.Push(paragraph);
+slide.AddObject(shape);
+```

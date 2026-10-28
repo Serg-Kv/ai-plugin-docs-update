@@ -1,0 +1,43 @@
+# SetCaps
+
+Specifies that any lowercase characters in the text run are formatted for display only as their capital letter character equivalents.
+
+Inherited from [ApiTextPr.SetCaps](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTextPr/Methods/SetCaps.md).
+
+## Syntax
+
+```javascript
+expression.SetCaps(isCaps);
+```
+
+`expression` - A variable that represents an [ApiRun](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiRun.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| isCaps | Required | boolean |  | Specifies that the contents of the current run are displayed capitalized. |
+
+## Returns
+
+[ApiTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTextPr.md)
+
+## Example
+
+Display all letters in a text run as capitals without changing the underlying text in a document.
+
+```javascript editor-docx
+// How do I make a run appear in all capital letters in a document?
+
+// Render lowercase characters as uppercase for visual effect in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+let run = Api.CreateRun();
+run.AddText("This is just a sample text. ");
+paragraph.AddElement(run);
+run = Api.CreateRun();
+run.SetCaps(true);
+run.AddText("This is a text run with the font set to capitalized letters.");
+paragraph.AddElement(run);
+```

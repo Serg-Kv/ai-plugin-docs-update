@@ -1,0 +1,46 @@
+# SetTextPr
+
+Sets the text properties to the current form.
+
+:::note
+Used if possible for this type of form.
+:::
+
+Inherited from [ApiFormBase.SetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiFormBase/Methods/SetTextPr.md).
+
+## Syntax
+
+```javascript
+expression.SetTextPr(textPr);
+```
+
+`expression` - A variable that represents an [ApiDateForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiDateForm.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| textPr | Required | [ApiTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTextPr.md) |  | The text properties that will be set to the current form. |
+
+## Returns
+
+boolean
+
+## Example
+
+Apply text formatting to a date form in a document.
+
+```javascript editor-docx
+// How do I apply bold and larger font to a date form in a document?
+
+// Customize the appearance of a date form by changing its font size and weight in a document.
+
+let doc = Api.GetDocument();
+let dateForm = Api.CreateDateForm({"key": "Nowadays", "tip": "Enter current date", "required": true, "placeholder": "Your date here", "format": "mm.dd.yyyy", "lang": "en-US"});
+let paragraph = doc.GetElement(0);
+paragraph.AddElement(dateForm);
+let textPr = Api.CreateTextPr();
+textPr.SetFontSize(30);
+textPr.SetBold(true);
+dateForm.SetTextPr(textPr);
+```

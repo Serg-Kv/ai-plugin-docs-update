@@ -1,0 +1,51 @@
+# SetBullet
+
+Sets the bullet or numbering to the current paragraph.
+
+Inherited from [ApiParaPr.SetBullet](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiParaPr/Methods/SetBullet.md).
+
+## Syntax
+
+```javascript
+expression.SetBullet(oBullet);
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiParagraph.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| oBullet | Required | [ApiBullet](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiBullet.md) \| null \| undefined |  | The bullet object created with the [Api#CreateBullet](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/Api/Methods/CreateBullet.md) or [Api#CreateNumbering](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/Api/Methods/CreateNumbering.md) method. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+Add a bullet point to a paragraph in a presentation.
+
+```javascript editor-pptx
+// How do I create a bulleted list in a presentation?
+
+// Format a paragraph with a bullet character in a presentation.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const gs1 = Api.CreateGradientStop(Api.RGB(255, 213, 191), 0);
+const gs2 = Api.CreateGradientStop(Api.RGB(255, 111, 61), 100000);
+const fill = Api.CreateRadialGradientFill([gs1, gs2]);
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape("flowChartMagneticTape", 300 * 36000, 130 * 36000, fill, stroke);
+shape.SetPosition(608400, 1267200);
+
+const docContent = shape.GetDocContent();
+const paragraph = docContent.GetElement(0);
+const bullet = Api.CreateBullet("-");
+paragraph.SetBullet(bullet);
+paragraph.AddText(" This is an example of the bulleted paragraph.");
+slide.AddObject(shape);
+```

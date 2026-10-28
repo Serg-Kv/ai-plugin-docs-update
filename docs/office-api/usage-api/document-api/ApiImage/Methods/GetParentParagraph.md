@@ -1,0 +1,41 @@
+# GetParentParagraph
+
+Returns a parent paragraph that contains the graphic object.
+
+Inherited from [ApiDrawing.GetParentParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiDrawing/Methods/GetParentParagraph.md).
+
+## Syntax
+
+```javascript
+expression.GetParentParagraph();
+```
+
+`expression` - A variable that represents an [ApiImage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiImage.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParagraph.md) \| null
+
+## Example
+
+Retrieve the parent paragraph that contains a drawing object in a document.
+
+```javascript editor-docx
+// How do I find the paragraph that holds a drawing in a document?
+
+// Access the enclosing paragraph to append a line break and label text after a shape in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+let fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+let stroke = Api.CreateStroke(0, Api.CreateNoFill());
+let drawing = Api.CreateShape("rect", 3212465, 963295, fill, stroke);
+paragraph.AddDrawing(drawing);
+let parentParagraph = drawing.GetParentParagraph();
+parentParagraph.AddLineBreak();
+parentParagraph.AddText("This is a parent paragraph");
+```

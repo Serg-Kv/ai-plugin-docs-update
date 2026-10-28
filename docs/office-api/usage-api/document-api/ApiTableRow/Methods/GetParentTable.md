@@ -1,0 +1,40 @@
+# GetParentTable
+
+Returns the parent table of the current row.
+
+## Syntax
+
+```javascript
+expression.GetParentTable();
+```
+
+`expression` - A variable that represents an [ApiTableRow](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTableRow.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiTable](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTable.md) \| null
+
+## Example
+
+Retrieve the table that contains a specific row in a document.
+
+```javascript editor-docx
+// How do I get a reference to the whole table from one of its rows in a document?
+
+// Reach back from a row to its containing table to apply changes at the table level in a document.
+
+let doc = Api.GetDocument();
+let tableStyle = doc.CreateStyle("CustomTableStyle", "table");
+tableStyle.SetBasedOn(doc.GetStyle("Bordered"));
+let table = Api.CreateTable(3, 3);
+table.SetStyle(tableStyle);
+table.SetWidth("percent", 100);
+let row = table.GetRow(0);
+let parentTable = row.GetParentTable();
+parentTable.SetTableBorderBottom("single", 32, 0, Api.Color(51, 51, 51));
+doc.Push(parentTable);
+```

@@ -1,0 +1,46 @@
+# GetAllWidgets
+
+Gets page widgets
+
+## Syntax
+
+```javascript
+expression.GetAllWidgets();
+```
+
+`expression` - A variable that represents an [ApiPage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiPage.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiWidget](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Enumeration/ApiWidget.md)[]
+
+## Example
+
+Retrieve all interactive fields from a page in a PDF.
+
+```javascript editor-pdf
+// Useful for accessing all the form fields in a PDF.
+
+// List every interactive element on the current page in a PDF.
+
+let doc = Api.GetDocument();
+doc.AddPage(0);
+let page = doc.GetPage(0);
+
+let textField = Api.CreateTextField([10, 10, 160, 30]);
+let comboboxField = Api.CreateComboboxField([10, 40, 160, 60]);
+let listboxField = Api.CreateListboxField([10, 70, 100, 130]);
+
+page.AddObject(textField);
+page.AddObject(comboboxField);
+page.AddObject(listboxField);
+
+let allWidgets = page.GetAllWidgets();
+allWidgets.forEach(function(field) {
+    console.log(field.GetClassType());
+});
+```

@@ -1,0 +1,35 @@
+# GetAllImages
+
+Returns all images from the current sheet.
+
+## Syntax
+
+```javascript
+expression.GetAllImages();
+```
+
+`expression` - A variable that represents an [ApiWorksheet](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiWorksheet.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiImage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiImage.md)[]
+
+## Example
+
+Retrieve every image embedded on a worksheet in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I list all images placed on a sheet in a spreadsheet?
+
+// Collect the full set of images from a worksheet in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+worksheet.AddImage("https://static.onlyoffice.com/assets/docs/samples/img/presentation_sky.png", 60 * 36000, 35 * 36000, 0, 2 * 36000, 0, 3 * 36000);
+let images = worksheet.GetAllImages();
+let classType = images[0].GetClassType();
+worksheet.GetRange("A10").SetValue("Class Type = " + classType);
+```

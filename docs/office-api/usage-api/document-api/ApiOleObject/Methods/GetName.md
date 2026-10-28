@@ -1,0 +1,45 @@
+# GetName
+
+Returns the name of the current drawing.
+
+Inherited from [ApiDrawing.GetName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiDrawing/Methods/GetName.md).
+
+## Syntax
+
+```javascript
+expression.GetName();
+```
+
+`expression` - A variable that represents an [ApiOleObject](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiOleObject.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+string
+
+## Example
+
+Retrieve the name assigned to a drawing object in a document.
+
+```javascript editor-docx
+// How do I get the name of a drawing shape in a document?
+
+// Assign a custom name to a shape and then read it back as text in a document.
+
+const doc = Api.GetDocument();
+const paragraph = doc.GetElement(0);
+
+const fill = Api.CreateSolidFill(Api.HexColor('#5B9BD5'));
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const drawing = Api.CreateShape('rect', Api.MillimetersToEmus(80), Api.MillimetersToEmus(40), fill, stroke);
+paragraph.AddDrawing(drawing);
+drawing.SetName('MyRectangle');
+
+const shapeName = drawing.GetName();
+const paragraph2 = Api.CreateParagraph();
+paragraph2.AddText('Drawing name: ' + shapeName);
+doc.Push(paragraph2);
+```

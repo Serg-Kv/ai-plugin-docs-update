@@ -1,0 +1,40 @@
+# GetFillColor
+
+Returns the background color for the current cell range.
+
+Returns 'No Fill' when the color of the background in the cell / cell range is null.
+
+## Syntax
+
+```javascript
+expression.GetFillColor();
+```
+
+`expression` - A variable that represents an [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiColor.md) \| 'No Fill'
+
+## Example
+
+Read the background color of a cell range in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I find out what background color a cell has in a spreadsheet?
+
+// Copy a cell's fill color and apply it to another cell in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+worksheet.SetColumnWidth(0, 60);
+let range = worksheet.GetRange("A1");
+range.SetFillColor(Api.RGB(255, 213, 191));
+range.SetValue("This is the cell with a color set to its background.");
+let fillColor = range.GetFillColor();
+worksheet.GetRange("A3").SetValue("This is another cell with the same color set to its background");
+worksheet.GetRange("A3").SetFillColor(fillColor);
+```

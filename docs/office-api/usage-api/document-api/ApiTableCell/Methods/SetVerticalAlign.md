@@ -1,0 +1,55 @@
+# SetVerticalAlign
+
+Specifies the vertical alignment for the text contents within the current table cell.
+
+Inherited from [ApiTableCellPr.SetVerticalAlign](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTableCellPr/Methods/SetVerticalAlign.md).
+
+## Syntax
+
+```javascript
+expression.SetVerticalAlign(sType);
+```
+
+`expression` - A variable that represents an [ApiTableCell](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTableCell.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sType | Required | "top" \| "center" \| "bottom" |  | The available types of the vertical alignment for the text contents of the current table cell. |
+
+## Returns
+
+boolean
+
+## Example
+
+Control where text sits vertically inside a table cell in a document.
+
+```javascript editor-docx
+// How do I align text to the top, center, or bottom of a table cell in a document?
+
+// Position cell content at a specific vertical location within a table cell in a document.
+
+let doc = Api.GetDocument();
+let tableStyle = doc.CreateStyle("CustomTableStyle", "table");
+tableStyle.SetBasedOn(doc.GetStyle("Bordered"));
+let table = Api.CreateTable(3, 3);
+table.SetWidth("percent", 100);
+let tableRow = table.GetRow(0);
+tableRow.SetHeight("atLeast", 1440);
+let cell = table.GetRow(0).GetCell(0);
+cell.SetVerticalAlign("top");
+let paragraph = cell.GetContent().GetElement(0);
+paragraph.AddText("Align top");
+cell = table.GetRow(0).GetCell(1);
+cell.SetVerticalAlign("center");
+paragraph = cell.GetContent().GetElement(0);
+paragraph.AddText("Align center");
+cell = table.GetRow(0).GetCell(2);
+cell.SetVerticalAlign("bottom");
+paragraph = cell.GetContent().GetElement(0);
+paragraph.AddText("Align bottom");
+table.SetStyle(tableStyle);
+doc.Push(table);
+```

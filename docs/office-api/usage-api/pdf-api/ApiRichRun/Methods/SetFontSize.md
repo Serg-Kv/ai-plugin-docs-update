@@ -1,0 +1,51 @@
+# SetFontSize
+
+Sets the font size to the characters of the current text run.
+
+Inherited from [ApiRichTextPr.SetFontSize](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiRichTextPr/Methods/SetFontSize.md).
+
+## Syntax
+
+```javascript
+expression.SetFontSize(size);
+```
+
+`expression` - A variable that represents an [ApiRichRun](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiRichRun.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| size | Required | [hps](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Enumeration/hps.md) |  | The text size value measured in half-points (1/144 of an inch). |
+
+## Returns
+
+[ApiRichTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiRichTextPr.md)
+
+## Example
+
+Adjust the size of text in a PDF.
+
+```javascript editor-pdf
+// How do I change how large text appears in a PDF?
+
+// Modify text size in a PDF.
+
+let doc = Api.GetDocument();
+let freeTextAnnot = Api.CreateFreeTextAnnot([160, 50, 360, 135]);
+let page = doc.GetPage(0);
+page.AddObject(freeTextAnnot);
+freeTextAnnot.SetIntent("freeTextCallout");
+freeTextAnnot.SetCallout([{x: 161, y: 51}, {x: 249, y: 125}, {x: 261, y: 125}]);
+freeTextAnnot.SetRectDiff([100, 64, 0.5, 0.5]);
+
+let richContent = freeTextAnnot.GetContent();
+let para = richContent.GetElement(0);
+let run = para.GetElement(0);
+run.AddText("Some example text");
+
+let textPr = run.GetTextPr();
+textPr.SetFontSize(40);
+
+console.log(`We set font size to ${textPr.GetFontSize()} for rich text properties`);
+```

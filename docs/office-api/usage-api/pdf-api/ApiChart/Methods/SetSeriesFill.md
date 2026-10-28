@@ -1,0 +1,53 @@
+# SetSeriesFill
+
+Sets the fill to the specified chart series.
+
+:::note
+The fill is not applied to 2D line and scatter series. Use the SetSeriesOutLine method to change their line and the SetMarkerFill method to change their markers.
+:::
+
+## Syntax
+
+```javascript
+expression.SetSeriesFill(oFill, nSeries, bAll);
+```
+
+`expression` - A variable that represents an [ApiChart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiChart.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| oFill | Required | [ApiFill](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiFill.md) |  | The fill type used to fill the series. |
+| nSeries | Required | number |  | The index of the chart series. |
+| bAll | Optional | boolean | false | Specifies if the fill will be applied to all series. |
+
+## Returns
+
+boolean
+
+## Example
+
+Color the bars or columns of a chart in a PDF.
+
+```javascript editor-pdf
+// How do I apply different colors to each data series in a PDF?
+
+// Apply a solid fill color to chart series in a PDF.
+
+const doc = Api.GetDocument();
+const page = doc.GetPage(0);
+
+const chart = Api.CreateChart("3DColumnClustered", [
+	[200, 240, 280],
+	[250, 260, 280]
+], ["Projected Revenue", "Estimated Costs"], [2014, 2015, 2016], 4051300, 2347595, 24);
+chart.SetSize(150 * 36000, 65 * 36000);
+chart.SetPosition(608400, 1267200);
+
+let fill = Api.CreateSolidFill(Api.RGB(51, 51, 51));
+chart.SetSeriesFill(fill, 0, false);
+fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+chart.SetSeriesFill(fill, 1, false);
+page.AddObject(chart);
+```

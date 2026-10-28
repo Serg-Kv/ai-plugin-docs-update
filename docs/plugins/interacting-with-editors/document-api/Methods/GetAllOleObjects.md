@@ -1,0 +1,36 @@
+# GetAllOleObjects
+
+Returns all OLE object data for objects which can be opened by the specified plugin.
+
+If *sPluginId* is not defined, this method returns all OLE objects contained in the current document.
+
+## Syntax
+
+```javascript
+expression.GetAllOleObjects(sPluginId);
+```
+
+`expression` - A variable that represents an [Api](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/document-api.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sPluginId | Required | string \| null \| undefined |  | Plugin identifier. It must be of the *asc.\{UUID\}* type. |
+
+## Returns
+
+[OLEObjectData](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/document-api/Enumeration/OLEObjectData.md)[]
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("GetAllOleObjects", ["asc.{38E022EA-AD92-45FC-B22B-49DF39746DB4}"], function (data) {
+    for (var i = 0; i < data.length; i++) {
+        if (data[i].InternalId == "5_665") {
+            this.Asc.plugin.executeMethod ("SelectOleObject", [data[i].InternalId]);
+            break;
+        }
+    }
+});
+```

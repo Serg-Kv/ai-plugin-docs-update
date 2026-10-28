@@ -1,0 +1,48 @@
+# AddTableOfContents
+
+Adds a table of content to the current document.
+
+## Syntax
+
+```javascript
+expression.AddTableOfContents(oTocPr, oRange);
+```
+
+`expression` - A variable that represents an [ApiDocument](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiDocument.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| oTocPr | Optional | [TocPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/TocPr.md) | \{\} | Table of contents properties. |
+| oRange | Optional | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiRange.md) |  | The range that the table of contents replaces. If omitted, the table of contents is inserted at the current position. |
+
+## Returns
+
+[ApiTableOfContents](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTableOfContents.md) \| null \| undefined
+
+## Example
+
+Generate a table of contents from headings in a document.
+
+```javascript editor-docx
+// Build the heading outline, then add an anchor paragraph where the table of contents should appear.
+
+// Insert the table of contents so it replaces the anchor range.
+
+let doc = Api.GetDocument();
+let newDocumentStyle = doc.GetStyle("Heading 1");
+let paragraph = doc.GetElement(0);
+paragraph.SetStyle(newDocumentStyle);
+paragraph.AddText("Heading 1");
+newDocumentStyle = doc.GetStyle("Heading 2");
+paragraph = Api.CreateParagraph();
+paragraph.SetStyle(newDocumentStyle);
+paragraph.AddText("Heading 2");
+doc.Push(paragraph);
+let anchor = Api.CreateParagraph();
+anchor.AddText("Table of contents goes here");
+doc.Push(anchor);
+let tocPr = {"ShowPageNums": true, "RightAlgn": true, "LeaderType": "dot", "FormatAsLinks": true, "BuildFrom": {"OutlineLvlStart": 1, "OutlineLvls": 9}, "TocStyle": "standard"};
+doc.AddTableOfContents(tocPr, anchor.GetRange());
+```

@@ -1,0 +1,37 @@
+# GetClassType
+
+Returns a type of the ApiInkAnnotation class.
+
+## Syntax
+
+```javascript
+expression.GetClassType();
+```
+
+`expression` - A variable that represents an [ApiInkAnnotation](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiInkAnnotation.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+"inkAnnot"
+
+## Example
+
+Get the class type of an ink annotation in a PDF.
+
+```javascript editor-pdf
+// Useful for verifying the category of an ink annotation in a PDF.
+
+// Determine the classification of an ink annotation in a PDF.
+
+let doc = Api.GetDocument();
+let inkPaths = [[{x: 328.002, y: 222.017}, {x: 328.648, y: 222.017}, {x: 329.294, y: 222.017}]];
+let inkAnnot = Api.CreateInkAnnot([10, 10, 160, 32], inkPaths);
+inkAnnot.SetBorderColor(Api.RGB(255, 0, 0));
+let page = doc.GetPage(0);
+page.AddObject(inkAnnot);
+console.log(`Annot class type is: ${inkAnnot.GetClassType()}`);
+```

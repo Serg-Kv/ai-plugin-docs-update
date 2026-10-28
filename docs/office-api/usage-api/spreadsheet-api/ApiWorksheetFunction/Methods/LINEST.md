@@ -1,0 +1,61 @@
+# LINEST
+
+Returns statistics that describe a linear trend matching known data points, by fitting a straight line using the least squares method.
+
+## Syntax
+
+```javascript
+expression.LINEST(arg1, arg2, arg3, arg4);
+```
+
+`expression` - A variable that represents an [ApiWorksheetFunction](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiWorksheetFunction.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| arg1 | Required | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| number[] |  | The set of y-values from the *y = mx + b* equation. |
+| arg2 | Optional | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| number[] |  | An optional set of x-values from the *y = mx + b* equation. |
+| arg3 | Optional | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| boolean |  | A logical value: the constant *b* is calculated normally if this parameter is set to **true** or omitted, and *b* is set equal to 0 if the parameter is **false**. |
+| arg4 | Optional | [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) \| [ApiName](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiName.md) \| boolean |  | A logical value: return additional regression statistics if this parameter is set to **true**, and return m-coefficients and the constant *b* if the parameter is **false** or omitted. |
+
+## Returns
+
+number[][]
+
+## Example
+
+Fit a straight line to data points and get trend statistics in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I analyze the relationship between x and y values to predict a trend in a spreadsheet?
+
+// Get the slope, intercept, and accuracy metrics for a linear regression in a spreadsheet.
+
+const worksheet = Api.GetActiveSheet();
+
+//configure function parameters
+let yValues = [1.5, 2, 3];
+let xValues = [2, 3.1, 3.5];
+let constant = true;
+let stats = true;
+
+//set values in cells
+for (let i = 0; i < yValues.length; i++) {
+  worksheet.GetRange("A" + (i + 1)).SetValue(yValues[i]);
+}
+for (let n = 0; n < xValues.length; n++) {
+  worksheet.GetRange("B" + (n + 1)).SetValue(xValues[n]);
+}
+
+//get x and y ranges
+let yRange = worksheet.GetRange("A1:A3");
+let xRange = worksheet.GetRange("B1:B3");
+let func = Api.WorksheetFunction;
+
+//invoke LINEST method
+let ans = func.LINEST(yRange, xRange, constant, stats);
+
+//print answer 
+ worksheet.GetRange("D1").SetValue(ans);
+```

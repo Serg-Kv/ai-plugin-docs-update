@@ -1,0 +1,49 @@
+# SetIndRight
+
+Sets the paragraph right side indentation.
+
+Inherited from [ApiParaPr.SetIndRight](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiParaPr/Methods/SetIndRight.md).
+
+## Syntax
+
+```javascript
+expression.SetIndRight(nValue);
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiParagraph.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| nValue | Required | [twips](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/twips.md) |  | The paragraph right side indentation value measured in twentieths of a point (1/1440 of an inch). |
+
+## Returns
+
+boolean
+
+## Example
+
+Indent a paragraph from the right inside a shape in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I push paragraph text away from the right edge in a spreadsheet?
+
+// Narrow the text area from the right so lines wrap before reaching the shape's border in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+let fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+let stroke = Api.CreateStroke(0, Api.CreateNoFill());
+let shape = worksheet.AddShape("flowChartOnlineStorage", 120 * 36000, 70 * 36000, fill, stroke, 0, 2 * 36000, 0, 3 * 36000);
+let content = shape.GetContent();
+let paragraph = content.GetElement(0);
+paragraph.AddText("This is a paragraph with the right offset of 2 inches set to it. ");
+paragraph.AddText("We also aligned the text in it by the right side. ");
+paragraph.AddText("This sentence is used to add lines for demonstrative purposes.");
+paragraph.SetJc("right");
+paragraph.SetIndRight(2880);
+paragraph = Api.CreateParagraph();
+paragraph.AddText("This is a paragraph without any offset set to it. ");
+paragraph.AddText("These sentences are used to add lines for demonstrative purposes. ");
+content.Push(paragraph);
+```

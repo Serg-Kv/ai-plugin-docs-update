@@ -1,0 +1,24 @@
+# ONLYOFFICE Docs: AI
+
+> Connect ONLYOFFICE editors to AI providers with AI Tools, add custom providers and MCP servers, and use the AI agent.
+
+Links below point to the Markdown version of each page. For the other sections of this documentation, see the [index](https://api.onlyoffice.com/ai-plugin-docs-update/llms.txt).
+
+## Get started
+
+- [Overview](https://api.onlyoffice.com/ai-plugin-docs-update/docs/ai/get-started/overview.md): AI Tools connects ONLYOFFICE editors to an AI provider, such as OpenAI or DeepSeek, or to a model running on your own server. It adds AI Chat, summarization, translation, grammar and spelling checks, Quick AI Actions, AI assistants, and the inline AI agent to the document, spreadsheet, presentation, and PDF editors.
+- [Playground](https://api.onlyoffice.com/ai-plugin-docs-update/docs/ai/get-started/playground.md): The Playground serves as an interactive platform for users to explore and test the capabilities of the ONLYOFFICE Docs APIs without registration and installing anything. It provides users with various API functionalities, allowing them to experiment with different document types seamlessly.
+
+## Guides
+
+- [AI Tools](https://api.onlyoffice.com/ai-plugin-docs-update/docs/ai/guides/ai-plugin.md): AI Tools connects an AI provider, such as OpenAI or DeepSeek, to ONLYOFFICE editors, enabling intelligent text generation, editing, summarization, and automatic macro creation.
+- [Configuring AI providers for all users](https://api.onlyoffice.com/ai-plugin-docs-update/docs/ai/guides/server-ai-providers.md): Connect AI providers once in the ONLYOFFICE Docs Admin Panel so that every editor user gets AI Tools without their own API keys, or turn AI off for the whole server or for a single editor configuration.
+- [Adding custom providers](https://api.onlyoffice.com/ai-plugin-docs-update/docs/ai/guides/custom-providers.md): Any custom provider can be added to AI Tools. To do this, follow the instructions below.
+- [AI agent (beta)](https://api.onlyoffice.com/ai-plugin-docs-update/docs/ai/guides/ai-agent.md): The AI agent was introduced in version 2.4.2 of the AI plugin, which is now AI Tools.
+- [Converting VBA macros](https://api.onlyoffice.com/ai-plugin-docs-update/docs/ai/guides/converting-vba-macros.md): ONLYOFFICE macros are different from Microsoft macros because the latter use the Visual Basic for Applications (VBA) scripting language. JavaScript is more flexible and can be used with any platform (which is important as ONLYOFFICE editors are supported on Windows, Linux, and macOS).
+- [Text annotations API guide](https://api.onlyoffice.com/ai-plugin-docs-update/docs/ai/guides/text-annotations-guide.md): ONLYOFFICE 9.2.0 introduced an API extension for working with text annotations - visual underlines that highlight text sections and allow you to associate metadata with them.
+- [Configuring Ollama with CORS](https://api.onlyoffice.com/ai-plugin-docs-update/docs/ai/guides/configuring-ollama-with-cors.md): Configuring OLLAMA_ORIGINS for local requests
+
+## More information
+
+- [FAQ](https://api.onlyoffice.com/ai-plugin-docs-update/docs/ai/more-information/faq.md): Which AI providers are supported?

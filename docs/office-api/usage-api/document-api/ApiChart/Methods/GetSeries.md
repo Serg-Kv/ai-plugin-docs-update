@@ -1,0 +1,53 @@
+# GetSeries
+
+Returns the series with a specific index.
+
+## Syntax
+
+```javascript
+expression.GetSeries(nIdx);
+```
+
+`expression` - A variable that represents an [ApiChart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiChart.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| nIdx | Required | number |  | Series index. |
+
+## Returns
+
+[ApiChartSeries](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiChartSeries.md) \| null \| undefined
+
+## Example
+
+Read the type of a specific data series from a chart in a document.
+
+```javascript editor-docx
+// How do I find out what chart type a particular series uses in a document?
+
+// Verify the series type when a chart mixes different visualization styles in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+let chart = Api.CreateChart("ComboColumnClusteredLine", [
+	[200, 240, 280],
+	[250, 260, 280]
+], ["Projected Revenue", "Estimated Costs"], [2014, 2015, 2016], 4051300, 2347595, 24);
+let fill = Api.CreateSolidFill(Api.RGB(51, 51, 51));
+chart.SetSeriesFill(fill, 0, false);
+fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+chart.SetSeriesFill(fill, 1, false);
+chart.SetVerAxisTitle("USD In Hundred Thousands", 20);
+chart.SetHorAxisTitle("Year", 22);
+chart.SetLegendPos("bottom");
+chart.SetShowDataLabels(false, false, true, false);
+chart.SetTitle("Financial Overview", 26);
+paragraph.AddDrawing(chart);
+let series = chart.GetSeries(0);
+let seriesType = series.GetChartType();
+paragraph = Api.CreateParagraph();
+paragraph.AddText("Series Type = " + seriesType);
+doc.Push(paragraph);
+```

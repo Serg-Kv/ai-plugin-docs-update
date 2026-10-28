@@ -1,0 +1,60 @@
+# Modify
+
+Modifies the current format condition with the specified parameters.
+
+Inherited from [ApiFormatCondition.Modify](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiFormatCondition/Methods/Modify.md).
+
+## Syntax
+
+```javascript
+expression.Modify(Type, Operator, Formula1, Formula2);
+```
+
+`expression` - A variable that represents an [ApiAboveAverage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiAboveAverage.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| Type | Optional | [XlFormatConditionType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/XlFormatConditionType.md) |  | The format condition type. |
+| Operator | Optional | [XlFormatConditionOperator](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/XlFormatConditionOperator.md) |  | The format condition operator. |
+| Formula1 | Optional | string \| number \| [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) |  | The first formula. |
+| Formula2 | Optional | string \| number \| [ApiRange](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiRange.md) |  | The second formula. |
+
+## Returns
+
+[ApiFormatCondition](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiFormatCondition.md) \| null
+
+## Example
+
+Update the condition of an existing formatting rule to use new criteria in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I change what value or formula a conditional formatting rule checks for in a spreadsheet?
+
+// Replace the trigger condition of a formatting rule without removing it from a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+
+worksheet.GetRange("A1").SetValue("Sales Data");
+worksheet.GetRange("A2").SetValue(30);
+worksheet.GetRange("A3").SetValue(250);
+worksheet.GetRange("A4").SetValue(150);
+worksheet.GetRange("A5").SetValue(300);
+worksheet.GetRange("A6").SetValue(40);
+
+let dataRange = worksheet.GetRange("A2:A6");
+
+let formatConditions = dataRange.GetFormatConditions();
+
+let condition1 = formatConditions.Add("xlCellValue", "xlLess", "50");
+condition1.SetFillColor(Api.RGB(255, 0, 0));
+
+worksheet.GetRange("C1").SetValue("Original formula:");
+worksheet.GetRange("C2").SetValue(condition1.Formula1);
+
+condition1.Modify("xlCellValue", "xlGreater", "200");
+
+worksheet.GetRange("C4").SetValue("Modified formula:");
+worksheet.GetRange("C5").SetValue(condition1.Formula1);
+```

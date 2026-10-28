@@ -1,0 +1,36 @@
+# SetSmallCaps
+
+Specifies that all the small letter characters in this paragraph are formatted for display only as their capital letter character equivalents which are two points smaller than the actual font size specified for this text.
+
+## Syntax
+
+```javascript
+expression.SetSmallCaps(isSmallCaps);
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParagraph.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| isSmallCaps | Required | boolean |  | Specifies if the contents of the current paragraph are displayed capitalized two points smaller or not. |
+
+## Returns
+
+[ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParagraph.md)
+
+## Example
+
+Format paragraph text to appear as small capital letters in a document.
+
+```javascript editor-docx
+// How do I display lowercase letters as smaller uppercase letters in a paragraph in a document?
+
+// Render all paragraph characters in a reduced capital letter style in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+paragraph.AddText("This is a paragraph with the font set to small capitalized letters.");
+paragraph.SetSmallCaps(true);
+```

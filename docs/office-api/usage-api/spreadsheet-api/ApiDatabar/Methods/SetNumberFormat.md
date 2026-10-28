@@ -1,0 +1,57 @@
+# SetNumberFormat
+
+Sets the number format applied to a cell when the conditional formatting rule evaluates to true.
+
+Inherited from [ApiFormatCondition.SetNumberFormat](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiFormatCondition/Methods/SetNumberFormat.md).
+
+## Syntax
+
+```javascript
+expression.SetNumberFormat(NumberFormat);
+```
+
+`expression` - A variable that represents an [ApiDatabar](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiDatabar.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| NumberFormat | Required | string |  | The number format code (e.g., "General", "#,##0.00", etc.) |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+Control how numbers are displayed when a formatting rule is triggered in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I apply a custom number display pattern to a conditional formatting rule in a spreadsheet?
+
+// Ensure highlighted cells show values with a specific currency or decimal style in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+
+worksheet.GetRange("A1").SetValue("Sales Data");
+worksheet.GetRange("A2").SetValue(1234.56);
+worksheet.GetRange("A3").SetValue(2500.75);
+worksheet.GetRange("A4").SetValue(150.25);
+worksheet.GetRange("A5").SetValue(3000.00);
+worksheet.GetRange("A6").SetValue(750.50);
+
+let dataRange = worksheet.GetRange("A2:A6");
+
+let formatConditions = dataRange.GetFormatConditions();
+
+let condition1 = formatConditions.Add("xlCellValue", "xlGreater", "2000");
+condition1.SetFillColor(Api.RGB(255, 0, 0));
+
+worksheet.GetRange("C1").SetValue("Original format:");
+worksheet.GetRange("C2").SetValue(condition1.GetNumberFormat());
+
+condition1.SetNumberFormat("$#,##0.00");
+
+worksheet.GetRange("C4").SetValue("New format:");
+worksheet.GetRange("C5").SetValue(condition1.GetNumberFormat());
+```

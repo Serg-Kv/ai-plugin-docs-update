@@ -1,0 +1,47 @@
+# GetPosInParent
+
+Returns the content control position within its parent element.
+
+## Syntax
+
+```javascript
+expression.GetPosInParent();
+```
+
+`expression` - A variable that represents an [ApiBlockLvlSdt](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiBlockLvlSdt.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+Number
+
+## Example
+
+Find the position of a content control among its siblings in a document.
+
+```javascript editor-docx
+// How do I get the index position of a content control within its parent in a document?
+
+// Insert a content control and use its position to retrieve and update it in a document.
+
+let doc = Api.GetDocument();
+let paragraph = Api.CreateParagraph();
+let run = Api.CreateRun();
+run.AddText("Number of paragraph elements at this point: ");
+run.AddTabStop();
+run.AddText("" + paragraph.GetElementsCount());
+run.AddLineBreak();
+paragraph.AddElement(run);
+run.AddText("Number of paragraph elements after we added a text run: ");
+run.AddTabStop();
+run.AddText("" + paragraph.GetElementsCount());
+doc.AddElement(0, paragraph);
+let blockLvlSdt = Api.CreateBlockLvlSdt();
+doc.AddElement(0, blockLvlSdt);
+let position = blockLvlSdt.GetPosInParent();
+blockLvlSdt = doc.GetElement(position);
+blockLvlSdt.SetPlaceholderText("Content control");
+```

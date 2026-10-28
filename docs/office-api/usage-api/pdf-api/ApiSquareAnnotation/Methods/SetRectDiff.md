@@ -1,0 +1,40 @@
+# SetRectDiff
+
+Sets annotation rect difference.
+
+## Syntax
+
+```javascript
+expression.SetRectDiff(rectDiff);
+```
+
+`expression` - A variable that represents an [ApiSquareAnnotation](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiSquareAnnotation.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| rectDiff | Required | [RectDiff](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Enumeration/RectDiff.md) |  | A set of four numbers that shall describe the numerical differences between two rectangles. |
+
+## Returns
+
+boolean
+
+## Example
+
+Adjust the spacing around a square annotation in a PDF.
+
+```javascript editor-pdf
+// How do I change the padding of a square annotation in a PDF?
+
+// Modify the margin between an annotation and its border in a PDF.
+
+let doc = Api.GetDocument();
+let squareAnnot = Api.CreateSquareAnnot([10, 10, 160, 32]);
+let page = doc.GetPage(0);
+page.AddObject(squareAnnot);
+squareAnnot.SetBorderEffectStyle("cloud");
+squareAnnot.SetBorderEffectIntensity(1);
+squareAnnot.SetRectDiff([10, 10, 10, 10]);
+console.log(`Annot rect diff is: ${squareAnnot.GetRectDiff()}`);
+```

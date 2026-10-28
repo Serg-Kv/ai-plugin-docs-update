@@ -1,0 +1,47 @@
+# MergeCells
+
+Merges an array of cells.
+
+If the merge is done successfully, it will return the resulting merged cell, otherwise the result will be "null".
+
+:::warning
+The number of cells in any row and the number of rows in the current table may be changed.
+:::
+
+## Syntax
+
+```javascript
+expression.MergeCells(aCells);
+```
+
+`expression` - A variable that represents an [ApiTable](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTable.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| aCells | Required | [ApiTableCell](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTableCell.md)[] |  | The array of cells to be merged. |
+
+## Returns
+
+[ApiTableCell](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTableCell.md) \| null \| undefined
+
+## Example
+
+Combine multiple table cells into a single cell in a document.
+
+```javascript editor-docx
+// How do I merge several cells together into one in a document?
+
+// Reduce cell count by joining adjacent cells into a unified area in a document.
+
+let doc = Api.GetDocument();
+let tableStyle = doc.CreateStyle("CustomTableStyle", "table");
+tableStyle.SetBasedOn(doc.GetStyle("Bordered"));
+let table = Api.CreateTable(5, 5);
+table.SetWidth("percent", 100);
+table.SetStyle(tableStyle);
+let cell = table.MergeCells([table.GetRow(1).GetCell(1), table.GetRow(1).GetCell(2), table.GetRow(2).GetCell(1), table.GetRow(2).GetCell(2)]);
+cell.GetContent().GetElement(0).AddText("Merged cell");
+doc.Push(table);
+```

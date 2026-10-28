@@ -1,0 +1,41 @@
+# GetLinkedText
+
+Returns the hyperlink address.
+
+## Syntax
+
+```javascript
+expression.GetLinkedText();
+```
+
+`expression` - A variable that represents an [ApiHyperlink](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiHyperlink.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+string
+
+## Example
+
+Read the URL address stored in a hyperlink in a document.
+
+```javascript editor-docx
+// How do I get the destination URL of a hyperlink in a document?
+
+// Retrieve the updated link target after changing the hyperlink address in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+let run = Api.CreateRun();
+run.AddText("Visit ONLYOFFICE for developers");
+paragraph.AddElement(run);
+let hyperlink = paragraph.AddHyperlink("https://www.onlyoffice.com");
+hyperlink.SetLink("https://api.onlyoffice.com");
+let linkedText = hyperlink.GetLinkedText();
+paragraph = Api.CreateParagraph();
+paragraph.AddText("Linked text: " + linkedText);
+doc.Push(paragraph);
+```

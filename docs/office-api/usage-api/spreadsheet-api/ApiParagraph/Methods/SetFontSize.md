@@ -1,0 +1,50 @@
+# SetFontSize
+
+Sets the font size to the characters of the current paragraph.
+
+## Syntax
+
+```javascript
+expression.SetFontSize(fontSize);
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiParagraph.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| fontSize | Required | [hps](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/hps.md) \| null |  | The text size value measured in half-points (1/144 of an inch). Pass *null* to remove the font size. |
+
+## Returns
+
+[ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiParagraph.md)
+
+## Example
+
+Adjust the text size for all content in a paragraph inside a shape in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I make text in a paragraph larger or smaller in a spreadsheet?
+
+// Control the visual weight of a paragraph by specifying an exact font size in a spreadsheet.
+
+const worksheet = Api.GetActiveSheet();
+const fill = Api.CreateSolidFill(Api.RGB(120, 140, 100));
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = worksheet.AddShape(
+	'roundRect',
+	Api.MillimetersToEmus(70), Api.MillimetersToEmus(30),
+	fill, stroke,
+	0, 0, 2, 0
+);
+
+const content = shape.GetContent();
+const paragraph = content.GetElement(0);
+paragraph.AddText('This text has a larger font size (24 half-points).');
+paragraph.SetFontSize(24);
+
+const paragraph2 = Api.CreateParagraph();
+paragraph2.AddText('This text has the default font size.');
+content.Push(paragraph2);
+```

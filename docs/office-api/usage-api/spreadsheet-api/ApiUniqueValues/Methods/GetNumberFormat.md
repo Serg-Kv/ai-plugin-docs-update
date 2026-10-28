@@ -1,0 +1,48 @@
+# GetNumberFormat
+
+Returns the number format for the unique values conditional formatting rule.
+
+## Syntax
+
+```javascript
+expression.GetNumberFormat();
+```
+
+`expression` - A variable that represents an [ApiUniqueValues](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiUniqueValues.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+string
+
+## Example
+
+Read the number format pattern assigned to a unique-values conditional formatting rule in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I check what number format a unique-values rule applies to matching cells in a spreadsheet?
+
+// Confirm the numeric display pattern a unique-values rule enforces on highlighted cells in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+
+worksheet.GetRange("A1").SetValue("Numbers");
+worksheet.GetRange("A2").SetValue(10.5);
+worksheet.GetRange("A3").SetValue(20.3);
+worksheet.GetRange("A4").SetValue(10.5);
+worksheet.GetRange("A5").SetValue(30.7);
+
+let range = worksheet.GetRange("A2:A5");
+let formatConditions = range.GetFormatConditions();
+let uniqueValuesCondition = formatConditions.AddUniqueValues();
+
+uniqueValuesCondition.SetNumberFormat("0.00%");
+
+let numberFormat = uniqueValuesCondition.GetNumberFormat();
+
+worksheet.GetRange("C1").SetValue("Number format:");
+worksheet.GetRange("C2").SetValue(numberFormat);
+```

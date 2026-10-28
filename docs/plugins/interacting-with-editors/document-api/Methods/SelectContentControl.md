@@ -1,0 +1,27 @@
+# SelectContentControl
+
+Selects the specified content control.
+
+## Syntax
+
+```javascript
+expression.SelectContentControl(id);
+```
+
+`expression` - A variable that represents an [Api](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/document-api.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| id | Required | string |  | A unique internal identifier of the content control. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("SelectContentControl", ["5_665"]);
+```

@@ -1,0 +1,55 @@
+# GetAllOleObjects
+
+Returns an array with all the OLE objects from the presentation slides, excluding slide layouts and slide masters.
+
+## Syntax
+
+```javascript
+expression.GetAllOleObjects();
+```
+
+`expression` - A variable that represents an [ApiPresentation](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiPresentation.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiOleObject](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiOleObject.md)[]
+
+## Example
+
+List all embedded or linked files in a presentation.
+
+```javascript editor-pptx
+// Access every linked video, spreadsheet, or external file in the presentation.
+
+// Retrieve OLE objects from slides and count them in a presentation.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const oleObject1 = Api.CreateOleObject(
+	'https://static.onlyoffice.com/assets/docs/samples/img/onlyoffice_logo.png',
+	150 * 36000, 150 * 36000,
+	'https://youtu.be/SKGz4pmnpgY',
+	'asc.{38E022EA-AD92-45FC-B22B-49DF39746DB4}'
+);
+slide.AddObject(oleObject1);
+const oleObject2 = oleObject1.Copy();
+oleObject2.SetPosition(0, 48 * 36000);
+slide.AddObject(oleObject2);
+
+const labelFill = Api.CreateSolidFill(Api.RGB(255, 230, 150));
+const labelStroke = Api.CreateStroke(0, Api.CreateNoFill());
+const label = Api.CreateShape('rect', 60 * 36000, 20 * 36000, labelFill, labelStroke);
+label.SetPosition(0, 96 * 36000);
+slide.AddObject(label);
+
+const oleObjects = presentation.GetAllOleObjects();
+const docContent = label.GetDocContent();
+const paragraph = docContent.GetElement(0);
+paragraph.AddText('OLE Objects in presentation excluding slide layouts and master slides: ' + oleObjects.length);
+```

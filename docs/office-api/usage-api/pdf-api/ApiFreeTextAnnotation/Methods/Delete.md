@@ -1,0 +1,39 @@
+# Delete
+
+Removes annotation from document.
+
+Inherited from [ApiBaseAnnotation.Delete](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiBaseAnnotation/Methods/Delete.md).
+
+## Syntax
+
+```javascript
+expression.Delete();
+```
+
+`expression` - A variable that represents an [ApiFreeTextAnnotation](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiFreeTextAnnotation.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+boolean
+
+## Example
+
+Remove an annotation from a PDF.
+
+```javascript editor-pdf
+// How do I delete an annotation in a PDF?
+
+// Erase an annotation that no longer needs to be in a PDF.
+
+let doc = Api.GetDocument();
+let squareAnnot = Api.CreateSquareAnnot([10, 10, 160, 32]);
+let page = doc.GetPage(0);
+page.AddObject(squareAnnot);
+squareAnnot.SetBorderStyle("dashed");
+squareAnnot.SetDashPattern([8, 4, 4, 4]);
+squareAnnot.Delete();
+```

@@ -1,0 +1,39 @@
+# SetFontFamily
+
+Sets all 4 font slots with the specified font family.
+
+Inherited from [ApiTextPr.SetFontFamily](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTextPr/Methods/SetFontFamily.md).
+
+## Syntax
+
+```javascript
+expression.SetFontFamily(sFontFamily);
+```
+
+`expression` - A variable that represents an [ApiRangeTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiRangeTextPr.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sFontFamily | Optional | string \| null |  | The font family or families used for the current text run. Pass *null* or omit it to remove the font family. |
+
+## Returns
+
+[ApiTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTextPr.md)
+
+## Example
+
+Change the font family applied to text in a document.
+
+```javascript editor-docx
+// How do I apply a different typeface to text in a document?
+
+// Switch all text to a specific font by updating the default text properties in a document.
+
+let doc = Api.GetDocument();
+let textPr = doc.GetDefaultTextPr();
+textPr.SetFontFamily("Comic Sans MS");
+let paragraph = doc.GetElement(0);
+paragraph.AddText("A sample text with the font family set to 'Comic Sans MS' using the text properties.");
+```

@@ -1,0 +1,49 @@
+# AddHeadingCrossRef
+
+Adds a heading cross-reference to the current paragraph.
+
+:::note
+This paragraph must be in the document.
+:::
+
+## Syntax
+
+```javascript
+expression.AddHeadingCrossRef(sRefType, oParaTo, bLink, bAboveBelow);
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParagraph.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| sRefType | Required | [headingRefTo](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/headingRefTo.md) |  | The text or numeric value of a heading reference you want to insert. |
+| oParaTo | Required | [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiParagraph.md) |  | The heading paragraph to be referred to (must be in the document). |
+| bLink | Optional | boolean | true | Specifies if the reference will be inserted as a hyperlink. |
+| bAboveBelow | Optional | boolean | false | Specifies if the above/below words indicating the position of the reference should be included (don't used with the "text" and "aboveBelow" sRefType). |
+
+## Returns
+
+boolean
+
+## Example
+
+Insert a cross-reference to a heading into a paragraph in a document.
+
+```javascript editor-docx
+// How do I link paragraph text to an existing heading in a document?
+
+// Let readers jump to a titled section by embedding a heading reference inside another paragraph in a document.
+
+let doc = Api.GetDocument();
+let newDocumentStyle = doc.GetStyle("Heading 1");
+let paragraph = doc.GetElement(0);
+paragraph.SetStyle(newDocumentStyle);
+paragraph.AddText("Cross-reference method");
+let headingParagraphs = doc.GetAllHeadingParagraphs();
+paragraph = Api.CreateParagraph();
+paragraph.AddText("Heading 1 style is applied to the heading ");
+doc.Push(paragraph);
+paragraph.AddHeadingCrossRef("text", headingParagraphs[0]);
+```

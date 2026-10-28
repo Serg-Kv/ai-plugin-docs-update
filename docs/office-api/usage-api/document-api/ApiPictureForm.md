@@ -1,0 +1,65 @@
+# ApiPictureForm
+
+Class representing a document picture form.
+
+ApiPictureForm is a subclass of [ApiFormBase](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiFormBase.md).
+
+## Properties
+
+| Name | Type | Description |
+| ---- | ---- | ----------- |
+| Value | string | Returns or sets the current image of the picture form as a base64 encoded string. |
+
+## Methods
+
+The following table lists the available methods.
+
+| Method | Returns | Description |
+| ------ | ------- | ----------- |
+| [Clear](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/Clear.md) | boolean | Clears the current form. |
+| [Copy](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/Copy.md) | [ApiForm](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/ApiForm.md) \| null \| undefined | Copies the current form (copies with the shape if it exists). |
+| [Delete](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/Delete.md) | boolean | Removes a form and its content. |
+| [GetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetBackgroundColor.md) | [ApiColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiColor.md) \| null \| undefined | Returns the background color of the current form. |
+| [GetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetBorderColor.md) | [ApiColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiColor.md) \| null \| undefined | Returns the border color of the current form. |
+| [GetClassType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetClassType.md) | "pictureForm" | Returns a type of the ApiPictureForm class. |
+| [GetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetFormKey.md) | string | Returns the current form key. |
+| [GetFormType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetFormType.md) | [FormType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/FormType.md) | Returns a type of the current form. |
+| [GetImage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetImage.md) | [Base64Img](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/Base64Img.md) | Returns an image in the base64 format from the current picture form. |
+| [GetInternalId](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetInternalId.md) | string | Returns an internal id of the current form. |
+| [GetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetLock.md) | boolean | Returns the lock state of the current form. |
+| [GetParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetParent.md) | [ParagraphLikeContainer](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/ParagraphLikeContainer.md) \| null \| undefined | Returns the parent element (a paragraph or an inline content control) that directly contains the current form. |
+| [GetPicturePosition](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetPicturePosition.md) | [percentage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/percentage.md)[] | Returns the picture position inside the current form. |
+| [GetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetPlaceholderText.md) | string | Returns the placeholder text from the current form. |
+| [GetPosInParent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetPosInParent.md) | Number | Returns the position (index) of the current form within its parent element. |
+| [GetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetRole.md) | string | Returns the role of the current form. |
+| [GetScaleFlag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetScaleFlag.md) | [ScaleFlag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/ScaleFlag.md) | Returns the current scaling condition of the picture form. |
+| [GetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetTag.md) | string | Returns the tag attribute for the current form. |
+| [GetText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetText.md) | string | Returns the text from the current form. |
+| [GetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetTextPr.md) | [ApiTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiTextPr.md) | Returns the text properties from the current form. |
+| [GetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetTipText.md) | string | Returns the tip text of the current form. |
+| [GetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetValue.md) | string | Returns the current image of the picture form as a base64 encoded string. |
+| [GetWrapperShape](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/GetWrapperShape.md) | [ApiShape](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiShape.md) \| null \| undefined | Returns a shape in which the form is placed to control the position and size of the fixed size form frame. |
+| [IsFilled](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/IsFilled.md) | boolean | Checks if the current form is filled. |
+| [IsFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/IsFixed.md) | boolean | Checks if the current form is fixed size. |
+| [IsLockAspectRatio](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/IsLockAspectRatio.md) | boolean | Checks if the aspect ratio of the current picture form is locked or not. |
+| [IsRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/IsRequired.md) | boolean | Checks if the current form is required. |
+| [IsRespectBorders](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/IsRespectBorders.md) | boolean | Checks if the form border width is respected or not. |
+| [MoveCursorOutside](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/MoveCursorOutside.md) | boolean | Places a cursor before/after the current form. |
+| [SetBackgroundColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/SetBackgroundColor.md) | boolean | Sets the background color to the current form. |
+| [SetBorderColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/SetBorderColor.md) | boolean | Sets the border color to the current form. |
+| [SetFormKey](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/SetFormKey.md) | boolean | Sets a key to the current form. |
+| [SetImage](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/SetImage.md) | boolean | Sets an image to the current picture form. |
+| [SetLock](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/SetLock.md) | boolean | Sets the lock state of the current form. |
+| [SetLockAspectRatio](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/SetLockAspectRatio.md) | boolean | Locks the aspect ratio of the current picture form. |
+| [SetPicturePosition](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/SetPicturePosition.md) | boolean | Sets the picture position inside the current form: |
+| [SetPlaceholderText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/SetPlaceholderText.md) | boolean | Sets the placeholder text to the current form. |
+| [SetRequired](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/SetRequired.md) | boolean | Specifies if the current form should be required. |
+| [SetRespectBorders](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/SetRespectBorders.md) | boolean | Respects the form border width when scaling the image. |
+| [SetRole](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/SetRole.md) | boolean | Sets the role to the current form. |
+| [SetScaleFlag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/SetScaleFlag.md) | boolean | Sets the scaling condition to the current picture form. |
+| [SetTag](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/SetTag.md) | boolean | Sets the tag attribute to the current form. |
+| [SetTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/SetTextPr.md) | boolean | Sets the text properties to the current form. |
+| [SetTipText](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/SetTipText.md) | boolean | Sets the tip text to the current form. |
+| [SetValue](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/SetValue.md) | boolean | Sets an image to the picture form. |
+| [ToFixed](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/ToFixed.md) | boolean | Converts the current form to a fixed size form. |
+| [ToInline](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiPictureForm/Methods/ToInline.md) | boolean | Converts the current form to an inline form. |

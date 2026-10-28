@@ -1,0 +1,39 @@
+# RGB
+
+Creates an RGB color from red, green and blue components.
+
+## Syntax
+
+```javascript
+expression.RGB(r, g, b);
+```
+
+`expression` - A variable that represents an [Api](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Api.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| r | Required | [byte](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/byte.md) |  | Red component (0-255). |
+| g | Required | [byte](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/byte.md) |  | Green component (0-255). |
+| b | Required | [byte](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/byte.md) |  | Blue component (0-255). |
+
+## Returns
+
+[ApiColor](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiColor.md)
+
+## Example
+
+Create a custom color from red, green, and blue values and apply it to text in a document.
+
+```javascript editor-docx
+// How do I set text color using red, green, and blue values in a document?
+
+// Color paragraph text with a specific RGB combination in a document.
+
+const doc = Api.GetDocument();
+const color = Api.RGB(186, 218, 85);
+const paragraph = doc.GetElement(0);
+paragraph.AddText('This text is in RGB color.');
+paragraph.SetColor(color);
+```

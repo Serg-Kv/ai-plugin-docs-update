@@ -1,0 +1,40 @@
+# GetReply
+
+Returns the specified comment reply.
+
+## Syntax
+
+```javascript
+expression.GetReply(nIndex);
+```
+
+`expression` - A variable that represents an [ApiComment](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiComment.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| nIndex | Optional | Number | 0 | The comment reply index. |
+
+## Returns
+
+[ApiCommentReply](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiCommentReply.md) \| null \| undefined
+
+## Example
+
+Read a specific reply from a comment thread in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I access a particular reply within a comment thread in a spreadsheet?
+
+// Retrieve the text of a chosen reply to inspect its contents in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+worksheet.GetRange("A1").SetValue("1");
+let range = worksheet.GetRange("A1");
+let comment = range.AddComment("This is just a number.");
+comment.AddReply("Reply 1", "John Smith", "uid-1");
+let reply = comment.GetReply();
+worksheet.GetRange("A3").SetValue("Comment's reply text: ");
+worksheet.GetRange("B3").SetValue(reply.GetText());
+```

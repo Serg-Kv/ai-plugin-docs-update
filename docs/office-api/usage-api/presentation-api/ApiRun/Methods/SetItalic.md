@@ -1,0 +1,54 @@
+# SetItalic
+
+Sets the italic property to the text character.
+
+Inherited from [ApiTextPr.SetItalic](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiTextPr/Methods/SetItalic.md).
+
+## Syntax
+
+```javascript
+expression.SetItalic(isItalic);
+```
+
+`expression` - A variable that represents an [ApiRun](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiRun.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| isItalic | Required | boolean |  | Specifies that the contents of the current run are displayed italicized. |
+
+## Returns
+
+[ApiTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiTextPr.md)
+
+## Example
+
+Set text to italic style in a presentation.
+
+```javascript editor-pptx
+// Apply italic formatting to emphasize text within a presentation.
+
+// Create a text run with italic formatting applied.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape("flowChartMagneticTape", 300 * 36000, 130 * 36000, fill, stroke);
+shape.SetPosition(608400, 1267200);
+
+const docContent = shape.GetDocContent();
+const paragraph = docContent.GetElement(0);
+let run = Api.CreateRun();
+run.AddText("This is just a sample text. ");
+paragraph.AddElement(run);
+
+run = Api.CreateRun();
+run.SetItalic(true);
+run.AddText("This is a text run with the font set to italicized letters.");
+paragraph.AddElement(run);
+slide.AddObject(shape);
+```

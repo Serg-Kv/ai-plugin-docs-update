@@ -1,0 +1,45 @@
+# GetElement
+
+Returns the hyperlink element using the position specified.
+
+## Syntax
+
+```javascript
+expression.GetElement(nPos);
+```
+
+`expression` - A variable that represents an [ApiHyperlink](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiHyperlink.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| nPos | Required | number |  | The position where the element which content we want to get must be located. |
+
+## Returns
+
+[ParagraphContent](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/ParagraphContent.md) \| null \| undefined
+
+## Example
+
+Access a specific element inside a hyperlink by its index in a document.
+
+```javascript editor-docx
+// How do I retrieve one element from a hyperlink using its position in a document?
+
+// Extract a run from a hyperlink to reuse its content elsewhere in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+let run1 = Api.CreateRun();
+run1.AddText("Visit ONLYOFFICE");
+paragraph.AddElement(run1, 0);
+let run2 = Api.CreateRun();
+run2.AddText(" for developers");
+paragraph.AddElement(run2, 1);
+let hyperlink = paragraph.AddHyperlink("https://api.onlyoffice.com");
+let element = hyperlink.GetElement(1);
+paragraph = Api.CreateParagraph();
+paragraph.AddText("Element text: " + element.GetText());
+doc.Push(paragraph);
+```

@@ -1,0 +1,57 @@
+# SetTabs
+
+Specifies a sequence of custom tab stops which will be used for any tab characters in the current paragraph.
+
+:::warning
+The lengths of the aPos and aVal arrays must be equal to each other.
+:::
+
+Inherited from [ApiParaPr.SetTabs](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiParaPr/Methods/SetTabs.md).
+
+## Syntax
+
+```javascript
+expression.SetTabs(aPos, aVal);
+```
+
+`expression` - A variable that represents an [ApiParagraph](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/ApiParagraph.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| aPos | Required | [twips](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/twips.md)[] |  | An array of the positions of custom tab stops with respect to the current page margins measured in twentieths of a point (1/1440 of an inch). |
+| aVal | Required | [TabJc](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/spreadsheet-api/Enumeration/TabJc.md)[] |  | An array of the styles of custom tab stops, which determines the behavior of the tab stop and the alignment which will be applied to text entered at the current custom tab stop. |
+
+## Returns
+
+boolean
+
+## Example
+
+Set custom tab stops for a paragraph inside a shape in a spreadsheet.
+
+```javascript editor-xlsx
+// How do I control where text jumps when I press Tab in a paragraph in a spreadsheet?
+
+// Place left, center, and right tab stops at specific positions to align paragraph text in a spreadsheet.
+
+let worksheet = Api.GetActiveSheet();
+let fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+let stroke = Api.CreateStroke(0, Api.CreateNoFill());
+let shape = worksheet.AddShape("flowChartOnlineStorage", 150 * 36000, 70 * 36000, fill, stroke, 0, 2 * 36000, 0, 3 * 36000);
+let content = shape.GetContent();
+let paragraph = content.GetElement(0);
+paragraph.SetTabs([1440, 2880, 4320], ["left", "center", "right"]);
+paragraph.AddTabStop();
+paragraph.AddText("Custom tab - 1 inch left");
+paragraph.AddLineBreak();
+paragraph.AddTabStop();
+paragraph.AddTabStop();
+paragraph.AddText("Custom tab - 2 inches center");
+paragraph.AddLineBreak();
+paragraph.AddTabStop();
+paragraph.AddTabStop();
+paragraph.AddTabStop();
+paragraph.AddText("Custom tab - 3 inches right");
+```

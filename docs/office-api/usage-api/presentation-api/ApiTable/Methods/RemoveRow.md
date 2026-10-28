@@ -1,0 +1,48 @@
+# RemoveRow
+
+Removes a table row with the specified cell. When the last row is removed, the whole table is deleted from the slide
+
+## Syntax
+
+```javascript
+expression.RemoveRow(cell);
+```
+
+`expression` - A variable that represents an [ApiTable](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiTable.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| cell | Required | [ApiTableCell](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiTableCell.md) |  | The table cell from the row which will be removed. |
+
+## Returns
+
+boolean
+
+## Example
+
+Remove a table row using a cell reference.
+
+```javascript editor-pptx
+// Delete a row from the table by specifying a cell within it.
+
+// Create a table and remove a row using a cell from that row.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+
+const table = Api.CreateTable(2, 4);
+let row = table.GetRow(0);
+let cell = row.GetCell(0);
+table.RemoveRow(cell);
+row = table.GetRow(0);
+cell = row.GetCell(0);
+const content = cell.GetContent();
+const paragraph = Api.CreateParagraph();
+paragraph.AddText("The first row was removed.");
+content.Push(paragraph);
+
+slide.RemoveAllObjects();
+slide.AddObject(table);
+```

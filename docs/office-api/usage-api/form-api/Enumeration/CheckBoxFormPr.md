@@ -1,0 +1,31 @@
+# CheckBoxFormPr
+
+Checkbox / radio button properties.
+
+## Type
+
+Enumeration
+
+## Values
+
+- [FormPrBase](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/FormPrBase.md)
+- [CheckBoxFormPrBase](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/form-api/Enumeration/CheckBoxFormPrBase.md)
+
+## Example
+
+Create a checkbox form with the common and specific checkbox form properties.
+
+```javascript editor-forms
+// How do I create a checkbox form with its properties?
+
+// Create the checkbox properties and apply them to the ApiCheckBoxForm object.
+
+let checkBoxFormPr = {
+	"key": "Marital status",
+	"tip": "Specify your marital status",
+	"required": true,
+	"placeholder": "Marital status",
+	"radio": true
+};
+let checkBoxForm = Api.CreateCheckBoxForm(checkBoxFormPr);
+```

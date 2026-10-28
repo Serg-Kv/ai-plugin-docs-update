@@ -1,0 +1,54 @@
+# MoveTo
+
+Moves the current path to the specified coordinates.
+
+## Syntax
+
+```javascript
+expression.MoveTo(x, y);
+```
+
+`expression` - A variable that represents an [ApiPath](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiPath.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| x | Required | [GeometryCoordinate](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Enumeration/GeometryCoordinate.md) |  | The X coordinate. |
+| y | Required | [GeometryCoordinate](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Enumeration/GeometryCoordinate.md) |  | The Y coordinate. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+Set the starting point for drawing a shape in a PDF.
+
+```javascript editor-pdf
+// Where do I begin drawing a custom shape in a PDF?
+
+// Position the cursor before adding lines to a shape in a PDF.
+
+const doc = Api.GetDocument();
+const page = doc.GetPage(0);
+
+let customGeometry = Api.CreateCustomGeometry();
+let path = customGeometry.AddPath();
+path.SetWidth(50 * 36000);
+path.SetHeight(50 * 36000);
+path.SetStroke(true);
+path.SetFill("norm");
+path.MoveTo(50 * 36000, 0);
+path.LineTo(70 * 36000, 45 * 36000);
+path.LineTo(55 * 36000, 70 * 36000);
+path.LineTo(50 * 36000, 50 * 36000);
+path.LineTo(0, 50 * 36000);
+path.Close();
+let fill = Api.CreateSolidFill(Api.RGB(100, 150, 200));
+let stroke = Api.CreateStroke(36000, Api.CreateSolidFill(Api.RGB(50, 75, 100)));
+let shape = Api.CreateShape("rect", 50 * 36000, 50 * 36000, fill, stroke);
+shape.SetGeometry(customGeometry);
+shape.SetPosition(2000000, 1000000);
+page.AddObject(shape);
+```

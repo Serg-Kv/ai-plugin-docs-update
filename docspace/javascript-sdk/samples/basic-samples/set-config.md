@@ -1,0 +1,155 @@
+---
+description: Update the embedded frame configuration using the JS SDK.
+tags: ["Apps", "Embed SDK", "Integration"]
+---
+
+# Set config
+
+This example demonstrates how to update the configuration of the embedded ONLYOFFICE Apps frame using the Embed SDK.
+
+Complete source code on GitHub: [JavaScript](https://github.com/ONLYOFFICE/docspace-samples/blob/master/js-sdk/basic-samples/set-config.html)
+
+## Before you start
+
+Please make sure you are using a server environment to run the HTML file because the Embed SDK must be launched on the server.
+You need to [add the URL](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/get-started/authentication-security.md#registering-allowed-embed-origins) of your server's root directory to the **Developer Tools** section of ONLYOFFICE Apps.
+
+<details>
+  <summary>Full example</summary>
+
+``` html
+<!-- Step 1: HTML Setup -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Set Config</title>
+
+    <!-- Replace with your actual portal URL -->
+    <script src="{PORTAL_SRC}/static/scripts/sdk/2.2.0/api.js"></script>
+
+    <style>
+      #button {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- SDK iframe -->
+    <iframe id="ds-frame"></iframe>
+
+    <!-- Trigger Button -->
+    <button id="button">Set Config</button>
+  </body>
+
+  <!-- Step 2: Embed SDK Logic -->
+  <script>
+    function onAppReady() {
+      const frame = DocSpace.SDK.frames["ds-frame"];
+      console.log(frame);
+      document.getElementById("button").onclick = () => {
+        config.width = "50%";
+        docSpace.setConfig(config);
+      };
+    }
+
+    const config = {
+      frameId: "ds-frame",
+      src: "{PORTAL_SRC}",
+      width: "100%",
+      height: "700px",
+      events: {
+        onAppReady,
+      },
+    };
+
+    const docSpace = DocSpace.SDK.initManager(config);
+  </script>
+</html>
+```
+
+</details>
+
+## Step 1. Set HTML structure
+
+Create a simple HTML page with an ONLYOFFICE Apps frame and a button to update the configuration.
+
+``` html
+<!-- Step 1: HTML Setup -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Set Config</title>
+
+    <!-- Replace with your actual portal URL -->
+    <script src="{PORTAL_SRC}/static/scripts/sdk/2.2.0/api.js"></script>
+
+    <style>
+      #button {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- SDK iframe -->
+    <iframe id="ds-frame"></iframe>
+
+    <!-- Trigger Button -->
+    <button id="button">Set Config</button>
+  </body>
+</html>
+```
+
+:::info
+The API JavaScript file can normally be found in the following ONLYOFFICE Apps folder: **\{PORTAL_SRC\}/static/scripts/sdk/2.2.0/api.js** where **\{PORTAL_SRC\}** is the name of the server with the ONLYOFFICE Apps installed.
+:::
+
+## Step 2. Embed SDK logic
+
+Use the [setConfig()](https://api.onlyoffice.com/ai-plugin-docs-update/docspace/javascript-sdk/usage-sdk/classes/SDKInstance.md#setconfig) method to modify and apply new configuration settings dynamically.
+
+``` ts
+function onAppReady() {
+  const frame = DocSpace.SDK.frames["ds-frame"];
+  console.log(frame);
+  document.getElementById("button").onclick = () => {
+    config.width = "50%";
+    docSpace.setConfig(config);
+  };
+}
+
+const config = {
+  frameId: "ds-frame",
+  src: "{PORTAL_SRC}",
+  width: "100%",
+  height: "700px",
+  events: {
+    onAppReady,
+  },
+};
+
+const docSpace = DocSpace.SDK.initManager(config);
+```

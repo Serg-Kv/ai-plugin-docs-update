@@ -1,0 +1,38 @@
+# EditOleObject
+
+Edits an OLE object in the document.
+
+## Syntax
+
+```javascript
+expression.EditOleObject(data);
+```
+
+`expression` - A variable that represents an [Api](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| data | Required | [OLEProperties](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/form-api/Enumeration/OLEProperties.md) |  | The OLE object properties. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+var _param = {
+    "data": "{data}",
+    "imgSrc": "https://example.com/image.png",
+    "objectId": "5_556",
+    "width": 70,
+    "height": 70,
+    "widthPix": 60 * 36000,
+    "heightPix": 60 * 36000
+};
+window.Asc.plugin.executeMethod ("EditOleObject", [_param], function () {
+    window.Asc.plugin.executeCommand ("close", "");
+});
+```

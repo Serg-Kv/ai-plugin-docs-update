@@ -1,0 +1,57 @@
+# GetAllCharts
+
+Returns an array with all the chart objects from the slide layout.
+
+## Syntax
+
+```javascript
+expression.GetAllCharts();
+```
+
+`expression` - A variable that represents an [ApiLayout](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiLayout.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiChart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiChart.md)[]
+
+## Example
+
+Get all chart objects from a slide layout as an array.
+
+```javascript editor-pptx
+// Charts added to layouts can be retrieved and modified.
+
+// Apply formatting to the first chart in the layout.
+
+const presentation = Api.GetPresentation();
+const master = presentation.GetMaster(0);
+const layout = master.GetLayout(0);
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const chart = Api.CreateChart("3DColumnClustered", [
+	[200, 240, 280],
+	[250, 260, 280]
+], ["Projected Revenue", "Estimated Costs"], [2014, 2015, 2016], 4051300, 2347595, 24);
+chart.SetVerAxisTitle("USD In Hundred Thousands", 20);
+chart.SetHorAxisTitle("Year", 22);
+chart.SetLegendPos("bottom");
+chart.SetShowDataLabels(false, false, true, false);
+chart.SetTitle("Financial Overview", 40);
+chart.SetSize(300 * 36000, 130 * 36000);
+chart.SetPosition(608400, 1267200);
+
+let fill = Api.CreateSolidFill(Api.RGB(51, 51, 51));
+chart.SetSeriesFill(fill, 0, false);
+fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+chart.SetSeriesFill(fill, 1, false);
+layout.AddObject(chart);
+
+const charts = layout.GetAllCharts();
+const stroke = Api.CreateStroke(1 * 150, Api.CreateSolidFill(Api.RGB(255, 111, 61)));
+charts[0].SetMinorHorizontalGridlines(stroke);
+```

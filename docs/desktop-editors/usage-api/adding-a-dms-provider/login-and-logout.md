@@ -1,0 +1,76 @@
+---
+sidebar_position: -5
+---
+
+import APITable from '@site/src/components/APITable/APITable';
+
+# Login and logout
+
+Before you start working on documents stored within your cloud, you need to log in to it.
+
+## Login
+
+Use the [execCommand](https://api.onlyoffice.com/ai-plugin-docs-update/docs/desktop-editors/usage-api/adding-a-dms-provider/execcommand.md) method to display a cloud in the **Connected clouds** list. When the *portal:login* command is sent, the cloud is registered and listed on the **Connected clouds** page. Call the command on all the pages you can access after logging in to your cloud. Parameters are specified in the format of a string with the serialized *json* as follows:
+
+```json
+{
+  "displayName": "user name", 
+  "email": "user@email.addr",
+  "domain": "domain name",
+  "provider": "provider",
+  "uiTheme": "theme",
+  "userId": "user id"
+}
+```
+
+<APITable>
+| Parameter   | Type   | Example                       | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| ----------- | ------ | ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| displayName | string | `"John Smith"`                | The user name displayed on the *Connected clouds* page. **This field is required.**                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| email       | string | `"john@example.com"`          | The user email displayed on the *Connected clouds* page.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| domain      | string | `"https://exampledomain.com"` | The cloud name and the cloud entry point. **This field is required.**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| provider    | string | `"onlyoffice"`                | The provider id used to refer to the desktop app in the JavaScript commands (the same as in the [config](https://api.onlyoffice.com/ai-plugin-docs-update/docs/desktop-editors/usage-api/adding-a-dms-provider.md)). **This field is required.**                                                                                                                                                                                                                                                                                                                                                                                                 |
+| uiTheme     | string or object | `"theme-dark"`                | The color of the cloud's tab in the tab bar: the id of an installed theme (for example, `theme-dark`), `default-dark` or `default-light`, or an object with the `type` (`dark` or `light`) and `color` (a hex color) fields. Supported on Windows and Linux.                                                                                                                                                                                                                                                                                                     |
+| userId      | string | `"78e1e841"`                  | The user id. **This field is required.**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+
+</APITable>
+
+### Example
+
+```ts
+const params = {
+  displayName: "John Smith",
+  email: "john@example.com",
+  domain: "https://exampledomain.com",
+  provider: "onlyoffice",
+  uiTheme: "theme-dark",
+  userId: "78e1e841",
+};
+window.AscDesktopEditor.execCommand("portal:login", JSON.stringify(params));
+```
+
+## Logout
+
+Use the [execCommand](https://api.onlyoffice.com/ai-plugin-docs-update/docs/desktop-editors/usage-api/adding-a-dms-provider/execcommand.md) method to remove a cloud from the **Connected clouds** list. When the *portal:logout* command is sent, the cloud will be removed from the list on the **Connected clouds** page. Cookies for this domain will be cleared. Parameters are specified in the format of a string with the serialized *json* as follows:
+
+```json
+{
+  "domain": "domain name"
+}
+```
+
+<APITable>
+
+| Parameter | Type   | Example                     | Description                                       |
+| --------- | ------ | --------------------------- | ------------------------------------------------- |
+| domain    | string | `https://exampledomain.com` | The cloud name and the cloud entry point. |
+
+</APITable>
+
+### Example
+
+```ts
+window.AscDesktopEditor.execCommand("portal:logout", JSON.stringify({
+  domain: "https://exampledomain.com",
+}));
+```

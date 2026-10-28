@@ -1,0 +1,46 @@
+# GetPosY
+
+Gets the y position of the drawing on the slide.
+
+Inherited from [ApiDrawing.GetPosY](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiDrawing/Methods/GetPosY.md).
+
+## Syntax
+
+```javascript
+expression.GetPosY();
+```
+
+`expression` - A variable that represents an [ApiChart](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiChart.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[EMU](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/Enumeration/EMU.md)
+
+## Example
+
+Get the vertical position of a shape in a presentation.
+
+```javascript editor-pptx
+// How do I find the top edge coordinate of an object in a presentation?
+
+// Read and display the Y position of a shape in a presentation.
+
+const presentation = Api.GetPresentation();
+const slide = presentation.GetSlideByIndex(0);
+slide.RemoveAllObjects();
+
+const fill = Api.CreateSolidFill(Api.RGB(230, 210, 230));
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape('roundRect', Api.MillimetersToEmus(300), Api.MillimetersToEmus(130), fill, stroke);
+shape.SetPosition(Api.MillimetersToEmus(20), Api.MillimetersToEmus(35));
+slide.AddObject(shape);
+
+const posY = shape.GetPosY();
+const docContent = shape.GetContent();
+const paragraph = docContent.GetElement(0);
+paragraph.AddText('Drawing Y position: ' + posY + ' EMU');
+```

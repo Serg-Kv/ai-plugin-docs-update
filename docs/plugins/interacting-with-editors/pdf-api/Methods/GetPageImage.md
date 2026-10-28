@@ -1,0 +1,27 @@
+# GetPageImage
+
+Returns the page image.
+
+## Syntax
+
+```javascript
+expression.GetPageImage(nPage, oParams);
+```
+
+`expression` - A variable that represents an [Api](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/pdf-api.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| nPage | Required | number |  | The page index. |
+| oParams | Optional | object | \{\} | The image parameters. |
+| oParams.maxSize | Optional | number |  | The size of the larger image side in pixels. |
+| oParams.annotations | Optional | boolean | false | Specifies whether the annotations will be rendered. |
+| oParams.fields | Optional | boolean | false | Specifies whether the fields will be rendered. |
+| oParams.drawings | Optional | boolean | false | Specifies whether the drawings will be rendered. |
+| oParams.withInfo | Optional | boolean | false | Return an object with the image plus the page size instead of a bare data URL. |
+
+## Returns
+
+string \| Object

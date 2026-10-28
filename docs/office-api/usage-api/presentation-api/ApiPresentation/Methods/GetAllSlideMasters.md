@@ -1,0 +1,50 @@
+# GetAllSlideMasters
+
+Returns an array of all slide masters from the current presentation.
+
+## Syntax
+
+```javascript
+expression.GetAllSlideMasters();
+```
+
+`expression` - A variable that represents an [ApiPresentation](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiPresentation.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiMaster](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/presentation-api/ApiMaster.md)[]
+
+## Example
+
+Access slide templates in a presentation.
+
+```javascript editor-pptx
+// How do I retrieve every slide master design in a presentation?
+
+// Add new masters and display the total count in a presentation.
+
+const presentation = Api.GetPresentation();
+const firstSlide = presentation.GetSlideByIndex(0);
+firstSlide.RemoveAllObjects();
+
+const count = 3;
+for (let i = 0; i < count; i++) {
+	const master = Api.CreateMaster();
+	Api.CreateLayout(master);
+	presentation.AddMaster(i + 1, master);
+}
+
+const masters = presentation.GetAllSlideMasters();
+
+const fill = Api.CreateSolidFill(Api.RGB(50, 100, 150));
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape('rect', 300 * 36000, 100 * 36000, fill, stroke);
+firstSlide.AddObject(shape);
+
+const paragraph = shape.GetContent().GetElement(0);
+paragraph.AddText('Total slide masters count: ' + masters.length);
+```

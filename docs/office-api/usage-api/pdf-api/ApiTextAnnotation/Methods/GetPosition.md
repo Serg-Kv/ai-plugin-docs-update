@@ -1,0 +1,38 @@
+# GetPosition
+
+Gets annotation position.
+
+Inherited from [ApiBaseAnnotation.GetPosition](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiBaseAnnotation/Methods/GetPosition.md).
+
+## Syntax
+
+```javascript
+expression.GetPosition();
+```
+
+`expression` - A variable that represents an [ApiTextAnnotation](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTextAnnotation.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[Point](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Enumeration/Point.md)
+
+## Example
+
+Get the position coordinates of an annotation in a PDF.
+
+```javascript editor-pdf
+// What are the horizontal and vertical coordinates of an annotation in a PDF?
+
+// Retrieve the X and Y position values from an annotation object in a PDF.
+
+let doc = Api.GetDocument();
+let squareAnnot = Api.CreateSquareAnnot([10, 10, 160, 32]);
+let page = doc.GetPage(0);
+page.AddObject(squareAnnot);
+let pos = squareAnnot.GetPosition();
+console.log(`Annot position x: ${pos.x}, y: ${pos.y}`);
+```

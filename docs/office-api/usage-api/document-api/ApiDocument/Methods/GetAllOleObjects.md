@@ -1,0 +1,46 @@
+# GetAllOleObjects
+
+Returns a collection of OLE objects from the document content.
+
+Inherited from [ApiDocumentContent.GetAllOleObjects](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiDocumentContent/Methods/GetAllOleObjects.md).
+
+## Syntax
+
+```javascript
+expression.GetAllOleObjects();
+```
+
+`expression` - A variable that represents an [ApiDocument](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiDocument.md) class.
+
+## Parameters
+
+This method doesn't have any parameters.
+
+## Returns
+
+[ApiOleObject](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiOleObject.md)[]
+
+## Example
+
+Retrieve all OLE objects in a document.
+
+```javascript editor-docx
+// How do I collect every OLE object present in a document?
+
+// Read the application ID of the first OLE object to identify which external app it belongs to.
+
+let doc = Api.GetDocument();
+let oleObject = Api.CreateOleObject(
+	'https://static.onlyoffice.com/assets/docs/samples/img/onlyoffice_logo.png',
+	150 * 36000, 150 * 36000,
+	'https://youtu.be/SKGz4pmnpgY',
+	'asc.{38E022EA-AD92-45FC-B22B-49DF39746DB4}'
+);
+let paragraph = doc.GetElement(0);
+paragraph.AddDrawing(oleObject);
+let oleObjects = doc.GetAllOleObjects();
+let appId = oleObjects[0].GetApplicationId();
+paragraph = Api.CreateParagraph();
+paragraph.AddText('The application ID for the current OLE object: ' + appId);
+doc.Push(paragraph);
+```

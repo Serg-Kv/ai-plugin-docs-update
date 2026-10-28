@@ -1,0 +1,44 @@
+# CreateShape
+
+Creates a shape with the parameters specified.
+
+## Syntax
+
+```javascript
+expression.CreateShape(shapeType, width, height, fill, stroke);
+```
+
+`expression` - A variable that represents an [Api](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Api.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| shapeType | Optional | [ShapeType](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/ShapeType.md) | "rect" | The shape type which specifies the preset shape geometry. The "textRect" type creates a text box as the editor inserts it: a light fill and a thin black outline. |
+| width | Optional | [EMU](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/EMU.md) | 914400 | The shape width in English measure units. |
+| height | Optional | [EMU](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/Enumeration/EMU.md) | 914400 | The shape height in English measure units. |
+| fill | Optional | [ApiFill](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiFill.md) |  | The color or pattern used to fill the shape. If not specified, the default shape style fill (theme accent) is used. |
+| stroke | Optional | [ApiStroke](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiStroke.md) |  | The stroke used to draw the shape outline. If not specified, the default shape style outline (theme accent) is used. |
+
+## Returns
+
+[ApiShape](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/document-api/ApiShape.md) \| null \| undefined
+
+## Example
+
+Insert a rectangle shape into a paragraph in a document.
+
+```javascript editor-docx
+// How do I add a shape to a paragraph in a document?
+
+// Place a colored gradient-filled rectangle inside existing text content in a document.
+
+let doc = Api.GetDocument();
+let paragraph = doc.GetElement(0);
+let gs1 = Api.CreateGradientStop(Api.RGB(255, 213, 191), 0);
+let gs2 = Api.CreateGradientStop(Api.RGB(255, 111, 61), 100000);
+let fill = Api.CreateLinearGradientFill([gs1, gs2], 5400000);
+let stroke = Api.CreateStroke(0, Api.CreateNoFill());
+let shape = Api.CreateShape("rect", 5930900, 395605, fill, stroke);
+paragraph.AddDrawing(shape);
+```

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkapi_onlyoffice_com=self.webpackChunkapi_onlyoffice_com||[]).push([["397565"],{236407(e){e.exports=JSON.parse('{"metadata":{"permalink":"/ai-plugin-docs-update/changelog","page":1,"postsPerPage":54,"totalPages":1,"totalCount":54,"blogDescription":"The history of updates and changes to the documentation.","blogTitle":"Changelog"}}')}}]);

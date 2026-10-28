@@ -1,0 +1,27 @@
+# RemoveOleObjects
+
+Removes several OLE objects from the document by their internal IDs.
+
+## Syntax
+
+```javascript
+expression.RemoveOleObjects(arrObjects);
+```
+
+`expression` - A variable that represents an [Api](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/document-api.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| arrObjects | Required | [OLEObjectData](https://api.onlyoffice.com/ai-plugin-docs-update/docs/plugins/interacting-with-editors/document-api/Enumeration/OLEObjectData.md)[] |  | An array of the identifiers which are used to work with OLE objects added to the document. Example: [\{"InternalId": "5_556"\}]. |
+
+## Returns
+
+This method doesn't return any data.
+
+## Example
+
+```javascript
+window.Asc.plugin.executeMethod ("RemoveOleObjects", [[{"InternalId": "5_556"}]]);
+```

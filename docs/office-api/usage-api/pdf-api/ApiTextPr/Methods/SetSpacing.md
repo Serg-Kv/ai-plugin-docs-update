@@ -1,0 +1,50 @@
+# SetSpacing
+
+Sets the text spacing measured in twentieths of a point.
+
+## Syntax
+
+```javascript
+expression.SetSpacing(spacing);
+```
+
+`expression` - A variable that represents an [ApiTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTextPr.md) class.
+
+## Parameters
+
+| **Name** | **Required/Optional** | **Data type** | **Default** | **Description** |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| spacing | Required | [twips](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/Enumeration/twips.md) \| null |  | The value of the text spacing measured in twentieths of a point (1/1440 of an inch). Pass *null* to remove the text spacing. |
+
+## Returns
+
+[ApiTextPr](https://api.onlyoffice.com/ai-plugin-docs-update/docs/office-api/usage-api/pdf-api/ApiTextPr.md)
+
+## Example
+
+Adjust the space between letters in a PDF.
+
+```javascript editor-pdf
+// How do I change character spacing in a PDF?
+
+// Modify the gap between characters to affect text density in a PDF.
+
+const doc = Api.GetDocument();
+const page = doc.GetPage(0);
+
+const fill = Api.CreateSolidFill(Api.RGB(255, 111, 61));
+const stroke = Api.CreateStroke(0, Api.CreateNoFill());
+const shape = Api.CreateShape("flowChartMagneticTape", 150 * 36000, 65 * 36000, fill, stroke);
+shape.SetPosition(608400, 1267200);
+
+const docContent = shape.GetContent();
+const paragraph = docContent.GetElement(0);
+const run = Api.CreateRun();
+const textPr = run.GetTextPr();
+textPr.SetFontSize(50);
+textPr.SetSpacing(80);
+paragraph.SetJc("left");
+run.AddText("This is a sample text inside the shape with the spacing set to 4 points (80 twentieths of a point) using the text properties.");
+paragraph.AddElement(run);
+page.AddObject(shape);
+```
